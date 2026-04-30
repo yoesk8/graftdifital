@@ -723,7 +723,7 @@
         <p>Whether you&rsquo;re starting from scratch or replacing an old site, I&rsquo;ll walk you through the whole process. No jargon, no pressure, no pushy sales calls.</p>
         <div class="contact-item">
           <div class="ci-icon">&#128231;</div>
-          <span>hello@graftdigital.co.uk</span>
+          <a href="mailto:sales@graftdigital.london" style="color:inherit;">sales@graftdigital.london</a>
         </div>
         <div class="contact-item">
           <div class="ci-icon">&#128241;</div>
@@ -884,8 +884,16 @@
   /* ── Form ── */
   document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();
-    const btn = this.querySelector('button[type=submit]');
-    btn.textContent = '&#10003; Sent! I\'ll be in touch shortly.';
+    const f     = this;
+    const name  = f.querySelector('input[type=text]').value;
+    const email = f.querySelector('input[type=email]').value;
+    const phone = f.querySelector('input[type=tel]').value;
+    const trade = f.querySelector('select').value;
+    const msg   = f.querySelector('textarea').value;
+    const body  = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nTrade: ${trade}\n\nMessage:\n${msg}`;
+    window.location.href = `mailto:sales@graftdigital.london?subject=New Enquiry from ${encodeURIComponent(name)} – ${encodeURIComponent(trade)}&body=${encodeURIComponent(body)}`;
+    const btn = f.querySelector('button[type=submit]');
+    btn.textContent = '\u2713 Opening your email app\u2026';
     btn.style.background = '#22c55e';
     btn.style.color = '#fff';
     btn.disabled = true;

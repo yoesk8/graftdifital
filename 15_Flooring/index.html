@@ -199,8 +199,17 @@
 <script>
   document.getElementById('reqForm').addEventListener('submit',function(e){
     e.preventDefault();
-    const btn=this.querySelector('button[type=submit]');
-    btn.textContent='✓ Sent! Yoel will be in touch shortly.';
+    const f=this;
+    const name=f.querySelector('input[type=text]').value;
+    const email=f.querySelector('input[type=email]').value;
+    const phone=f.querySelector('input[type=tel]').value;
+    const msg=f.querySelector('textarea').value;
+    const inp=f.querySelector('input[name=template]');
+    const tmpl=inp?inp.value:'General';
+    const body='Name: '+name+'\nEmail: '+email+'\nPhone: '+phone+'\nTemplate: '+tmpl+'\n\nMessage:\n'+msg;
+    window.location.href='mailto:sales@graftdigital.london?subject='+encodeURIComponent('Template Request – '+tmpl+' – '+name)+'&body='+encodeURIComponent(body);
+    const btn=f.querySelector('button[type=submit]');
+    btn.textContent='✓ Opening your email app…';
     btn.style.background='#22c55e'; btn.style.color='#fff'; btn.disabled=true;
   });
 </script>
