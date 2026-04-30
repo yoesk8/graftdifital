@@ -820,7 +820,10 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
+  emailjs.init('twC-FPSUKrUmnDgQL');
+
   /* ── Industry data ── */
   const industries = [
     { icon: '&#129695;', name: 'Window Cleaning',          folder: '01_Window_Cleaning' },
@@ -881,8 +884,7 @@
   document.getElementById('mobileClose').addEventListener('click', () => closeMobile());
   function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
 
-  /* ── EmailJS ── */
-  emailjs.init('twC-FPSUKrUmnDgQL');
+  /* ── EmailJS ── (SDK loaded above) */
 
   /* ── Form ── */
   document.getElementById('contactForm').addEventListener('submit', function (e) {
@@ -920,6 +922,5 @@
     });
   });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </body>
 </html>
