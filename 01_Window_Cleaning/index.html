@@ -3,214 +3,621 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Window Cleaning Website Template | Graft Digital</title>
-  <meta name="description" content="Streak-free results, regular rounds, residential &amp; commercial clients across London.">
-  <meta name="keywords" content="window cleaning, window cleaner London">
+  <title>ClearView London | Professional Window Cleaning Services</title>
+  <meta name="description" content="London's trusted window cleaning specialists. Residential, commercial and conservatory cleaning across all London boroughs. Free quotes, reliable service, streak-free results.">
+  <meta name="keywords" content="window cleaning London, window cleaner London, residential window cleaning, commercial window cleaning, conservatory cleaning London">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy:#0A1628; --navy-mid:#0F2040; --gold:#F5A623; --gold-dark:#C98010;
-      --gold-light:#FFB84D; --white:#FFFFFF; --off-white:#F7F9FC;
-      --text:#1A2332; --text-mid:#4A5568; --border:#E2E8F0;
-    }
     html { scroll-behavior: smooth; }
-    body { font-family:'Inter',-apple-system,sans-serif; color:var(--text); background:var(--white); line-height:1.6; }
+
+    :root {
+      --dark:       #0B1F3A;
+      --dark-mid:   #112b50;
+      --blue:       #1A56DB;
+      --blue-mid:   #3B82F6;
+      --blue-light: #60A5FA;
+      --sky:        #BAE6FD;
+      --white:      #FFFFFF;
+      --off-white:  #F8FAFC;
+      --light:      #EFF6FF;
+      --text:       #0F172A;
+      --text-mid:   #475569;
+      --text-light: #94A3B8;
+      --border:     #CBD5E1;
+      --gold:       #F59E0B;
+      --trans:      all 0.24s ease;
+      --radius:     12px;
+      --shadow:     0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -1px rgba(0,0,0,.06);
+      --shadow-lg:  0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05);
+      --shadow-xl:  0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04);
+    }
+
+    body { font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; color:var(--text); background:var(--white); line-height:1.6; overflow-x:hidden; }
     a { text-decoration:none; color:inherit; }
-    .container { max-width:1100px; margin:0 auto; padding:0 24px; }
+    .container { max-width:1180px; margin:0 auto; padding:0 24px; }
+
+    /* BUTTONS */
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:8px; font-size:.95rem; font-weight:700; cursor:pointer; transition:var(--trans); border:none; font-family:inherit; }
+    .btn-blue { background:var(--blue); color:var(--white); }
+    .btn-blue:hover { background:#1447c0; transform:translateY(-2px); box-shadow:0 8px 20px rgba(26,86,219,.35); }
+    .btn-white { background:var(--white); color:var(--blue); }
+    .btn-white:hover { background:var(--light); transform:translateY(-2px); }
+    .btn-outline-white { background:transparent; color:var(--white); border:2px solid rgba(255,255,255,.5); }
+    .btn-outline-white:hover { border-color:var(--white); background:rgba(255,255,255,.1); }
+    .btn-lg { padding:15px 34px; font-size:1rem; }
+
     /* TOPBAR */
-    .topbar { background:var(--navy); padding:14px 0; position:sticky; top:0; z-index:100; box-shadow:0 2px 12px rgba(0,0,0,.25); }
-    .topbar-inner { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-    .logo { display:flex; align-items:center; gap:9px; }
-    .logo-mark { width:34px; height:34px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:900; color:var(--navy); }
-    .logo-text { font-size:1.1rem; font-weight:900; color:#fff; letter-spacing:-.03em; }
-    .logo-text span { color:var(--gold); }
-    .back-link { color:rgba(255,255,255,.7); font-size:.85rem; font-weight:500; display:flex; align-items:center; gap:6px; transition:color .2s; }
-    .back-link:hover { color:var(--gold); }
+    .topbar { background:var(--dark); padding:10px 0; border-bottom:1px solid rgba(255,255,255,.06); }
+    .topbar-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+    .topbar-left { display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
+    .topbar-item { display:flex; align-items:center; gap:7px; color:rgba(255,255,255,.7); font-size:.82rem; }
+    .topbar-item a { color:rgba(255,255,255,.7); transition:var(--trans); }
+    .topbar-item a:hover { color:var(--sky); }
+    .topbar-right { display:flex; align-items:center; gap:6px; }
+    .social-btn { width:28px; height:28px; background:rgba(255,255,255,.08); border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:.8rem; color:rgba(255,255,255,.6); transition:var(--trans); }
+    .social-btn:hover { background:var(--blue); color:white; }
+
+    /* NAVBAR */
+    nav { background:var(--white); position:sticky; top:0; z-index:200; box-shadow:0 1px 0 var(--border); transition:var(--trans); }
+    nav.scrolled { box-shadow:0 4px 20px rgba(0,0,0,.1); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px 0; }
+    .logo { display:flex; align-items:center; gap:10px; }
+    .logo-icon { width:40px; height:40px; background:var(--blue); border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; }
+    .logo-name { line-height:1.15; }
+    .logo-name strong { display:block; font-size:1.1rem; font-weight:800; color:var(--dark); letter-spacing:-.02em; }
+    .logo-name span { display:block; font-size:.68rem; font-weight:600; color:var(--blue); letter-spacing:.1em; text-transform:uppercase; }
+    .nav-links { display:flex; align-items:center; gap:28px; list-style:none; }
+    .nav-links a { font-size:.9rem; font-weight:500; color:var(--text-mid); transition:var(--trans); position:relative; }
+    .nav-links a::after { content:''; position:absolute; bottom:-3px; left:0; right:0; height:2px; background:var(--blue); transform:scaleX(0); transform-origin:left; transition:var(--trans); }
+    .nav-links a:hover { color:var(--blue); }
+    .nav-links a:hover::after { transform:scaleX(1); }
+    .nav-phone { display:flex; align-items:center; gap:8px; background:var(--light); border-radius:8px; padding:8px 16px; }
+    .nav-phone a { font-size:.88rem; font-weight:700; color:var(--blue); }
+    .hamburger { display:none; background:none; border:none; cursor:pointer; padding:4px; flex-direction:column; gap:5px; }
+    .hamburger span { display:block; width:22px; height:2px; background:var(--dark); transition:var(--trans); }
+
     /* HERO */
-    .hero { background:var(--navy); background-image:radial-gradient(ellipse at 15% 60%,rgba(26,53,96,.6) 0%,transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(245,166,35,.07) 0%,transparent 50%); min-height:480px; display:flex; align-items:center; padding:72px 0 64px; position:relative; overflow:hidden; }
-    .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px); background-size:54px 54px; }
-    .hero-content { position:relative; z-index:2; max-width:680px; }
-    .preview-banner { background:rgba(245,166,35,.1); border:1px solid rgba(245,166,35,.3); border-radius:10px; padding:15px 20px; margin-bottom:36px; display:flex; align-items:flex-start; gap:11px; max-width:600px; }
-    .preview-banner p { color:rgba(255,255,255,.8); font-size:.86rem; line-height:1.55; margin:0; }
-    .preview-banner strong { color:var(--gold); }
-    .hero-tag { display:inline-flex; align-items:center; gap:7px; background:rgba(245,166,35,.13); border:1px solid rgba(245,166,35,.28); color:var(--gold-light); padding:6px 15px; border-radius:100px; font-size:.8rem; font-weight:600; margin-bottom:20px; }
-    .hero-icon { font-size:3.2rem; margin-bottom:10px; display:block; line-height:1; }
-    .hero h1 { font-size:clamp(2.1rem,4.5vw,3.4rem); color:#fff; letter-spacing:-.04em; margin-bottom:16px; line-height:1.15; font-weight:900; }
-    .hero h1 span { color:var(--gold); }
-    .hero > .container > .hero-content > p { color:rgba(255,255,255,.68); font-size:1.05rem; max-width:520px; margin-bottom:32px; }
-    .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
-    .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:8px; font-size:.95rem; font-weight:700; cursor:pointer; transition:all .22s ease; border:none; font-family:inherit; }
-    .btn-gold { background:var(--gold); color:var(--navy); }
-    .btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 20px rgba(245,166,35,.35); }
-    .btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.35); }
-    .btn-outline:hover { border-color:#fff; background:rgba(255,255,255,.08); }
+    #hero { background:linear-gradient(135deg,var(--dark) 0%,#1440a0 55%,#1D7FC4 100%); min-height:88vh; display:flex; align-items:center; position:relative; overflow:hidden; padding:80px 0; }
+    .pane-grid { position:absolute; right:0; top:0; width:42%; height:100%; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:10px; padding:40px 50px 40px 30px; opacity:.06; }
+    .pane { background:white; border-radius:6px; }
+    .hero-glow { position:absolute; top:-100px; right:100px; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle,rgba(96,165,250,.15) 0%,transparent 70%); }
+    .drop { position:absolute; border-radius:50%; background:rgba(255,255,255,.06); }
+    .drop-1 { width:180px; height:180px; bottom:-40px; left:10%; }
+    .drop-2 { width:80px; height:80px; top:15%; right:48%; }
+    .drop-3 { width:120px; height:120px; top:-30px; right:38%; }
+    .hero-content { position:relative; z-index:2; max-width:640px; }
+    .hero-badge { display:inline-flex; align-items:center; gap:7px; background:rgba(96,165,250,.15); border:1px solid rgba(96,165,250,.3); color:var(--sky); padding:6px 16px; border-radius:100px; font-size:.8rem; font-weight:600; margin-bottom:24px; }
+    .hero h1 { font-size:clamp(2.2rem,4.5vw,3.8rem); font-weight:900; color:var(--white); letter-spacing:-.04em; line-height:1.1; margin-bottom:20px; }
+    .hero h1 span { color:var(--sky); }
+    .hero > .container > .hero-content > p { color:rgba(255,255,255,.72); font-size:1.1rem; max-width:500px; margin-bottom:36px; }
+    .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:48px; }
+    .hero-trust { display:flex; gap:20px; flex-wrap:wrap; }
+    .trust-badge { display:flex; align-items:center; gap:8px; color:rgba(255,255,255,.8); font-size:.82rem; font-weight:500; }
+    .trust-badge .tb-icon { width:30px; height:30px; background:rgba(255,255,255,.1); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.9rem; }
+
+    /* STATS */
+    .stats-bar { display:grid; grid-template-columns:repeat(4,1fr); border-bottom:1px solid var(--border); border-top:1px solid var(--border); }
+    .stat-item { text-align:center; padding:32px 16px; border-right:1px solid var(--border); }
+    .stat-item:last-child { border-right:none; }
+    .stat-num { font-size:2.6rem; font-weight:900; color:var(--blue); line-height:1; margin-bottom:4px; }
+    .stat-lbl { font-size:.84rem; color:var(--text-mid); font-weight:500; }
+
+    /* SECTION COMMON */
+    .section-tag { display:inline-block; background:var(--light); color:var(--blue); font-size:.75rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:5px 14px; border-radius:100px; margin-bottom:14px; }
+    .section-header { margin-bottom:52px; }
+    .section-header h2 { font-size:clamp(1.8rem,3vw,2.6rem); font-weight:800; letter-spacing:-.03em; margin-bottom:12px; }
+    .section-header p { color:var(--text-mid); font-size:1rem; max-width:520px; }
+    .section-header.center { text-align:center; }
+    .section-header.center p { margin:0 auto; }
+
     /* SERVICES */
-    .services { padding:80px 0; background:var(--off-white); }
-    .services h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .services .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
-    .service-card { background:#fff; border-radius:12px; padding:28px 24px; border:1px solid var(--border); transition:all .22s ease; }
-    .service-card:hover { transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.08); border-color:rgba(245,166,35,.3); }
-    .sc-icon { font-size:1.8rem; margin-bottom:12px; display:block; }
-    .sc-title { font-size:1rem; font-weight:700; margin-bottom:6px; }
-    .sc-desc { font-size:.88rem; color:var(--text-mid); line-height:1.65; }
-    /* TRUST */
-    .why { padding:80px 0; background:var(--white); }
-    .why h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .why .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .trust-items { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; text-align:center; }
-    .trust-item { padding:28px 16px; }
-    .trust-num { font-size:2.4rem; font-weight:900; color:var(--gold-dark); line-height:1; margin-bottom:6px; }
-    .trust-lbl { font-size:.88rem; color:var(--text-mid); }
-    /* CTA */
-    .cta-section { padding:72px 0; background:var(--navy); background-image:radial-gradient(ellipse at 80% 50%,rgba(245,166,35,.08) 0%,transparent 55%); text-align:center; }
-    .cta-section h2 { color:#fff; font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; margin-bottom:14px; }
-    .cta-section p { color:rgba(255,255,255,.65); font-size:1rem; margin-bottom:32px; max-width:480px; margin-left:auto; margin-right:auto; }
-    /* FORM */
-    .contact-mini { padding:80px 0; background:var(--off-white); }
-    .contact-mini h2 { font-size:clamp(1.5rem,3vw,2rem); font-weight:800; text-align:center; margin-bottom:8px; }
-    .contact-mini .sub { text-align:center; color:var(--text-mid); font-size:.97rem; margin-bottom:32px; }
-    .mini-form { max-width:520px; margin:0 auto; background:#fff; border-radius:16px; padding:36px; border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,0,0,.06); }
+    #services { padding:92px 0; background:var(--off-white); }
+    .services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr)); gap:24px; }
+    .service-card { background:var(--white); border-radius:var(--radius); border:1px solid var(--border); padding:32px 28px; transition:var(--trans); position:relative; overflow:hidden; }
+    .service-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--blue); transform:scaleX(0); transform-origin:left; transition:var(--trans); }
+    .service-card:hover { transform:translateY(-5px); box-shadow:var(--shadow-xl); }
+    .service-card:hover::before { transform:scaleX(1); }
+    .sc-icon { width:52px; height:52px; background:var(--light); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:18px; }
+    .sc-title { font-size:1.1rem; font-weight:700; margin-bottom:10px; }
+    .sc-desc { font-size:.9rem; color:var(--text-mid); line-height:1.7; margin-bottom:18px; }
+    .sc-link { font-size:.85rem; font-weight:700; color:var(--blue); display:flex; align-items:center; gap:5px; transition:var(--trans); }
+    .sc-link:hover { gap:9px; }
+
+    /* PROCESS */
+    #process { padding:92px 0; background:var(--white); }
+    .process-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:0; position:relative; }
+    .process-step { padding:40px 32px; text-align:center; position:relative; }
+    .process-step:not(:last-child)::after { content:'&#8594;'; position:absolute; top:50px; right:-10px; font-size:1.4rem; color:var(--border); z-index:2; }
+    .step-circle { width:64px; height:64px; background:var(--blue); color:var(--white); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.6rem; font-weight:900; margin:0 auto 20px; box-shadow:0 8px 20px rgba(26,86,219,.3); }
+    .step-title { font-size:1.1rem; font-weight:700; margin-bottom:10px; }
+    .step-desc { font-size:.9rem; color:var(--text-mid); line-height:1.7; }
+
+    /* WHY US */
+    #why-us { padding:92px 0; background:var(--dark); }
+    .why-header h2 { color:var(--white); }
+    .why-header p  { color:rgba(255,255,255,.6); }
+    .why-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
+    .why-card { background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:28px 24px; transition:var(--trans); }
+    .why-card:hover { background:rgba(255,255,255,.08); transform:translateY(-3px); }
+    .wc-icon { width:46px; height:46px; background:rgba(26,86,219,.3); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; margin-bottom:16px; }
+    .wc-title { font-size:1rem; font-weight:700; color:var(--white); margin-bottom:8px; }
+    .wc-desc { font-size:.88rem; color:rgba(255,255,255,.6); line-height:1.7; }
+
+    /* TESTIMONIALS */
+    #testimonials { padding:92px 0; background:var(--off-white); }
+    .reviews-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; }
+    .review-card { background:var(--white); border-radius:var(--radius); border:1px solid var(--border); padding:32px 28px; transition:var(--trans); }
+    .review-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-lg); }
+    .stars { color:var(--gold); font-size:1.1rem; letter-spacing:2px; margin-bottom:14px; }
+    .review-text { font-size:.95rem; color:var(--text-mid); line-height:1.75; font-style:italic; margin-bottom:20px; }
+    .review-text::before { content:'\201C'; }
+    .review-text::after  { content:'\201D'; }
+    .reviewer { display:flex; align-items:center; gap:12px; padding-top:18px; border-top:1px solid var(--border); }
+    .reviewer-avatar { width:42px; height:42px; border-radius:50%; background:var(--light); display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:800; color:var(--blue); flex-shrink:0; }
+    .reviewer-name { font-size:.88rem; font-weight:700; }
+    .reviewer-loc  { font-size:.78rem; color:var(--text-light); }
+    .google-badge  { display:flex; align-items:center; gap:4px; color:var(--text-light); font-size:.73rem; margin-top:2px; }
+
+    /* AREAS */
+    #areas { padding:92px 0; background:var(--white); }
+    .areas-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:10px; margin-top:40px; }
+    .area-pill { background:var(--light); border:1px solid #DBEAFE; border-radius:8px; padding:10px 14px; font-size:.84rem; font-weight:500; color:var(--dark); text-align:center; transition:var(--trans); }
+    .area-pill:hover { background:var(--blue); color:var(--white); border-color:var(--blue); }
+
+    /* QUOTE */
+    #quote { padding:92px 0; background:linear-gradient(135deg,var(--dark) 0%,#1440a0 100%); position:relative; overflow:hidden; }
+    #quote::before { content:''; position:absolute; top:-80px; right:-80px; width:400px; height:400px; border-radius:50%; background:radial-gradient(circle,rgba(96,165,250,.12) 0%,transparent 70%); }
+    .quote-grid { display:grid; grid-template-columns:1fr 1.1fr; gap:64px; align-items:start; position:relative; z-index:2; }
+    .quote-info h2 { color:var(--white); font-size:clamp(1.8rem,3vw,2.4rem); margin-bottom:16px; font-weight:800; }
+    .quote-info p { color:rgba(255,255,255,.7); margin-bottom:32px; font-size:1rem; line-height:1.75; }
+    .quote-features { list-style:none; }
+    .quote-features li { display:flex; align-items:center; gap:10px; color:rgba(255,255,255,.8); font-size:.92rem; padding:8px 0; border-bottom:1px solid rgba(255,255,255,.07); }
+    .quote-features li:last-child { border:none; }
+    .qf-check { width:20px; height:20px; border-radius:50%; background:rgba(96,165,250,.2); flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:.65rem; color:var(--sky); font-weight:700; }
+    .quote-form-wrap { background:var(--white); border-radius:16px; padding:40px; box-shadow:0 24px 48px rgba(0,0,0,.2); }
+    .qf-title { font-size:1.3rem; font-weight:800; margin-bottom:6px; }
+    .qf-sub { font-size:.88rem; color:var(--text-mid); margin-bottom:24px; }
     .fg { margin-bottom:16px; }
-    .fg label { display:block; font-size:.84rem; font-weight:600; margin-bottom:6px; }
-    .fg input,.fg textarea { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:8px; font-size:.92rem; font-family:inherit; color:var(--text); outline:none; transition:border .2s; }
-    .fg input:focus,.fg textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(245,166,35,.12); }
-    .fg textarea { resize:vertical; min-height:88px; }
+    .fg label { display:block; font-size:.82rem; font-weight:600; margin-bottom:6px; }
+    .fg input,.fg select,.fg textarea { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:8px; font-size:.92rem; font-family:inherit; color:var(--text); outline:none; transition:var(--trans); }
+    .fg input:focus,.fg select:focus,.fg textarea:focus { border-color:var(--blue); box-shadow:0 0 0 3px rgba(26,86,219,.1); }
+    .fg textarea { resize:vertical; min-height:90px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .form-note { font-size:.75rem; color:var(--text-light); margin-top:10px; text-align:center; }
+
     /* FOOTER */
-    footer { background:#050D1A; padding:32px 0; border-top:1px solid rgba(255,255,255,.05); }
-    .footer-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
-    .footer-copy { color:rgba(255,255,255,.35); font-size:.82rem; }
-    .footer-copy strong { color:var(--gold); }
-    @media(max-width:600px){ .hero-ctas{flex-direction:column;} .hero-ctas .btn{justify-content:center;} }
+    footer { background:#060F1E; padding:56px 0 28px; }
+    .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; margin-bottom:48px; }
+    .footer-desc { color:rgba(255,255,255,.45); font-size:.88rem; line-height:1.75; margin-top:16px; }
+    .footer-col h4 { color:var(--white); font-size:.88rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; margin-bottom:16px; }
+    .footer-col ul { list-style:none; }
+    .footer-col ul li { margin-bottom:10px; }
+    .footer-col ul li a { color:rgba(255,255,255,.45); font-size:.87rem; transition:var(--trans); }
+    .footer-col ul li a:hover { color:var(--sky); }
+    .footer-bottom { padding-top:28px; border-top:1px solid rgba(255,255,255,.06); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+    .footer-bottom p { color:rgba(255,255,255,.3); font-size:.8rem; }
+    .built-by { color:rgba(255,255,255,.25); font-size:.75rem; }
+    .built-by a { color:rgba(255,255,255,.4); transition:var(--trans); }
+    .built-by a:hover { color:#F5A623; }
+
+    /* FLOAT CTA */
+    .float-cta { position:fixed; bottom:24px; right:24px; z-index:300; display:none; }
+    .float-cta a { display:flex; align-items:center; gap:8px; background:var(--blue); color:white; padding:13px 22px; border-radius:100px; font-size:.9rem; font-weight:700; box-shadow:0 8px 24px rgba(26,86,219,.45); transition:var(--trans); font-family:inherit; }
+    .float-cta a:hover { background:#1447c0; transform:translateY(-2px); }
+
+    /* MOBILE MENU */
+    .mobile-menu { display:none; position:fixed; inset:0; background:var(--white); z-index:190; flex-direction:column; align-items:center; justify-content:center; gap:28px; }
+    .mobile-menu.open { display:flex; }
+    .mobile-menu a { font-size:1.4rem; font-weight:700; color:var(--dark); transition:var(--trans); }
+    .mobile-menu a:hover { color:var(--blue); }
+    .mobile-close { position:absolute; top:20px; right:20px; background:none; border:none; font-size:1.6rem; cursor:pointer; color:var(--text-mid); }
+
+    /* REVEAL */
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity .6s ease,transform .6s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){ .footer-grid { grid-template-columns:1fr 1fr; } }
+    @media(max-width:900px){ .quote-grid { grid-template-columns:1fr; } .quote-info { display:none; } }
+    @media(max-width:700px){
+      .nav-links,.nav-phone { display:none; }
+      .hamburger { display:flex; }
+      .stats-bar { grid-template-columns:1fr 1fr; }
+      .stats-bar .stat-item:nth-child(2) { border-right:none; }
+      .topbar-right { display:none; }
+      .hero-ctas { flex-direction:column; }
+      .hero-ctas .btn { justify-content:center; }
+      .form-row { grid-template-columns:1fr; }
+      .footer-grid { grid-template-columns:1fr; }
+      .footer-bottom { flex-direction:column; text-align:center; }
+      .process-step::after { display:none; }
+      .float-cta { display:block; }
+    }
   </style>
 </head>
 <body>
-<header class="topbar">
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&#x2715;</button>
+  <a href="#services"      onclick="closeMob()">Services</a>
+  <a href="#process"       onclick="closeMob()">How It Works</a>
+  <a href="#testimonials"  onclick="closeMob()">Reviews</a>
+  <a href="#areas"         onclick="closeMob()">Areas</a>
+  <a href="#quote" class="btn btn-blue" onclick="closeMob()">Free Quote</a>
+</div>
+
+<!-- TOPBAR -->
+<div class="topbar">
   <div class="container">
     <div class="topbar-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text">Graft<span>Digital</span></span>
-      </a>
-      <a href="../index.html#industries" class="back-link">&larr; All Templates</a>
+      <div class="topbar-left">
+        <div class="topbar-item">&#128222; <a href="tel:02030000000">020 3000 0000</a></div>
+        <div class="topbar-item">&#128231; <a href="mailto:info@clearviewlondon.co.uk">info@clearviewlondon.co.uk</a></div>
+        <div class="topbar-item">&#128336; Mon &ndash; Sat, 7am &ndash; 6pm</div>
+      </div>
+      <div class="topbar-right">
+        <a href="#" class="social-btn">f</a>
+        <a href="#" class="social-btn">&#9424;</a>
+        <a href="#" class="social-btn">G</a>
+      </div>
     </div>
   </div>
-</header>
+</div>
 
-<section class="hero">
-  <div class="hero-grid"></div>
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-icon">&#129695;</div>
+        <div class="logo-name">
+          <strong>ClearView</strong>
+          <span>London</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#areas">Areas We Cover</a></li>
+      </ul>
+      <div class="nav-phone">&#128222; <a href="tel:02030000000">020 3000 0000</a></div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="pane-grid"><div class="pane"></div><div class="pane"></div><div class="pane"></div><div class="pane"></div></div>
+  <div class="hero-glow"></div>
+  <div class="drop drop-1"></div><div class="drop drop-2"></div><div class="drop drop-3"></div>
   <div class="container">
     <div class="hero-content">
-      <div class="preview-banner">
-        <span style="font-size:1.2rem;flex-shrink:0;">&#128065;</span>
-        <p>This is a <strong>sample template</strong> for a Window Cleaning business. Your real site will be fully customised with your branding, photos &amp; details. <a href="#get-started" style="color:var(--gold);font-weight:700;">Request this template &darr;</a></p>
-      </div>
-      <div class="hero-tag">&#128205; London Trade Template</div>
-      <span class="hero-icon">&#129695;</span>
-      <h1>London&rsquo;s Trusted<br><span>Window Cleaning</span><br>Specialists</h1>
-      <p>Streak-free results, regular rounds, residential &amp; commercial clients across London.</p>
+      <div class="hero-badge">&#11088; Rated 5 Stars on Google &bull; 500+ Happy Customers</div>
+      <h1>London&rsquo;s Most Trusted<br><span>Window Cleaning</span><br>Specialists</h1>
+      <p>Streak-free results. Reliable service. Fair prices. We cover all London boroughs &mdash; residential, commercial, and conservatory cleaning done right.</p>
       <div class="hero-ctas">
-        <a href="#get-started" class="btn btn-gold">Get a Free Quote</a>
-        <a href="tel:+447895628993" class="btn btn-outline">&#128222; Call Now</a>
+        <a href="#quote"          class="btn btn-white btn-lg">Get a Free Quote</a>
+        <a href="tel:02030000000" class="btn btn-outline-white btn-lg">&#128222; Call Now</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-badge"><div class="tb-icon">&#9989;</div> Fully Insured</div>
+        <div class="trust-badge"><div class="tb-icon">&#127795;</div> Eco-Friendly</div>
+        <div class="trust-badge"><div class="tb-icon">&#128197;</div> No Contract</div>
+        <div class="trust-badge"><div class="tb-icon">&#128274;</div> DBS Checked</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="services">
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">10+</div><div class="stat-lbl">Years in London</div></div>
+  <div class="stat-item"><div class="stat-num">500+</div><div class="stat-lbl">Customers Served</div></div>
+  <div class="stat-item"><div class="stat-num">32</div><div class="stat-lbl">Boroughs Covered</div></div>
+  <div class="stat-item"><div class="stat-num">5&#9733;</div><div class="stat-lbl">Google Rating</div></div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
   <div class="container">
-    <h2>Our Services</h2>
-    <p class="sub">Professional Window Cleaning services across all London boroughs</p>
+    <div class="section-header reveal">
+      <span class="section-tag">Our Services</span>
+      <h2>Everything Your Windows Need</h2>
+      <p>From terraced houses in Hackney to office blocks in the City &mdash; we clean them all.</p>
+    </div>
     <div class="services-grid">
-      <div class="service-card">
-        <span class="sc-icon">&#10003;</span>
-        <div class="sc-title">Residential</div>
-        <p class="sc-desc">Trusted by homeowners across London for reliable, high-quality work done right first time.</p>
+      <div class="service-card reveal">
+        <div class="sc-icon">&#127968;</div>
+        <div class="sc-title">Residential Window Cleaning</div>
+        <p class="sc-desc">Regular cleans for houses, flats and apartments across London. We work around your schedule and treat your home with respect.</p>
+        <a href="#quote" class="sc-link">Get a quote &#8594;</a>
       </div>
-      <div class="service-card">
-        <span class="sc-icon">&#127970;</span>
-        <div class="sc-title">Commercial</div>
-        <p class="sc-desc">We work with businesses, landlords and property managers throughout Greater London.</p>
+      <div class="service-card reveal">
+        <div class="sc-icon">&#127970;</div>
+        <div class="sc-title">Commercial Window Cleaning</div>
+        <p class="sc-desc">Offices, retail units, restaurants and schools. Flexible scheduling including early mornings and weekends to minimise disruption.</p>
+        <a href="#quote" class="sc-link">Get a quote &#8594;</a>
       </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128241;</span>
-        <div class="sc-title">Emergency Callouts</div>
-        <p class="sc-desc">Fast response when you need it most. We cover all London postcodes, seven days a week.</p>
+      <div class="service-card reveal">
+        <div class="sc-icon">&#127961;</div>
+        <div class="sc-title">Conservatory Cleaning</div>
+        <p class="sc-desc">Full conservatory cleaning including frames, roof panels, guttering and doors. Specialist techniques for glass and polycarbonate roofs.</p>
+        <a href="#quote" class="sc-link">Get a quote &#8594;</a>
       </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128205;</span>
-        <div class="sc-title">All London Boroughs</div>
-        <p class="sc-desc">From Hackney to Hammersmith, Croydon to Camden &mdash; we cover the entire Greater London area.</p>
+      <div class="service-card reveal">
+        <div class="sc-icon">&#128295;</div>
+        <div class="sc-title">Reach &amp; Wash System</div>
+        <p class="sc-desc">Pure water fed pole system for high-rise and hard-to-reach windows. Safer than ladders, leaves no residue, results last longer.</p>
+        <a href="#quote" class="sc-link">Get a quote &#8594;</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="sc-icon">&#9728;</div>
+        <div class="sc-title">Solar Panel Cleaning</div>
+        <p class="sc-desc">Dirty panels lose up to 30% efficiency. Our deionised water system cleans without chemicals, protecting your investment.</p>
+        <a href="#quote" class="sc-link">Get a quote &#8594;</a>
+      </div>
+      <div class="service-card reveal">
+        <div class="sc-icon">&#127783;</div>
+        <div class="sc-title">Gutter Clearing</div>
+        <p class="sc-desc">Blocked gutters cause damp and structural damage. We clear, flush and provide photographic evidence of all work carried out.</p>
+        <a href="#quote" class="sc-link">Get a quote &#8594;</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="why">
+<!-- PROCESS -->
+<section id="process">
   <div class="container">
-    <h2>Why Choose Us?</h2>
-    <p class="sub">Trusted by hundreds of London customers</p>
-    <div class="trust-items">
-      <div class="trust-item"><div class="trust-num">500+</div><div class="trust-lbl">Jobs Completed</div></div>
-      <div class="trust-item"><div class="trust-num">5&#9733;</div><div class="trust-lbl">Google Rating</div></div>
-      <div class="trust-item"><div class="trust-num">10+</div><div class="trust-lbl">Years Experience</div></div>
-      <div class="trust-item"><div class="trust-num">32</div><div class="trust-lbl">London Boroughs Covered</div></div>
+    <div class="section-header center reveal">
+      <span class="section-tag">How It Works</span>
+      <h2>Spotless Windows in 3 Simple Steps</h2>
+      <p>We&rsquo;ve made it as easy as possible to get started.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="step-circle">1</div>
+        <div class="step-title">Request a Free Quote</div>
+        <p class="step-desc">Fill in our quick form or call us directly. Tell us your property type, location and how often you&rsquo;d like us to visit.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-circle">2</div>
+        <div class="step-title">We Confirm Your Visit</div>
+        <p class="step-desc">We&rsquo;ll confirm your booking with a fixed price &mdash; no hidden fees. You&rsquo;ll receive a reminder the day before.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-circle">3</div>
+        <div class="step-title">Sit Back &amp; Enjoy</div>
+        <p class="step-desc">Our trained team arrives on time, cleans everything thoroughly, and leaves your property exactly as we found it.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="cta-section">
+<!-- WHY US -->
+<section id="why-us">
   <div class="container">
-    <h2>Ready to Book? Get a Free Quote Today.</h2>
-    <p>No call centres, no pressure. Just a quick chat and a fair, honest price.</p>
-    <a href="#get-started" class="btn btn-gold">Request a Free Quote</a>
-  </div>
-</section>
-
-<section class="contact-mini" id="get-started">
-  <div class="container">
-    <h2>Request This Template</h2>
-    <p class="sub">Like what you see? Contact Yoel at Graft Digital to get your own Window Cleaning website live within days.</p>
-    <div class="mini-form">
-      <form id="reqForm">
-        <div class="fg"><label>Your Name</label><input type="text" placeholder="John Smith" required></div>
-        <div class="fg"><label>Email</label><input type="email" placeholder="john@yourcompany.co.uk" required></div>
-        <div class="fg"><label>Phone</label><input type="tel" placeholder="+44 7XXX XXX XXX"></div>
-        <div class="fg"><label>Tell me about your business</label><textarea placeholder="Where in London are you based? Do you have a logo or existing site?"></textarea></div>
-        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;font-size:.97rem;">Send Enquiry to Graft Digital &rarr;</button>
-      </form>
+    <div class="section-header why-header reveal">
+      <span class="section-tag" style="background:rgba(96,165,250,.15);color:var(--sky);">Why Choose Us</span>
+      <h2>The ClearView Difference</h2>
+      <p>We&rsquo;re not just another cleaning company. Here&rsquo;s what sets us apart.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="wc-icon">&#9989;</div><div class="wc-title">Fully Insured &amp; DBS Checked</div><p class="wc-desc">Every team member is background-checked and we carry full public liability insurance for complete peace of mind.</p></div>
+      <div class="why-card reveal"><div class="wc-icon">&#127795;</div><div class="wc-title">Eco-Friendly Products</div><p class="wc-desc">We use biodegradable solutions and a pure water system that leaves no chemical residue on your windows.</p></div>
+      <div class="why-card reveal"><div class="wc-icon">&#128222;</div><div class="wc-title">Always Reachable</div><p class="wc-desc">Call or WhatsApp us directly. No call centres, no automated menus &mdash; just a real person who knows your job.</p></div>
+      <div class="why-card reveal"><div class="wc-icon">&#128197;</div><div class="wc-title">Flexible Scheduling</div><p class="wc-desc">Weekly, fortnightly or one-off cleans. Early mornings and Saturdays available. We work around your life.</p></div>
+      <div class="why-card reveal"><div class="wc-icon">&#128176;</div><div class="wc-title">Transparent Pricing</div><p class="wc-desc">Fixed prices with no hidden extras. We quote upfront and never charge more than agreed. Simple.</p></div>
+      <div class="why-card reveal"><div class="wc-icon">&#11088;</div><div class="wc-title">Satisfaction Guaranteed</div><p class="wc-desc">Not happy? We&rsquo;ll come back and sort it for free. We&rsquo;re not done until you&rsquo;re completely satisfied.</p></div>
     </div>
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-tag">Customer Reviews</span>
+      <h2>What Londoners Say About Us</h2>
+      <p>Don&rsquo;t just take our word for it.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">Absolutely brilliant service. Turned up on time, did a thorough job on all our windows and even cleaned the frames. Our Islington terrace hasn&rsquo;t looked this good in years.</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">SM</div>
+          <div><div class="reviewer-name">Sarah M.</div><div class="reviewer-loc">Islington, N1</div><div class="google-badge">&#9679; Verified Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">Used them for our Soho office. Professional, quick and very reasonably priced. The team got everything done before our 9am start. Highly recommend for commercial premises.</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">JT</div>
+          <div><div class="reviewer-name">James T.</div><div class="reviewer-loc">Soho, W1</div><div class="google-badge">&#9679; Verified Google Review</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">Fortnightly schedule for 8 months now. Consistent, reliable, windows always spotless. They also cleared our gutters. Couldn&rsquo;t ask for more.</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">RH</div>
+          <div><div class="reviewer-name">Rachel &amp; Tom H.</div><div class="reviewer-loc">Hackney, E8</div><div class="google-badge">&#9679; Verified Google Review</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section id="areas">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Areas We Cover</span>
+      <h2>Serving All of Greater London</h2>
+      <p>From Zone 1 to the outer boroughs &mdash; if you&rsquo;re in London, we can get to you.</p>
+    </div>
+    <div class="areas-grid reveal">
+      <div class="area-pill">Barking</div><div class="area-pill">Barnet</div><div class="area-pill">Bexley</div>
+      <div class="area-pill">Brent</div><div class="area-pill">Bromley</div><div class="area-pill">Camden</div>
+      <div class="area-pill">City of London</div><div class="area-pill">Croydon</div><div class="area-pill">Ealing</div>
+      <div class="area-pill">Enfield</div><div class="area-pill">Greenwich</div><div class="area-pill">Hackney</div>
+      <div class="area-pill">Hammersmith</div><div class="area-pill">Haringey</div><div class="area-pill">Harrow</div>
+      <div class="area-pill">Havering</div><div class="area-pill">Hillingdon</div><div class="area-pill">Hounslow</div>
+      <div class="area-pill">Islington</div><div class="area-pill">Kensington</div><div class="area-pill">Kingston</div>
+      <div class="area-pill">Lambeth</div><div class="area-pill">Lewisham</div><div class="area-pill">Merton</div>
+      <div class="area-pill">Newham</div><div class="area-pill">Redbridge</div><div class="area-pill">Richmond</div>
+      <div class="area-pill">Southwark</div><div class="area-pill">Sutton</div><div class="area-pill">Tower Hamlets</div>
+      <div class="area-pill">Waltham Forest</div><div class="area-pill">Wandsworth</div><div class="area-pill">Westminster</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE FORM -->
+<section id="quote">
+  <div class="container">
+    <div class="quote-grid">
+      <div class="quote-info reveal">
+        <h2>Get Your Free Quote Today</h2>
+        <p>Fill in the form and we&rsquo;ll reply with a fixed price within a few hours. No obligation, no pushy sales calls &mdash; just a fair, honest quote.</p>
+        <ul class="quote-features">
+          <li><span class="qf-check">&#10003;</span> Response within 2 hours</li>
+          <li><span class="qf-check">&#10003;</span> Fixed prices, no hidden fees</li>
+          <li><span class="qf-check">&#10003;</span> Available 7 days a week</li>
+          <li><span class="qf-check">&#10003;</span> First clean discounts available</li>
+          <li><span class="qf-check">&#10003;</span> All London postcodes covered</li>
+        </ul>
+      </div>
+      <div class="quote-form-wrap reveal">
+        <div class="qf-title">Request a Free Quote</div>
+        <div class="qf-sub">We&rsquo;ll reply within 2 hours</div>
+        <form id="quoteForm">
+          <div class="form-row">
+            <div class="fg"><label>First Name</label><input type="text" placeholder="John" required></div>
+            <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith" required></div>
+          </div>
+          <div class="fg"><label>Email Address</label><input type="email" placeholder="john@email.com" required></div>
+          <div class="fg"><label>Phone Number</label><input type="tel" placeholder="07XXX XXX XXX" required></div>
+          <div class="form-row">
+            <div class="fg">
+              <label>Service Needed</label>
+              <select required>
+                <option value="" disabled selected>Select&hellip;</option>
+                <option>Residential Windows</option>
+                <option>Commercial Windows</option>
+                <option>Conservatory</option>
+                <option>Reach &amp; Wash</option>
+                <option>Solar Panels</option>
+                <option>Gutters</option>
+                <option>Multiple Services</option>
+              </select>
+            </div>
+            <div class="fg"><label>Your Postcode</label><input type="text" placeholder="e.g. N1 2AB"></div>
+          </div>
+          <div class="fg"><label>Additional Info (optional)</label><textarea placeholder="Number of windows, property type, any access requirements&hellip;"></textarea></div>
+          <button type="submit" class="btn btn-blue" style="width:100%;justify-content:center;font-size:.97rem;padding:14px;">
+            Request My Free Quote &rarr;
+          </button>
+          <p class="form-note">&#128274; Your details are safe with us. We never share your information.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <div class="container">
-    <div class="footer-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text" style="color:#fff;">Graft<span style="color:var(--gold);">Digital</span></span>
-      </a>
-      <span class="footer-copy">&copy; 2025 <strong>Graft Digital</strong> &mdash; Built by Yoel Gutierrez &middot; London</span>
+    <div class="footer-grid">
+      <div>
+        <a href="#" class="logo">
+          <div class="logo-icon">&#129695;</div>
+          <div class="logo-name"><strong style="color:white;">ClearView</strong><span style="color:var(--sky);">London</span></div>
+        </a>
+        <p class="footer-desc">London&rsquo;s trusted window cleaning specialists. Serving homes and businesses across all 33 London boroughs. Fully insured, DBS checked, 5-star rated.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Residential</a></li>
+          <li><a href="#services">Commercial</a></li>
+          <li><a href="#services">Conservatory</a></li>
+          <li><a href="#services">Reach &amp; Wash</a></li>
+          <li><a href="#services">Solar Panels</a></li>
+          <li><a href="#services">Gutters</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#why-us">About Us</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#areas">Areas Covered</a></li>
+          <li><a href="#quote">Get a Quote</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:02030000000">020 3000 0000</a></li>
+          <li><a href="mailto:info@clearviewlondon.co.uk">info@clearviewlondon.co.uk</a></li>
+          <li><a href="#">WhatsApp Us</a></li>
+          <li><a href="#areas">London, UK</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 ClearView London. All rights reserved.</p>
+      <span class="built-by">Website by <a href="https://graftdigital.london" target="_blank">Graft Digital</a></span>
     </div>
   </div>
 </footer>
+
+<!-- FLOATING CALL BTN (mobile) -->
+<div class="float-cta">
+  <a href="tel:02030000000">&#128222; Call for a Free Quote</a>
+</div>
+
 <script>
-  document.getElementById('reqForm').addEventListener('submit',function(e){
+  /* Navbar */
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50), { passive: true });
+
+  /* Mobile menu */
+  document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
+  document.getElementById('mobileClose').addEventListener('click', closeMob);
+  function closeMob() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  /* Scroll reveal */
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  /* Quote form */
+  document.getElementById('quoteForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    const f=this;
-    const btn=f.querySelector('button[type=submit]');
-    const inp=f.querySelector('input[name=template]');
-    const tmpl=inp?inp.value:'General';
-    const name=f.querySelector('input[type=text]').value;
-    const email=f.querySelector('input[type=email]').value;
-    const phone=f.querySelector('input[type=tel]').value;
-    const msg=f.querySelector('textarea').value;
-    const body='Name: '+name+'\nEmail: '+email+'\nPhone: '+phone+'\nTemplate: '+tmpl+'\n\nMessage:\n'+msg;
-    window.location.href='mailto:sales@graftdigital.london?subject='+encodeURIComponent('Template Request – '+tmpl+' – '+name)+'&body='+encodeURIComponent(body);
-    btn.textContent='✓ Opening your email app…';
-    btn.style.background='#22c55e'; btn.style.color='#fff'; btn.disabled=true;
+    const f     = this;
+    const fname = f.querySelectorAll('input[type=text]')[0].value;
+    const lname = f.querySelectorAll('input[type=text]')[1].value;
+    const email = f.querySelector('input[type=email]').value;
+    const phone = f.querySelector('input[type=tel]').value;
+    const svc   = f.querySelector('select').value;
+    const post  = f.querySelectorAll('input[type=text]')[2].value;
+    const msg   = f.querySelector('textarea').value;
+    const body  = 'Name: '+fname+' '+lname+'\nEmail: '+email+'\nPhone: '+phone+'\nService: '+svc+'\nPostcode: '+post+'\n\nNotes:\n'+msg;
+    window.location.href = 'mailto:info@clearviewlondon.co.uk?subject='+encodeURIComponent('Quote Request \u2013 '+fname+' '+lname)+'&body='+encodeURIComponent(body);
+    const btn = f.querySelector('button[type=submit]');
+    btn.textContent = '\u2713 Opening your email app\u2026';
+    btn.style.background = '#16a34a';
+    btn.disabled = true;
   });
 </script>
 </body>
