@@ -820,10 +820,7 @@
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-  emailjs.init('twC-FPSUKrUmnDgQL');
-
   /* ── Industry data ── */
   const industries = [
     { icon: '&#129695;', name: 'Window Cleaning',          folder: '01_Window_Cleaning' },
@@ -884,42 +881,24 @@
   document.getElementById('mobileClose').addEventListener('click', () => closeMobile());
   function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
 
-  /* ── EmailJS ── (SDK loaded above) */
-
   /* ── Form ── */
   document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();
-    const f      = this;
-    const btn    = f.querySelector('button[type=submit]');
-    const names  = f.querySelectorAll('input[type=text]');
-    const fname  = names[0].value;
-    const lname  = names[1].value;
-    const email  = f.querySelector('input[type=email]').value;
-    const phone  = f.querySelector('input[type=tel]').value;
-    const trade  = f.querySelector('select').value;
-    const msg    = f.querySelector('textarea').value;
-
-    btn.textContent = 'Sending\u2026';
+    const f     = this;
+    const names = f.querySelectorAll('input[type=text]');
+    const fname = names[0].value;
+    const lname = names[1].value;
+    const email = f.querySelector('input[type=email]').value;
+    const phone = f.querySelector('input[type=tel]').value;
+    const trade = f.querySelector('select').value;
+    const msg   = f.querySelector('textarea').value;
+    const body  = 'Name: ' + fname + ' ' + lname + '\nEmail: ' + email + '\nPhone: ' + phone + '\nTrade: ' + trade + '\n\nMessage:\n' + msg;
+    window.location.href = 'mailto:sales@graftdigital.london?subject=' + encodeURIComponent('New Enquiry \u2013 ' + fname + ' ' + lname + ' \u2013 ' + trade) + '&body=' + encodeURIComponent(body);
+    const btn = f.querySelector('button[type=submit]');
+    btn.textContent = '\u2713 Opening your email app\u2026';
+    btn.style.background = '#22c55e';
+    btn.style.color = '#fff';
     btn.disabled = true;
-
-    emailjs.send('service_os9nu0p', 'service_os9nu0p', {
-      subject:    'New Enquiry \u2013 ' + fname + ' ' + lname + ' \u2013 ' + trade,
-      from_name:  fname + ' ' + lname,
-      from_email: email,
-      phone:      phone,
-      trade:      trade,
-      message:    msg,
-    }).then(function () {
-      btn.textContent = '\u2713 Sent! I\'ll be in touch shortly.';
-      btn.style.background = '#22c55e';
-      btn.style.color = '#fff';
-    }).catch(function (err) {
-      console.error(err);
-      btn.textContent = 'Something went wrong \u2013 email sales@graftdigital.london';
-      btn.style.background = '#ef4444';
-      btn.style.color = '#fff';
-      btn.disabled = false;
-    });
   });
 </script>
 </body>
