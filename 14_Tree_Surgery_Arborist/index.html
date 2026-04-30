@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tree Surgery Website Template | Graft Digital</title>
+  <meta name="description" content="Tree removal, pruning and stump grinding by qualified arborists in London.">
+  <meta name="keywords" content="tree surgeon London, arborist">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:#0A1628; --navy-mid:#0F2040; --gold:#F5A623; --gold-dark:#C98010;
+      --gold-light:#FFB84D; --white:#FFFFFF; --off-white:#F7F9FC;
+      --text:#1A2332; --text-mid:#4A5568; --border:#E2E8F0;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Inter',-apple-system,sans-serif; color:var(--text); background:var(--white); line-height:1.6; }
+    a { text-decoration:none; color:inherit; }
+    .container { max-width:1100px; margin:0 auto; padding:0 24px; }
+    /* TOPBAR */
+    .topbar { background:var(--navy); padding:14px 0; position:sticky; top:0; z-index:100; box-shadow:0 2px 12px rgba(0,0,0,.25); }
+    .topbar-inner { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    .logo { display:flex; align-items:center; gap:9px; }
+    .logo-mark { width:34px; height:34px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:900; color:var(--navy); }
+    .logo-text { font-size:1.1rem; font-weight:900; color:#fff; letter-spacing:-.03em; }
+    .logo-text span { color:var(--gold); }
+    .back-link { color:rgba(255,255,255,.7); font-size:.85rem; font-weight:500; display:flex; align-items:center; gap:6px; transition:color .2s; }
+    .back-link:hover { color:var(--gold); }
+    /* HERO */
+    .hero { background:var(--navy); background-image:radial-gradient(ellipse at 15% 60%,rgba(26,53,96,.6) 0%,transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(245,166,35,.07) 0%,transparent 50%); min-height:480px; display:flex; align-items:center; padding:72px 0 64px; position:relative; overflow:hidden; }
+    .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px); background-size:54px 54px; }
+    .hero-content { position:relative; z-index:2; max-width:680px; }
+    .preview-banner { background:rgba(245,166,35,.1); border:1px solid rgba(245,166,35,.3); border-radius:10px; padding:15px 20px; margin-bottom:36px; display:flex; align-items:flex-start; gap:11px; max-width:600px; }
+    .preview-banner p { color:rgba(255,255,255,.8); font-size:.86rem; line-height:1.55; margin:0; }
+    .preview-banner strong { color:var(--gold); }
+    .hero-tag { display:inline-flex; align-items:center; gap:7px; background:rgba(245,166,35,.13); border:1px solid rgba(245,166,35,.28); color:var(--gold-light); padding:6px 15px; border-radius:100px; font-size:.8rem; font-weight:600; margin-bottom:20px; }
+    .hero-icon { font-size:3.2rem; margin-bottom:10px; display:block; line-height:1; }
+    .hero h1 { font-size:clamp(2.1rem,4.5vw,3.4rem); color:#fff; letter-spacing:-.04em; margin-bottom:16px; line-height:1.15; font-weight:900; }
+    .hero h1 span { color:var(--gold); }
+    .hero > .container > .hero-content > p { color:rgba(255,255,255,.68); font-size:1.05rem; max-width:520px; margin-bottom:32px; }
+    .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:8px; font-size:.95rem; font-weight:700; cursor:pointer; transition:all .22s ease; border:none; font-family:inherit; }
+    .btn-gold { background:var(--gold); color:var(--navy); }
+    .btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 20px rgba(245,166,35,.35); }
+    .btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.35); }
+    .btn-outline:hover { border-color:#fff; background:rgba(255,255,255,.08); }
+    /* SERVICES */
+    .services { padding:80px 0; background:var(--off-white); }
+    .services h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
+    .services .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
+    .services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
+    .service-card { background:#fff; border-radius:12px; padding:28px 24px; border:1px solid var(--border); transition:all .22s ease; }
+    .service-card:hover { transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.08); border-color:rgba(245,166,35,.3); }
+    .sc-icon { font-size:1.8rem; margin-bottom:12px; display:block; }
+    .sc-title { font-size:1rem; font-weight:700; margin-bottom:6px; }
+    .sc-desc { font-size:.88rem; color:var(--text-mid); line-height:1.65; }
+    /* TRUST */
+    .why { padding:80px 0; background:var(--white); }
+    .why h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
+    .why .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
+    .trust-items { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; text-align:center; }
+    .trust-item { padding:28px 16px; }
+    .trust-num { font-size:2.4rem; font-weight:900; color:var(--gold-dark); line-height:1; margin-bottom:6px; }
+    .trust-lbl { font-size:.88rem; color:var(--text-mid); }
+    /* CTA */
+    .cta-section { padding:72px 0; background:var(--navy); background-image:radial-gradient(ellipse at 80% 50%,rgba(245,166,35,.08) 0%,transparent 55%); text-align:center; }
+    .cta-section h2 { color:#fff; font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; margin-bottom:14px; }
+    .cta-section p { color:rgba(255,255,255,.65); font-size:1rem; margin-bottom:32px; max-width:480px; margin-left:auto; margin-right:auto; }
+    /* FORM */
+    .contact-mini { padding:80px 0; background:var(--off-white); }
+    .contact-mini h2 { font-size:clamp(1.5rem,3vw,2rem); font-weight:800; text-align:center; margin-bottom:8px; }
+    .contact-mini .sub { text-align:center; color:var(--text-mid); font-size:.97rem; margin-bottom:32px; }
+    .mini-form { max-width:520px; margin:0 auto; background:#fff; border-radius:16px; padding:36px; border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,0,0,.06); }
+    .fg { margin-bottom:16px; }
+    .fg label { display:block; font-size:.84rem; font-weight:600; margin-bottom:6px; }
+    .fg input,.fg textarea { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:8px; font-size:.92rem; font-family:inherit; color:var(--text); outline:none; transition:border .2s; }
+    .fg input:focus,.fg textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(245,166,35,.12); }
+    .fg textarea { resize:vertical; min-height:88px; }
+    /* FOOTER */
+    footer { background:#050D1A; padding:32px 0; border-top:1px solid rgba(255,255,255,.05); }
+    .footer-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+    .footer-copy { color:rgba(255,255,255,.35); font-size:.82rem; }
+    .footer-copy strong { color:var(--gold); }
+    @media(max-width:600px){ .hero-ctas{flex-direction:column;} .hero-ctas .btn{justify-content:center;} }
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <div class="container">
+    <div class="topbar-inner">
+      <a href="../index.html" class="logo">
+        <div class="logo-mark">G</div>
+        <span class="logo-text">Graft<span>Digital</span></span>
+      </a>
+      <a href="../index.html#industries" class="back-link">&larr; All Templates</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="preview-banner">
+        <span style="font-size:1.2rem;flex-shrink:0;">&#128065;</span>
+        <p>This is a <strong>sample template</strong> for a Tree Surgery business. Your real site will be fully customised with your branding, photos &amp; details. <a href="#get-started" style="color:var(--gold);font-weight:700;">Request this template &darr;</a></p>
+      </div>
+      <div class="hero-tag">&#128205; London Trade Template</div>
+      <span class="hero-icon">&#127795;</span>
+      <h1>London&rsquo;s Trusted<br><span>Tree Surgery</span><br>Specialists</h1>
+      <p>Tree removal, pruning and stump grinding by qualified arborists in London.</p>
+      <div class="hero-ctas">
+        <a href="#get-started" class="btn btn-gold">Get a Free Quote</a>
+        <a href="tel:+447000000000" class="btn btn-outline">&#128222; Call Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="container">
+    <h2>Our Services</h2>
+    <p class="sub">Professional Tree Surgery services across all London boroughs</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="sc-icon">&#10003;</span>
+        <div class="sc-title">Residential</div>
+        <p class="sc-desc">Trusted by homeowners across London for reliable, high-quality work done right first time.</p>
+      </div>
+      <div class="service-card">
+        <span class="sc-icon">&#127970;</span>
+        <div class="sc-title">Commercial</div>
+        <p class="sc-desc">We work with businesses, landlords and property managers throughout Greater London.</p>
+      </div>
+      <div class="service-card">
+        <span class="sc-icon">&#128241;</span>
+        <div class="sc-title">Emergency Callouts</div>
+        <p class="sc-desc">Fast response when you need it most. We cover all London postcodes, seven days a week.</p>
+      </div>
+      <div class="service-card">
+        <span class="sc-icon">&#128205;</span>
+        <div class="sc-title">All London Boroughs</div>
+        <p class="sc-desc">From Hackney to Hammersmith, Croydon to Camden &mdash; we cover the entire Greater London area.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="container">
+    <h2>Why Choose Us?</h2>
+    <p class="sub">Trusted by hundreds of London customers</p>
+    <div class="trust-items">
+      <div class="trust-item"><div class="trust-num">500+</div><div class="trust-lbl">Jobs Completed</div></div>
+      <div class="trust-item"><div class="trust-num">5&#9733;</div><div class="trust-lbl">Google Rating</div></div>
+      <div class="trust-item"><div class="trust-num">10+</div><div class="trust-lbl">Years Experience</div></div>
+      <div class="trust-item"><div class="trust-num">32</div><div class="trust-lbl">London Boroughs Covered</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to Book? Get a Free Quote Today.</h2>
+    <p>No call centres, no pressure. Just a quick chat and a fair, honest price.</p>
+    <a href="#get-started" class="btn btn-gold">Request a Free Quote</a>
+  </div>
+</section>
+
+<section class="contact-mini" id="get-started">
+  <div class="container">
+    <h2>Request This Template</h2>
+    <p class="sub">Like what you see? Contact Yoel at Graft Digital to get your own Tree Surgery website live within days.</p>
+    <div class="mini-form">
+      <form id="reqForm">
+        <div class="fg"><label>Your Name</label><input type="text" placeholder="John Smith" required></div>
+        <div class="fg"><label>Email</label><input type="email" placeholder="john@yourcompany.co.uk" required></div>
+        <div class="fg"><label>Phone</label><input type="tel" placeholder="+44 7XXX XXX XXX"></div>
+        <div class="fg"><label>Tell me about your business</label><textarea placeholder="Where in London are you based? Do you have a logo or existing site?"></textarea></div>
+        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;font-size:.97rem;">Send Enquiry to Graft Digital &rarr;</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="../index.html" class="logo">
+        <div class="logo-mark">G</div>
+        <span class="logo-text" style="color:#fff;">Graft<span style="color:var(--gold);">Digital</span></span>
+      </a>
+      <span class="footer-copy">&copy; 2025 <strong>Graft Digital</strong> &mdash; Built by Yoel Gutierrez &middot; London</span>
+    </div>
+  </div>
+</footer>
+<script>
+  document.getElementById('reqForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    const btn=this.querySelector('button[type=submit]');
+    btn.textContent='✓ Sent! Yoel will be in touch shortly.';
+    btn.style.background='#22c55e'; btn.style.color='#fff'; btn.disabled=true;
+  });
+</script>
+</body>
+</html>
