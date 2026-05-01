@@ -3,214 +3,707 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plumbing Website Template | Graft Digital</title>
-  <meta name="description" content="Emergency callouts, boiler installs, leak repairs &mdash; covering all London boroughs.">
-  <meta name="keywords" content="plumber London, emergency plumber">
+  <title>Capital Plumbing & Heating London | Gas Safe Registered</title>
+  <meta name="description" content="Gas Safe registered plumbers and heating engineers covering all London boroughs. Boiler repairs, leaks, installations and 24/7 emergencies. What we quote is what you pay.">
+  <meta name="keywords" content="plumber London, gas safe plumber, boiler repair London, emergency plumber, central heating London, leak repair London">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy:#0A1628; --navy-mid:#0F2040; --gold:#F5A623; --gold-dark:#C98010;
-      --gold-light:#FFB84D; --white:#FFFFFF; --off-white:#F7F9FC;
-      --text:#1A2332; --text-mid:#4A5568; --border:#E2E8F0;
-    }
     html { scroll-behavior: smooth; }
-    body { font-family:'Inter',-apple-system,sans-serif; color:var(--text); background:var(--white); line-height:1.6; }
+
+    :root {
+      --teal-dk:  #0B3D3D;
+      --teal:     #0C9488;
+      --teal-mid: #14B8A6;
+      --teal-lt:  #CCFBF1;
+      --teal-bg:  #F0FDFA;
+      --orange:   #F97316;
+      --orange-dk:#EA580C;
+      --orange-lt:#FFF7ED;
+      --white:    #FFFFFF;
+      --off-white:#F8FAFC;
+      --text:     #1C1917;
+      --text-mid: #57534E;
+      --text-lt:  #A8A29E;
+      --border:   #E7E5E4;
+      --border-t: #99F6E4;
+      --trans:    all 0.22s ease;
+      --radius:   10px;
+      --shadow:   0 4px 6px -1px rgba(0,0,0,.08);
+      --shadow-lg:0 10px 15px -3px rgba(0,0,0,.1);
+      --shadow-xl:0 20px 25px -5px rgba(0,0,0,.1);
+    }
+
+    body { font-family:'Inter',-apple-system,sans-serif; color:var(--text); background:var(--white); line-height:1.6; overflow-x:hidden; }
     a { text-decoration:none; color:inherit; }
-    .container { max-width:1100px; margin:0 auto; padding:0 24px; }
-    /* TOPBAR */
-    .topbar { background:var(--navy); padding:14px 0; position:sticky; top:0; z-index:100; box-shadow:0 2px 12px rgba(0,0,0,.25); }
-    .topbar-inner { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-    .logo { display:flex; align-items:center; gap:9px; }
-    .logo-mark { width:34px; height:34px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:900; color:var(--navy); }
-    .logo-text { font-size:1.1rem; font-weight:900; color:#fff; letter-spacing:-.03em; }
-    .logo-text span { color:var(--gold); }
-    .back-link { color:rgba(255,255,255,.7); font-size:.85rem; font-weight:500; display:flex; align-items:center; gap:6px; transition:color .2s; }
-    .back-link:hover { color:var(--gold); }
+    .container { max-width:1180px; margin:0 auto; padding:0 24px; }
+
+    /* BUTTONS */
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:8px; font-size:.95rem; font-weight:700; cursor:pointer; transition:var(--trans); border:none; font-family:inherit; }
+    .btn-teal    { background:var(--teal); color:var(--white); }
+    .btn-teal:hover { background:#0a7e73; transform:translateY(-2px); box-shadow:0 8px 20px rgba(12,148,136,.3); }
+    .btn-orange  { background:var(--orange); color:var(--white); }
+    .btn-orange:hover { background:var(--orange-dk); transform:translateY(-2px); }
+    .btn-outline { background:transparent; color:var(--teal); border:2px solid var(--teal); }
+    .btn-outline:hover { background:var(--teal); color:var(--white); }
+    .btn-white-outline { background:transparent; color:var(--white); border:2px solid rgba(255,255,255,.5); }
+    .btn-white-outline:hover { background:rgba(255,255,255,.1); border-color:var(--white); }
+    .btn-lg { padding:15px 34px; font-size:1rem; }
+
+    /* TEMPLATE BANNER */
+    .tpl-banner { background:#0A1628; border-bottom:1px solid rgba(245,166,35,.3); padding:9px 24px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; font-family:'Inter',sans-serif; }
+    .tpl-badge { background:#F5A623; color:#0A1628; font-size:.72rem; font-weight:800; padding:3px 10px; border-radius:100px; letter-spacing:.06em; text-transform:uppercase; }
+    .tpl-text { color:rgba(255,255,255,.6); font-size:.82rem; }
+    .tpl-text strong { color:white; }
+    .tpl-back { display:inline-flex; align-items:center; gap:6px; background:#F5A623; color:#0A1628; font-size:.8rem; font-weight:700; padding:6px 14px; border-radius:6px; white-space:nowrap; transition:var(--trans); }
+    .tpl-back:hover { background:#FFB84D; }
+
+    /* PROMO BAR */
+    .promo-bar { background:var(--teal); padding:11px 0; }
+    .promo-inner { display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap; }
+    .promo-inner span { color:var(--white); font-size:.88rem; }
+    .promo-inner strong { color:#A7F3D0; }
+    .promo-pill { background:var(--orange); color:var(--white); font-size:.75rem; font-weight:800; padding:3px 10px; border-radius:100px; letter-spacing:.04em; }
+    .promo-link { color:#A7F3D0; font-weight:700; font-size:.88rem; text-decoration:underline; transition:var(--trans); }
+    .promo-link:hover { color:var(--white); }
+
+    /* NAVBAR */
+    nav { background:var(--white); position:sticky; top:0; z-index:200; box-shadow:0 1px 0 var(--border); transition:var(--trans); }
+    nav.scrolled { box-shadow:0 4px 16px rgba(0,0,0,.1); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:14px 0; }
+    .logo { display:flex; align-items:center; gap:11px; }
+    .logo-drop { font-size:1.6rem; line-height:1; }
+    .logo-text strong { display:block; font-size:1.1rem; font-weight:900; color:var(--teal-dk); letter-spacing:-.03em; }
+    .logo-text span   { display:block; font-size:.65rem; font-weight:600; color:var(--teal); letter-spacing:.1em; text-transform:uppercase; }
+    .nav-links { display:flex; align-items:center; gap:26px; list-style:none; }
+    .nav-links a { font-size:.88rem; font-weight:500; color:var(--text-mid); transition:var(--trans); position:relative; }
+    .nav-links a::after { content:''; position:absolute; bottom:-3px; left:0; right:0; height:2px; background:var(--teal); transform:scaleX(0); transform-origin:left; transition:var(--trans); }
+    .nav-links a:hover { color:var(--teal); }
+    .nav-links a:hover::after { transform:scaleX(1); }
+    .nav-right { display:flex; align-items:center; gap:10px; }
+    .nav-emg { display:flex; align-items:center; gap:7px; color:var(--orange); font-size:.82rem; font-weight:700; background:var(--orange-lt); border-radius:8px; padding:7px 14px; transition:var(--trans); }
+    .nav-emg:hover { background:var(--orange); color:var(--white); }
+    .hamburger { display:none; background:none; border:none; cursor:pointer; padding:4px; flex-direction:column; gap:5px; }
+    .hamburger span { display:block; width:22px; height:2px; background:var(--teal-dk); transition:var(--trans); }
+
     /* HERO */
-    .hero { background:var(--navy); background-image:radial-gradient(ellipse at 15% 60%,rgba(26,53,96,.6) 0%,transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(245,166,35,.07) 0%,transparent 50%); min-height:480px; display:flex; align-items:center; padding:72px 0 64px; position:relative; overflow:hidden; }
-    .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px); background-size:54px 54px; }
-    .hero-content { position:relative; z-index:2; max-width:680px; }
-    .preview-banner { background:rgba(245,166,35,.1); border:1px solid rgba(245,166,35,.3); border-radius:10px; padding:15px 20px; margin-bottom:36px; display:flex; align-items:flex-start; gap:11px; max-width:600px; }
-    .preview-banner p { color:rgba(255,255,255,.8); font-size:.86rem; line-height:1.55; margin:0; }
-    .preview-banner strong { color:var(--gold); }
-    .hero-tag { display:inline-flex; align-items:center; gap:7px; background:rgba(245,166,35,.13); border:1px solid rgba(245,166,35,.28); color:var(--gold-light); padding:6px 15px; border-radius:100px; font-size:.8rem; font-weight:600; margin-bottom:20px; }
-    .hero-icon { font-size:3.2rem; margin-bottom:10px; display:block; line-height:1; }
-    .hero h1 { font-size:clamp(2.1rem,4.5vw,3.4rem); color:#fff; letter-spacing:-.04em; margin-bottom:16px; line-height:1.15; font-weight:900; }
-    .hero h1 span { color:var(--gold); }
-    .hero > .container > .hero-content > p { color:rgba(255,255,255,.68); font-size:1.05rem; max-width:520px; margin-bottom:32px; }
-    .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
-    .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:8px; font-size:.95rem; font-weight:700; cursor:pointer; transition:all .22s ease; border:none; font-family:inherit; }
-    .btn-gold { background:var(--gold); color:var(--navy); }
-    .btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 20px rgba(245,166,35,.35); }
-    .btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.35); }
-    .btn-outline:hover { border-color:#fff; background:rgba(255,255,255,.08); }
+    #hero { background:var(--white); padding:72px 0 64px; }
+    .hero-grid { display:grid; grid-template-columns:1fr 440px; gap:56px; align-items:center; }
+    .hero-eyebrow { display:flex; align-items:center; gap:8px; margin-bottom:20px; }
+    .eyebrow-dot { width:8px; height:8px; border-radius:50%; background:var(--teal); }
+    .eyebrow-text { font-size:.8rem; font-weight:700; color:var(--teal); letter-spacing:.1em; text-transform:uppercase; }
+    .hero h1 { font-size:clamp(2.2rem,4vw,3.6rem); font-weight:900; color:var(--text); letter-spacing:-.04em; line-height:1.1; margin-bottom:18px; }
+    .hero h1 em { font-style:normal; color:var(--teal); }
+    .hero-sub { color:var(--text-mid); font-size:1.05rem; max-width:480px; margin-bottom:32px; line-height:1.75; }
+    .hero-ctas { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:36px; }
+    .hero-promise { display:flex; align-items:center; gap:10px; background:var(--teal-bg); border:1px solid var(--border-t); border-radius:10px; padding:14px 18px; max-width:480px; }
+    .promise-icon { font-size:1.4rem; flex-shrink:0; }
+    .promise-text { font-size:.85rem; color:var(--teal-dk); font-weight:500; line-height:1.5; }
+    .promise-text strong { font-weight:800; }
+
+    /* HERO RIGHT CARD */
+    .hero-card { background:var(--teal-dk); border-radius:20px; padding:36px 32px; color:var(--white); position:relative; overflow:hidden; }
+    .hero-card::before { content:''; position:absolute; top:-60px; right:-60px; width:200px; height:200px; border-radius:50%; background:rgba(12,148,136,.3); }
+    .hc-gas { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); border-radius:8px; padding:9px 16px; margin-bottom:24px; font-size:.82rem; font-weight:700; color:#A7F3D0; }
+    .hc-title { font-size:1.5rem; font-weight:800; margin-bottom:6px; line-height:1.2; }
+    .hc-sub { color:rgba(255,255,255,.6); font-size:.88rem; margin-bottom:24px; }
+    .hc-stats { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:24px; }
+    .hc-stat { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:10px; padding:14px; text-align:center; }
+    .hc-num { font-size:1.8rem; font-weight:900; color:var(--teal-mid); line-height:1; }
+    .hc-lbl { font-size:.72rem; color:rgba(255,255,255,.5); margin-top:3px; }
+    .hc-phone { display:flex; align-items:center; gap:10px; background:var(--orange); border-radius:10px; padding:14px 18px; color:var(--white); font-weight:800; font-size:1.05rem; transition:var(--trans); }
+    .hc-phone:hover { background:var(--orange-dk); }
+
+    /* TRUST STRIP */
+    #trust { background:var(--off-white); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:20px 0; }
+    .trust-inner { display:flex; align-items:center; justify-content:space-around; flex-wrap:wrap; gap:8px; }
+    .trust-item { display:flex; align-items:center; gap:9px; padding:8px 16px; }
+    .ti-icon { font-size:1.3rem; }
+    .ti-name { font-weight:800; font-size:.88rem; color:var(--text); }
+    .ti-sub  { font-size:.7rem; color:var(--teal); font-weight:600; letter-spacing:.04em; text-transform:uppercase; }
+
     /* SERVICES */
-    .services { padding:80px 0; background:var(--off-white); }
-    .services h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .services .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
-    .service-card { background:#fff; border-radius:12px; padding:28px 24px; border:1px solid var(--border); transition:all .22s ease; }
-    .service-card:hover { transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.08); border-color:rgba(245,166,35,.3); }
-    .sc-icon { font-size:1.8rem; margin-bottom:12px; display:block; }
-    .sc-title { font-size:1rem; font-weight:700; margin-bottom:6px; }
-    .sc-desc { font-size:.88rem; color:var(--text-mid); line-height:1.65; }
-    /* TRUST */
-    .why { padding:80px 0; background:var(--white); }
-    .why h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .why .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .trust-items { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; text-align:center; }
-    .trust-item { padding:28px 16px; }
-    .trust-num { font-size:2.4rem; font-weight:900; color:var(--gold-dark); line-height:1; margin-bottom:6px; }
-    .trust-lbl { font-size:.88rem; color:var(--text-mid); }
-    /* CTA */
-    .cta-section { padding:72px 0; background:var(--navy); background-image:radial-gradient(ellipse at 80% 50%,rgba(245,166,35,.08) 0%,transparent 55%); text-align:center; }
-    .cta-section h2 { color:#fff; font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; margin-bottom:14px; }
-    .cta-section p { color:rgba(255,255,255,.65); font-size:1rem; margin-bottom:32px; max-width:480px; margin-left:auto; margin-right:auto; }
-    /* FORM */
-    .contact-mini { padding:80px 0; background:var(--off-white); }
-    .contact-mini h2 { font-size:clamp(1.5rem,3vw,2rem); font-weight:800; text-align:center; margin-bottom:8px; }
-    .contact-mini .sub { text-align:center; color:var(--text-mid); font-size:.97rem; margin-bottom:32px; }
-    .mini-form { max-width:520px; margin:0 auto; background:#fff; border-radius:16px; padding:36px; border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,0,0,.06); }
-    .fg { margin-bottom:16px; }
-    .fg label { display:block; font-size:.84rem; font-weight:600; margin-bottom:6px; }
-    .fg input,.fg textarea { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:8px; font-size:.92rem; font-family:inherit; color:var(--text); outline:none; transition:border .2s; }
-    .fg input:focus,.fg textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(245,166,35,.12); }
-    .fg textarea { resize:vertical; min-height:88px; }
+    #services { padding:92px 0; background:var(--white); }
+    .svc-tabs { display:flex; gap:4px; background:var(--off-white); border:1px solid var(--border); border-radius:10px; padding:4px; margin-bottom:40px; width:fit-content; }
+    .svc-tab { padding:9px 24px; border-radius:7px; font-size:.9rem; font-weight:600; color:var(--text-mid); cursor:pointer; transition:var(--trans); border:none; background:none; font-family:inherit; }
+    .svc-tab.active { background:var(--white); color:var(--teal); box-shadow:var(--shadow); }
+    .svc-panel { display:none; }
+    .svc-panel.active { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px; }
+    .svc-card { border:1px solid var(--border); border-radius:var(--radius); padding:28px 24px; transition:var(--trans); background:var(--white); }
+    .svc-card:hover { border-color:var(--teal); box-shadow:var(--shadow-lg); transform:translateY(-3px); }
+    .svc-icon { width:48px; height:48px; background:var(--teal-bg); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; margin-bottom:14px; }
+    .svc-title { font-size:1rem; font-weight:700; margin-bottom:8px; }
+    .svc-desc  { font-size:.87rem; color:var(--text-mid); line-height:1.7; margin-bottom:14px; }
+    .svc-price { font-size:.8rem; font-weight:700; color:var(--teal); background:var(--teal-bg); padding:4px 12px; border-radius:100px; display:inline-block; }
+
+    /* SECTION COMMON */
+    .section-tag { display:inline-block; font-size:.75rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:5px 14px; border-radius:100px; margin-bottom:14px; }
+    .tag-teal   { background:var(--teal-lt); color:var(--teal-dk); }
+    .tag-orange { background:var(--orange-lt); color:var(--orange-dk); }
+    .tag-grey   { background:var(--off-white); color:var(--text-mid); }
+    .section-header { margin-bottom:48px; }
+    .section-header h2 { font-size:clamp(1.8rem,3vw,2.6rem); font-weight:800; letter-spacing:-.03em; margin-bottom:12px; }
+    .section-header p  { color:var(--text-mid); font-size:1rem; max-width:520px; }
+    .section-header.center { text-align:center; }
+    .section-header.center p { margin:0 auto; }
+
+    /* STATS COUNTER */
+    #counters { background:var(--teal); padding:64px 0; }
+    .counters-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:0; }
+    .counter-item { text-align:center; padding:20px; border-right:1px solid rgba(255,255,255,.15); }
+    .counter-item:last-child { border-right:none; }
+    .counter-num { font-size:3rem; font-weight:900; color:var(--white); line-height:1; margin-bottom:6px; }
+    .counter-lbl { font-size:.84rem; color:rgba(255,255,255,.7); font-weight:500; }
+
+    /* EMERGENCY */
+    #emergency { padding:0; }
+    .emg-band { background:var(--teal-dk); padding:56px 0; position:relative; overflow:hidden; }
+    .emg-band::after { content:''; position:absolute; right:-80px; top:-80px; width:320px; height:320px; border-radius:50%; background:rgba(12,148,136,.2); }
+    .emg-inner { position:relative; z-index:2; display:grid; grid-template-columns:1fr auto; gap:48px; align-items:center; }
+    .emg-tag { display:inline-flex; align-items:center; gap:8px; background:rgba(249,115,22,.2); border:1px solid rgba(249,115,22,.4); color:#FED7AA; padding:5px 14px; border-radius:100px; font-size:.75rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin-bottom:14px; }
+    .emg-inner h2 { font-size:clamp(1.7rem,3vw,2.5rem); font-weight:900; color:var(--white); letter-spacing:-.03em; margin-bottom:12px; }
+    .emg-inner p { color:rgba(255,255,255,.65); font-size:.97rem; line-height:1.75; max-width:520px; }
+    .emg-action { flex-shrink:0; text-align:center; }
+    .emg-num { font-size:2rem; font-weight:900; color:var(--white); white-space:nowrap; margin-bottom:10px; }
+    .emg-num a { color:var(--white); transition:var(--trans); }
+    .emg-num a:hover { color:var(--teal-mid); }
+    .emg-note { font-size:.78rem; color:rgba(255,255,255,.4); margin-top:8px; }
+
+    /* FOUNDER */
+    #founder { padding:92px 0; background:var(--teal-bg); }
+    .founder-grid { display:grid; grid-template-columns:280px 1fr; gap:64px; align-items:center; }
+    .founder-card { background:var(--white); border-radius:20px; padding:36px 28px; text-align:center; box-shadow:var(--shadow-lg); border:1px solid var(--border-t); }
+    .founder-avatar { width:88px; height:88px; border-radius:50%; background:var(--teal); display:flex; align-items:center; justify-content:center; font-size:2.2rem; font-weight:900; color:var(--white); margin:0 auto 16px; }
+    .founder-name { font-size:1.2rem; font-weight:800; margin-bottom:3px; }
+    .founder-role { font-size:.8rem; color:var(--teal); font-weight:600; letter-spacing:.06em; text-transform:uppercase; margin-bottom:16px; }
+    .founder-badges { display:flex; flex-direction:column; gap:8px; }
+    .fbadge { display:flex; align-items:center; gap:8px; background:var(--teal-bg); border:1px solid var(--border-t); border-radius:8px; padding:8px 12px; font-size:.78rem; font-weight:600; color:var(--teal-dk); }
+    .founder-content h2 { font-size:clamp(1.7rem,3vw,2.4rem); font-weight:800; letter-spacing:-.03em; margin-bottom:18px; }
+    .founder-content p { color:var(--text-mid); font-size:.97rem; line-height:1.8; margin-bottom:14px; }
+    .founder-content blockquote { border-left:3px solid var(--teal); padding-left:20px; margin:24px 0; font-size:1.05rem; font-style:italic; color:var(--teal-dk); font-weight:500; line-height:1.65; }
+
+    /* TESTIMONIALS */
+    #testimonials { padding:92px 0; background:var(--white); }
+    .reviews-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; }
+    .review-card { border-radius:var(--radius); padding:28px 24px; border:1px solid var(--border); transition:var(--trans); background:var(--white); }
+    .review-card:hover { box-shadow:var(--shadow-lg); transform:translateY(-3px); border-color:var(--border-t); }
+    .rev-platform { display:flex; align-items:center; gap:6px; font-size:.75rem; font-weight:700; color:var(--teal); letter-spacing:.04em; text-transform:uppercase; margin-bottom:12px; }
+    .stars { color:#F59E0B; font-size:1rem; letter-spacing:2px; margin-bottom:12px; }
+    .rev-text { font-size:.9rem; color:var(--text-mid); line-height:1.75; font-style:italic; margin-bottom:18px; }
+    .rev-text::before { content:'\201C'; }
+    .rev-text::after  { content:'\201D'; }
+    .reviewer { display:flex; align-items:center; gap:10px; padding-top:14px; border-top:1px solid var(--border); }
+    .rev-av { width:38px; height:38px; border-radius:50%; background:var(--teal-lt); display:flex; align-items:center; justify-content:center; font-size:.85rem; font-weight:800; color:var(--teal-dk); flex-shrink:0; }
+    .rev-name { font-size:.86rem; font-weight:700; }
+    .rev-loc  { font-size:.74rem; color:var(--text-lt); }
+
+    /* AREAS + QUOTE */
+    #contact { padding:92px 0; background:var(--off-white); }
+    .contact-grid { display:grid; grid-template-columns:1fr 1.15fr; gap:56px; align-items:start; }
+    .areas-wrap h2 { font-size:clamp(1.6rem,2.5vw,2.2rem); font-weight:800; letter-spacing:-.03em; margin-bottom:10px; }
+    .areas-wrap p { color:var(--text-mid); font-size:.95rem; margin-bottom:28px; line-height:1.7; }
+    .borough-grid { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:32px; }
+    .boro { background:var(--white); border:1px solid var(--border); border-radius:6px; padding:7px 12px; font-size:.8rem; font-weight:500; color:var(--text); transition:var(--trans); }
+    .boro:hover { background:var(--teal); color:var(--white); border-color:var(--teal); }
+    .contact-box { display:flex; flex-direction:column; gap:10px; }
+    .contact-row { display:flex; align-items:center; gap:12px; background:var(--white); border:1px solid var(--border); border-radius:10px; padding:14px 18px; transition:var(--trans); }
+    .contact-row:hover { border-color:var(--teal); }
+    .cr-icon { width:38px; height:38px; background:var(--teal-bg); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0; }
+    .cr-label { font-size:.75rem; color:var(--text-lt); }
+    .cr-value { font-size:.92rem; font-weight:700; color:var(--text); }
+    .cr-value a { color:var(--text); transition:var(--trans); }
+    .cr-value a:hover { color:var(--teal); }
+
+    /* QUOTE FORM */
+    .quote-wrap { background:var(--white); border-radius:16px; padding:36px; border:1px solid var(--border); box-shadow:var(--shadow-lg); }
+    .qf-head { margin-bottom:24px; }
+    .qf-title { font-size:1.25rem; font-weight:800; margin-bottom:4px; }
+    .qf-sub   { font-size:.85rem; color:var(--text-mid); }
+    .fg { margin-bottom:14px; }
+    .fg label { display:block; font-size:.8rem; font-weight:600; margin-bottom:6px; color:var(--text); }
+    .fg input,.fg select,.fg textarea { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:8px; font-size:.9rem; font-family:inherit; color:var(--text); outline:none; transition:var(--trans); background:var(--white); }
+    .fg input:focus,.fg select:focus,.fg textarea:focus { border-color:var(--teal); box-shadow:0 0 0 3px rgba(12,148,136,.1); }
+    .fg textarea { resize:vertical; min-height:82px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+
     /* FOOTER */
-    footer { background:#050D1A; padding:32px 0; border-top:1px solid rgba(255,255,255,.05); }
-    .footer-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
-    .footer-copy { color:rgba(255,255,255,.35); font-size:.82rem; }
-    .footer-copy strong { color:var(--gold); }
-    @media(max-width:600px){ .hero-ctas{flex-direction:column;} .hero-ctas .btn{justify-content:center;} }
+    footer { background:var(--teal-dk); padding:56px 0 28px; }
+    .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; margin-bottom:44px; }
+    .footer-desc { color:rgba(255,255,255,.4); font-size:.85rem; line-height:1.75; margin-top:14px; }
+    .footer-col h4 { color:var(--white); font-size:.82rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; margin-bottom:16px; }
+    .footer-col ul { list-style:none; }
+    .footer-col li { margin-bottom:9px; }
+    .footer-col a { color:rgba(255,255,255,.4); font-size:.84rem; transition:var(--trans); }
+    .footer-col a:hover { color:var(--teal-mid); }
+    .footer-bottom { padding-top:24px; border-top:1px solid rgba(255,255,255,.08); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+    .footer-bottom p { color:rgba(255,255,255,.25); font-size:.78rem; }
+    .built-by { color:rgba(255,255,255,.2); font-size:.74rem; }
+    .built-by a { color:rgba(255,255,255,.35); transition:var(--trans); }
+    .built-by a:hover { color:#F5A623; }
+
+    /* FLOAT */
+    .float-cta { position:fixed; bottom:24px; right:24px; z-index:300; display:none; }
+    .float-cta a { display:flex; align-items:center; gap:8px; background:var(--orange); color:white; padding:12px 20px; border-radius:100px; font-size:.88rem; font-weight:700; box-shadow:0 8px 24px rgba(249,115,22,.4); transition:var(--trans); font-family:inherit; }
+    .float-cta a:hover { background:var(--orange-dk); transform:translateY(-2px); }
+
+    /* MOBILE MENU */
+    .mobile-menu { display:none; position:fixed; inset:0; background:var(--white); z-index:190; flex-direction:column; align-items:center; justify-content:center; gap:28px; }
+    .mobile-menu.open { display:flex; }
+    .mobile-menu a { font-size:1.35rem; font-weight:700; color:var(--teal-dk); transition:var(--trans); }
+    .mobile-menu a:hover { color:var(--teal); }
+    .mobile-close { position:absolute; top:20px; right:20px; background:none; border:none; font-size:1.6rem; cursor:pointer; color:var(--text-mid); }
+
+    /* REVEAL */
+    .reveal { opacity:0; transform:translateY(20px); transition:opacity .55s ease,transform .55s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){ .footer-grid{grid-template-columns:1fr 1fr;} }
+    @media(max-width:900px){ .hero-grid{grid-template-columns:1fr;} .hero-card{display:none;} .founder-grid{grid-template-columns:1fr;} .founder-card{max-width:320px;} .emg-inner{grid-template-columns:1fr;} .emg-action{text-align:left;} .contact-grid{grid-template-columns:1fr;} }
+    @media(max-width:700px){ .nav-links,.nav-right{display:none;} .hamburger{display:flex;} .counters-grid{grid-template-columns:1fr 1fr;} .counters-grid .counter-item:nth-child(2){border-right:none;} .form-row{grid-template-columns:1fr;} .footer-grid{grid-template-columns:1fr;} .footer-bottom{flex-direction:column;text-align:center;} .float-cta{display:block;} .trust-item:nth-child(n+4){display:none;} }
   </style>
 </head>
 <body>
-<header class="topbar">
+
+<!-- TEMPLATE BANNER -->
+<div class="tpl-banner">
+  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+    <span class="tpl-badge">Template Preview</span>
+    <span class="tpl-text">This is a <strong>Plumbing &amp; Heating</strong> website template by Graft Digital. All content is customisable.</span>
+  </div>
+  <a href="https://graftdigital.london" class="tpl-back">&#8592; Back to Graft Digital</a>
+</div>
+
+<!-- PROMO BAR -->
+<div class="promo-bar">
+  <div class="promo-inner">
+    <span class="promo-pill">Limited Offer</span>
+    <span><strong>10% off labour</strong> when you book online &mdash;</span>
+    <a href="#contact" class="promo-link">Claim your discount &rarr;</a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
   <div class="container">
-    <div class="topbar-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text">Graft<span>Digital</span></span>
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-drop">&#128293;</span>
+        <div class="logo-text">
+          <strong>Capital Plumbing</strong>
+          <span>&amp; Heating &bull; London</span>
+        </div>
       </a>
-      <a href="../index.html#industries" class="back-link">&larr; All Templates</a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#emergency">Emergency</a></li>
+        <li><a href="#founder">About Us</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="tel:02030000000" class="nav-emg">&#128293; 24/7 Emergency</a>
+        <a href="#contact" class="btn btn-teal" style="padding:9px 20px;font-size:.88rem;">Free Quote</a>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
     </div>
   </div>
-</header>
+</nav>
 
-<section class="hero">
-  <div class="hero-grid"></div>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&#x2715;</button>
+  <a href="#services"      onclick="closeMob()">Services</a>
+  <a href="#emergency"     onclick="closeMob()">Emergency</a>
+  <a href="#founder"       onclick="closeMob()">About Us</a>
+  <a href="#testimonials"  onclick="closeMob()">Reviews</a>
+  <a href="#contact"       onclick="closeMob()">Contact</a>
+  <a href="tel:02030000000" class="btn btn-orange" onclick="closeMob()">&#128293; Emergency Call</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
   <div class="container">
-    <div class="hero-content">
-      <div class="preview-banner">
-        <span style="font-size:1.2rem;flex-shrink:0;">&#128065;</span>
-        <p>This is a <strong>sample template</strong> for a Plumbing business. Your real site will be fully customised with your branding, photos &amp; details. <a href="#get-started" style="color:var(--gold);font-weight:700;">Request this template &darr;</a></p>
+    <div class="hero-grid">
+      <div class="reveal">
+        <div class="hero-eyebrow">
+          <div class="eyebrow-dot"></div>
+          <span class="eyebrow-text">Gas Safe Registered &bull; 17 Years Experience</span>
+        </div>
+        <h1>Reliable Plumbing<br>&amp; <em>Heating Services</em><br>Across London</h1>
+        <p class="hero-sub">Leaks, boiler breakdowns, full installations &mdash; we handle it all. What we quote is what you pay. No hidden charges, no surprises, ever.</p>
+        <div class="hero-ctas">
+          <a href="#contact"        class="btn btn-teal btn-lg">Get a Free Quote</a>
+          <a href="tel:02030000000" class="btn btn-orange btn-lg">&#128293; Emergency: 020 3000 0000</a>
+        </div>
+        <div class="hero-promise">
+          <span class="promise-icon">&#9989;</span>
+          <div class="promise-text"><strong>Our price guarantee:</strong> We provide a fixed quote before starting any work. The price we quote is the price you pay &mdash; full stop.</div>
+        </div>
       </div>
-      <div class="hero-tag">&#128205; London Trade Template</div>
-      <span class="hero-icon">&#128295;</span>
-      <h1>London&rsquo;s Trusted<br><span>Plumbing</span><br>Specialists</h1>
-      <p>Emergency callouts, boiler installs, leak repairs &mdash; covering all London boroughs.</p>
-      <div class="hero-ctas">
-        <a href="#get-started" class="btn btn-gold">Get a Free Quote</a>
-        <a href="tel:+447895628993" class="btn btn-outline">&#128222; Call Now</a>
+      <div class="reveal">
+        <div class="hero-card">
+          <div class="hc-gas">&#128293; Gas Safe Registered &bull; Reg. 000000</div>
+          <div class="hc-title">Get a Quote in Minutes</div>
+          <div class="hc-sub">We respond within 1 hour &bull; Mon&ndash;Sun, 7am&ndash;9pm</div>
+          <div class="hc-stats">
+            <div class="hc-stat"><div class="hc-num">17+</div><div class="hc-lbl">Years in London</div></div>
+            <div class="hc-stat"><div class="hc-num">800+</div><div class="hc-lbl">Jobs Done</div></div>
+            <div class="hc-stat"><div class="hc-num">5&#9733;</div><div class="hc-lbl">Trustpilot Rating</div></div>
+            <div class="hc-stat"><div class="hc-num">24/7</div><div class="hc-lbl">Emergency Cover</div></div>
+          </div>
+          <a href="tel:02030000000" class="hc-phone">&#128222; Call: 020 3000 0000</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div id="trust">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-item"><span class="ti-icon">&#128293;</span><div><div class="ti-name">Gas Safe</div><div class="ti-sub">Registered</div></div></div>
+      <div class="trust-item"><span class="ti-icon">&#9733;</span><div><div class="ti-name">Trustpilot</div><div class="ti-sub">5.0 Stars</div></div></div>
+      <div class="trust-item"><span class="ti-icon">&#9989;</span><div><div class="ti-name">Checkatrade</div><div class="ti-sub">Verified</div></div></div>
+      <div class="trust-item"><span class="ti-icon">&#128203;</span><div><div class="ti-name">Which?</div><div class="ti-sub">Trusted Trader</div></div></div>
+      <div class="trust-item"><span class="ti-icon">&#127970;</span><div><div class="ti-name">TrustATrader</div><div class="ti-sub">Approved</div></div></div>
+      <div class="trust-item"><span class="ti-icon">&#128274;</span><div><div class="ti-name">Fully Insured</div><div class="ti-sub">&pound;5m Liability</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag tag-teal">Our Services</span>
+      <h2>Plumbing &amp; Heating Done Right</h2>
+      <p>Choose your service category below to see what we offer.</p>
+    </div>
+    <div class="svc-tabs reveal">
+      <button class="svc-tab active" onclick="switchTab('plumbing',this)">&#128295; Plumbing</button>
+      <button class="svc-tab" onclick="switchTab('heating',this)">&#128293; Heating &amp; Boilers</button>
+      <button class="svc-tab" onclick="switchTab('drainage',this)">&#128167; Drainage</button>
+    </div>
+
+    <div id="tab-plumbing" class="svc-panel active">
+      <div class="svc-card reveal"><div class="svc-icon">&#128167;</div><div class="svc-title">Leak Detection &amp; Repair</div><p class="svc-desc">Burst pipes, dripping taps, hidden leaks. We locate and fix the source fast, protecting your property from water damage.</p><span class="svc-price">From &pound;85</span></div>
+      <div class="svc-card reveal"><div class="svc-icon">&#128715;</div><div class="svc-title">Bathroom Installations</div><p class="svc-desc">Full bathroom fits, shower installations, toilet replacements and basin fitting. Supply and fit or fit-only available.</p><span class="svc-price">Free Quote</span></div>
+      <div class="svc-card reveal"><div class="svc-icon">&#127959;</div><div class="svc-title">Pipe Work &amp; Re-routing</div><p class="svc-desc">New pipe runs, isolating old pipework and full re-plumbing for extensions, loft conversions and refurbishments.</p><span class="svc-price">Free Quote</span></div>
+      <div class="svc-card reveal"><div class="svc-icon">&#127968;</div><div class="svc-title">Landlord Plumbing</div><p class="svc-desc">Annual inspections, repair call-outs and compliance reports for HMOs and residential lets across London.</p><span class="svc-price">Fixed Rate Plans</span></div>
+      <div class="svc-card reveal"><div class="svc-icon">&#9889;</div><div class="svc-title">Water Pressure Issues</div><p class="svc-desc">Low or inconsistent water pressure diagnosed and resolved. Pump installations and mains pressure balancing.</p><span class="svc-price">From &pound;95</span></div>
+      <div class="svc-card reveal"><div class="svc-icon">&#9832;</div><div class="svc-title">Stopcock &amp; Valve Work</div><p class="svc-desc">Replacement stopcocks, gate valves and ball valves. Essential maintenance to keep your system in safe working order.</p><span class="svc-price">From &pound;75</span></div>
+    </div>
+
+    <div id="tab-heating" class="svc-panel">
+      <div class="svc-card reveal"><div class="svc-icon">&#128293;</div><div class="svc-title">Boiler Repair &amp; Service</div><p class="svc-desc">All makes and models. Annual boiler services, fault diagnosis and same-day emergency repairs by Gas Safe engineers.</p><span class="svc-price">Service from &pound;65</span></div>
+      <div class="svc-card reveal"><div class="svc-icon">&#9832;</div><div class="svc-title">Boiler Installations</div><p class="svc-desc">New combi, system and heat-only boiler installations. We advise on the best unit for your property and usage.</p><span class="svc-price">Free Survey</span></div>
+      <div class="svc-card reveal"><div class="svc-icon">&#127974;</div><div class="svc-title">Central Heating Systems</div><p class="svc-desc">New systems, power flushes, radiator additions and full system balancing for even heat throughout your home.</p><span class="svc-price">Free Quote</span></div>
+      <div class="svc-card reveal"><div class="svc-icon">&#128196;</div><div class="svc-title">Gas Safety Certificates</div><p class="svc-desc">CP12 landlord gas safety inspections and certificates. Fast turnaround &mdash; certificate issued same day.</p><span class="svc-price">From &pound;60</span></div>
+      <div class="svc-card reveal"><div class="svc-icon">&#10052;</div><div class="svc-title">Underfloor Heating</div><p class="svc-desc">Wet and electric underfloor heating installation. Ideal for new builds, extensions and kitchen or bathroom refurbs.</p><span class="svc-price">Free Quote</span></div>
+      <div class="svc-card reveal"><div class="svc-icon">&#9728;</div><div class="svc-title">Thermostats &amp; Controls</div><p class="svc-desc">Smart thermostat installation (Nest, Hive, Drayton), zone controls and wireless programmer upgrades.</p><span class="svc-price">From &pound;95</span></div>
+    </div>
+
+    <div id="tab-drainage" class="svc-panel">
+      <div class="svc-card reveal"><div class="svc-icon">&#128167;</div><div class="svc-title">Blocked Drains</div><p class="svc-desc">Sinks, baths, toilets and external drains unblocked fast. Drain jetting and manual rodding available 24/7.</p><span class="svc-price">From &pound;75</span></div>
+      <div class="svc-card reveal"><div class="svc-icon">&#128250;</div><div class="svc-title">CCTV Drain Survey</div><p class="svc-desc">Full CCTV camera inspection with HD report. Identifies root ingress, collapse, misalignment and blockage source.</p><span class="svc-price">From &pound;120</span></div>
+      <div class="svc-card reveal"><div class="svc-icon">&#127959;</div><div class="svc-title">Drain Repairs</div><p class="svc-desc">Patch lining, no-dig repairs and full drain replacement. We fix the root cause, not just clear the symptom.</p><span class="svc-price">Free Quote</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTERS -->
+<section id="counters">
+  <div class="container">
+    <div class="counters-grid">
+      <div class="counter-item"><div class="counter-num" data-target="800">0</div><div class="counter-lbl">Jobs Completed</div></div>
+      <div class="counter-item"><div class="counter-num" data-target="17">0</div><div class="counter-lbl">Years in London</div></div>
+      <div class="counter-item"><div class="counter-num" data-target="32">0</div><div class="counter-lbl">Boroughs Covered</div></div>
+      <div class="counter-item"><div class="counter-num" data-target="98">0</div><div class="counter-lbl">% Customer Satisfaction</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EMERGENCY -->
+<section id="emergency">
+  <div class="emg-band">
+    <div class="container">
+      <div class="emg-inner reveal">
+        <div>
+          <div class="emg-tag">&#128293; Available Right Now</div>
+          <h2>Plumbing Emergency?<br>We&rsquo;re Available Around the Clock.</h2>
+          <p>Burst pipes, boiler breakdowns, no hot water, blocked drains &mdash; our emergency team covers all London postcodes. Most callouts attended within 60 minutes.</p>
+        </div>
+        <div class="emg-action">
+          <div class="emg-num"><a href="tel:02030000000">020 3000 0000</a></div>
+          <a href="tel:02030000000" class="btn btn-orange btn-lg">Call the Emergency Line</a>
+          <p class="emg-note">Available 24 hours &bull; 7 days a week &bull; All London postcodes</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="services">
+<!-- FOUNDER -->
+<section id="founder">
   <div class="container">
-    <h2>Our Services</h2>
-    <p class="sub">Professional Plumbing services across all London boroughs</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <span class="sc-icon">&#10003;</span>
-        <div class="sc-title">Residential</div>
-        <p class="sc-desc">Trusted by homeowners across London for reliable, high-quality work done right first time.</p>
+    <div class="founder-grid reveal">
+      <div>
+        <div class="founder-card">
+          <div class="founder-avatar">JB</div>
+          <div class="founder-name">James Bennett</div>
+          <div class="founder-role">Founder &amp; Master Plumber</div>
+          <div class="founder-badges">
+            <div class="fbadge">&#128293; Gas Safe: Reg. 000000</div>
+            <div class="fbadge">&#9989; 17 Years Experience</div>
+            <div class="fbadge">&#127970; London-Born &amp; Based</div>
+            <div class="fbadge">&#128203; City &amp; Guilds Qualified</div>
+          </div>
+        </div>
       </div>
-      <div class="service-card">
-        <span class="sc-icon">&#127970;</span>
-        <div class="sc-title">Commercial</div>
-        <p class="sc-desc">We work with businesses, landlords and property managers throughout Greater London.</p>
-      </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128241;</span>
-        <div class="sc-title">Emergency Callouts</div>
-        <p class="sc-desc">Fast response when you need it most. We cover all London postcodes, seven days a week.</p>
-      </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128205;</span>
-        <div class="sc-title">All London Boroughs</div>
-        <p class="sc-desc">From Hackney to Hammersmith, Croydon to Camden &mdash; we cover the entire Greater London area.</p>
+      <div class="founder-content">
+        <span class="section-tag tag-teal">Our Story</span>
+        <h2>Built on Honesty,<br>Run on Reputation</h2>
+        <p>Capital Plumbing &amp; Heating was founded on one simple principle: do the job properly, charge a fair price, and treat every customer&rsquo;s home like your own. That&rsquo;s how we&rsquo;ve built our reputation across London over 17 years.</p>
+        <p>We&rsquo;re not a large call centre-operated firm. Every job is handled personally, and every quote is fixed &mdash; what we tell you upfront is what appears on your invoice.</p>
+        <blockquote>
+          &ldquo;I started this business because I was fed up seeing customers overcharged and underserved. Good plumbing shouldn&rsquo;t be a lottery.&rdquo;
+        </blockquote>
+        <a href="#contact" class="btn btn-teal">Work With Us &rarr;</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="why">
+<!-- TESTIMONIALS -->
+<section id="testimonials">
   <div class="container">
-    <h2>Why Choose Us?</h2>
-    <p class="sub">Trusted by hundreds of London customers</p>
-    <div class="trust-items">
-      <div class="trust-item"><div class="trust-num">500+</div><div class="trust-lbl">Jobs Completed</div></div>
-      <div class="trust-item"><div class="trust-num">5&#9733;</div><div class="trust-lbl">Google Rating</div></div>
-      <div class="trust-item"><div class="trust-num">10+</div><div class="trust-lbl">Years Experience</div></div>
-      <div class="trust-item"><div class="trust-num">32</div><div class="trust-lbl">London Boroughs Covered</div></div>
+    <div class="section-header center reveal">
+      <span class="section-tag tag-teal">Reviews</span>
+      <h2>Trusted Across London</h2>
+      <p>5-star rated on Trustpilot, Google and Checkatrade.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="rev-platform">&#9733; Trustpilot</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rev-text">Boiler packed in on a Sunday evening. James was at my flat in Islington within the hour, diagnosed the fault and had it fixed by 10pm. Absolutely brilliant service, reasonable price and no drama.</p>
+        <div class="reviewer"><div class="rev-av">AM</div><div><div class="rev-name">Anna M.</div><div class="rev-loc">Islington, N1</div></div></div>
+      </div>
+      <div class="review-card reveal">
+        <div class="rev-platform">&#9733; Google Reviews</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rev-text">Used Capital for a full bathroom installation. From the initial survey to the final fit, everything was on time and on budget. The workmanship is exceptional &mdash; couldn&rsquo;t be happier with the result.</p>
+        <div class="reviewer"><div class="rev-av">TH</div><div><div class="rev-name">Tom H.</div><div class="rev-loc">Chelsea, SW3</div></div></div>
+      </div>
+      <div class="review-card reveal">
+        <div class="rev-platform">&#9733; Checkatrade</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rev-text">As a landlord with three properties in South London, I need a plumber I can actually rely on. Capital have been my go-to for two years. Fast, professional and their fixed pricing makes budgeting easy.</p>
+        <div class="reviewer"><div class="rev-av">PW</div><div><div class="rev-name">Paul W.</div><div class="rev-loc">Landlord &bull; South London</div></div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="cta-section">
+<!-- AREAS + CONTACT -->
+<section id="contact">
   <div class="container">
-    <h2>Ready to Book? Get a Free Quote Today.</h2>
-    <p>No call centres, no pressure. Just a quick chat and a fair, honest price.</p>
-    <a href="#get-started" class="btn btn-gold">Request a Free Quote</a>
-  </div>
-</section>
+    <div class="contact-grid">
+      <div class="reveal">
+        <span class="section-tag tag-teal" style="margin-bottom:16px;display:inline-block;">Get In Touch</span>
+        <div class="areas-wrap">
+          <h2>Covering All of Greater London</h2>
+          <p>Our engineers are based across the city so we keep response times fast for both planned work and emergencies.</p>
+          <div class="borough-grid">
+            <span class="boro">Barnet</span><span class="boro">Brent</span><span class="boro">Camden</span>
+            <span class="boro">City of London</span><span class="boro">Croydon</span><span class="boro">Ealing</span>
+            <span class="boro">Enfield</span><span class="boro">Greenwich</span><span class="boro">Hackney</span>
+            <span class="boro">Hammersmith</span><span class="boro">Haringey</span><span class="boro">Harrow</span>
+            <span class="boro">Islington</span><span class="boro">Kensington</span><span class="boro">Kingston</span>
+            <span class="boro">Lambeth</span><span class="boro">Lewisham</span><span class="boro">Merton</span>
+            <span class="boro">Newham</span><span class="boro">Richmond</span><span class="boro">Southwark</span>
+            <span class="boro">Sutton</span><span class="boro">Tower Hamlets</span><span class="boro">Wandsworth</span>
+            <span class="boro">Westminster</span><span class="boro">Waltham Forest</span>
+          </div>
+          <div class="contact-box">
+            <div class="contact-row"><div class="cr-icon">&#128222;</div><div><div class="cr-label">Phone (24/7 Emergency)</div><div class="cr-value"><a href="tel:02030000000">020 3000 0000</a></div></div></div>
+            <div class="contact-row"><div class="cr-icon">&#128231;</div><div><div class="cr-label">Email</div><div class="cr-value"><a href="mailto:info@capitalplumbing.co.uk">info@capitalplumbing.co.uk</a></div></div></div>
+            <div class="contact-row"><div class="cr-icon">&#128336;</div><div><div class="cr-label">Hours</div><div class="cr-value">Mon&ndash;Sun, 7am&ndash;9pm &bull; 24/7 Emergency</div></div></div>
+          </div>
+        </div>
+      </div>
 
-<section class="contact-mini" id="get-started">
-  <div class="container">
-    <h2>Request This Template</h2>
-    <p class="sub">Like what you see? Contact Yoel at Graft Digital to get your own Plumbing website live within days.</p>
-    <div class="mini-form">
-      <form id="reqForm">
-        <div class="fg"><label>Your Name</label><input type="text" placeholder="John Smith" required></div>
-        <div class="fg"><label>Email</label><input type="email" placeholder="john@yourcompany.co.uk" required></div>
-        <div class="fg"><label>Phone</label><input type="tel" placeholder="+44 7XXX XXX XXX"></div>
-        <div class="fg"><label>Tell me about your business</label><textarea placeholder="Where in London are you based? Do you have a logo or existing site?"></textarea></div>
-        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;font-size:.97rem;">Send Enquiry to Graft Digital &rarr;</button>
-      </form>
+      <div class="reveal">
+        <div class="quote-wrap">
+          <div class="qf-head">
+            <div class="qf-title">Book Online &mdash; Save 10%</div>
+            <div class="qf-sub">Book online and save 10% on labour &bull; Response within 1 hour</div>
+          </div>
+          <form id="quoteForm">
+            <div class="form-row">
+              <div class="fg"><label>First Name</label><input type="text" placeholder="John" required></div>
+              <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith" required></div>
+            </div>
+            <div class="fg"><label>Email</label><input type="email" placeholder="john@email.com" required></div>
+            <div class="fg"><label>Phone</label><input type="tel" placeholder="07XXX XXX XXX" required></div>
+            <div class="form-row">
+              <div class="fg">
+                <label>Service Needed</label>
+                <select required>
+                  <option value="" disabled selected>Select&hellip;</option>
+                  <optgroup label="Plumbing">
+                    <option>Leak Repair</option>
+                    <option>Bathroom Installation</option>
+                    <option>Pipe Work</option>
+                    <option>Water Pressure</option>
+                    <option>Landlord Plumbing</option>
+                  </optgroup>
+                  <optgroup label="Heating">
+                    <option>Boiler Repair</option>
+                    <option>Boiler Installation</option>
+                    <option>Central Heating</option>
+                    <option>Gas Safety Certificate</option>
+                    <option>Underfloor Heating</option>
+                  </optgroup>
+                  <optgroup label="Drainage">
+                    <option>Blocked Drain</option>
+                    <option>CCTV Survey</option>
+                    <option>Drain Repair</option>
+                  </optgroup>
+                  <option>24/7 Emergency</option>
+                </select>
+              </div>
+              <div class="fg"><label>Postcode</label><input type="text" placeholder="e.g. SW1 1AA"></div>
+            </div>
+            <div class="fg"><label>Describe the issue (optional)</label><textarea placeholder="Any details about the problem, property type, urgency&hellip;"></textarea></div>
+            <button type="submit" class="btn btn-teal" style="width:100%;justify-content:center;padding:14px;font-size:.97rem;">
+              Book Now &amp; Save 10% &rarr;
+            </button>
+            <p style="font-size:.74rem;color:var(--text-lt);text-align:center;margin-top:10px;">&#128274; Your details are safe. We never share your information.</p>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="container">
-    <div class="footer-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text" style="color:#fff;">Graft<span style="color:var(--gold);">Digital</span></span>
-      </a>
-      <span class="footer-copy">&copy; 2025 <strong>Graft Digital</strong> &mdash; Built by Yoel Gutierrez &middot; London</span>
+    <div class="footer-grid">
+      <div>
+        <a href="#" class="logo">
+          <span class="logo-drop">&#128293;</span>
+          <div class="logo-text"><strong style="color:white;">Capital Plumbing</strong><span style="color:var(--teal-mid);">&amp; Heating &bull; London</span></div>
+        </a>
+        <p class="footer-desc">Gas Safe registered plumbers and heating engineers. Serving all London boroughs for 17 years. Fixed prices, certified work, 5-star rated.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Leak Repairs</a></li>
+          <li><a href="#services">Boiler Services</a></li>
+          <li><a href="#services">Bathrooms</a></li>
+          <li><a href="#services">Central Heating</a></li>
+          <li><a href="#services">Gas Certificates</a></li>
+          <li><a href="#services">Drain Clearance</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#founder">Our Story</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#contact">Areas Covered</a></li>
+          <li><a href="#contact">Get a Quote</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:02030000000">020 3000 0000</a></li>
+          <li><a href="mailto:info@capitalplumbing.co.uk">info@capitalplumbing.co.uk</a></li>
+          <li><a href="#">WhatsApp</a></li>
+          <li><a href="#contact">London, UK</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Capital Plumbing &amp; Heating London. Gas Safe Reg. 000000. All rights reserved.</p>
+      <span class="built-by">Website by <a href="https://graftdigital.london" target="_blank">Graft Digital</a></span>
     </div>
   </div>
 </footer>
+
+<div class="float-cta">
+  <a href="tel:02030000000">&#128293; Emergency Plumber</a>
+</div>
+
 <script>
-  document.getElementById('reqForm').addEventListener('submit',function(e){
+  /* Navbar scroll */
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50), { passive: true });
+
+  /* Mobile menu */
+  document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
+  document.getElementById('mobileClose').addEventListener('click', closeMob);
+  function closeMob() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  /* Service tabs */
+  function switchTab(id, btn) {
+    document.querySelectorAll('.svc-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.svc-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  /* Counter animation */
+  function animateCounters() {
+    document.querySelectorAll('.counter-num[data-target]').forEach(el => {
+      const target = +el.dataset.target;
+      const suffix = target === 98 ? '%' : '+';
+      let current = 0;
+      const step = Math.ceil(target / 60);
+      const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = current + suffix;
+        if (current >= target) clearInterval(timer);
+      }, 24);
+    });
+  }
+  const counterObs = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) { animateCounters(); counterObs.disconnect(); }
+  }, { threshold: 0.3 });
+  const countersEl = document.getElementById('counters');
+  if (countersEl) counterObs.observe(countersEl);
+
+  /* Scroll reveal */
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  /* Quote form */
+  document.getElementById('quoteForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    const f=this;
-    const btn=f.querySelector('button[type=submit]');
-    const inp=f.querySelector('input[name=template]');
-    const tmpl=inp?inp.value:'General';
-    const name=f.querySelector('input[type=text]').value;
-    const email=f.querySelector('input[type=email]').value;
-    const phone=f.querySelector('input[type=tel]').value;
-    const msg=f.querySelector('textarea').value;
-    const body='Name: '+name+'\nEmail: '+email+'\nPhone: '+phone+'\nTemplate: '+tmpl+'\n\nMessage:\n'+msg;
-    window.location.href='mailto:sales@graftdigital.london?subject='+encodeURIComponent('Template Request – '+tmpl+' – '+name)+'&body='+encodeURIComponent(body);
-    btn.textContent='✓ Opening your email app…';
-    btn.style.background='#22c55e'; btn.style.color='#fff'; btn.disabled=true;
+    const f     = this;
+    const fname = f.querySelectorAll('input[type=text]')[0].value;
+    const lname = f.querySelectorAll('input[type=text]')[1].value;
+    const email = f.querySelector('input[type=email]').value;
+    const phone = f.querySelector('input[type=tel]').value;
+    const svc   = f.querySelector('select').value;
+    const post  = f.querySelectorAll('input[type=text]')[2].value;
+    const msg   = f.querySelector('textarea').value;
+    const body  = 'Name: '+fname+' '+lname+'\nEmail: '+email+'\nPhone: '+phone+'\nService: '+svc+'\nPostcode: '+post+'\n\nDetails:\n'+msg;
+    window.location.href = 'mailto:info@capitalplumbing.co.uk?subject='+encodeURIComponent('Quote Request \u2013 '+fname+' '+lname+' \u2013 '+svc)+'&body='+encodeURIComponent(body);
+    const btn = f.querySelector('button[type=submit]');
+    btn.textContent = '\u2713 Opening your email app\u2026';
+    btn.style.background = '#16a34a';
+    btn.disabled = true;
   });
 </script>
 </body>
