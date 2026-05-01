@@ -3,214 +3,684 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Electricians Website Template | Graft Digital</title>
-  <meta name="description" content="NICEIC-certified electrical work for homes and businesses across Greater London.">
-  <meta name="keywords" content="electrician London, electrical services">
+  <title>Apex Electrical London | NICEIC Certified Electricians</title>
+  <meta name="description" content="NICEIC certified electricians covering all London boroughs. Rewires, consumer units, EICR certificates, EV charging & 24/7 emergency callouts. Free quotes.">
+  <meta name="keywords" content="electrician London, NICEIC electrician, EICR certificate London, consumer unit upgrade, emergency electrician London, EV charging installation">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy:#0A1628; --navy-mid:#0F2040; --gold:#F5A623; --gold-dark:#C98010;
-      --gold-light:#FFB84D; --white:#FFFFFF; --off-white:#F7F9FC;
-      --text:#1A2332; --text-mid:#4A5568; --border:#E2E8F0;
-    }
     html { scroll-behavior: smooth; }
-    body { font-family:'Inter',-apple-system,sans-serif; color:var(--text); background:var(--white); line-height:1.6; }
+
+    :root {
+      --black:      #0D1117;
+      --dark:       #161B22;
+      --dark-card:  #1C2333;
+      --yellow:     #F59E0B;
+      --yellow-lt:  #FCD34D;
+      --yellow-dk:  #D97706;
+      --red:        #EF4444;
+      --red-dk:     #B91C1C;
+      --white:      #FFFFFF;
+      --off-white:  #F9FAFB;
+      --light:      #F3F4F6;
+      --text:       #111827;
+      --text-mid:   #4B5563;
+      --text-light: #9CA3AF;
+      --border:     #E5E7EB;
+      --border-dark:#30363D;
+      --trans:      all 0.22s ease;
+      --radius:     10px;
+      --shadow-lg:  0 10px 15px -3px rgba(0,0,0,.15), 0 4px 6px -2px rgba(0,0,0,.1);
+      --shadow-xl:  0 20px 25px -5px rgba(0,0,0,.15), 0 10px 10px -5px rgba(0,0,0,.08);
+      --glow:       0 0 24px rgba(245,158,11,.25);
+    }
+
+    body { font-family:'Inter',-apple-system,sans-serif; color:var(--text); background:var(--white); line-height:1.6; overflow-x:hidden; }
     a { text-decoration:none; color:inherit; }
-    .container { max-width:1100px; margin:0 auto; padding:0 24px; }
-    /* TOPBAR */
-    .topbar { background:var(--navy); padding:14px 0; position:sticky; top:0; z-index:100; box-shadow:0 2px 12px rgba(0,0,0,.25); }
-    .topbar-inner { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-    .logo { display:flex; align-items:center; gap:9px; }
-    .logo-mark { width:34px; height:34px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:900; color:var(--navy); }
-    .logo-text { font-size:1.1rem; font-weight:900; color:#fff; letter-spacing:-.03em; }
-    .logo-text span { color:var(--gold); }
-    .back-link { color:rgba(255,255,255,.7); font-size:.85rem; font-weight:500; display:flex; align-items:center; gap:6px; transition:color .2s; }
-    .back-link:hover { color:var(--gold); }
+    .container { max-width:1180px; margin:0 auto; padding:0 24px; }
+
+    /* BUTTONS */
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:8px; font-size:.95rem; font-weight:700; cursor:pointer; transition:var(--trans); border:none; font-family:inherit; }
+    .btn-yellow { background:var(--yellow); color:var(--black); }
+    .btn-yellow:hover { background:var(--yellow-lt); transform:translateY(-2px); box-shadow:var(--glow); }
+    .btn-red    { background:var(--red); color:var(--white); }
+    .btn-red:hover { background:var(--red-dk); transform:translateY(-2px); }
+    .btn-dark   { background:var(--dark-card); color:var(--white); border:1px solid var(--border-dark); }
+    .btn-dark:hover { border-color:var(--yellow); color:var(--yellow); }
+    .btn-outline-yellow { background:transparent; color:var(--yellow); border:2px solid var(--yellow); }
+    .btn-outline-yellow:hover { background:var(--yellow); color:var(--black); }
+    .btn-lg { padding:15px 34px; font-size:1rem; }
+
+    /* TEMPLATE BANNER */
+    .tpl-banner { background:#0A1628; border-bottom:1px solid rgba(245,166,35,.3); padding:9px 24px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; font-family:'Inter',sans-serif; }
+    .tpl-badge { background:#F5A623; color:#0A1628; font-size:.72rem; font-weight:800; padding:3px 10px; border-radius:100px; letter-spacing:.06em; text-transform:uppercase; }
+    .tpl-text { color:rgba(255,255,255,.6); font-size:.82rem; }
+    .tpl-text strong { color:white; }
+    .tpl-back { display:inline-flex; align-items:center; gap:6px; background:#F5A623; color:#0A1628; font-size:.8rem; font-weight:700; padding:6px 14px; border-radius:6px; white-space:nowrap; }
+    .tpl-back:hover { background:#FFB84D; }
+
+    /* EMERGENCY BAR */
+    .emergency-bar { background:var(--red); padding:10px 0; }
+    .emergency-inner { display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap; }
+    .emergency-inner span { color:var(--white); font-size:.88rem; font-weight:600; }
+    .emergency-inner a { color:var(--white); font-weight:800; font-size:.95rem; letter-spacing:.02em; transition:var(--trans); }
+    .emergency-inner a:hover { color:var(--yellow-lt); }
+    .pulse { display:inline-block; width:9px; height:9px; border-radius:50%; background:white; animation:pulse 1.6s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.4)} }
+
+    /* NAVBAR */
+    nav { background:var(--black); position:sticky; top:0; z-index:200; border-bottom:1px solid var(--border-dark); transition:var(--trans); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; gap:24px; padding:14px 0; }
+    .logo { display:flex; align-items:center; gap:12px; }
+    .logo-bolt { font-size:1.5rem; line-height:1; }
+    .logo-name strong { display:block; font-size:1.15rem; font-weight:900; color:var(--white); letter-spacing:-.03em; }
+    .logo-name span { display:block; font-size:.65rem; font-weight:600; color:var(--yellow); letter-spacing:.12em; text-transform:uppercase; }
+    .nav-links { display:flex; align-items:center; gap:28px; list-style:none; }
+    .nav-links a { font-size:.88rem; font-weight:500; color:rgba(255,255,255,.65); transition:var(--trans); }
+    .nav-links a:hover { color:var(--yellow); }
+    .nav-cta-wrap { display:flex; align-items:center; gap:10px; }
+    .nav-phone-btn { display:flex; align-items:center; gap:8px; background:rgba(245,158,11,.12); border:1px solid rgba(245,158,11,.3); border-radius:8px; padding:8px 16px; color:var(--yellow); font-size:.88rem; font-weight:700; transition:var(--trans); }
+    .nav-phone-btn:hover { background:var(--yellow); color:var(--black); }
+    .hamburger { display:none; background:none; border:none; cursor:pointer; padding:4px; flex-direction:column; gap:5px; }
+    .hamburger span { display:block; width:22px; height:2px; background:white; transition:var(--trans); }
+
     /* HERO */
-    .hero { background:var(--navy); background-image:radial-gradient(ellipse at 15% 60%,rgba(26,53,96,.6) 0%,transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(245,166,35,.07) 0%,transparent 50%); min-height:480px; display:flex; align-items:center; padding:72px 0 64px; position:relative; overflow:hidden; }
-    .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px); background-size:54px 54px; }
-    .hero-content { position:relative; z-index:2; max-width:680px; }
-    .preview-banner { background:rgba(245,166,35,.1); border:1px solid rgba(245,166,35,.3); border-radius:10px; padding:15px 20px; margin-bottom:36px; display:flex; align-items:flex-start; gap:11px; max-width:600px; }
-    .preview-banner p { color:rgba(255,255,255,.8); font-size:.86rem; line-height:1.55; margin:0; }
-    .preview-banner strong { color:var(--gold); }
-    .hero-tag { display:inline-flex; align-items:center; gap:7px; background:rgba(245,166,35,.13); border:1px solid rgba(245,166,35,.28); color:var(--gold-light); padding:6px 15px; border-radius:100px; font-size:.8rem; font-weight:600; margin-bottom:20px; }
-    .hero-icon { font-size:3.2rem; margin-bottom:10px; display:block; line-height:1; }
-    .hero h1 { font-size:clamp(2.1rem,4.5vw,3.4rem); color:#fff; letter-spacing:-.04em; margin-bottom:16px; line-height:1.15; font-weight:900; }
-    .hero h1 span { color:var(--gold); }
-    .hero > .container > .hero-content > p { color:rgba(255,255,255,.68); font-size:1.05rem; max-width:520px; margin-bottom:32px; }
-    .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
-    .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:8px; font-size:.95rem; font-weight:700; cursor:pointer; transition:all .22s ease; border:none; font-family:inherit; }
-    .btn-gold { background:var(--gold); color:var(--navy); }
-    .btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 20px rgba(245,166,35,.35); }
-    .btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.35); }
-    .btn-outline:hover { border-color:#fff; background:rgba(255,255,255,.08); }
+    #hero { background:var(--black); min-height:90vh; display:flex; align-items:center; padding:80px 0; position:relative; overflow:hidden; }
+    .hero-bg-grid {
+      position:absolute; inset:0;
+      background-image: linear-gradient(rgba(245,158,11,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(245,158,11,.04) 1px, transparent 1px);
+      background-size:48px 48px;
+    }
+    .hero-circuit { position:absolute; right:0; top:0; bottom:0; width:50%; opacity:.04; background: repeating-linear-gradient(0deg,transparent,transparent 40px,rgba(245,158,11,1) 40px,rgba(245,158,11,1) 41px), repeating-linear-gradient(90deg,transparent,transparent 40px,rgba(245,158,11,1) 40px,rgba(245,158,11,1) 41px); }
+    .hero-glow { position:absolute; top:-100px; right:200px; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle,rgba(245,158,11,.08) 0%,transparent 70%); }
+    .hero-inner { position:relative; z-index:2; display:grid; grid-template-columns:1fr 420px; gap:64px; align-items:center; }
+    .hero-label { display:inline-flex; align-items:center; gap:8px; background:rgba(245,158,11,.1); border:1px solid rgba(245,158,11,.25); color:var(--yellow); padding:6px 16px; border-radius:100px; font-size:.78rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; margin-bottom:24px; }
+    .hero h1 { font-size:clamp(2.4rem,4.5vw,4rem); font-weight:900; color:var(--white); letter-spacing:-.04em; line-height:1.08; margin-bottom:20px; }
+    .hero h1 em { font-style:normal; color:var(--yellow); }
+    .hero-sub { color:rgba(255,255,255,.6); font-size:1.05rem; max-width:520px; margin-bottom:36px; line-height:1.75; }
+    .hero-ctas { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:44px; }
+    .hero-certs { display:flex; gap:16px; flex-wrap:wrap; }
+    .cert-badge { display:flex; align-items:center; gap:7px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:8px; padding:8px 14px; color:rgba(255,255,255,.75); font-size:.78rem; font-weight:600; }
+    .cert-badge .ci { font-size:.95rem; }
+
+    /* STAT CARDS (hero right) */
+    .hero-stats-col { display:flex; flex-direction:column; gap:16px; }
+    .stat-card { background:var(--dark-card); border:1px solid var(--border-dark); border-radius:var(--radius); padding:24px 22px; transition:var(--trans); }
+    .stat-card:hover { border-color:var(--yellow); box-shadow:var(--glow); }
+    .sc-num { font-size:2.4rem; font-weight:900; color:var(--yellow); line-height:1; margin-bottom:4px; }
+    .sc-lbl { font-size:.82rem; color:rgba(255,255,255,.5); }
+    .stat-card-wide { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .stat-card-wide .sc-num { font-size:1.8rem; }
+
+    /* CERTS STRIP */
+    #certs { background:var(--dark); border-top:1px solid var(--border-dark); border-bottom:1px solid var(--border-dark); padding:22px 0; }
+    .certs-inner { display:flex; align-items:center; justify-content:center; gap:0; flex-wrap:wrap; }
+    .cert-item { display:flex; align-items:center; gap:10px; padding:10px 32px; border-right:1px solid var(--border-dark); }
+    .cert-item:last-child { border-right:none; }
+    .cert-icon { font-size:1.4rem; }
+    .cert-name { font-weight:800; color:var(--white); font-size:.88rem; letter-spacing:.02em; }
+    .cert-sub { font-size:.72rem; color:var(--yellow); font-weight:600; letter-spacing:.05em; text-transform:uppercase; }
+
     /* SERVICES */
-    .services { padding:80px 0; background:var(--off-white); }
-    .services h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .services .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
-    .service-card { background:#fff; border-radius:12px; padding:28px 24px; border:1px solid var(--border); transition:all .22s ease; }
-    .service-card:hover { transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.08); border-color:rgba(245,166,35,.3); }
-    .sc-icon { font-size:1.8rem; margin-bottom:12px; display:block; }
-    .sc-title { font-size:1rem; font-weight:700; margin-bottom:6px; }
-    .sc-desc { font-size:.88rem; color:var(--text-mid); line-height:1.65; }
-    /* TRUST */
-    .why { padding:80px 0; background:var(--white); }
-    .why h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .why .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .trust-items { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; text-align:center; }
-    .trust-item { padding:28px 16px; }
-    .trust-num { font-size:2.4rem; font-weight:900; color:var(--gold-dark); line-height:1; margin-bottom:6px; }
-    .trust-lbl { font-size:.88rem; color:var(--text-mid); }
-    /* CTA */
-    .cta-section { padding:72px 0; background:var(--navy); background-image:radial-gradient(ellipse at 80% 50%,rgba(245,166,35,.08) 0%,transparent 55%); text-align:center; }
-    .cta-section h2 { color:#fff; font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; margin-bottom:14px; }
-    .cta-section p { color:rgba(255,255,255,.65); font-size:1rem; margin-bottom:32px; max-width:480px; margin-left:auto; margin-right:auto; }
-    /* FORM */
-    .contact-mini { padding:80px 0; background:var(--off-white); }
-    .contact-mini h2 { font-size:clamp(1.5rem,3vw,2rem); font-weight:800; text-align:center; margin-bottom:8px; }
-    .contact-mini .sub { text-align:center; color:var(--text-mid); font-size:.97rem; margin-bottom:32px; }
-    .mini-form { max-width:520px; margin:0 auto; background:#fff; border-radius:16px; padding:36px; border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,0,0,.06); }
-    .fg { margin-bottom:16px; }
-    .fg label { display:block; font-size:.84rem; font-weight:600; margin-bottom:6px; }
-    .fg input,.fg textarea { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:8px; font-size:.92rem; font-family:inherit; color:var(--text); outline:none; transition:border .2s; }
-    .fg input:focus,.fg textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(245,166,35,.12); }
+    #services { padding:92px 0; background:var(--off-white); }
+    .section-tag { display:inline-block; font-size:.75rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:5px 14px; border-radius:100px; margin-bottom:14px; }
+    .tag-yellow { background:rgba(245,158,11,.12); color:var(--yellow-dk); }
+    .tag-light  { background:var(--light); color:var(--text-mid); }
+    .section-header { margin-bottom:52px; }
+    .section-header h2 { font-size:clamp(1.8rem,3vw,2.6rem); font-weight:800; letter-spacing:-.03em; margin-bottom:12px; }
+    .section-header p { color:var(--text-mid); font-size:1rem; max-width:520px; }
+    .section-header.center { text-align:center; }
+    .section-header.center p { margin:0 auto; }
+
+    .services-list { display:flex; flex-direction:column; gap:2px; }
+    .svc-row { display:grid; grid-template-columns:72px 1fr auto; align-items:center; gap:24px; background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:24px 28px; transition:var(--trans); }
+    .svc-row:hover { border-color:var(--yellow); box-shadow:var(--shadow-lg); transform:translateX(4px); }
+    .svc-num { font-size:2rem; font-weight:900; color:var(--yellow); opacity:.5; line-height:1; }
+    .svc-body { }
+    .svc-title { font-size:1.05rem; font-weight:700; margin-bottom:5px; }
+    .svc-desc  { font-size:.88rem; color:var(--text-mid); line-height:1.6; }
+    .svc-tag   { font-size:.73rem; font-weight:700; padding:4px 12px; border-radius:100px; white-space:nowrap; }
+    .tag-pop   { background:rgba(245,158,11,.12); color:var(--yellow-dk); }
+    .tag-cert  { background:#DCFCE7; color:#15803D; }
+    .tag-new   { background:#EDE9FE; color:#6D28D9; }
+
+    /* EMERGENCY SECTION */
+    #emergency { background:var(--black); padding:72px 0; position:relative; overflow:hidden; }
+    .emg-glow { position:absolute; left:-100px; top:50%; transform:translateY(-50%); width:400px; height:400px; border-radius:50%; background:radial-gradient(circle,rgba(239,68,68,.12) 0%,transparent 70%); }
+    .emg-inner { position:relative; z-index:2; display:grid; grid-template-columns:1fr auto; gap:48px; align-items:center; }
+    .emg-label { display:inline-flex; align-items:center; gap:8px; background:rgba(239,68,68,.15); border:1px solid rgba(239,68,68,.3); color:#FCA5A5; padding:5px 14px; border-radius:100px; font-size:.75rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; margin-bottom:16px; }
+    .emg-inner h2 { font-size:clamp(1.8rem,3vw,2.6rem); font-weight:900; color:var(--white); letter-spacing:-.03em; margin-bottom:14px; }
+    .emg-inner p  { color:rgba(255,255,255,.6); font-size:1rem; max-width:540px; }
+    .emg-ctas { display:flex; flex-direction:column; gap:12px; align-items:flex-end; }
+    .emg-phone { font-size:1.9rem; font-weight:900; color:var(--white); letter-spacing:-.02em; white-space:nowrap; }
+    .emg-phone a { color:var(--white); transition:var(--trans); }
+    .emg-phone a:hover { color:var(--yellow-lt); }
+    .emg-sub { font-size:.8rem; color:rgba(255,255,255,.4); text-align:right; }
+
+    /* WHY US */
+    #why-us { padding:92px 0; background:var(--white); }
+    .why-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:0; border:1px solid var(--border); border-radius:16px; overflow:hidden; }
+    .why-item { padding:36px 28px; border-right:1px solid var(--border); border-bottom:1px solid var(--border); transition:var(--trans); }
+    .why-item:hover { background:var(--off-white); }
+    .wi-icon { font-size:2rem; margin-bottom:14px; display:block; }
+    .wi-title { font-size:1rem; font-weight:700; margin-bottom:8px; }
+    .wi-desc  { font-size:.87rem; color:var(--text-mid); line-height:1.7; }
+
+    /* GALLERY */
+    #gallery { padding:92px 0; background:var(--black); }
+    .gallery-header h2 { color:var(--white); }
+    .gallery-header p  { color:rgba(255,255,255,.55); }
+    .gallery-grid { display:grid; grid-template-columns:repeat(4,1fr); grid-template-rows:200px 200px; gap:12px; margin-top:48px; }
+    .gallery-item { border-radius:var(--radius); overflow:hidden; position:relative; cursor:pointer; transition:var(--trans); }
+    .gallery-item:hover { transform:scale(1.02); box-shadow:var(--glow); }
+    .gallery-item:nth-child(1) { grid-column:span 2; }
+    .gallery-item:nth-child(4) { grid-column:span 2; }
+    .gi-bg { width:100%; height:100%; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px; }
+    .gi-icon { font-size:2.5rem; opacity:.7; }
+    .gi-label { font-size:.8rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; opacity:.6; }
+    .gi-overlay { position:absolute; inset:0; background:rgba(245,158,11,.0); display:flex; align-items:center; justify-content:center; transition:var(--trans); }
+    .gallery-item:hover .gi-overlay { background:rgba(245,158,11,.15); }
+    /* Varied backgrounds */
+    .gi-1 { background:linear-gradient(135deg,#1C2333,#253047); color:rgba(255,255,255,.5); }
+    .gi-2 { background:linear-gradient(135deg,#1A2744,#253060); color:rgba(255,255,255,.5); }
+    .gi-3 { background:linear-gradient(135deg,#221C1C,#3D2A1A); color:rgba(255,255,255,.5); }
+    .gi-4 { background:linear-gradient(135deg,#1C2233,#2A3050); color:rgba(255,255,255,.5); }
+    .gi-5 { background:linear-gradient(135deg,#1A2233,#1E3044); color:rgba(255,255,255,.5); }
+    .gi-6 { background:linear-gradient(135deg,#221C33,#2A1F44); color:rgba(255,255,255,.5); }
+    .gallery-note { text-align:center; margin-top:20px; color:rgba(255,255,255,.3); font-size:.8rem; }
+
+    /* TESTIMONIALS */
+    #testimonials { padding:92px 0; background:var(--off-white); }
+    .reviews-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; }
+    .review-card { background:var(--white); border-radius:var(--radius); border:1px solid var(--border); padding:32px 28px; transition:var(--trans); position:relative; }
+    .review-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--yellow); border-radius:var(--radius) var(--radius) 0 0; }
+    .review-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-lg); }
+    .stars { color:var(--yellow); font-size:1rem; letter-spacing:2px; margin-bottom:14px; }
+    .review-text { font-size:.93rem; color:var(--text-mid); line-height:1.75; font-style:italic; margin-bottom:20px; }
+    .review-text::before { content:'\201C'; }
+    .review-text::after  { content:'\201D'; }
+    .reviewer { display:flex; align-items:center; gap:12px; padding-top:16px; border-top:1px solid var(--border); }
+    .rev-avatar { width:40px; height:40px; border-radius:50%; background:rgba(245,158,11,.15); display:flex; align-items:center; justify-content:center; font-size:.88rem; font-weight:800; color:var(--yellow-dk); flex-shrink:0; }
+    .rev-name { font-size:.87rem; font-weight:700; }
+    .rev-loc  { font-size:.76rem; color:var(--text-light); }
+    .rev-src  { font-size:.72rem; color:var(--text-light); margin-top:2px; }
+
+    /* AREAS + QUOTE */
+    #areas-quote { padding:92px 0; background:var(--white); }
+    .aq-grid { display:grid; grid-template-columns:1fr 1.1fr; gap:64px; align-items:start; }
+    .areas-col h2 { font-size:clamp(1.6rem,2.5vw,2.2rem); font-weight:800; margin-bottom:12px; }
+    .areas-col p { color:var(--text-mid); font-size:.95rem; margin-bottom:28px; }
+    .boroughs { display:flex; flex-wrap:wrap; gap:8px; }
+    .boro { background:var(--light); border:1px solid var(--border); border-radius:6px; padding:7px 13px; font-size:.8rem; font-weight:500; color:var(--text); transition:var(--trans); }
+    .boro:hover { background:var(--yellow); border-color:var(--yellow); color:var(--black); }
+
+    /* QUOTE FORM */
+    .quote-form-wrap { background:var(--dark); border-radius:16px; padding:40px; border:1px solid var(--border-dark); }
+    .qf-title { font-size:1.3rem; font-weight:800; color:var(--white); margin-bottom:6px; }
+    .qf-sub { font-size:.87rem; color:rgba(255,255,255,.5); margin-bottom:24px; }
+    .fg { margin-bottom:15px; }
+    .fg label { display:block; font-size:.8rem; font-weight:600; margin-bottom:6px; color:rgba(255,255,255,.7); }
+    .fg input,.fg select,.fg textarea { width:100%; padding:11px 14px; background:rgba(255,255,255,.06); border:1.5px solid var(--border-dark); border-radius:8px; font-size:.9rem; font-family:inherit; color:var(--white); outline:none; transition:var(--trans); }
+    .fg input::placeholder,.fg textarea::placeholder { color:rgba(255,255,255,.25); }
+    .fg input:focus,.fg select:focus,.fg textarea:focus { border-color:var(--yellow); box-shadow:0 0 0 3px rgba(245,158,11,.12); }
+    .fg select option { background:var(--dark); }
     .fg textarea { resize:vertical; min-height:88px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+
     /* FOOTER */
-    footer { background:#050D1A; padding:32px 0; border-top:1px solid rgba(255,255,255,.05); }
-    .footer-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
-    .footer-copy { color:rgba(255,255,255,.35); font-size:.82rem; }
-    .footer-copy strong { color:var(--gold); }
-    @media(max-width:600px){ .hero-ctas{flex-direction:column;} .hero-ctas .btn{justify-content:center;} }
+    footer { background:var(--black); padding:56px 0 28px; border-top:1px solid var(--border-dark); }
+    .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; margin-bottom:48px; }
+    .footer-desc { color:rgba(255,255,255,.4); font-size:.86rem; line-height:1.75; margin-top:14px; }
+    .footer-col h4 { color:var(--white); font-size:.82rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; margin-bottom:16px; }
+    .footer-col ul { list-style:none; }
+    .footer-col ul li { margin-bottom:10px; }
+    .footer-col ul li a { color:rgba(255,255,255,.4); font-size:.85rem; transition:var(--trans); }
+    .footer-col ul li a:hover { color:var(--yellow); }
+    .footer-bottom { padding-top:24px; border-top:1px solid var(--border-dark); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+    .footer-bottom p { color:rgba(255,255,255,.25); font-size:.78rem; }
+    .built-by { color:rgba(255,255,255,.2); font-size:.75rem; }
+    .built-by a { color:rgba(255,255,255,.35); transition:var(--trans); }
+    .built-by a:hover { color:#F5A623; }
+
+    /* FLOAT */
+    .float-emg { position:fixed; bottom:24px; right:24px; z-index:300; display:none; }
+    .float-emg a { display:flex; align-items:center; gap:8px; background:var(--red); color:white; padding:12px 20px; border-radius:100px; font-size:.88rem; font-weight:700; box-shadow:0 8px 24px rgba(239,68,68,.45); transition:var(--trans); font-family:inherit; }
+    .float-emg a:hover { background:var(--red-dk); transform:translateY(-2px); }
+
+    /* MOBILE */
+    .mobile-menu { display:none; position:fixed; inset:0; background:var(--black); z-index:190; flex-direction:column; align-items:center; justify-content:center; gap:28px; }
+    .mobile-menu.open { display:flex; }
+    .mobile-menu a { font-size:1.35rem; font-weight:700; color:rgba(255,255,255,.8); transition:var(--trans); }
+    .mobile-menu a:hover { color:var(--yellow); }
+    .mobile-close { position:absolute; top:20px; right:20px; background:none; border:none; font-size:1.6rem; cursor:pointer; color:rgba(255,255,255,.6); }
+
+    /* REVEAL */
+    .reveal { opacity:0; transform:translateY(20px); transition:opacity .55s ease,transform .55s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){ .footer-grid{grid-template-columns:1fr 1fr;} .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;} .gallery-item:nth-child(1),.gallery-item:nth-child(4){grid-column:span 1;} }
+    @media(max-width:900px){ .hero-inner{grid-template-columns:1fr;} .hero-stats-col{flex-direction:row;flex-wrap:wrap;} .stat-card{flex:1;min-width:140px;} .emg-inner{grid-template-columns:1fr;} .emg-ctas{align-items:flex-start;} .emg-phone{font-size:1.4rem;} .aq-grid{grid-template-columns:1fr;} }
+    @media(max-width:700px){ .nav-links,.nav-cta-wrap{display:none;} .hamburger{display:flex;} .svc-row{grid-template-columns:48px 1fr;} .svc-tag{display:none;} .certs-inner{justify-content:flex-start;} .cert-item{border-right:none;border-bottom:1px solid var(--border-dark);width:100%;} .gallery-grid{grid-template-columns:1fr 1fr;} .form-row{grid-template-columns:1fr;} .footer-grid{grid-template-columns:1fr;} .footer-bottom{flex-direction:column;text-align:center;} .float-emg{display:block;} }
   </style>
 </head>
 <body>
-<header class="topbar">
+
+<!-- TEMPLATE BANNER -->
+<div class="tpl-banner">
+  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+    <span class="tpl-badge">Template Preview</span>
+    <span class="tpl-text">This is an <strong>Electricians</strong> website template by Graft Digital. All content is customisable.</span>
+  </div>
+  <a href="https://graftdigital.london" class="tpl-back">&#8592; Back to Graft Digital</a>
+</div>
+
+<!-- EMERGENCY BAR -->
+<div class="emergency-bar">
+  <div class="emergency-inner">
+    <span class="pulse"></span>
+    <span>24/7 Emergency Electrician Available &mdash;</span>
+    <a href="tel:02030000000">Call Now: 020 3000 0000</a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
   <div class="container">
-    <div class="topbar-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text">Graft<span>Digital</span></span>
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-bolt">&#9889;</span>
+        <div class="logo-name">
+          <strong>Apex Electrical</strong>
+          <span>London</span>
+        </div>
       </a>
-      <a href="../index.html#industries" class="back-link">&larr; All Templates</a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#emergency">Emergency</a></li>
+        <li><a href="#gallery">Our Work</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#areas-quote">Contact</a></li>
+      </ul>
+      <div class="nav-cta-wrap">
+        <a href="tel:02030000000" class="nav-phone-btn">&#128222; 020 3000 0000</a>
+        <a href="#areas-quote" class="btn btn-yellow" style="padding:9px 20px;font-size:.88rem;">Free Quote</a>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
     </div>
   </div>
-</header>
+</nav>
 
-<section class="hero">
-  <div class="hero-grid"></div>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&#x2715;</button>
+  <a href="#services"     onclick="closeMob()">Services</a>
+  <a href="#emergency"    onclick="closeMob()">Emergency</a>
+  <a href="#gallery"      onclick="closeMob()">Our Work</a>
+  <a href="#testimonials" onclick="closeMob()">Reviews</a>
+  <a href="#areas-quote"  onclick="closeMob()">Contact</a>
+  <a href="tel:02030000000" class="btn btn-red" onclick="closeMob()">&#128222; Emergency Call</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-circuit"></div>
+  <div class="hero-glow"></div>
   <div class="container">
-    <div class="hero-content">
-      <div class="preview-banner">
-        <span style="font-size:1.2rem;flex-shrink:0;">&#128065;</span>
-        <p>This is a <strong>sample template</strong> for a Electricians business. Your real site will be fully customised with your branding, photos &amp; details. <a href="#get-started" style="color:var(--gold);font-weight:700;">Request this template &darr;</a></p>
+    <div class="hero-inner">
+      <div class="hero-content reveal">
+        <div class="hero-label">&#9889; NICEIC Certified &bull; Part P Registered</div>
+        <h1>Powering London&rsquo;s<br>Homes &amp; <em>Businesses</em><br>Since 2010</h1>
+        <p class="hero-sub">From emergency callouts to full rewires &mdash; Apex Electrical delivers safe, certified electrical work across all London boroughs. Trusted by 600+ homeowners and businesses.</p>
+        <div class="hero-ctas">
+          <a href="#areas-quote"   class="btn btn-yellow btn-lg">Get a Free Quote</a>
+          <a href="tel:02030000000" class="btn btn-outline-yellow btn-lg">&#128222; 24/7 Emergency</a>
+        </div>
+        <div class="hero-certs">
+          <div class="cert-badge"><span class="ci">&#9989;</span> NICEIC Approved</div>
+          <div class="cert-badge"><span class="ci">&#9989;</span> Part P Registered</div>
+          <div class="cert-badge"><span class="ci">&#9989;</span> Fully Insured</div>
+          <div class="cert-badge"><span class="ci">&#9989;</span> DBS Checked</div>
+        </div>
       </div>
-      <div class="hero-tag">&#128205; London Trade Template</div>
-      <span class="hero-icon">&#9889;</span>
-      <h1>London&rsquo;s Trusted<br><span>Electricians</span><br>Specialists</h1>
-      <p>NICEIC-certified electrical work for homes and businesses across Greater London.</p>
-      <div class="hero-ctas">
-        <a href="#get-started" class="btn btn-gold">Get a Free Quote</a>
-        <a href="tel:+447895628993" class="btn btn-outline">&#128222; Call Now</a>
+      <div class="hero-stats-col reveal">
+        <div class="stat-card">
+          <div class="sc-num">600+</div>
+          <div class="sc-lbl">Jobs completed across London</div>
+        </div>
+        <div class="stat-card">
+          <div class="sc-num">5&#9733;</div>
+          <div class="sc-lbl">Google rating &bull; 120+ reviews</div>
+        </div>
+        <div class="stat-card stat-card-wide">
+          <div>
+            <div class="sc-num">15+</div>
+            <div class="sc-lbl">Years experience</div>
+          </div>
+          <div style="text-align:right;">
+            <div class="sc-num">24/7</div>
+            <div class="sc-lbl">Emergency cover</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="sc-num">All 32</div>
+          <div class="sc-lbl">London boroughs covered</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTS STRIP -->
+<div id="certs">
+  <div class="container">
+    <div class="certs-inner">
+      <div class="cert-item"><span class="cert-icon">&#9889;</span><div><div class="cert-name">NICEIC</div><div class="cert-sub">Approved Contractor</div></div></div>
+      <div class="cert-item"><span class="cert-icon">&#127968;</span><div><div class="cert-name">Part P</div><div class="cert-sub">Registered</div></div></div>
+      <div class="cert-item"><span class="cert-icon">&#128196;</span><div><div class="cert-name">EICR</div><div class="cert-sub">Certified Tester</div></div></div>
+      <div class="cert-item"><span class="cert-icon">&#9889;</span><div><div class="cert-name">NAPIT</div><div class="cert-sub">Member</div></div></div>
+      <div class="cert-item"><span class="cert-icon">&#128665;</span><div><div class="cert-name">OZEV</div><div class="cert-sub">Authorised Installer</div></div></div>
+      <div class="cert-item"><span class="cert-icon">&#9728;</span><div><div class="cert-name">MCS</div><div class="cert-sub">Solar Certified</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag tag-yellow">Our Services</span>
+      <h2>Electrical Work You Can Trust</h2>
+      <p>Fully certified work for homes, landlords and businesses across London.</p>
+    </div>
+    <div class="services-list">
+      <div class="svc-row reveal">
+        <div class="svc-num">01</div>
+        <div class="svc-body">
+          <div class="svc-title">EICR Electrical Safety Certificate</div>
+          <p class="svc-desc">Landlord certificates, homebuyer reports and periodic inspections. Certified, detailed and issued same day in most cases.</p>
+        </div>
+        <span class="svc-tag tag-cert">Required by Law</span>
+      </div>
+      <div class="svc-row reveal">
+        <div class="svc-num">02</div>
+        <div class="svc-body">
+          <div class="svc-title">Full Rewires &amp; Partial Rewires</div>
+          <p class="svc-desc">Outdated or unsafe wiring replaced to modern BS 7671 standards. Minimal disruption with precise planning and tidy workmanship.</p>
+        </div>
+        <span class="svc-tag tag-pop">Most Popular</span>
+      </div>
+      <div class="svc-row reveal">
+        <div class="svc-num">03</div>
+        <div class="svc-body">
+          <div class="svc-title">Consumer Unit Upgrades</div>
+          <p class="svc-desc">Replace your old fuse board with a modern RCD-protected consumer unit. Keeps your home safe and up to current regulations.</p>
+        </div>
+        <span class="svc-tag tag-pop">Most Popular</span>
+      </div>
+      <div class="svc-row reveal">
+        <div class="svc-num">04</div>
+        <div class="svc-body">
+          <div class="svc-title">EV Charging Point Installation</div>
+          <p class="svc-desc">Home and workplace EV charger installation. OZEV authorised &mdash; eligible customers can save up to &pound;350 per unit on installation.</p>
+        </div>
+        <span class="svc-tag tag-new">Growing Fast</span>
+      </div>
+      <div class="svc-row reveal">
+        <div class="svc-num">05</div>
+        <div class="svc-body">
+          <div class="svc-title">Sockets, Lighting &amp; Fitting</div>
+          <p class="svc-desc">Extra sockets, USB outlets, outdoor lighting, downlighters, smart home wiring and more. No job too small.</p>
+        </div>
+        <span class="svc-tag tag-light">Residential</span>
+      </div>
+      <div class="svc-row reveal">
+        <div class="svc-num">06</div>
+        <div class="svc-body">
+          <div class="svc-title">Commercial Electrical Services</div>
+          <p class="svc-desc">Offices, retail units, restaurants and schools. Planned maintenance, three-phase power and commercial compliance work.</p>
+        </div>
+        <span class="svc-tag tag-light">Commercial</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="services">
+<!-- EMERGENCY SECTION -->
+<section id="emergency">
+  <div class="emg-glow"></div>
   <div class="container">
-    <h2>Our Services</h2>
-    <p class="sub">Professional Electricians services across all London boroughs</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <span class="sc-icon">&#10003;</span>
-        <div class="sc-title">Residential</div>
-        <p class="sc-desc">Trusted by homeowners across London for reliable, high-quality work done right first time.</p>
+    <div class="emg-inner reveal">
+      <div>
+        <div class="emg-label"><span class="pulse" style="background:#FCA5A5;"></span> Available Right Now</div>
+        <h2>Electrical Emergency?<br>We&rsquo;re Available 24/7.</h2>
+        <p>Power cuts, tripped fuses, sparking sockets, burning smells &mdash; don&rsquo;t wait. Our emergency electricians cover all London postcodes and can typically be with you within 90 minutes.</p>
       </div>
-      <div class="service-card">
-        <span class="sc-icon">&#127970;</span>
-        <div class="sc-title">Commercial</div>
-        <p class="sc-desc">We work with businesses, landlords and property managers throughout Greater London.</p>
-      </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128241;</span>
-        <div class="sc-title">Emergency Callouts</div>
-        <p class="sc-desc">Fast response when you need it most. We cover all London postcodes, seven days a week.</p>
-      </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128205;</span>
-        <div class="sc-title">All London Boroughs</div>
-        <p class="sc-desc">From Hackney to Hammersmith, Croydon to Camden &mdash; we cover the entire Greater London area.</p>
+      <div class="emg-ctas">
+        <div class="emg-phone"><a href="tel:02030000000">020 3000 0000</a></div>
+        <div class="emg-sub">Available 24 hours &bull; 7 days a week</div>
+        <a href="tel:02030000000" class="btn btn-red btn-lg" style="margin-top:8px;">&#128222; Call the Emergency Line</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="why">
+<!-- WHY US -->
+<section id="why-us">
   <div class="container">
-    <h2>Why Choose Us?</h2>
-    <p class="sub">Trusted by hundreds of London customers</p>
-    <div class="trust-items">
-      <div class="trust-item"><div class="trust-num">500+</div><div class="trust-lbl">Jobs Completed</div></div>
-      <div class="trust-item"><div class="trust-num">5&#9733;</div><div class="trust-lbl">Google Rating</div></div>
-      <div class="trust-item"><div class="trust-num">10+</div><div class="trust-lbl">Years Experience</div></div>
-      <div class="trust-item"><div class="trust-num">32</div><div class="trust-lbl">London Boroughs Covered</div></div>
+    <div class="section-header center reveal">
+      <span class="section-tag tag-yellow">Why Choose Apex</span>
+      <h2>Safe Hands Every Time</h2>
+      <p>We don&rsquo;t cut corners. Every job is done to the highest safety standards.</p>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-item"><span class="wi-icon">&#128196;</span><div class="wi-title">Certified &amp; Compliant</div><p class="wi-desc">All work is NICEIC certified and Part P compliant. You receive full certification and documentation on completion.</p></div>
+      <div class="why-item"><span class="wi-icon">&#128221;</span><div class="wi-title">Fixed Prices</div><p class="wi-desc">We quote before we start. No call-out surprises, no labour rate changes mid-job. The price we quote is the price you pay.</p></div>
+      <div class="why-item"><span class="wi-icon">&#128214;</span><div class="wi-title">Landlord Specialists</div><p class="wi-desc">EICR certificates, remedial works and compliance reports. We keep your property legal and your tenants safe.</p></div>
+      <div class="why-item"><span class="wi-icon">&#9989;</span><div class="wi-title">Tidy Workmanship</div><p class="wi-desc">We protect your home, chase cables neatly and leave every job clean. You won&rsquo;t know we were there, except for the results.</p></div>
+      <div class="why-item"><span class="wi-icon">&#128222;</span><div class="wi-title">Always Contactable</div><p class="wi-desc">Direct line to your electrician. No middlemen. Updates during the job and a follow-up call to make sure you&rsquo;re satisfied.</p></div>
+      <div class="why-item"><span class="wi-icon">&#128274;</span><div class="wi-title">Fully Insured</div><p class="wi-desc">Public liability insurance up to &pound;5m. You and your property are fully protected on every single job we carry out.</p></div>
     </div>
   </div>
 </section>
 
-<section class="cta-section">
+<!-- GALLERY -->
+<section id="gallery">
   <div class="container">
-    <h2>Ready to Book? Get a Free Quote Today.</h2>
-    <p>No call centres, no pressure. Just a quick chat and a fair, honest price.</p>
-    <a href="#get-started" class="btn btn-gold">Request a Free Quote</a>
+    <div class="section-header gallery-header center reveal">
+      <span class="section-tag" style="background:rgba(245,158,11,.12);color:var(--yellow);">Our Work</span>
+      <h2>Recent Projects Across London</h2>
+      <p>A selection of residential and commercial electrical work completed across the city.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item"><div class="gi-bg gi-1"><span class="gi-icon">&#9889;</span><span class="gi-label">Consumer Unit Upgrade</span></div><div class="gi-overlay"></div></div>
+      <div class="gallery-item"><div class="gi-bg gi-2"><span class="gi-icon">&#127968;</span><span class="gi-label">Full Rewire &bull; Islington</span></div><div class="gi-overlay"></div></div>
+      <div class="gallery-item"><div class="gi-bg gi-3"><span class="gi-icon">&#128665;</span><span class="gi-label">EV Charger &bull; Hackney</span></div><div class="gi-overlay"></div></div>
+      <div class="gallery-item"><div class="gi-bg gi-4"><span class="gi-icon">&#128196;</span><span class="gi-label">EICR Certificate &bull; Kensington</span></div><div class="gi-overlay"></div></div>
+      <div class="gallery-item"><div class="gi-bg gi-5"><span class="gi-icon">&#127970;</span><span class="gi-label">Commercial Install &bull; Soho</span></div><div class="gi-overlay"></div></div>
+      <div class="gallery-item"><div class="gi-bg gi-6"><span class="gi-icon">&#9728;</span><span class="gi-label">Garden Lighting &bull; Richmond</span></div><div class="gi-overlay"></div></div>
+    </div>
+    <p class="gallery-note">&#128247; Real project photos will replace these tiles on your live site</p>
   </div>
 </section>
 
-<section class="contact-mini" id="get-started">
+<!-- TESTIMONIALS -->
+<section id="testimonials">
   <div class="container">
-    <h2>Request This Template</h2>
-    <p class="sub">Like what you see? Contact Yoel at Graft Digital to get your own Electricians website live within days.</p>
-    <div class="mini-form">
-      <form id="reqForm">
-        <div class="fg"><label>Your Name</label><input type="text" placeholder="John Smith" required></div>
-        <div class="fg"><label>Email</label><input type="email" placeholder="john@yourcompany.co.uk" required></div>
-        <div class="fg"><label>Phone</label><input type="tel" placeholder="+44 7XXX XXX XXX"></div>
-        <div class="fg"><label>Tell me about your business</label><textarea placeholder="Where in London are you based? Do you have a logo or existing site?"></textarea></div>
-        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;font-size:.97rem;">Send Enquiry to Graft Digital &rarr;</button>
-      </form>
+    <div class="section-header center reveal">
+      <span class="section-tag tag-yellow">Reviews</span>
+      <h2>What Our Customers Say</h2>
+      <p>5.0 stars across 120+ verified Google reviews.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">Apex rewired our Victorian terrace in Islington from top to bottom. Immaculate work, incredibly tidy and the certificate was issued the same day. It&rsquo;s rare to find tradespeople who combine skill with genuine professionalism.</p>
+        <div class="reviewer"><div class="rev-avatar">DM</div><div><div class="rev-name">David M.</div><div class="rev-loc">Islington, N1</div><div class="rev-src">&#9679; Google Review</div></div></div>
+      </div>
+      <div class="review-card reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">Called them at 11pm for a power cut emergency. Electrician was at our flat in Clapham within the hour, diagnosed the fault straight away and had us back on in 40 minutes. Absolute lifesavers.</p>
+        <div class="reviewer"><div class="rev-avatar">KP</div><div><div class="rev-name">Karen P.</div><div class="rev-loc">Clapham, SW4</div><div class="rev-src">&#9679; Google Review</div></div></div>
+      </div>
+      <div class="review-card reveal">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">Got my EICR and consumer unit upgrade done on the same day for a great price. The landlord certificate was emailed over within the hour. Will definitely be using them for all my rental properties going forward.</p>
+        <div class="reviewer"><div class="rev-avatar">RB</div><div><div class="rev-name">Robert B.</div><div class="rev-loc">Landlord &bull; Croydon</div><div class="rev-src">&#9679; Google Review</div></div></div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- AREAS + QUOTE -->
+<section id="areas-quote">
+  <div class="container">
+    <div class="aq-grid">
+      <div class="areas-col reveal">
+        <span class="section-tag tag-yellow" style="margin-bottom:14px;display:inline-block;">Areas We Cover</span>
+        <h2>Serving All of Greater London</h2>
+        <p>Our electricians are based across the city so we can get to you fast &mdash; for both planned work and emergencies.</p>
+        <div class="boroughs">
+          <span class="boro">Barnet</span><span class="boro">Brent</span><span class="boro">Camden</span>
+          <span class="boro">City of London</span><span class="boro">Croydon</span><span class="boro">Ealing</span>
+          <span class="boro">Enfield</span><span class="boro">Greenwich</span><span class="boro">Hackney</span>
+          <span class="boro">Hammersmith</span><span class="boro">Haringey</span><span class="boro">Harrow</span>
+          <span class="boro">Havering</span><span class="boro">Hillingdon</span><span class="boro">Hounslow</span>
+          <span class="boro">Islington</span><span class="boro">Kensington</span><span class="boro">Kingston</span>
+          <span class="boro">Lambeth</span><span class="boro">Lewisham</span><span class="boro">Merton</span>
+          <span class="boro">Newham</span><span class="boro">Redbridge</span><span class="boro">Richmond</span>
+          <span class="boro">Southwark</span><span class="boro">Sutton</span><span class="boro">Tower Hamlets</span>
+          <span class="boro">Waltham Forest</span><span class="boro">Wandsworth</span><span class="boro">Westminster</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="quote-form-wrap">
+          <div class="qf-title">Get a Free Quote</div>
+          <div class="qf-sub">We&rsquo;ll respond within 2 hours &bull; Mon&ndash;Sun</div>
+          <form id="quoteForm">
+            <div class="form-row">
+              <div class="fg"><label>First Name</label><input type="text" placeholder="John" required></div>
+              <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith" required></div>
+            </div>
+            <div class="fg"><label>Email</label><input type="email" placeholder="john@email.com" required></div>
+            <div class="fg"><label>Phone</label><input type="tel" placeholder="07XXX XXX XXX" required></div>
+            <div class="form-row">
+              <div class="fg">
+                <label>Service Required</label>
+                <select required>
+                  <option value="" disabled selected>Select&hellip;</option>
+                  <option>EICR Certificate</option>
+                  <option>Full Rewire</option>
+                  <option>Consumer Unit Upgrade</option>
+                  <option>EV Charging Point</option>
+                  <option>Sockets / Lighting</option>
+                  <option>Commercial Work</option>
+                  <option>Emergency Callout</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="fg"><label>Postcode</label><input type="text" placeholder="e.g. N1 2AB"></div>
+            </div>
+            <div class="fg"><label>Tell us more (optional)</label><textarea placeholder="Property type, scope of work, any urgency&hellip;"></textarea></div>
+            <button type="submit" class="btn btn-yellow" style="width:100%;justify-content:center;font-size:.95rem;padding:14px;">
+              Request My Free Quote &rarr;
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <div class="container">
-    <div class="footer-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text" style="color:#fff;">Graft<span style="color:var(--gold);">Digital</span></span>
-      </a>
-      <span class="footer-copy">&copy; 2025 <strong>Graft Digital</strong> &mdash; Built by Yoel Gutierrez &middot; London</span>
+    <div class="footer-grid">
+      <div>
+        <a href="#" class="logo">
+          <span class="logo-bolt">&#9889;</span>
+          <div class="logo-name"><strong>Apex Electrical</strong><span>London</span></div>
+        </a>
+        <p class="footer-desc">NICEIC approved electricians serving all London boroughs. Residential, commercial and emergency electrical services. Part P registered, fully insured, 5-star rated.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">EICR Certificates</a></li>
+          <li><a href="#services">Full Rewires</a></li>
+          <li><a href="#services">Consumer Units</a></li>
+          <li><a href="#services">EV Charging</a></li>
+          <li><a href="#services">Sockets &amp; Lighting</a></li>
+          <li><a href="#services">Commercial</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#why-us">About Us</a></li>
+          <li><a href="#gallery">Our Work</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#areas-quote">Get a Quote</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:02030000000">020 3000 0000 (24/7)</a></li>
+          <li><a href="mailto:info@apexelectrical.co.uk">info@apexelectrical.co.uk</a></li>
+          <li><a href="#">WhatsApp Us</a></li>
+          <li><a href="#areas-quote">London, UK</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Apex Electrical London. All rights reserved. NICEIC Approved Contractor.</p>
+      <span class="built-by">Website by <a href="https://graftdigital.london" target="_blank">Graft Digital</a></span>
     </div>
   </div>
 </footer>
+
+<!-- FLOATING EMERGENCY BTN (mobile) -->
+<div class="float-emg">
+  <a href="tel:02030000000">&#9889; Emergency Line</a>
+</div>
+
 <script>
-  document.getElementById('reqForm').addEventListener('submit',function(e){
+  /* Navbar */
+  window.addEventListener('scroll', () => {}, { passive: true });
+
+  /* Mobile menu */
+  document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
+  document.getElementById('mobileClose').addEventListener('click', closeMob);
+  function closeMob() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  /* Scroll reveal */
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  /* Quote form */
+  document.getElementById('quoteForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    const f=this;
-    const btn=f.querySelector('button[type=submit]');
-    const inp=f.querySelector('input[name=template]');
-    const tmpl=inp?inp.value:'General';
-    const name=f.querySelector('input[type=text]').value;
-    const email=f.querySelector('input[type=email]').value;
-    const phone=f.querySelector('input[type=tel]').value;
-    const msg=f.querySelector('textarea').value;
-    const body='Name: '+name+'\nEmail: '+email+'\nPhone: '+phone+'\nTemplate: '+tmpl+'\n\nMessage:\n'+msg;
-    window.location.href='mailto:sales@graftdigital.london?subject='+encodeURIComponent('Template Request – '+tmpl+' – '+name)+'&body='+encodeURIComponent(body);
-    btn.textContent='✓ Opening your email app…';
-    btn.style.background='#22c55e'; btn.style.color='#fff'; btn.disabled=true;
+    const f     = this;
+    const fname = f.querySelectorAll('input[type=text]')[0].value;
+    const lname = f.querySelectorAll('input[type=text]')[1].value;
+    const email = f.querySelector('input[type=email]').value;
+    const phone = f.querySelector('input[type=tel]').value;
+    const svc   = f.querySelector('select').value;
+    const post  = f.querySelectorAll('input[type=text]')[2].value;
+    const msg   = f.querySelector('textarea').value;
+    const body  = 'Name: '+fname+' '+lname+'\nEmail: '+email+'\nPhone: '+phone+'\nService: '+svc+'\nPostcode: '+post+'\n\nNotes:\n'+msg;
+    window.location.href = 'mailto:info@apexelectrical.co.uk?subject='+encodeURIComponent('Quote Request \u2013 '+fname+' '+lname+' \u2013 '+svc)+'&body='+encodeURIComponent(body);
+    const btn = f.querySelector('button[type=submit]');
+    btn.textContent = '\u2713 Opening your email app\u2026';
+    btn.style.background = '#22c55e';
+    btn.style.color = '#fff';
+    btn.disabled = true;
   });
 </script>
 </body>
