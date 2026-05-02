@@ -3,215 +3,752 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Roofing Website Template | Graft Digital</title>
-  <meta name="description" content="Roof repairs, replacements and inspections for London properties.">
-  <meta name="keywords" content="roofer London, roof repair">
+  <title>Summit Roofing London | Roof Repairs, Replacements &amp; Inspections</title>
+  <meta name="description" content="London's trusted roofers. Emergency leak repairs, full roof replacements, flat roofing, guttering and more. Free roof inspection. 10-year workmanship guarantee.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:#0A1628; --navy-mid:#0F2040; --gold:#F5A623; --gold-dark:#C98010;
-      --gold-light:#FFB84D; --white:#FFFFFF; --off-white:#F7F9FC;
-      --text:#1A2332; --text-mid:#4A5568; --border:#E2E8F0;
+      --charcoal: #1C1917;
+      --charcoal-mid: #292524;
+      --charcoal-light: #44403C;
+      --red: #B91C1C;
+      --red-mid: #DC2626;
+      --red-light: #FEE2E2;
+      --cream: #FDFAF5;
+      --stone: #F5F0E8;
+      --white: #FFFFFF;
+      --text: #1C1917;
+      --text-mid: #57534E;
+      --text-muted: #A8A29E;
+      --border: #E7E0D5;
+      --gold: #D97706;
+      --gold-pale: #FEF3C7;
     }
     html { scroll-behavior: smooth; }
-    body { font-family:'Inter',-apple-system,sans-serif; color:var(--text); background:var(--white); line-height:1.6; }
-    a { text-decoration:none; color:inherit; }
-    .container { max-width:1100px; margin:0 auto; padding:0 24px; }
-    /* TOPBAR */
-    .topbar { background:var(--navy); padding:14px 0; position:sticky; top:0; z-index:100; box-shadow:0 2px 12px rgba(0,0,0,.25); }
-    .topbar-inner { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-    .logo { display:flex; align-items:center; gap:9px; }
-    .logo-mark { width:34px; height:34px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:900; color:var(--navy); }
-    .logo-text { font-size:1.1rem; font-weight:900; color:#fff; letter-spacing:-.03em; }
-    .logo-text span { color:var(--gold); }
-    .back-link { color:rgba(255,255,255,.7); font-size:.85rem; font-weight:500; display:flex; align-items:center; gap:6px; transition:color .2s; }
-    .back-link:hover { color:var(--gold); }
-    /* HERO */
-    .hero { background:var(--navy); background-image:radial-gradient(ellipse at 15% 60%,rgba(26,53,96,.6) 0%,transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(245,166,35,.07) 0%,transparent 50%); min-height:480px; display:flex; align-items:center; padding:72px 0 64px; position:relative; overflow:hidden; }
-    .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px); background-size:54px 54px; }
-    .hero-content { position:relative; z-index:2; max-width:680px; }
-    .preview-banner { background:rgba(245,166,35,.1); border:1px solid rgba(245,166,35,.3); border-radius:10px; padding:15px 20px; margin-bottom:36px; display:flex; align-items:flex-start; gap:11px; max-width:600px; }
-    .preview-banner p { color:rgba(255,255,255,.8); font-size:.86rem; line-height:1.55; margin:0; }
-    .preview-banner strong { color:var(--gold); }
-    .hero-tag { display:inline-flex; align-items:center; gap:7px; background:rgba(245,166,35,.13); border:1px solid rgba(245,166,35,.28); color:var(--gold-light); padding:6px 15px; border-radius:100px; font-size:.8rem; font-weight:600; margin-bottom:20px; }
-    .hero-icon { font-size:3.2rem; margin-bottom:10px; display:block; line-height:1; }
-    .hero h1 { font-size:clamp(2.1rem,4.5vw,3.4rem); color:#fff; letter-spacing:-.04em; margin-bottom:16px; line-height:1.15; font-weight:900; }
-    .hero h1 span { color:var(--gold); }
-    .hero > .container > .hero-content > p { color:rgba(255,255,255,.68); font-size:1.05rem; max-width:520px; margin-bottom:32px; }
-    .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
-    .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:8px; font-size:.95rem; font-weight:700; cursor:pointer; transition:all .22s ease; border:none; font-family:inherit; }
-    .btn-gold { background:var(--gold); color:var(--navy); }
-    .btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 20px rgba(245,166,35,.35); }
-    .btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.35); }
-    .btn-outline:hover { border-color:#fff; background:rgba(255,255,255,.08); }
-    /* SERVICES */
-    .services { padding:80px 0; background:var(--off-white); }
-    .services h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .services .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
-    .service-card { background:#fff; border-radius:12px; padding:28px 24px; border:1px solid var(--border); transition:all .22s ease; }
-    .service-card:hover { transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.08); border-color:rgba(245,166,35,.3); }
-    .sc-icon { font-size:1.8rem; margin-bottom:12px; display:block; }
-    .sc-title { font-size:1rem; font-weight:700; margin-bottom:6px; }
-    .sc-desc { font-size:.88rem; color:var(--text-mid); line-height:1.65; }
-    /* TRUST */
-    .why { padding:80px 0; background:var(--white); }
-    .why h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .why .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .trust-items { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; text-align:center; }
-    .trust-item { padding:28px 16px; }
-    .trust-num { font-size:2.4rem; font-weight:900; color:var(--gold-dark); line-height:1; margin-bottom:6px; }
-    .trust-lbl { font-size:.88rem; color:var(--text-mid); }
-    /* CTA */
-    .cta-section { padding:72px 0; background:var(--navy); background-image:radial-gradient(ellipse at 80% 50%,rgba(245,166,35,.08) 0%,transparent 55%); text-align:center; }
-    .cta-section h2 { color:#fff; font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; margin-bottom:14px; }
-    .cta-section p { color:rgba(255,255,255,.65); font-size:1rem; margin-bottom:32px; max-width:480px; margin-left:auto; margin-right:auto; }
-    /* FORM */
-    .contact-mini { padding:80px 0; background:var(--off-white); }
-    .contact-mini h2 { font-size:clamp(1.5rem,3vw,2rem); font-weight:800; text-align:center; margin-bottom:8px; }
-    .contact-mini .sub { text-align:center; color:var(--text-mid); font-size:.97rem; margin-bottom:32px; }
-    .mini-form { max-width:520px; margin:0 auto; background:#fff; border-radius:16px; padding:36px; border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,0,0,.06); }
-    .fg { margin-bottom:16px; }
-    .fg label { display:block; font-size:.84rem; font-weight:600; margin-bottom:6px; }
-    .fg input,.fg textarea { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:8px; font-size:.92rem; font-family:inherit; color:var(--text); outline:none; transition:border .2s; }
-    .fg input:focus,.fg textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(245,166,35,.12); }
-    .fg textarea { resize:vertical; min-height:88px; }
-    /* FOOTER */
-    footer { background:#050D1A; padding:32px 0; border-top:1px solid rgba(255,255,255,.05); }
-    .footer-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
-    .footer-copy { color:rgba(255,255,255,.35); font-size:.82rem; }
-    .footer-copy strong { color:var(--gold); }
-    @media(max-width:600px){ .hero-ctas{flex-direction:column;} .hero-ctas .btn{justify-content:center;} }
+    body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── TEMPLATE BANNER ── */
+    .template-banner { background: var(--charcoal); padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .template-badge { background: var(--gold); color: var(--charcoal); font-size: .72rem; font-weight: 800; padding: 3px 10px; border-radius: 20px; letter-spacing: .04em; text-transform: uppercase; }
+    .template-back { color: rgba(255,255,255,.7); font-size: .82rem; font-weight: 500; display: flex; align-items: center; gap: 6px; transition: color .2s; }
+    .template-back:hover { color: var(--gold); }
+
+    /* ── EMERGENCY BAR ── */
+    .emergency-bar {
+      background: var(--red); color: white;
+      padding: 11px 24px;
+      display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;
+    }
+    .emergency-bar .emg-text { font-size: .88rem; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+    .emg-pulse { display: inline-block; width: 10px; height: 10px; background: white; border-radius: 50%; animation: emgpulse 1.4s infinite; flex-shrink: 0; }
+    @keyframes emgpulse { 0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(255,255,255,.6)} 50%{opacity:.7;box-shadow:0 0 0 6px rgba(255,255,255,0)} }
+    .emergency-bar a.emg-call { background: white; color: var(--red); font-size: .88rem; font-weight: 900; padding: 6px 18px; border-radius: 6px; transition: opacity .2s; }
+    .emergency-bar a.emg-call:hover { opacity: .88; }
+
+    /* ── NAVBAR ── */
+    .navbar { background: var(--charcoal); position: sticky; top: 0; z-index: 200; box-shadow: 0 2px 16px rgba(0,0,0,.4); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: 1100px; margin: 0 auto; }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark { width: 40px; height: 40px; background: var(--red); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+    .logo-name { font-size: 1.1rem; font-weight: 900; color: white; letter-spacing: -.02em; }
+    .logo-name span { color: var(--gold); }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: .88rem; font-weight: 600; color: rgba(255,255,255,.7); transition: color .2s; }
+    .nav-links a:hover { color: white; }
+    .nav-cta { background: var(--red); color: white; padding: 10px 22px; border-radius: 8px; font-size: .88rem; font-weight: 700; transition: background .2s; }
+    .nav-cta:hover { background: var(--red-mid); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; }
+    .mobile-menu { display: none; background: var(--charcoal-mid); border-top: 1px solid rgba(255,255,255,.08); }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; padding: 14px 24px; font-size: .95rem; font-weight: 600; color: rgba(255,255,255,.75); border-bottom: 1px solid rgba(255,255,255,.06); }
+    .mobile-menu a:last-child { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--charcoal);
+      padding: 80px 0 0;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent 0px, transparent 28px,
+        rgba(255,255,255,.012) 28px, rgba(255,255,255,.012) 29px
+      );
+    }
+    .hero-inner { display: grid; grid-template-columns: 1fr 440px; gap: 60px; align-items: end; position: relative; z-index: 1; }
+    .hero-content { padding-bottom: 80px; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(185,28,28,.25); border: 1px solid rgba(185,28,28,.5);
+      color: #FCA5A5; padding: 6px 14px; border-radius: 6px;
+      font-size: .78rem; font-weight: 700; margin-bottom: 24px; letter-spacing: .06em; text-transform: uppercase;
+    }
+    .hero h1 { font-size: clamp(2.4rem, 4.5vw, 3.8rem); font-weight: 900; line-height: 1.05; color: white; margin-bottom: 22px; letter-spacing: -.03em; }
+    .hero h1 span { color: var(--gold); }
+    .hero-sub { font-size: 1rem; color: rgba(255,255,255,.65); margin-bottom: 36px; max-width: 480px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
+    .btn-red { background: var(--red); color: white; padding: 14px 30px; border-radius: 8px; font-size: .98rem; font-weight: 800; transition: background .2s; }
+    .btn-red:hover { background: var(--red-mid); }
+    .btn-ghost { border: 1.5px solid rgba(255,255,255,.3); color: white; padding: 14px 30px; border-radius: 8px; font-size: .98rem; font-weight: 700; transition: all .2s; }
+    .btn-ghost:hover { border-color: white; background: rgba(255,255,255,.06); }
+    .hero-stats { display: flex; gap: 32px; flex-wrap: wrap; }
+    .hero-stat { }
+    .hero-stat .num { font-size: 2rem; font-weight: 900; color: white; line-height: 1; }
+    .hero-stat .lbl { font-size: .75rem; color: rgba(255,255,255,.5); font-weight: 600; margin-top: 2px; }
+
+    /* Hero visual: stacked roof cards */
+    .hero-visual { display: flex; flex-direction: column; gap: 0; align-self: stretch; justify-content: flex-end; }
+    .roof-card {
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+      padding: 20px 24px;
+      display: flex; align-items: center; gap: 16px;
+      border-bottom: none;
+      transition: background .2s;
+    }
+    .roof-card:first-child { border-radius: 16px 16px 0 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .roof-card:last-child { border-bottom: 1px solid rgba(255,255,255,.1); }
+    .roof-card:hover { background: rgba(255,255,255,.09); }
+    .roof-card-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .roof-card-text strong { display: block; font-size: .9rem; font-weight: 800; color: white; }
+    .roof-card-text span { font-size: .78rem; color: rgba(255,255,255,.55); }
+    .roof-card-badge {
+      margin-left: auto; background: rgba(217,119,6,.2); border: 1px solid rgba(217,119,6,.4);
+      color: var(--gold); font-size: .7rem; font-weight: 800; padding: 3px 9px; border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    /* ── GUARANTEE STRIP ── */
+    .guarantee-strip { background: var(--gold); padding: 20px 0; }
+    .guarantee-inner { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .guarantee-item { display: flex; align-items: center; gap: 10px; font-size: .9rem; font-weight: 800; color: var(--charcoal); }
+    .guarantee-item .gicon { font-size: 1.3rem; }
+
+    /* ── SERVICES ── */
+    .services { padding: 88px 0; background: var(--cream); }
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-tag { display: inline-block; background: var(--red-light); color: var(--red); font-size: .73rem; font-weight: 800; padding: 5px 14px; border-radius: 6px; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 12px; }
+    .section-header h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 900; letter-spacing: -.03em; margin-bottom: 12px; }
+    .section-header p { font-size: .97rem; color: var(--text-mid); max-width: 520px; margin: 0 auto; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .service-card {
+      background: white; border: 1px solid var(--border); border-radius: 16px;
+      padding: 28px 22px; position: relative; overflow: hidden;
+      transition: box-shadow .25s, transform .25s;
+    }
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--charcoal);
+    }
+    .service-card.featured::before { background: var(--red); }
+    .service-card:hover { box-shadow: 0 10px 36px rgba(0,0,0,.1); transform: translateY(-4px); }
+    .svc-icon { font-size: 2rem; margin-bottom: 14px; display: block; }
+    .service-card h3 { font-size: .97rem; font-weight: 800; margin-bottom: 8px; }
+    .service-card p { font-size: .83rem; color: var(--text-mid); margin-bottom: 14px; }
+    .svc-from { font-size: .78rem; font-weight: 800; color: var(--red); }
+
+    /* ── ROOFING MATERIALS ── */
+    .materials { padding: 88px 0; background: var(--charcoal); }
+    .materials .section-header h2 { color: white; }
+    .materials .section-header p { color: rgba(255,255,255,.6); }
+    .materials .section-tag { background: rgba(185,28,28,.3); color: #FCA5A5; }
+    .materials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; border: 2px solid rgba(255,255,255,.06); border-radius: 16px; overflow: hidden; }
+    .material-tile {
+      padding: 32px 28px; background: rgba(255,255,255,.04); border-right: 1px solid rgba(255,255,255,.06);
+      transition: background .2s;
+    }
+    .material-tile:nth-child(3n) { border-right: none; }
+    .material-tile:hover { background: rgba(255,255,255,.08); }
+    .mat-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+    .mat-name { font-size: 1rem; font-weight: 800; color: white; margin-bottom: 6px; }
+    .mat-desc { font-size: .82rem; color: rgba(255,255,255,.55); margin-bottom: 12px; }
+    .mat-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .mat-tag { background: rgba(255,255,255,.06); color: rgba(255,255,255,.6); font-size: .7rem; font-weight: 700; padding: 3px 9px; border-radius: 4px; }
+
+    /* ── PROCESS ── */
+    .process { padding: 88px 0; background: var(--stone); }
+    .process-timeline { max-width: 700px; margin: 0 auto; position: relative; }
+    .process-timeline::before {
+      content: ''; position: absolute; left: 28px; top: 0; bottom: 0; width: 2px;
+      background: linear-gradient(to bottom, var(--red) 0%, var(--charcoal) 100%);
+    }
+    .process-step {
+      display: flex; gap: 28px; align-items: flex-start; margin-bottom: 40px; position: relative;
+    }
+    .process-step:last-child { margin-bottom: 0; }
+    .step-num {
+      width: 58px; height: 58px; background: var(--charcoal); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; font-weight: 900; color: white; flex-shrink: 0; z-index: 1;
+      border: 3px solid var(--stone);
+    }
+    .process-step.highlight .step-num { background: var(--red); }
+    .step-content { padding-top: 10px; }
+    .step-content h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 6px; }
+    .step-content p { font-size: .88rem; color: var(--text-mid); }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { padding: 88px 0; background: white; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .review-card { background: var(--cream); border: 1px solid var(--border); border-radius: 16px; padding: 28px 24px; }
+    .review-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .reviewer { display: flex; align-items: center; gap: 12px; }
+    .reviewer-avatar { width: 44px; height: 44px; background: var(--charcoal); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .95rem; font-weight: 900; color: white; }
+    .reviewer-name { font-size: .9rem; font-weight: 800; }
+    .reviewer-loc { font-size: .77rem; color: var(--text-muted); }
+    .stars { color: var(--gold); font-size: .9rem; letter-spacing: 1px; }
+    .review-text { font-size: .87rem; color: var(--text-mid); line-height: 1.65; font-style: italic; }
+    .review-service { display: inline-block; margin-top: 14px; background: var(--red-light); color: var(--red); font-size: .72rem; font-weight: 700; padding: 3px 10px; border-radius: 4px; }
+
+    /* ── INSURANCE & CERTS ── */
+    .certs { padding: 56px 0; background: var(--charcoal-mid); }
+    .certs-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
+    .certs-text h3 { font-size: 1.2rem; font-weight: 900; color: white; margin-bottom: 6px; }
+    .certs-text p { font-size: .88rem; color: rgba(255,255,255,.6); max-width: 440px; }
+    .certs-badges { display: flex; gap: 14px; flex-wrap: wrap; }
+    .cert-badge { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: 10px; padding: 14px 20px; text-align: center; }
+    .cert-badge .cb-icon { font-size: 1.4rem; display: block; margin-bottom: 4px; }
+    .cert-badge .cb-name { font-size: .72rem; font-weight: 800; color: rgba(255,255,255,.7); letter-spacing: .04em; text-transform: uppercase; }
+
+    /* ── CONTACT ── */
+    .contact { padding: 88px 0; background: var(--cream); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .contact-left h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 900; letter-spacing: -.03em; margin-bottom: 14px; }
+    .contact-left p { font-size: .95rem; color: var(--text-mid); margin-bottom: 32px; }
+    .contact-details { display: flex; flex-direction: column; gap: 16px; }
+    .contact-row { display: flex; align-items: flex-start; gap: 14px; }
+    .contact-icon { width: 44px; height: 44px; background: var(--red-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .contact-row-text strong { display: block; font-size: .82rem; font-weight: 700; color: var(--text-muted); margin-bottom: 2px; }
+    .contact-row-text a { color: var(--charcoal); font-size: .95rem; font-weight: 700; transition: color .2s; }
+    .contact-row-text a:hover { color: var(--red); }
+    .contact-form { background: white; border-radius: 20px; padding: 36px 32px; border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(0,0,0,.06); }
+    .contact-form h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 24px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: .82rem; font-weight: 700; margin-bottom: 6px; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 11px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-family: inherit; font-size: .9rem; color: var(--text); outline: none; transition: border-color .2s; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--charcoal); }
+    .form-group textarea { min-height: 90px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .btn-submit { width: 100%; background: var(--charcoal); color: white; border: none; padding: 14px; border-radius: 10px; font-family: inherit; font-size: 1rem; font-weight: 800; cursor: pointer; transition: background .2s; }
+    .btn-submit:hover { background: var(--charcoal-mid); }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--charcoal); color: white; padding: 56px 0 28px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .footer-logo-mark { width: 36px; height: 36px; background: var(--red); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: .95rem; }
+    .footer-logo-text { font-size: 1rem; font-weight: 900; color: white; }
+    .footer-brand p { font-size: .85rem; color: rgba(255,255,255,.5); max-width: 280px; }
+    .footer-col h4 { font-size: .78rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 14px; color: rgba(255,255,255,.35); }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { font-size: .87rem; color: rgba(255,255,255,.55); transition: color .2s; }
+    .footer-col ul a:hover { color: var(--gold); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .footer-bottom p { font-size: .8rem; color: rgba(255,255,255,.35); }
+    .footer-bottom a { color: var(--gold); }
+
+    /* ── FLOATING CTA ── */
+    .floating-cta { display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--red); color: white; padding: 14px 28px; border-radius: 50px; font-size: .95rem; font-weight: 800; box-shadow: 0 4px 24px rgba(185,28,28,.5); z-index: 500; white-space: nowrap; }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .55s ease, transform .55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .materials-grid { grid-template-columns: 1fr 1fr; }
+      .materials-grid .material-tile:nth-child(2n) { border-right: none; }
+      .reviews-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .certs-inner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .materials-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .floating-cta { display: flex; }
+      .guarantee-inner { gap: 16px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-<header class="topbar">
-  <div class="container">
-    <div class="topbar-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text">Graft<span>Digital</span></span>
-      </a>
-      <a href="../index.html#industries" class="back-link">&larr; All Templates</a>
-    </div>
-  </div>
-</header>
 
-<section class="hero">
-  <div class="hero-grid"></div>
-  <div class="container">
-    <div class="hero-content">
-      <div class="preview-banner">
-        <span style="font-size:1.2rem;flex-shrink:0;">&#128065;</span>
-        <p>This is a <strong>sample template</strong> for a Roofing business. Your real site will be fully customised with your branding, photos &amp; details. <a href="#get-started" style="color:var(--gold);font-weight:700;">Request this template &darr;</a></p>
-      </div>
-      <div class="hero-tag">&#128205; London Trade Template</div>
-      <span class="hero-icon">&#127968;</span>
-      <h1>London&rsquo;s Trusted<br><span>Roofing</span><br>Specialists</h1>
-      <p>Roof repairs, replacements and inspections for London properties.</p>
-      <div class="hero-ctas">
-        <a href="#get-started" class="btn btn-gold">Get a Free Quote</a>
-        <a href="tel:+447895628993" class="btn btn-outline">&#128222; Call Now</a>
-      </div>
-    </div>
+  <!-- TEMPLATE BANNER -->
+  <div class="template-banner">
+    <span class="template-badge">Template Preview</span>
+    <a href="https://graftdigital.london" class="template-back">&#8592; Back to Graft Digital</a>
   </div>
-</section>
 
-<section class="services">
-  <div class="container">
-    <h2>Our Services</h2>
-    <p class="sub">Professional Roofing services across all London boroughs</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <span class="sc-icon">&#10003;</span>
-        <div class="sc-title">Residential</div>
-        <p class="sc-desc">Trusted by homeowners across London for reliable, high-quality work done right first time.</p>
+  <!-- EMERGENCY BAR -->
+  <div class="emergency-bar">
+    <span class="emg-text"><span class="emg-pulse"></span> Roof Leaking? We Offer 24/7 Emergency Repairs Across London</span>
+    <a href="tel:+447895628993" class="emg-call">Call Now: +44 7895 628993</a>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="logo">
+        <div class="logo-mark">&#127968;</div>
+        <span class="logo-name">Summit <span>Roofing</span></span>
       </div>
-      <div class="service-card">
-        <span class="sc-icon">&#127970;</span>
-        <div class="sc-title">Commercial</div>
-        <p class="sc-desc">We work with businesses, landlords and property managers throughout Greater London.</p>
-      </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128241;</span>
-        <div class="sc-title">Emergency Callouts</div>
-        <p class="sc-desc">Fast response when you need it most. We cover all London postcodes, seven days a week.</p>
-      </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128205;</span>
-        <div class="sc-title">All London Boroughs</div>
-        <p class="sc-desc">From Hackney to Hammersmith, Croydon to Camden &mdash; we cover the entire Greater London area.</p>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#materials">Roof Types</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact" class="nav-cta">Free Inspection</a></li>
+      </ul>
+      <div class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+        <span></span><span></span><span></span>
       </div>
     </div>
-  </div>
-</section>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#services" onclick="document.getElementById('mobileMenu').classList.remove('open')">Services</a>
+      <a href="#materials" onclick="document.getElementById('mobileMenu').classList.remove('open')">Roof Types</a>
+      <a href="#process" onclick="document.getElementById('mobileMenu').classList.remove('open')">Our Process</a>
+      <a href="#reviews" onclick="document.getElementById('mobileMenu').classList.remove('open')">Reviews</a>
+      <a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Free Inspection</a>
+    </div>
+  </nav>
 
-<section class="why">
-  <div class="container">
-    <h2>Why Choose Us?</h2>
-    <p class="sub">Trusted by hundreds of London customers</p>
-    <div class="trust-items">
-      <div class="trust-item"><div class="trust-num">500+</div><div class="trust-lbl">Jobs Completed</div></div>
-      <div class="trust-item"><div class="trust-num">5&#9733;</div><div class="trust-lbl">Google Rating</div></div>
-      <div class="trust-item"><div class="trust-num">10+</div><div class="trust-lbl">Years Experience</div></div>
-      <div class="trust-item"><div class="trust-num">32</div><div class="trust-lbl">London Boroughs Covered</div></div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-eyebrow">&#127968; London&#8217;s Trusted Roofers Since 2009</div>
+          <h1>Roof Repairs &amp; Replacements Done <span>Right.</span></h1>
+          <p class="hero-sub">From emergency leak fixes to full roof replacements — Summit Roofing delivers quality craftsmanship with a 10-year guarantee, across every London borough.</p>
+          <div class="hero-btns">
+            <a href="#contact" class="btn-red">Book Free Inspection</a>
+            <a href="tel:+447895628993" class="btn-ghost">&#128222; 24/7 Emergency Line</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat"><div class="num">3,200+</div><div class="lbl">Roofs Completed</div></div>
+            <div class="hero-stat"><div class="num">15yr</div><div class="lbl">Trading in London</div></div>
+            <div class="hero-stat"><div class="num">4.9&#11088;</div><div class="lbl">Average Rating</div></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="roof-card">
+            <div class="roof-card-icon">&#9889;</div>
+            <div class="roof-card-text"><strong>Emergency Leak Repairs</strong><span>Same-day response available</span></div>
+            <span class="roof-card-badge">24/7</span>
+          </div>
+          <div class="roof-card">
+            <div class="roof-card-icon">&#127968;</div>
+            <div class="roof-card-text"><strong>Full Roof Replacement</strong><span>Strip, batten and re-tile</span></div>
+            <span class="roof-card-badge">Most Popular</span>
+          </div>
+          <div class="roof-card">
+            <div class="roof-card-icon">&#9749;</div>
+            <div class="roof-card-text"><strong>Flat Roof Specialist</strong><span>EPDM, GRP fibreglass, felt</span></div>
+          </div>
+          <div class="roof-card">
+            <div class="roof-card-icon">&#127783;</div>
+            <div class="roof-card-text"><strong>Guttering &amp; Fascias</strong><span>Supply &amp; fit, all systems</span></div>
+          </div>
+          <div class="roof-card">
+            <div class="roof-card-icon">&#128269;</div>
+            <div class="roof-card-text"><strong>Free Roof Inspection</strong><span>Full written report provided</span></div>
+            <span class="roof-card-badge">Free</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE STRIP -->
+  <div class="guarantee-strip">
+    <div class="container">
+      <div class="guarantee-inner">
+        <div class="guarantee-item"><span class="gicon">&#9989;</span> 10-Year Workmanship Guarantee</div>
+        <div class="guarantee-item"><span class="gicon">&#128176;</span> £2M Public Liability Insurance</div>
+        <div class="guarantee-item"><span class="gicon">&#9889;</span> 24/7 Emergency Call-Out</div>
+        <div class="guarantee-item"><span class="gicon">&#128269;</span> Free Roof Inspection</div>
+        <div class="guarantee-item"><span class="gicon">&#127942;</span> NFRC Registered</div>
+      </div>
     </div>
   </div>
-</section>
 
-<section class="cta-section">
-  <div class="container">
-    <h2>Ready to Book? Get a Free Quote Today.</h2>
-    <p>No call centres, no pressure. Just a quick chat and a fair, honest price.</p>
-    <a href="#get-started" class="btn btn-gold">Request a Free Quote</a>
-  </div>
-</section>
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Our Services</div>
+        <h2>Every Roofing Job, Done Properly</h2>
+        <p>From a single slipped tile to a complete roof overhaul — we handle every roofing challenge across London.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card featured reveal">
+          <span class="svc-icon">&#9889;</span>
+          <h3>Emergency Repairs</h3>
+          <p>Storm damage, sudden leaks or collapsed sections — we respond fast, day or night, to make your property safe.</p>
+          <div class="svc-from">24/7 Available</div>
+        </div>
+        <div class="service-card reveal">
+          <span class="svc-icon">&#127968;</span>
+          <h3>Roof Replacement</h3>
+          <p>Full strip and re-cover using your choice of tiles, slates or felt. Includes new battens, felt underlay and all fixings.</p>
+          <div class="svc-from">From £2,800</div>
+        </div>
+        <div class="service-card reveal">
+          <span class="svc-icon">&#128269;</span>
+          <h3>Roof Repairs</h3>
+          <p>Missing or broken tiles, cracked flashing, repointing of ridge and verge — we fix all common roofing problems.</p>
+          <div class="svc-from">From £150</div>
+        </div>
+        <div class="service-card reveal">
+          <span class="svc-icon">&#9749;</span>
+          <h3>Flat Roofing</h3>
+          <p>Specialist EPDM rubber, GRP fibreglass and traditional felt flat roofing for extensions, garages and commercial premises.</p>
+          <div class="svc-from">From £900</div>
+        </div>
+        <div class="service-card reveal">
+          <span class="svc-icon">&#127783;</span>
+          <h3>Gutters &amp; Fascias</h3>
+          <p>UPVC and cast iron guttering systems, fascia boards, soffits and bargeboards — supply, fit and repair.</p>
+          <div class="svc-from">From £200</div>
+        </div>
+        <div class="service-card reveal">
+          <span class="svc-icon">&#128167;</span>
+          <h3>Chimney &amp; Flashing</h3>
+          <p>Repointing, rendering, lead flashing replacement and full chimney rebuilds to prevent leaks at all roof penetrations.</p>
+          <div class="svc-from">From £300</div>
+        </div>
+        <div class="service-card reveal">
+          <span class="svc-icon">&#127774;</span>
+          <h3>Roof Cleaning</h3>
+          <p>Moss and algae removal, biocide treatment and pressure washing to extend the life of your tiles and prevent damage.</p>
+          <div class="svc-from">From £250</div>
+        </div>
+        <div class="service-card reveal">
+          <span class="svc-icon">&#128221;</span>
+          <h3>Roof Inspections</h3>
+          <p>Comprehensive inspection with a full written report — ideal before buying a property or after storm damage.</p>
+          <div class="svc-from">Free</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="contact-mini" id="get-started">
-  <div class="container">
-    <h2>Request This Template</h2>
-    <p class="sub">Like what you see? Contact Yoel at Graft Digital to get your own Roofing website live within days.</p>
-    <div class="mini-form">
-      <form id="reqForm">
-        <div class="fg"><label>Your Name</label><input type="text" placeholder="John Smith" required></div>
-        <div class="fg"><label>Email</label><input type="email" placeholder="john@yourcompany.co.uk" required></div>
-        <div class="fg"><label>Phone</label><input type="tel" placeholder="+44 7XXX XXX XXX"></div>
-        <div class="fg"><label>Tell me about your business</label><textarea placeholder="Where in London are you based? Do you have a logo or existing site?"></textarea></div>
-        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;font-size:.97rem;">Send Enquiry to Graft Digital &rarr;</button>
-      </form>
+  <!-- ROOFING MATERIALS -->
+  <section class="materials" id="materials">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Roof Types</div>
+        <h2>We Work with Every Roofing Material</h2>
+        <p>Whatever your roof is made of, our experienced team has the skills to repair, restore or replace it.</p>
+      </div>
+      <div class="materials-grid reveal">
+        <div class="material-tile">
+          <span class="mat-icon">&#127928;</span>
+          <div class="mat-name">Concrete &amp; Clay Tiles</div>
+          <div class="mat-desc">The most common choice for London homes. We supply and fit all major tile profiles.</div>
+          <div class="mat-tags"><span class="mat-tag">Repair</span><span class="mat-tag">Replace</span><span class="mat-tag">New Build</span></div>
+        </div>
+        <div class="material-tile">
+          <span class="mat-icon">&#129504;</span>
+          <div class="mat-name">Natural Slate</div>
+          <div class="mat-desc">Premium Welsh, Spanish and Brazilian slate — matched and re-used where possible.</div>
+          <div class="mat-tags"><span class="mat-tag">Repair</span><span class="mat-tag">Re-slate</span><span class="mat-tag">Heritage</span></div>
+        </div>
+        <div class="material-tile">
+          <span class="mat-icon">&#128971;</span>
+          <div class="mat-name">EPDM Rubber</div>
+          <div class="mat-desc">The gold standard for flat roofing. Single-layer, seamless, 50-year lifespan.</div>
+          <div class="mat-tags"><span class="mat-tag">Flat Roofs</span><span class="mat-tag">Extensions</span><span class="mat-tag">Garages</span></div>
+        </div>
+        <div class="material-tile">
+          <span class="mat-icon">&#9732;</span>
+          <div class="mat-name">GRP Fibreglass</div>
+          <div class="mat-desc">Rigid, seamless fibreglass overlay — ideal for complex flat roof shapes and bay windows.</div>
+          <div class="mat-tags"><span class="mat-tag">Flat Roofs</span><span class="mat-tag">Bay Windows</span></div>
+        </div>
+        <div class="material-tile">
+          <span class="mat-icon">&#128167;</span>
+          <div class="mat-name">Lead &amp; Flashing</div>
+          <div class="mat-desc">Traditional lead work for valleys, flashings, dormers and chimney weathering.</div>
+          <div class="mat-tags"><span class="mat-tag">Repair</span><span class="mat-tag">Replacement</span><span class="mat-tag">Heritage</span></div>
+        </div>
+        <div class="material-tile">
+          <span class="mat-icon">&#128218;</span>
+          <div class="mat-name">Felt &amp; Torch-On</div>
+          <div class="mat-desc">Traditional high-performance felt and torch-on felt for cost-effective flat roof solutions.</div>
+          <div class="mat-tags"><span class="mat-tag">Flat Roofs</span><span class="mat-tag">Re-felt</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">How It Works</div>
+        <h2>From First Call to Finished Roof</h2>
+        <p>A straightforward, transparent process — so you always know exactly what to expect.</p>
+      </div>
+      <div class="process-timeline">
+        <div class="process-step reveal">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Free Roof Inspection</h3>
+            <p>We come to you at a time that suits — one of our experienced roofers will thoroughly inspect your roof and identify every issue, no matter how small.</p>
+          </div>
+        </div>
+        <div class="process-step highlight reveal">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Written Quote — No Hidden Costs</h3>
+            <p>You receive a detailed written quote within 24 hours, breaking down every element of the work and materials. No surprises when the invoice arrives.</p>
+          </div>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Work Scheduled at Your Convenience</h3>
+            <p>We plan the job around you. Most repairs are completed the same week — larger projects are scheduled with a full timeline so you&#8217;re always informed.</p>
+          </div>
+        </div>
+        <div class="process-step reveal">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h3>Expert Installation &amp; Clean-Up</h3>
+            <p>Our team works cleanly and efficiently. We remove all old materials, leave your property tidy and respect your neighbours throughout the job.</p>
+          </div>
+        </div>
+        <div class="process-step highlight reveal">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h3>10-Year Guarantee Issued</h3>
+            <p>Once complete, you receive a signed 10-year workmanship guarantee — and we&#8217;re always available if anything ever needs attention.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="reviews">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Reviews</div>
+        <h2>What London Homeowners Say</h2>
+        <p>Hundreds of five-star reviews from satisfied customers across Greater London.</p>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card reveal">
+          <div class="review-top">
+            <div class="reviewer">
+              <div class="reviewer-avatar">M</div>
+              <div><div class="reviewer-name">Michael T.</div><div class="reviewer-loc">Tottenham, N17</div></div>
+            </div>
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+          <p class="review-text">"Roof was leaking badly after the storms. Summit came out the same day, found two cracked tiles and damaged flashing. Sorted it in a couple of hours. Price was very fair and they were spotlessly clean. Won&#8217;t use anyone else."</p>
+          <span class="review-service">Emergency Repair</span>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-top">
+            <div class="reviewer">
+              <div class="reviewer-avatar">L</div>
+              <div><div class="reviewer-name">Linda F.</div><div class="reviewer-loc">Chiswick, W4</div></div>
+            </div>
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+          <p class="review-text">"Had the entire roof replaced on our Victorian terrace. The team were so professional — scaffolding up Monday, new roof by Thursday, scaffolding gone Friday. The finish is beautiful and the written guarantee gives real peace of mind."</p>
+          <span class="review-service">Full Replacement</span>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-top">
+            <div class="reviewer">
+              <div class="reviewer-avatar">D</div>
+              <div><div class="reviewer-name">David K.</div><div class="reviewer-loc">Peckham, SE15</div></div>
+            </div>
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+          <p class="review-text">"Flat roof on our extension was letting water in. Summit fitted EPDM rubber and it&#8217;s transformed it. They explained every option clearly, didn&#8217;t push the most expensive solution and the workmanship is outstanding. Highly recommended."</p>
+          <span class="review-service">Flat Roofing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTS -->
+  <div class="certs">
+    <div class="container">
+      <div class="certs-inner">
+        <div class="certs-text">
+          <h3>Accredited, Insured &amp; Registered</h3>
+          <p>All work is carried out by qualified roofers, fully insured to £2M public liability. Every job comes with a signed 10-year workmanship guarantee.</p>
+        </div>
+        <div class="certs-badges">
+          <div class="cert-badge"><span class="cb-icon">&#127942;</span><span class="cb-name">NFRC</span></div>
+          <div class="cert-badge"><span class="cb-icon">&#128272;</span><span class="cb-name">£2M Insured</span></div>
+          <div class="cert-badge"><span class="cb-icon">&#9989;</span><span class="cb-name">TrustMark</span></div>
+          <div class="cert-badge"><span class="cb-icon">&#128221;</span><span class="cb-name">Which? Trusted</span></div>
+          <div class="cert-badge"><span class="cb-icon">&#11088;</span><span class="cb-name">Checkatrade</span></div>
+        </div>
+      </div>
     </div>
   </div>
-</section>
 
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text" style="color:#fff;">Graft<span style="color:var(--gold);">Digital</span></span>
-      </a>
-      <span class="footer-copy">&copy; 2025 <strong>Graft Digital</strong> &mdash; Built by Yoel Gutierrez &middot; London</span>
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left reveal">
+          <div class="section-tag">Contact Us</div>
+          <h2>Get Your Free Roof Inspection</h2>
+          <p>Whether you need an emergency repair or want to know the state of your roof, we'll send an experienced roofer to inspect it — completely free, with no obligation.</p>
+          <div class="contact-details">
+            <div class="contact-row">
+              <div class="contact-icon">&#9889;</div>
+              <div class="contact-row-text">
+                <strong>24/7 Emergency</strong>
+                <a href="tel:+447895628993">+44 7895 628993</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-icon">&#9993;</div>
+              <div class="contact-row-text">
+                <strong>Email</strong>
+                <a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-icon">&#128337;</div>
+              <div class="contact-row-text">
+                <strong>Office Hours</strong>
+                <a>Mon&#8211;Fri 7am&#8211;7pm, Sat 8am&#8211;5pm</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form reveal">
+          <h3>Book a Free Inspection</h3>
+          <form onsubmit="handleContact(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" id="cFirst" placeholder="Michael" required>
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" id="cLast" placeholder="Turner" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="tel" id="cPhone" placeholder="+44 7xxx xxxxxx" required>
+            </div>
+            <div class="form-group">
+              <label>Postcode</label>
+              <input type="text" id="cPost" placeholder="e.g. N17 6AB">
+            </div>
+            <div class="form-group">
+              <label>Type of Work</label>
+              <select id="cService">
+                <option value="">Select type...</option>
+                <option>Emergency Repair</option>
+                <option>Roof Repair</option>
+                <option>Full Roof Replacement</option>
+                <option>Flat Roofing</option>
+                <option>Gutters &amp; Fascias</option>
+                <option>Chimney &amp; Flashing</option>
+                <option>Roof Inspection Only</option>
+                <option>Other / Not Sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Additional Details</label>
+              <textarea id="cMsg" placeholder="e.g. Leaking around chimney on Victorian terrace, 3-bed house in Tottenham..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Book Free Inspection &#8594;</button>
+          </form>
+        </div>
+      </div>
     </div>
-  </div>
-</footer>
-<script>
-  document.getElementById('reqForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    const f=this;
-    const btn=f.querySelector('button[type=submit]');
-    const inp=f.querySelector('input[name=template]');
-    const tmpl=inp?inp.value:'General';
-    const name=f.querySelector('input[type=text]').value;
-    const email=f.querySelector('input[type=email]').value;
-    const phone=f.querySelector('input[type=tel]').value;
-    const msg=f.querySelector('textarea').value;
-    const body='Name: '+name+'\nEmail: '+email+'\nPhone: '+phone+'\nTemplate: '+tmpl+'\n\nMessage:\n'+msg;
-    window.location.href='mailto:sales@graftdigital.london?subject='+encodeURIComponent('Template Request – '+tmpl+' – '+name)+'&body='+encodeURIComponent(body);
-    btn.textContent='✓ Opening your email app…';
-    btn.style.background='#22c55e'; btn.style.color='#fff'; btn.disabled=true;
-  });
-</script>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-mark">&#127968;</div>
+            <span class="footer-logo-text">Summit Roofing London</span>
+          </div>
+          <p>London&#8217;s trusted roofers since 2009. NFRC registered, fully insured, with a 10-year workmanship guarantee on all work.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Emergency Repairs</a></li>
+            <li><a href="#services">Roof Replacement</a></li>
+            <li><a href="#services">Flat Roofing</a></li>
+            <li><a href="#services">Gutters &amp; Fascias</a></li>
+            <li><a href="#services">Inspections</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+447895628993">+44 7895 628993 (24/7)</a></li>
+            <li><a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a></li>
+            <li><a href="#contact">Free Roof Inspection</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&#169; 2025 Summit Roofing London Ltd. All rights reserved.</p>
+        <p>Website by <a href="https://graftdigital.london">Graft Digital</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING CTA -->
+  <a href="tel:+447895628993" class="floating-cta">&#9889; 24/7 Emergency: +44 7895 628993</a>
+
+  <script>
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => obs.observe(el));
+
+    // Contact form
+    function handleContact(e) {
+      e.preventDefault();
+      const first = document.getElementById('cFirst').value;
+      const last = document.getElementById('cLast').value;
+      const phone = document.getElementById('cPhone').value;
+      const post = document.getElementById('cPost').value;
+      const service = document.getElementById('cService').value || 'Not specified';
+      const msg = document.getElementById('cMsg').value;
+      const subject = 'Roofing Enquiry \u2013 ' + first + ' ' + last + ' \u2013 ' + service;
+      const body = 'Name: ' + first + ' ' + last + '\nPhone: ' + phone + '\nPostcode: ' + post + '\nService: ' + service + '\n\nDetails:\n' + msg;
+      window.location.href = 'mailto:sales@graftdigital.london?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    }
+  </script>
 </body>
 </html>
