@@ -3,214 +3,724 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HVAC Website Template | Graft Digital</title>
-  <meta name="description" content="Air conditioning installation, service &amp; repair for London homes and offices.">
-  <meta name="keywords" content="HVAC London, air conditioning installation">
+  <title>Celsius HVAC London | Air Conditioning, Heating & Ventilation</title>
+  <meta name="description" content="F-Gas certified HVAC engineers covering London and the South East. Air conditioning, heating, ventilation and mechanical services for commercial and residential buildings.">
+  <meta name="keywords" content="HVAC London, air conditioning installation London, F-Gas engineer, commercial HVAC, ventilation London, heating engineer London">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy:#0A1628; --navy-mid:#0F2040; --gold:#F5A623; --gold-dark:#C98010;
-      --gold-light:#FFB84D; --white:#FFFFFF; --off-white:#F7F9FC;
-      --text:#1A2332; --text-mid:#4A5568; --border:#E2E8F0;
-    }
     html { scroll-behavior: smooth; }
-    body { font-family:'Inter',-apple-system,sans-serif; color:var(--text); background:var(--white); line-height:1.6; }
+
+    :root {
+      --slate:      #0D1B2E;
+      --slate-mid:  #162840;
+      --slate-lt:   #1E3A5A;
+      --cyan:       #0891B2;
+      --cyan-mid:   #06B6D4;
+      --cyan-lt:    #22D3EE;
+      --cyan-bg:    #ECFEFF;
+      --cyan-border:#A5F3FC;
+      --ice:        #F0F9FF;
+      --orange:     #F97316;
+      --white:      #FFFFFF;
+      --off-white:  #F8FAFC;
+      --text:       #0F172A;
+      --text-mid:   #475569;
+      --text-lt:    #94A3B8;
+      --border:     #E2E8F0;
+      --trans:      all 0.22s ease;
+      --radius:     12px;
+      --shadow:     0 4px 6px -1px rgba(0,0,0,.08);
+      --shadow-lg:  0 10px 15px -3px rgba(0,0,0,.12);
+      --shadow-xl:  0 20px 25px -5px rgba(0,0,0,.15);
+      --glow-cyan:  0 0 28px rgba(8,145,178,.2);
+    }
+
+    body { font-family:'Inter',-apple-system,sans-serif; color:var(--text); background:var(--white); line-height:1.6; overflow-x:hidden; }
     a { text-decoration:none; color:inherit; }
-    .container { max-width:1100px; margin:0 auto; padding:0 24px; }
-    /* TOPBAR */
-    .topbar { background:var(--navy); padding:14px 0; position:sticky; top:0; z-index:100; box-shadow:0 2px 12px rgba(0,0,0,.25); }
-    .topbar-inner { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-    .logo { display:flex; align-items:center; gap:9px; }
-    .logo-mark { width:34px; height:34px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:900; color:var(--navy); }
-    .logo-text { font-size:1.1rem; font-weight:900; color:#fff; letter-spacing:-.03em; }
-    .logo-text span { color:var(--gold); }
-    .back-link { color:rgba(255,255,255,.7); font-size:.85rem; font-weight:500; display:flex; align-items:center; gap:6px; transition:color .2s; }
-    .back-link:hover { color:var(--gold); }
+    .container { max-width:1180px; margin:0 auto; padding:0 24px; }
+
+    /* BUTTONS */
+    .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:8px; font-size:.95rem; font-weight:700; cursor:pointer; transition:var(--trans); border:none; font-family:inherit; }
+    .btn-cyan    { background:var(--cyan); color:var(--white); }
+    .btn-cyan:hover { background:#0778a0; transform:translateY(-2px); box-shadow:var(--glow-cyan); }
+    .btn-outline-white { background:transparent; color:var(--white); border:2px solid rgba(255,255,255,.45); }
+    .btn-outline-white:hover { border-color:var(--white); background:rgba(255,255,255,.08); }
+    .btn-outline-cyan { background:transparent; color:var(--cyan); border:2px solid var(--cyan); }
+    .btn-outline-cyan:hover { background:var(--cyan); color:var(--white); }
+    .btn-slate { background:var(--slate); color:var(--white); }
+    .btn-slate:hover { background:var(--slate-lt); }
+    .btn-lg { padding:15px 34px; font-size:1rem; }
+
+    /* TEMPLATE BANNER */
+    .tpl-banner { background:#0A1628; border-bottom:1px solid rgba(245,166,35,.3); padding:9px 24px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+    .tpl-badge { background:#F5A623; color:#0A1628; font-size:.72rem; font-weight:800; padding:3px 10px; border-radius:100px; letter-spacing:.06em; text-transform:uppercase; }
+    .tpl-text  { color:rgba(255,255,255,.6); font-size:.82rem; }
+    .tpl-text strong { color:white; }
+    .tpl-back  { display:inline-flex; align-items:center; gap:6px; background:#F5A623; color:#0A1628; font-size:.8rem; font-weight:700; padding:6px 14px; border-radius:6px; white-space:nowrap; transition:var(--trans); }
+    .tpl-back:hover { background:#FFB84D; }
+
+    /* NAVBAR */
+    nav { background:var(--slate); position:sticky; top:0; z-index:200; border-bottom:1px solid rgba(255,255,255,.06); transition:var(--trans); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:15px 0; }
+    .logo { display:flex; align-items:center; gap:11px; }
+    .logo-icon { font-size:1.6rem; }
+    .logo-text strong { display:block; font-size:1.1rem; font-weight:900; color:var(--white); letter-spacing:-.03em; }
+    .logo-text span   { display:block; font-size:.65rem; font-weight:600; color:var(--cyan-lt); letter-spacing:.1em; text-transform:uppercase; }
+    .nav-links { display:flex; align-items:center; gap:26px; list-style:none; }
+    .nav-links a { font-size:.88rem; font-weight:500; color:rgba(255,255,255,.6); transition:var(--trans); }
+    .nav-links a:hover { color:var(--cyan-lt); }
+    .nav-right { display:flex; align-items:center; gap:10px; }
+    .nav-phone { display:flex; align-items:center; gap:7px; color:rgba(255,255,255,.75); font-size:.88rem; font-weight:700; }
+    .nav-phone a { color:var(--cyan-lt); transition:var(--trans); }
+    .nav-phone a:hover { color:var(--white); }
+    .hamburger { display:none; background:none; border:none; cursor:pointer; padding:4px; flex-direction:column; gap:5px; }
+    .hamburger span { display:block; width:22px; height:2px; background:rgba(255,255,255,.8); transition:var(--trans); }
+
     /* HERO */
-    .hero { background:var(--navy); background-image:radial-gradient(ellipse at 15% 60%,rgba(26,53,96,.6) 0%,transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(245,166,35,.07) 0%,transparent 50%); min-height:480px; display:flex; align-items:center; padding:72px 0 64px; position:relative; overflow:hidden; }
-    .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px); background-size:54px 54px; }
-    .hero-content { position:relative; z-index:2; max-width:680px; }
-    .preview-banner { background:rgba(245,166,35,.1); border:1px solid rgba(245,166,35,.3); border-radius:10px; padding:15px 20px; margin-bottom:36px; display:flex; align-items:flex-start; gap:11px; max-width:600px; }
-    .preview-banner p { color:rgba(255,255,255,.8); font-size:.86rem; line-height:1.55; margin:0; }
-    .preview-banner strong { color:var(--gold); }
-    .hero-tag { display:inline-flex; align-items:center; gap:7px; background:rgba(245,166,35,.13); border:1px solid rgba(245,166,35,.28); color:var(--gold-light); padding:6px 15px; border-radius:100px; font-size:.8rem; font-weight:600; margin-bottom:20px; }
-    .hero-icon { font-size:3.2rem; margin-bottom:10px; display:block; line-height:1; }
-    .hero h1 { font-size:clamp(2.1rem,4.5vw,3.4rem); color:#fff; letter-spacing:-.04em; margin-bottom:16px; line-height:1.15; font-weight:900; }
-    .hero h1 span { color:var(--gold); }
-    .hero > .container > .hero-content > p { color:rgba(255,255,255,.68); font-size:1.05rem; max-width:520px; margin-bottom:32px; }
-    .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
-    .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:8px; font-size:.95rem; font-weight:700; cursor:pointer; transition:all .22s ease; border:none; font-family:inherit; }
-    .btn-gold { background:var(--gold); color:var(--navy); }
-    .btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 20px rgba(245,166,35,.35); }
-    .btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.35); }
-    .btn-outline:hover { border-color:#fff; background:rgba(255,255,255,.08); }
-    /* SERVICES */
-    .services { padding:80px 0; background:var(--off-white); }
-    .services h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .services .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
-    .service-card { background:#fff; border-radius:12px; padding:28px 24px; border:1px solid var(--border); transition:all .22s ease; }
-    .service-card:hover { transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.08); border-color:rgba(245,166,35,.3); }
-    .sc-icon { font-size:1.8rem; margin-bottom:12px; display:block; }
-    .sc-title { font-size:1rem; font-weight:700; margin-bottom:6px; }
-    .sc-desc { font-size:.88rem; color:var(--text-mid); line-height:1.65; }
-    /* TRUST */
-    .why { padding:80px 0; background:var(--white); }
-    .why h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .why .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .trust-items { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; text-align:center; }
-    .trust-item { padding:28px 16px; }
-    .trust-num { font-size:2.4rem; font-weight:900; color:var(--gold-dark); line-height:1; margin-bottom:6px; }
-    .trust-lbl { font-size:.88rem; color:var(--text-mid); }
-    /* CTA */
-    .cta-section { padding:72px 0; background:var(--navy); background-image:radial-gradient(ellipse at 80% 50%,rgba(245,166,35,.08) 0%,transparent 55%); text-align:center; }
-    .cta-section h2 { color:#fff; font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; margin-bottom:14px; }
-    .cta-section p { color:rgba(255,255,255,.65); font-size:1rem; margin-bottom:32px; max-width:480px; margin-left:auto; margin-right:auto; }
-    /* FORM */
-    .contact-mini { padding:80px 0; background:var(--off-white); }
-    .contact-mini h2 { font-size:clamp(1.5rem,3vw,2rem); font-weight:800; text-align:center; margin-bottom:8px; }
-    .contact-mini .sub { text-align:center; color:var(--text-mid); font-size:.97rem; margin-bottom:32px; }
-    .mini-form { max-width:520px; margin:0 auto; background:#fff; border-radius:16px; padding:36px; border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,0,0,.06); }
-    .fg { margin-bottom:16px; }
-    .fg label { display:block; font-size:.84rem; font-weight:600; margin-bottom:6px; }
-    .fg input,.fg textarea { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:8px; font-size:.92rem; font-family:inherit; color:var(--text); outline:none; transition:border .2s; }
-    .fg input:focus,.fg textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(245,166,35,.12); }
+    #hero {
+      background: var(--slate);
+      background-image: radial-gradient(ellipse at 70% 40%, rgba(8,145,178,.12) 0%, transparent 60%), radial-gradient(ellipse at 20% 80%, rgba(8,145,178,.07) 0%, transparent 50%);
+      padding: 96px 0 180px;
+      clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid-bg { position:absolute; inset:0; background-image:linear-gradient(rgba(8,145,178,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(8,145,178,.04) 1px,transparent 1px); background-size:52px 52px; }
+    .hero-inner { position:relative; z-index:2; text-align:center; max-width:760px; margin:0 auto; }
+    .hero-eyebrow { display:inline-flex; align-items:center; gap:8px; background:rgba(8,145,178,.15); border:1px solid rgba(8,145,178,.3); color:var(--cyan-lt); padding:7px 18px; border-radius:100px; font-size:.78rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; margin-bottom:28px; }
+    .hero h1 { font-size:clamp(2.4rem,5vw,4.2rem); font-weight:900; color:var(--white); letter-spacing:-.05em; line-height:1.08; margin-bottom:22px; }
+    .hero h1 em { font-style:normal; color:var(--cyan-mid); }
+    .hero-sub { color:rgba(255,255,255,.65); font-size:1.08rem; max-width:580px; margin:0 auto 36px; line-height:1.75; }
+    .hero-ctas { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:48px; }
+    .hero-certrow { display:flex; align-items:center; justify-content:center; gap:24px; flex-wrap:wrap; }
+    .hc-badge { display:flex; align-items:center; gap:7px; color:rgba(255,255,255,.6); font-size:.78rem; font-weight:500; }
+    .hc-badge .dot { width:6px; height:6px; border-radius:50%; background:var(--cyan-mid); flex-shrink:0; }
+
+    /* FLOATING SERVICE CARDS */
+    .floating-cards { margin-top:-80px; position:relative; z-index:10; padding-bottom:64px; background:var(--white); }
+    .floating-cards-inner { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+    .fc { background:var(--white); border-radius:var(--radius); border:1px solid var(--border); padding:28px 22px; box-shadow:var(--shadow-xl); transition:var(--trans); cursor:pointer; position:relative; overflow:hidden; }
+    .fc::before { content:''; position:absolute; bottom:0; left:0; right:0; height:3px; transition:var(--trans); transform:scaleX(0); transform-origin:left; }
+    .fc.ac::before     { background:var(--cyan); }
+    .fc.heat::before   { background:var(--orange); }
+    .fc.vent::before   { background:#8B5CF6; }
+    .fc.mech::before   { background:#10B981; }
+    .fc:hover { transform:translateY(-5px); box-shadow:0 24px 40px rgba(0,0,0,.12); }
+    .fc:hover::before  { transform:scaleX(1); }
+    .fc-icon { font-size:2.2rem; margin-bottom:14px; display:block; }
+    .fc-title { font-size:1rem; font-weight:800; margin-bottom:8px; letter-spacing:-.02em; }
+    .fc-desc  { font-size:.83rem; color:var(--text-mid); line-height:1.65; margin-bottom:14px; }
+    .fc-link  { font-size:.8rem; font-weight:700; color:var(--cyan); display:flex; align-items:center; gap:4px; transition:var(--trans); }
+    .fc:hover .fc-link { gap:8px; }
+
+    /* SECTION COMMON */
+    .section-tag { display:inline-block; font-size:.74rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:5px 14px; border-radius:100px; margin-bottom:14px; }
+    .tag-cyan  { background:var(--cyan-bg); color:var(--cyan); }
+    .tag-slate { background:rgba(255,255,255,.08); color:rgba(255,255,255,.7); }
+    .section-header { margin-bottom:52px; }
+    .section-header h2 { font-size:clamp(1.8rem,3vw,2.6rem); font-weight:800; letter-spacing:-.04em; margin-bottom:12px; }
+    .section-header p  { color:var(--text-mid); font-size:1rem; max-width:520px; }
+    .section-header.center { text-align:center; }
+    .section-header.center p { margin:0 auto; }
+    .section-header.light h2 { color:var(--white); }
+    .section-header.light p  { color:rgba(255,255,255,.6); }
+
+    /* CERTS STRIP */
+    #certs { background:var(--off-white); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:22px 0; }
+    .certs-scroll { display:flex; align-items:center; justify-content:center; gap:0; flex-wrap:wrap; }
+    .cert-block { display:flex; align-items:center; gap:10px; padding:10px 28px; border-right:1px solid var(--border); }
+    .cert-block:last-child { border-right:none; }
+    .cb-icon { font-size:1.4rem; }
+    .cb-name { font-weight:800; font-size:.88rem; color:var(--text); }
+    .cb-sub  { font-size:.7rem; color:var(--cyan); font-weight:600; letter-spacing:.05em; text-transform:uppercase; }
+
+    /* SECTORS */
+    #sectors { padding:92px 0; background:var(--white); }
+    .sectors-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:14px; margin-top:16px; }
+    .sector-card { border:1px solid var(--border); border-radius:var(--radius); padding:24px 18px; text-align:center; transition:var(--trans); background:var(--white); }
+    .sector-card:hover { border-color:var(--cyan); background:var(--cyan-bg); transform:translateY(-3px); box-shadow:var(--shadow-lg); }
+    .sc-icon  { font-size:2rem; margin-bottom:10px; display:block; }
+    .sc-name  { font-size:.9rem; font-weight:700; color:var(--text); }
+    .sc-desc  { font-size:.76rem; color:var(--text-mid); margin-top:4px; line-height:1.5; }
+
+    /* FEATURES */
+    #features { padding:92px 0; background:var(--slate); }
+    .features-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; }
+    .feat-card { position:relative; border-radius:16px; padding:40px 32px; overflow:hidden; transition:var(--trans); }
+    .feat-card:hover { transform:translateY(-4px); }
+    .feat-card.f1 { background:rgba(8,145,178,.1); border:1px solid rgba(8,145,178,.2); }
+    .feat-card.f2 { background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); }
+    .feat-card.f3 { background:rgba(8,145,178,.07); border:1px solid rgba(8,145,178,.15); }
+    .feat-num  { font-size:4rem; font-weight:900; color:rgba(8,145,178,.15); line-height:1; margin-bottom:16px; }
+    .feat-title{ font-size:1.2rem; font-weight:800; color:var(--white); margin-bottom:12px; }
+    .feat-body { color:rgba(255,255,255,.55); font-size:.9rem; line-height:1.75; }
+    .feat-icon { font-size:2.4rem; margin-bottom:16px; display:block; }
+
+    /* FAQ */
+    #faq { padding:92px 0; background:var(--ice); }
+    .faq-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:64px; align-items:start; }
+    .faq-list  { display:flex; flex-direction:column; gap:10px; }
+    .faq-item  { background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius); overflow:hidden; transition:var(--trans); }
+    .faq-item.open { border-color:var(--cyan-border); }
+    .faq-q {
+      width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px;
+      padding:18px 22px; background:none; border:none; font-family:inherit;
+      font-size:.95rem; font-weight:700; color:var(--text); cursor:pointer; text-align:left;
+      transition:var(--trans);
+    }
+    .faq-q:hover { color:var(--cyan); }
+    .faq-item.open .faq-q { color:var(--cyan); }
+    .faq-chevron { font-size:.8rem; transition:var(--trans); flex-shrink:0; color:var(--text-lt); }
+    .faq-item.open .faq-chevron { transform:rotate(180deg); color:var(--cyan); }
+    .faq-a { max-height:0; overflow:hidden; transition:max-height .35s ease; }
+    .faq-a-inner { padding:0 22px 18px; font-size:.88rem; color:var(--text-mid); line-height:1.75; }
+    .faq-item.open .faq-a { max-height:300px; }
+
+    .faq-cta-box { background:var(--slate); border-radius:16px; padding:40px 36px; color:var(--white); position:sticky; top:100px; }
+    .fcb-tag  { display:inline-block; background:rgba(8,145,178,.2); color:var(--cyan-lt); font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:4px 12px; border-radius:100px; margin-bottom:16px; }
+    .fcb-title{ font-size:1.5rem; font-weight:800; margin-bottom:10px; }
+    .fcb-sub  { color:rgba(255,255,255,.55); font-size:.9rem; line-height:1.7; margin-bottom:24px; }
+    .fcb-list { list-style:none; margin-bottom:28px; }
+    .fcb-list li { display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid rgba(255,255,255,.06); color:rgba(255,255,255,.75); font-size:.88rem; }
+    .fcb-list li:last-child { border:none; }
+    .fcb-dot { width:18px; height:18px; border-radius:50%; background:rgba(8,145,178,.25); flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:.6rem; color:var(--cyan-lt); }
+
+    /* TESTIMONIALS */
+    #testimonials { padding:92px 0; background:var(--white); }
+    .reviews-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; }
+    .review-card { border-radius:var(--radius); padding:32px 28px; border:1px solid var(--border); transition:var(--trans); }
+    .review-card:hover { border-color:var(--cyan-border); box-shadow:var(--shadow-lg); transform:translateY(-3px); }
+    .rev-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+    .stars { color:#F59E0B; font-size:1rem; letter-spacing:2px; }
+    .rev-sector { font-size:.72rem; font-weight:700; color:var(--cyan); background:var(--cyan-bg); padding:3px 10px; border-radius:100px; letter-spacing:.04em; }
+    .rev-text { font-size:.9rem; color:var(--text-mid); line-height:1.75; font-style:italic; margin-bottom:18px; }
+    .rev-text::before { content:'\201C'; }
+    .rev-text::after  { content:'\201D'; }
+    .reviewer { display:flex; align-items:center; gap:10px; padding-top:14px; border-top:1px solid var(--border); }
+    .rev-av { width:38px; height:38px; border-radius:50%; background:var(--cyan-bg); display:flex; align-items:center; justify-content:center; font-size:.85rem; font-weight:800; color:var(--cyan); flex-shrink:0; }
+    .rev-name { font-size:.86rem; font-weight:700; }
+    .rev-loc  { font-size:.74rem; color:var(--text-lt); }
+
+    /* CONTACT */
+    #contact { padding:92px 0; background:var(--off-white); }
+    .contact-grid { display:grid; grid-template-columns:1.1fr 1fr; gap:56px; align-items:start; }
+    .cf-wrap { background:var(--white); border-radius:16px; padding:40px; border:1px solid var(--border); box-shadow:var(--shadow-lg); }
+    .cf-title { font-size:1.3rem; font-weight:800; margin-bottom:4px; }
+    .cf-sub   { font-size:.85rem; color:var(--text-mid); margin-bottom:24px; }
+    .fg { margin-bottom:14px; }
+    .fg label { display:block; font-size:.8rem; font-weight:600; margin-bottom:6px; }
+    .fg input,.fg select,.fg textarea { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:8px; font-size:.9rem; font-family:inherit; color:var(--text); outline:none; transition:var(--trans); }
+    .fg input:focus,.fg select:focus,.fg textarea:focus { border-color:var(--cyan); box-shadow:0 0 0 3px rgba(8,145,178,.1); }
     .fg textarea { resize:vertical; min-height:88px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .contact-info { }
+    .ci-title { font-size:clamp(1.5rem,2.5vw,2.2rem); font-weight:800; letter-spacing:-.03em; margin-bottom:14px; }
+    .ci-sub   { color:var(--text-mid); font-size:.97rem; line-height:1.75; margin-bottom:32px; }
+    .ci-items { display:flex; flex-direction:column; gap:12px; margin-bottom:32px; }
+    .ci-row { display:flex; align-items:center; gap:14px; }
+    .ci-icon { width:44px; height:44px; background:var(--cyan-bg); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+    .ci-label { font-size:.74rem; color:var(--text-lt); }
+    .ci-val   { font-size:.92rem; font-weight:700; color:var(--text); }
+    .ci-val a { color:var(--text); transition:var(--trans); }
+    .ci-val a:hover { color:var(--cyan); }
+    .borough-wrap { margin-top:28px; }
+    .bw-title { font-size:.82rem; font-weight:700; color:var(--text-mid); margin-bottom:10px; text-transform:uppercase; letter-spacing:.06em; }
+    .boroughs { display:flex; flex-wrap:wrap; gap:6px; }
+    .boro { background:var(--white); border:1px solid var(--border); border-radius:6px; padding:5px 11px; font-size:.76rem; font-weight:500; transition:var(--trans); }
+    .boro:hover { background:var(--cyan); color:var(--white); border-color:var(--cyan); }
+
     /* FOOTER */
-    footer { background:#050D1A; padding:32px 0; border-top:1px solid rgba(255,255,255,.05); }
-    .footer-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
-    .footer-copy { color:rgba(255,255,255,.35); font-size:.82rem; }
-    .footer-copy strong { color:var(--gold); }
-    @media(max-width:600px){ .hero-ctas{flex-direction:column;} .hero-ctas .btn{justify-content:center;} }
+    footer { background:var(--slate); padding:56px 0 28px; border-top:1px solid rgba(255,255,255,.06); }
+    .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; margin-bottom:44px; }
+    .footer-desc { color:rgba(255,255,255,.38); font-size:.84rem; line-height:1.75; margin-top:14px; }
+    .footer-col h4 { color:var(--white); font-size:.8rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; margin-bottom:16px; }
+    .footer-col ul { list-style:none; }
+    .footer-col li { margin-bottom:9px; }
+    .footer-col a  { color:rgba(255,255,255,.38); font-size:.84rem; transition:var(--trans); }
+    .footer-col a:hover { color:var(--cyan-lt); }
+    .footer-bottom { padding-top:24px; border-top:1px solid rgba(255,255,255,.06); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+    .footer-bottom p { color:rgba(255,255,255,.22); font-size:.77rem; }
+    .built-by { color:rgba(255,255,255,.2); font-size:.74rem; }
+    .built-by a { color:rgba(255,255,255,.35); transition:var(--trans); }
+    .built-by a:hover { color:#F5A623; }
+
+    /* MOBILE MENU */
+    .mobile-menu { display:none; position:fixed; inset:0; background:var(--slate); z-index:190; flex-direction:column; align-items:center; justify-content:center; gap:28px; }
+    .mobile-menu.open { display:flex; }
+    .mobile-menu a { font-size:1.35rem; font-weight:700; color:rgba(255,255,255,.8); transition:var(--trans); }
+    .mobile-menu a:hover { color:var(--cyan-lt); }
+    .mobile-close { position:absolute; top:20px; right:20px; background:none; border:none; font-size:1.6rem; cursor:pointer; color:rgba(255,255,255,.5); }
+
+    /* REVEAL */
+    .reveal { opacity:0; transform:translateY(20px); transition:opacity .55s ease,transform .55s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){ .footer-grid{grid-template-columns:1fr 1fr;} .features-grid{grid-template-columns:1fr 1fr;} }
+    @media(max-width:900px){ .floating-cards-inner{grid-template-columns:1fr 1fr;} .faq-grid{grid-template-columns:1fr;} .faq-cta-box{position:static;} .contact-grid{grid-template-columns:1fr;} }
+    @media(max-width:700px){ .nav-links,.nav-right{display:none;} .hamburger{display:flex;} .floating-cards-inner{grid-template-columns:1fr 1fr;} .features-grid{grid-template-columns:1fr;} .form-row{grid-template-columns:1fr;} .footer-grid{grid-template-columns:1fr;} .footer-bottom{flex-direction:column;text-align:center;} .cert-block:nth-child(n+5){display:none;} }
   </style>
 </head>
 <body>
-<header class="topbar">
+
+<!-- TEMPLATE BANNER -->
+<div class="tpl-banner">
+  <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+    <span class="tpl-badge">Template Preview</span>
+    <span class="tpl-text">This is an <strong>HVAC</strong> website template by Graft Digital. All content is customisable.</span>
+  </div>
+  <a href="https://graftdigital.london" class="tpl-back">&#8592; Back to Graft Digital</a>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
   <div class="container">
-    <div class="topbar-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text">Graft<span>Digital</span></span>
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">&#10052;</span>
+        <div class="logo-text">
+          <strong>Celsius HVAC</strong>
+          <span>London</span>
+        </div>
       </a>
-      <a href="../index.html#industries" class="back-link">&larr; All Templates</a>
+      <ul class="nav-links">
+        <li><a href="#floating-cards">Services</a></li>
+        <li><a href="#sectors">Sectors</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <span class="nav-phone">&#128222; <a href="tel:02030000000">020 3000 0000</a></span>
+        <a href="#contact" class="btn btn-cyan" style="padding:9px 20px;font-size:.88rem;">Enquire Now</a>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
     </div>
   </div>
-</header>
+</nav>
 
-<section class="hero">
-  <div class="hero-grid"></div>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&#x2715;</button>
+  <a href="#floating-cards" onclick="closeMob()">Services</a>
+  <a href="#sectors"        onclick="closeMob()">Sectors</a>
+  <a href="#faq"            onclick="closeMob()">FAQ</a>
+  <a href="#testimonials"   onclick="closeMob()">Reviews</a>
+  <a href="#contact"        onclick="closeMob()">Contact</a>
+  <a href="#contact" class="btn btn-cyan" onclick="closeMob()">Enquire Now</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
   <div class="container">
-    <div class="hero-content">
-      <div class="preview-banner">
-        <span style="font-size:1.2rem;flex-shrink:0;">&#128065;</span>
-        <p>This is a <strong>sample template</strong> for a HVAC business. Your real site will be fully customised with your branding, photos &amp; details. <a href="#get-started" style="color:var(--gold);font-weight:700;">Request this template &darr;</a></p>
-      </div>
-      <div class="hero-tag">&#128205; London Trade Template</div>
-      <span class="hero-icon">&#10052;</span>
-      <h1>London&rsquo;s Trusted<br><span>HVAC</span><br>Specialists</h1>
-      <p>Air conditioning installation, service &amp; repair for London homes and offices.</p>
+    <div class="hero-inner reveal">
+      <div class="hero-eyebrow">&#10052; F-Gas Certified &bull; 16+ Years &bull; London &amp; South East</div>
+      <h1>Precision <em>Climate Control</em><br>for London&rsquo;s Buildings</h1>
+      <p class="hero-sub">From single-room air conditioning to full building HVAC systems &mdash; Celsius designs, installs and maintains climate solutions for commercial and residential clients across London.</p>
       <div class="hero-ctas">
-        <a href="#get-started" class="btn btn-gold">Get a Free Quote</a>
-        <a href="tel:+447895628993" class="btn btn-outline">&#128222; Call Now</a>
+        <a href="#contact"        class="btn btn-cyan btn-lg">Request a Survey</a>
+        <a href="tel:02030000000" class="btn btn-outline-white btn-lg">&#128222; 020 3000 0000</a>
+      </div>
+      <div class="hero-certrow">
+        <div class="hc-badge"><span class="dot"></span> F-Gas Certified</div>
+        <div class="hc-badge"><span class="dot"></span> CHAS Accredited</div>
+        <div class="hc-badge"><span class="dot"></span> SafeContractor</div>
+        <div class="hc-badge"><span class="dot"></span> City &amp; Guilds</div>
+        <div class="hc-badge"><span class="dot"></span> REFCOM Registered</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="services">
+<!-- FLOATING SERVICE CARDS -->
+<div class="floating-cards" id="floating-cards">
   <div class="container">
-    <h2>Our Services</h2>
-    <p class="sub">Professional HVAC services across all London boroughs</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <span class="sc-icon">&#10003;</span>
-        <div class="sc-title">Residential</div>
-        <p class="sc-desc">Trusted by homeowners across London for reliable, high-quality work done right first time.</p>
+    <div class="floating-cards-inner">
+      <div class="fc ac reveal">
+        <span class="fc-icon">&#10052;</span>
+        <div class="fc-title">Air Conditioning</div>
+        <p class="fc-desc">Supply and install of split, multi-split and VRF systems for homes, offices and commercial premises. All major brands.</p>
+        <span class="fc-link">Learn more &#8594;</span>
       </div>
-      <div class="service-card">
+      <div class="fc heat reveal">
+        <span class="fc-icon">&#128293;</span>
+        <div class="fc-title">Heating Systems</div>
+        <p class="fc-desc">Commercial and residential heating design and installation. Heat pumps, fan coil units, underfloor heating and more.</p>
+        <span class="fc-link">Learn more &#8594;</span>
+      </div>
+      <div class="fc vent reveal">
+        <span class="fc-icon">&#127787;</span>
+        <div class="fc-title">Ventilation</div>
+        <p class="fc-desc">MVHR, MEV and commercial ventilation systems. Fresh air circulation, extract and heat recovery for healthier buildings.</p>
+        <span class="fc-link">Learn more &#8594;</span>
+      </div>
+      <div class="fc mech reveal">
+        <span class="fc-icon">&#9881;</span>
+        <div class="fc-title">Mechanical Services</div>
+        <p class="fc-desc">Planned maintenance contracts, reactive repairs and full M&amp;E fit-outs. Keeping your building systems running safely.</p>
+        <span class="fc-link">Learn more &#8594;</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CERTS STRIP -->
+<div id="certs">
+  <div class="container">
+    <div class="certs-scroll">
+      <div class="cert-block"><span class="cb-icon">&#127981;</span><div><div class="cb-name">F-Gas</div><div class="cb-sub">Category I Certified</div></div></div>
+      <div class="cert-block"><span class="cb-icon">&#9989;</span><div><div class="cb-name">CHAS</div><div class="cb-sub">Accredited</div></div></div>
+      <div class="cert-block"><span class="cb-icon">&#128274;</span><div><div class="cb-name">SafeContractor</div><div class="cb-sub">Approved</div></div></div>
+      <div class="cert-block"><span class="cb-icon">&#128196;</span><div><div class="cb-name">REFCOM</div><div class="cb-sub">Registered</div></div></div>
+      <div class="cert-block"><span class="cb-icon">&#127970;</span><div><div class="cb-name">CSCS</div><div class="cb-sub">Card Holders</div></div></div>
+      <div class="cert-block"><span class="cb-icon">&#128293;</span><div><div class="cb-name">City &amp; Guilds</div><div class="cb-sub">Qualified Engineers</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTORS -->
+<section id="sectors">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag tag-cyan">Sectors We Serve</span>
+      <h2>Climate Solutions for Every Building Type</h2>
+      <p>From a single office to a hospital ward &mdash; we have the expertise and accreditations to work across all sectors.</p>
+    </div>
+    <div class="sectors-grid reveal">
+      <div class="sector-card">
         <span class="sc-icon">&#127970;</span>
-        <div class="sc-title">Commercial</div>
-        <p class="sc-desc">We work with businesses, landlords and property managers throughout Greater London.</p>
+        <div class="sc-name">Commercial Offices</div>
+        <p class="sc-desc">VRF systems, BMS integration, full M&amp;E</p>
       </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128241;</span>
-        <div class="sc-title">Emergency Callouts</div>
-        <p class="sc-desc">Fast response when you need it most. We cover all London postcodes, seven days a week.</p>
+      <div class="sector-card">
+        <span class="sc-icon">&#127973;</span>
+        <div class="sc-name">Healthcare</div>
+        <p class="sc-desc">Sterile environments, infection control</p>
       </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128205;</span>
-        <div class="sc-title">All London Boroughs</div>
-        <p class="sc-desc">From Hackney to Hammersmith, Croydon to Camden &mdash; we cover the entire Greater London area.</p>
+      <div class="sector-card">
+        <span class="sc-icon">&#127859;</span>
+        <div class="sc-name">Hospitality</div>
+        <p class="sc-desc">Restaurants, hotels and bars</p>
+      </div>
+      <div class="sector-card">
+        <span class="sc-icon">&#127978;</span>
+        <div class="sc-name">Retail</div>
+        <p class="sc-desc">Shops, showrooms and malls</p>
+      </div>
+      <div class="sector-card">
+        <span class="sc-icon">&#127981;</span>
+        <div class="sc-name">Industrial</div>
+        <p class="sc-desc">Warehouses, factories, process cooling</p>
+      </div>
+      <div class="sector-card">
+        <span class="sc-icon">&#127968;</span>
+        <div class="sc-name">Residential</div>
+        <p class="sc-desc">Houses, flats and apartments</p>
+      </div>
+      <div class="sector-card">
+        <span class="sc-icon">&#127979;</span>
+        <div class="sc-name">Education</div>
+        <p class="sc-desc">Schools, colleges and universities</p>
+      </div>
+      <div class="sector-card">
+        <span class="sc-icon">&#128187;</span>
+        <div class="sc-name">Data Centres</div>
+        <p class="sc-desc">Precision cooling, critical environments</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="why">
+<!-- FEATURES -->
+<section id="features">
   <div class="container">
-    <h2>Why Choose Us?</h2>
-    <p class="sub">Trusted by hundreds of London customers</p>
-    <div class="trust-items">
-      <div class="trust-item"><div class="trust-num">500+</div><div class="trust-lbl">Jobs Completed</div></div>
-      <div class="trust-item"><div class="trust-num">5&#9733;</div><div class="trust-lbl">Google Rating</div></div>
-      <div class="trust-item"><div class="trust-num">10+</div><div class="trust-lbl">Years Experience</div></div>
-      <div class="trust-item"><div class="trust-num">32</div><div class="trust-lbl">London Boroughs Covered</div></div>
+    <div class="section-header light center reveal">
+      <span class="section-tag tag-slate">Why Celsius</span>
+      <h2>The Standard You Should Expect</h2>
+      <p>We don&rsquo;t just install &mdash; we design, commission and support every system we touch.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card f1 reveal">
+        <div class="feat-num">01</div>
+        <span class="feat-icon">&#128196;</span>
+        <div class="feat-title">Design &amp; Specification</div>
+        <p class="feat-body">Every project starts with a proper site survey and heat load calculation. We design the right system for your building, not just the cheapest one to install.</p>
+      </div>
+      <div class="feat-card f2 reveal">
+        <div class="feat-num">02</div>
+        <span class="feat-icon">&#9881;</span>
+        <div class="feat-title">Installation &amp; Commissioning</div>
+        <p class="feat-body">Our engineers are City &amp; Guilds trained and F-Gas certified. Every installation is fully commissioned, tested and documented before handover.</p>
+      </div>
+      <div class="feat-card f3 reveal">
+        <div class="feat-num">03</div>
+        <span class="feat-icon">&#128203;</span>
+        <div class="feat-title">Ongoing Maintenance</div>
+        <p class="feat-body">Planned Preventative Maintenance (PPM) contracts keep your systems running efficiently, extend their lifespan and protect your warranty. Reactive cover also available.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="cta-section">
+<!-- FAQ -->
+<section id="faq">
   <div class="container">
-    <h2>Ready to Book? Get a Free Quote Today.</h2>
-    <p>No call centres, no pressure. Just a quick chat and a fair, honest price.</p>
-    <a href="#get-started" class="btn btn-gold">Request a Free Quote</a>
-  </div>
-</section>
-
-<section class="contact-mini" id="get-started">
-  <div class="container">
-    <h2>Request This Template</h2>
-    <p class="sub">Like what you see? Contact Yoel at Graft Digital to get your own HVAC website live within days.</p>
-    <div class="mini-form">
-      <form id="reqForm">
-        <div class="fg"><label>Your Name</label><input type="text" placeholder="John Smith" required></div>
-        <div class="fg"><label>Email</label><input type="email" placeholder="john@yourcompany.co.uk" required></div>
-        <div class="fg"><label>Phone</label><input type="tel" placeholder="+44 7XXX XXX XXX"></div>
-        <div class="fg"><label>Tell me about your business</label><textarea placeholder="Where in London are you based? Do you have a logo or existing site?"></textarea></div>
-        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;font-size:.97rem;">Send Enquiry to Graft Digital &rarr;</button>
-      </form>
+    <div class="faq-grid">
+      <div>
+        <div class="section-header reveal">
+          <span class="section-tag tag-cyan">FAQ</span>
+          <h2>Common Questions</h2>
+          <p>Everything you need to know before getting in touch.</p>
+        </div>
+        <div class="faq-list reveal">
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Do you work on residential as well as commercial projects?
+              <span class="faq-chevron">&#9660;</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">Yes &mdash; we work across both sectors. Residential projects include air conditioning for homes, flats and apartments, heat pumps, and MVHR ventilation. Commercial work spans offices, healthcare, hospitality, retail and industrial premises.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Are your engineers F-Gas certified?
+              <span class="faq-chevron">&#9660;</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">All of our engineers hold Category I F-Gas certification, which is a legal requirement for handling refrigerants used in air conditioning and heat pump systems. We are also REFCOM registered, the industry-recognised scheme for refrigerant handling.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              How long does a typical installation take?
+              <span class="faq-chevron">&#9660;</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">A single-room split air conditioning system typically takes 4&ndash;8 hours. Multi-room or VRF systems for commercial premises can take anywhere from 2 days to several weeks depending on the scale. We&rsquo;ll give you a detailed programme of works before starting.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Do you offer maintenance contracts?
+              <span class="faq-chevron">&#9660;</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">Yes &mdash; we offer Planned Preventative Maintenance (PPM) contracts covering annual, bi-annual and quarterly service visits. These keep your systems operating at peak efficiency, maintain warranty validity and are often a compliance requirement for commercial premises.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              Which brands do you work with?
+              <span class="faq-chevron">&#9660;</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">We install and service all major brands including Mitsubishi Electric, Daikin, Fujitsu, Samsung, LG and Panasonic. We&rsquo;ll recommend the best brand and model for your specific requirements and budget.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              What areas of London do you cover?
+              <span class="faq-chevron">&#9660;</span>
+            </button>
+            <div class="faq-a"><div class="faq-a-inner">We cover all London boroughs as well as the surrounding Home Counties. Our engineers are based across the city to ensure fast response times for both planned and reactive work. Contact us to confirm coverage for your specific location.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="faq-cta-box">
+          <div class="fcb-tag">Free Consultation</div>
+          <div class="fcb-title">Not sure what system you need?</div>
+          <p class="fcb-sub">Our engineers will visit your site, assess your requirements and recommend the most cost-effective solution &mdash; completely free of charge.</p>
+          <ul class="fcb-list">
+            <li><span class="fcb-dot">&#10003;</span> No-obligation site survey</li>
+            <li><span class="fcb-dot">&#10003;</span> Written specification provided</li>
+            <li><span class="fcb-dot">&#10003;</span> Fixed-price quotation</li>
+            <li><span class="fcb-dot">&#10003;</span> Finance options available</li>
+            <li><span class="fcb-dot">&#10003;</span> All brands and system types</li>
+          </ul>
+          <a href="#contact" class="btn btn-cyan" style="width:100%;justify-content:center;">Book a Free Survey &rarr;</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="section-tag tag-cyan">Testimonials</span>
+      <h2>Trusted Across London&rsquo;s Sectors</h2>
+      <p>From restaurant groups to office landlords &mdash; here&rsquo;s what our clients say.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="rev-header"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><span class="rev-sector">Hospitality</span></div>
+        <p class="rev-text">Celsius installed and commissioned a full VRF system across three floors of our restaurant group. The project was delivered on time, the engineers were professional and the aftercare has been excellent. We now have them on a PPM contract.</p>
+        <div class="reviewer"><div class="rev-av">DC</div><div><div class="rev-name">David C.</div><div class="rev-loc">Operations Director &bull; Restaurant Group, London</div></div></div>
+      </div>
+      <div class="review-card reveal">
+        <div class="rev-header"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><span class="rev-sector">Commercial</span></div>
+        <p class="rev-text">We brought Celsius in to replace a failing chiller plant at our Canary Wharf office. The survey, design and installation were all handled seamlessly. They worked nights and weekends to avoid disrupting our tenants. Exceptional.</p>
+        <div class="reviewer"><div class="rev-av">SB</div><div><div class="rev-name">Sarah B.</div><div class="rev-loc">Facilities Manager &bull; Canary Wharf, E14</div></div></div>
+      </div>
+      <div class="review-card reveal">
+        <div class="rev-header"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><span class="rev-sector">Residential</span></div>
+        <p class="rev-text">Had a Mitsubishi multi-split system installed throughout our house in Kensington. The team were tidy, efficient and explained everything clearly. Couldn&rsquo;t be happier with how it works and how it looks.</p>
+        <div class="reviewer"><div class="rev-av">MR</div><div><div class="rev-name">Michael R.</div><div class="rev-loc">Kensington, W8</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="cf-wrap">
+          <div class="cf-title">Request a Free Survey</div>
+          <div class="cf-sub">We&rsquo;ll assess your requirements and provide a fixed-price quotation &bull; Usually within 24 hours</div>
+          <form id="quoteForm">
+            <div class="form-row">
+              <div class="fg"><label>First Name</label><input type="text" placeholder="John" required></div>
+              <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith" required></div>
+            </div>
+            <div class="fg"><label>Email</label><input type="email" placeholder="john@company.co.uk" required></div>
+            <div class="fg"><label>Phone</label><input type="tel" placeholder="020 XXXX XXXX" required></div>
+            <div class="form-row">
+              <div class="fg">
+                <label>Service Required</label>
+                <select required>
+                  <option value="" disabled selected>Select&hellip;</option>
+                  <option>Air Conditioning &ndash; Residential</option>
+                  <option>Air Conditioning &ndash; Commercial</option>
+                  <option>Heating System</option>
+                  <option>Ventilation / MVHR</option>
+                  <option>Mechanical Services</option>
+                  <option>Maintenance Contract</option>
+                  <option>Emergency Repair</option>
+                  <option>Not Sure &ndash; Need a Survey</option>
+                </select>
+              </div>
+              <div class="fg"><label>Postcode</label><input type="text" placeholder="e.g. W1 2AB"></div>
+            </div>
+            <div class="fg">
+              <label>Building Type &amp; Brief</label>
+              <textarea placeholder="e.g. 3-storey office, approx 2,000 sq ft, looking to install air conditioning throughout&hellip;"></textarea>
+            </div>
+            <button type="submit" class="btn btn-cyan" style="width:100%;justify-content:center;padding:14px;font-size:.97rem;">
+              Request Free Survey &rarr;
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="contact-info reveal">
+        <div class="ci-title">Get in Touch</div>
+        <p class="ci-sub">Whether you know exactly what you need or want expert advice, our team is ready to help. We cover all London boroughs and the surrounding counties.</p>
+        <div class="ci-items">
+          <div class="ci-row"><div class="ci-icon">&#128222;</div><div><div class="ci-label">Phone</div><div class="ci-val"><a href="tel:02030000000">020 3000 0000</a></div></div></div>
+          <div class="ci-row"><div class="ci-icon">&#128231;</div><div><div class="ci-label">Email</div><div class="ci-val"><a href="mailto:info@celsiushvac.co.uk">info@celsiushvac.co.uk</a></div></div></div>
+          <div class="ci-row"><div class="ci-icon">&#128336;</div><div><div class="ci-label">Office Hours</div><div class="ci-val">Mon&ndash;Fri 7am&ndash;6pm &bull; Sat 8am&ndash;2pm</div></div></div>
+          <div class="ci-row"><div class="ci-icon">&#128205;</div><div><div class="ci-label">Location</div><div class="ci-val">London &amp; South East, UK</div></div></div>
+        </div>
+        <div class="borough-wrap">
+          <div class="bw-title">Boroughs Covered</div>
+          <div class="boroughs">
+            <span class="boro">Camden</span><span class="boro">City of London</span><span class="boro">Croydon</span>
+            <span class="boro">Ealing</span><span class="boro">Greenwich</span><span class="boro">Hackney</span>
+            <span class="boro">Hammersmith</span><span class="boro">Islington</span><span class="boro">Kensington</span>
+            <span class="boro">Kingston</span><span class="boro">Lambeth</span><span class="boro">Lewisham</span>
+            <span class="boro">Newham</span><span class="boro">Richmond</span><span class="boro">Southwark</span>
+            <span class="boro">Tower Hamlets</span><span class="boro">Wandsworth</span><span class="boro">Westminster</span>
+            <span class="boro">+ All Others</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <div class="container">
-    <div class="footer-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text" style="color:#fff;">Graft<span style="color:var(--gold);">Digital</span></span>
-      </a>
-      <span class="footer-copy">&copy; 2025 <strong>Graft Digital</strong> &mdash; Built by Yoel Gutierrez &middot; London</span>
+    <div class="footer-grid">
+      <div>
+        <a href="#" class="logo">
+          <span class="logo-icon">&#10052;</span>
+          <div class="logo-text"><strong>Celsius HVAC</strong><span>London</span></div>
+        </a>
+        <p class="footer-desc">F-Gas certified HVAC engineers serving London and the South East. Air conditioning, heating, ventilation and mechanical services for commercial and residential buildings. CHAS accredited &bull; SafeContractor approved.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#floating-cards">Air Conditioning</a></li>
+          <li><a href="#floating-cards">Heating Systems</a></li>
+          <li><a href="#floating-cards">Ventilation</a></li>
+          <li><a href="#floating-cards">Mechanical</a></li>
+          <li><a href="#floating-cards">Maintenance</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Sectors</h4>
+        <ul>
+          <li><a href="#sectors">Commercial</a></li>
+          <li><a href="#sectors">Healthcare</a></li>
+          <li><a href="#sectors">Hospitality</a></li>
+          <li><a href="#sectors">Residential</a></li>
+          <li><a href="#sectors">Industrial</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:02030000000">020 3000 0000</a></li>
+          <li><a href="mailto:info@celsiushvac.co.uk">info@celsiushvac.co.uk</a></li>
+          <li><a href="#contact">Request a Survey</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Celsius HVAC London. F-Gas Certified &bull; CHAS Accredited &bull; All rights reserved.</p>
+      <span class="built-by">Website by <a href="https://graftdigital.london" target="_blank">Graft Digital</a></span>
     </div>
   </div>
 </footer>
+
 <script>
-  document.getElementById('reqForm').addEventListener('submit',function(e){
+  /* Mobile menu */
+  document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
+  document.getElementById('mobileClose').addEventListener('click', closeMob);
+  function closeMob() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  /* FAQ accordion */
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  /* Scroll reveal */
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  /* Quote form */
+  document.getElementById('quoteForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    const f=this;
-    const btn=f.querySelector('button[type=submit]');
-    const inp=f.querySelector('input[name=template]');
-    const tmpl=inp?inp.value:'General';
-    const name=f.querySelector('input[type=text]').value;
-    const email=f.querySelector('input[type=email]').value;
-    const phone=f.querySelector('input[type=tel]').value;
-    const msg=f.querySelector('textarea').value;
-    const body='Name: '+name+'\nEmail: '+email+'\nPhone: '+phone+'\nTemplate: '+tmpl+'\n\nMessage:\n'+msg;
-    window.location.href='mailto:sales@graftdigital.london?subject='+encodeURIComponent('Template Request – '+tmpl+' – '+name)+'&body='+encodeURIComponent(body);
-    btn.textContent='✓ Opening your email app…';
-    btn.style.background='#22c55e'; btn.style.color='#fff'; btn.disabled=true;
+    const f     = this;
+    const fname = f.querySelectorAll('input[type=text]')[0].value;
+    const lname = f.querySelectorAll('input[type=text]')[1].value;
+    const email = f.querySelector('input[type=email]').value;
+    const phone = f.querySelector('input[type=tel]').value;
+    const svc   = f.querySelector('select').value;
+    const post  = f.querySelectorAll('input[type=text]')[2].value;
+    const msg   = f.querySelector('textarea').value;
+    const body  = 'Name: '+fname+' '+lname+'\nEmail: '+email+'\nPhone: '+phone+'\nService: '+svc+'\nPostcode: '+post+'\n\nBrief:\n'+msg;
+    window.location.href = 'mailto:info@celsiushvac.co.uk?subject='+encodeURIComponent('Survey Request \u2013 '+fname+' '+lname+' \u2013 '+svc)+'&body='+encodeURIComponent(body);
+    const btn = f.querySelector('button[type=submit]');
+    btn.textContent = '\u2713 Opening your email app\u2026';
+    btn.style.background = '#16a34a';
+    btn.disabled = true;
   });
 </script>
 </body>
