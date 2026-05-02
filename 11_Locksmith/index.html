@@ -3,215 +3,772 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Locksmith Website Template | Graft Digital</title>
-  <meta name="description" content="24/7 emergency locksmith covering all London boroughs.">
-  <meta name="keywords" content="locksmith London, emergency locksmith">
+  <title>Swift Locksmith London | 24/7 Emergency Locksmith</title>
+  <meta name="description" content="London's fastest emergency locksmith. Average response time 28 minutes. Locked out? Lost keys? Broken lock? Call us 24/7 — no call-out fee, no fix no fee.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:#0A1628; --navy-mid:#0F2040; --gold:#F5A623; --gold-dark:#C98010;
-      --gold-light:#FFB84D; --white:#FFFFFF; --off-white:#F7F9FC;
-      --text:#1A2332; --text-mid:#4A5568; --border:#E2E8F0;
+      --black: #08090E;
+      --dark: #0F1623;
+      --dark-mid: #1A2435;
+      --dark-light: #243046;
+      --blue: #2563EB;
+      --blue-mid: #3B82F6;
+      --blue-light: #93C5FD;
+      --blue-pale: #EFF6FF;
+      --yellow: #FBBF24;
+      --yellow-pale: #FFFBEB;
+      --white: #FFFFFF;
+      --off-white: #F8FAFC;
+      --text: #0F172A;
+      --text-mid: #475569;
+      --text-muted: #94A3B8;
+      --border: #E2E8F0;
     }
     html { scroll-behavior: smooth; }
-    body { font-family:'Inter',-apple-system,sans-serif; color:var(--text); background:var(--white); line-height:1.6; }
-    a { text-decoration:none; color:inherit; }
-    .container { max-width:1100px; margin:0 auto; padding:0 24px; }
-    /* TOPBAR */
-    .topbar { background:var(--navy); padding:14px 0; position:sticky; top:0; z-index:100; box-shadow:0 2px 12px rgba(0,0,0,.25); }
-    .topbar-inner { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-    .logo { display:flex; align-items:center; gap:9px; }
-    .logo-mark { width:34px; height:34px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:900; color:var(--navy); }
-    .logo-text { font-size:1.1rem; font-weight:900; color:#fff; letter-spacing:-.03em; }
-    .logo-text span { color:var(--gold); }
-    .back-link { color:rgba(255,255,255,.7); font-size:.85rem; font-weight:500; display:flex; align-items:center; gap:6px; transition:color .2s; }
-    .back-link:hover { color:var(--gold); }
-    /* HERO */
-    .hero { background:var(--navy); background-image:radial-gradient(ellipse at 15% 60%,rgba(26,53,96,.6) 0%,transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(245,166,35,.07) 0%,transparent 50%); min-height:480px; display:flex; align-items:center; padding:72px 0 64px; position:relative; overflow:hidden; }
-    .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px); background-size:54px 54px; }
-    .hero-content { position:relative; z-index:2; max-width:680px; }
-    .preview-banner { background:rgba(245,166,35,.1); border:1px solid rgba(245,166,35,.3); border-radius:10px; padding:15px 20px; margin-bottom:36px; display:flex; align-items:flex-start; gap:11px; max-width:600px; }
-    .preview-banner p { color:rgba(255,255,255,.8); font-size:.86rem; line-height:1.55; margin:0; }
-    .preview-banner strong { color:var(--gold); }
-    .hero-tag { display:inline-flex; align-items:center; gap:7px; background:rgba(245,166,35,.13); border:1px solid rgba(245,166,35,.28); color:var(--gold-light); padding:6px 15px; border-radius:100px; font-size:.8rem; font-weight:600; margin-bottom:20px; }
-    .hero-icon { font-size:3.2rem; margin-bottom:10px; display:block; line-height:1; }
-    .hero h1 { font-size:clamp(2.1rem,4.5vw,3.4rem); color:#fff; letter-spacing:-.04em; margin-bottom:16px; line-height:1.15; font-weight:900; }
-    .hero h1 span { color:var(--gold); }
-    .hero > .container > .hero-content > p { color:rgba(255,255,255,.68); font-size:1.05rem; max-width:520px; margin-bottom:32px; }
-    .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
-    .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:8px; font-size:.95rem; font-weight:700; cursor:pointer; transition:all .22s ease; border:none; font-family:inherit; }
-    .btn-gold { background:var(--gold); color:var(--navy); }
-    .btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 20px rgba(245,166,35,.35); }
-    .btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.35); }
-    .btn-outline:hover { border-color:#fff; background:rgba(255,255,255,.08); }
-    /* SERVICES */
-    .services { padding:80px 0; background:var(--off-white); }
-    .services h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .services .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
-    .service-card { background:#fff; border-radius:12px; padding:28px 24px; border:1px solid var(--border); transition:all .22s ease; }
-    .service-card:hover { transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.08); border-color:rgba(245,166,35,.3); }
-    .sc-icon { font-size:1.8rem; margin-bottom:12px; display:block; }
-    .sc-title { font-size:1rem; font-weight:700; margin-bottom:6px; }
-    .sc-desc { font-size:.88rem; color:var(--text-mid); line-height:1.65; }
-    /* TRUST */
-    .why { padding:80px 0; background:var(--white); }
-    .why h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .why .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .trust-items { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; text-align:center; }
-    .trust-item { padding:28px 16px; }
-    .trust-num { font-size:2.4rem; font-weight:900; color:var(--gold-dark); line-height:1; margin-bottom:6px; }
-    .trust-lbl { font-size:.88rem; color:var(--text-mid); }
-    /* CTA */
-    .cta-section { padding:72px 0; background:var(--navy); background-image:radial-gradient(ellipse at 80% 50%,rgba(245,166,35,.08) 0%,transparent 55%); text-align:center; }
-    .cta-section h2 { color:#fff; font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; margin-bottom:14px; }
-    .cta-section p { color:rgba(255,255,255,.65); font-size:1rem; margin-bottom:32px; max-width:480px; margin-left:auto; margin-right:auto; }
-    /* FORM */
-    .contact-mini { padding:80px 0; background:var(--off-white); }
-    .contact-mini h2 { font-size:clamp(1.5rem,3vw,2rem); font-weight:800; text-align:center; margin-bottom:8px; }
-    .contact-mini .sub { text-align:center; color:var(--text-mid); font-size:.97rem; margin-bottom:32px; }
-    .mini-form { max-width:520px; margin:0 auto; background:#fff; border-radius:16px; padding:36px; border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,0,0,.06); }
-    .fg { margin-bottom:16px; }
-    .fg label { display:block; font-size:.84rem; font-weight:600; margin-bottom:6px; }
-    .fg input,.fg textarea { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:8px; font-size:.92rem; font-family:inherit; color:var(--text); outline:none; transition:border .2s; }
-    .fg input:focus,.fg textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(245,166,35,.12); }
-    .fg textarea { resize:vertical; min-height:88px; }
-    /* FOOTER */
-    footer { background:#050D1A; padding:32px 0; border-top:1px solid rgba(255,255,255,.05); }
-    .footer-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
-    .footer-copy { color:rgba(255,255,255,.35); font-size:.82rem; }
-    .footer-copy strong { color:var(--gold); }
-    @media(max-width:600px){ .hero-ctas{flex-direction:column;} .hero-ctas .btn{justify-content:center;} }
+    body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── TEMPLATE BANNER ── */
+    .template-banner { background: var(--black); padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .template-badge { background: var(--blue); color: white; font-size: .72rem; font-weight: 800; padding: 3px 10px; border-radius: 4px; letter-spacing: .04em; text-transform: uppercase; }
+    .template-back { color: rgba(255,255,255,.65); font-size: .82rem; font-weight: 500; display: flex; align-items: center; gap: 6px; transition: color .2s; }
+    .template-back:hover { color: var(--blue-light); }
+
+    /* ── NAVBAR ── */
+    .navbar { background: var(--dark); position: sticky; top: 0; z-index: 200; box-shadow: 0 1px 0 rgba(255,255,255,.06), 0 4px 20px rgba(0,0,0,.4); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; max-width: 1100px; margin: 0 auto; }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark { width: 36px; height: 36px; background: var(--blue); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+    .logo-name { font-size: 1.05rem; font-weight: 900; color: white; letter-spacing: -.02em; }
+    .logo-name span { color: var(--blue-mid); }
+    .nav-links { display: flex; align-items: center; gap: 24px; list-style: none; }
+    .nav-links a { font-size: .86rem; font-weight: 600; color: rgba(255,255,255,.65); transition: color .2s; }
+    .nav-links a:hover { color: white; }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .nav-phone { color: white; font-size: .86rem; font-weight: 800; display: flex; align-items: center; gap: 6px; border: 1px solid rgba(255,255,255,.15); padding: 8px 16px; border-radius: 7px; transition: border-color .2s; }
+    .nav-phone:hover { border-color: rgba(255,255,255,.4); }
+    .nav-cta { background: var(--blue); color: white; padding: 9px 20px; border-radius: 7px; font-size: .86rem; font-weight: 800; transition: background .2s; }
+    .nav-cta:hover { background: var(--blue-mid); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; }
+    .mobile-menu { display: none; background: var(--dark-mid); border-top: 1px solid rgba(255,255,255,.06); }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; padding: 13px 24px; font-size: .93rem; font-weight: 600; color: rgba(255,255,255,.7); border-bottom: 1px solid rgba(255,255,255,.05); }
+    .mobile-menu a:last-child { color: var(--blue-light); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--dark);
+      padding: 80px 0 72px;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    /* Blue glow effects */
+    .hero::before {
+      content: ''; position: absolute;
+      top: -100px; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse, rgba(37,99,235,.2) 0%, transparent 70%);
+    }
+    .hero::after {
+      content: ''; position: absolute;
+      bottom: -60px; left: 20%;
+      width: 300px; height: 300px;
+      background: radial-gradient(ellipse, rgba(37,99,235,.08) 0%, transparent 70%);
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
+    .response-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(37,99,235,.15); border: 1px solid rgba(37,99,235,.4);
+      color: var(--blue-light); padding: 8px 20px; border-radius: 50px;
+      font-size: .82rem; font-weight: 800; margin-bottom: 28px; letter-spacing: .03em;
+    }
+    .response-dot { width: 8px; height: 8px; background: var(--blue-mid); border-radius: 50%; animation: glow 2s infinite; }
+    @keyframes glow { 0%,100%{box-shadow:0 0 0 0 rgba(59,130,246,.6)} 50%{box-shadow:0 0 0 6px rgba(59,130,246,0)} }
+    .hero h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 900; line-height: 1.08; color: white; margin-bottom: 20px; letter-spacing: -.03em; }
+    .hero h1 .highlight { color: var(--blue-mid); }
+    .hero-sub { font-size: 1.02rem; color: rgba(255,255,255,.6); margin-bottom: 36px; max-width: 540px; margin-left: auto; margin-right: auto; }
+    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 52px; }
+    .btn-blue { background: var(--blue); color: white; padding: 14px 32px; border-radius: 8px; font-size: .97rem; font-weight: 800; transition: background .2s; }
+    .btn-blue:hover { background: var(--blue-mid); }
+    .btn-white { background: white; color: var(--dark); padding: 14px 32px; border-radius: 8px; font-size: .97rem; font-weight: 800; transition: opacity .2s; }
+    .btn-white:hover { opacity: .88; }
+    /* Hero stats row */
+    .hero-stats { display: flex; justify-content: center; gap: 0; border: 1px solid rgba(255,255,255,.08); border-radius: 14px; overflow: hidden; max-width: 600px; margin: 0 auto; }
+    .hero-stat { flex: 1; padding: 20px 16px; text-align: center; border-right: 1px solid rgba(255,255,255,.08); }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat .h-num { font-size: 1.8rem; font-weight: 900; color: white; line-height: 1; }
+    .hero-stat .h-num span { color: var(--blue-mid); }
+    .hero-stat .h-lbl { font-size: .72rem; color: rgba(255,255,255,.45); font-weight: 600; margin-top: 3px; letter-spacing: .03em; text-transform: uppercase; }
+
+    /* ── SCENARIO CARDS ── */
+    .scenarios { padding: 80px 0; background: var(--off-white); }
+    .section-header { text-align: center; margin-bottom: 52px; }
+    .section-tag { display: inline-block; background: var(--blue-pale); color: var(--blue); font-size: .73rem; font-weight: 800; padding: 5px 14px; border-radius: 6px; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 12px; }
+    .section-header h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 900; letter-spacing: -.03em; margin-bottom: 12px; }
+    .section-header p { font-size: .95rem; color: var(--text-mid); max-width: 520px; margin: 0 auto; }
+
+    .scenarios-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .scenario-card {
+      background: white; border: 1.5px solid var(--border); border-radius: 18px; padding: 32px 28px;
+      display: flex; gap: 22px; align-items: flex-start;
+      transition: border-color .2s, box-shadow .2s, transform .2s;
+    }
+    .scenario-card:hover { border-color: var(--blue); box-shadow: 0 8px 32px rgba(37,99,235,.1); transform: translateY(-3px); }
+    .scenario-icon-wrap {
+      width: 60px; height: 60px; background: var(--blue-pale); border-radius: 14px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0;
+      border: 1px solid rgba(37,99,235,.15);
+    }
+    .scenario-card h3 { font-size: 1.05rem; font-weight: 900; margin-bottom: 8px; color: var(--dark); }
+    .scenario-card p { font-size: .85rem; color: var(--text-mid); margin-bottom: 14px; line-height: 1.6; }
+    .scenario-features { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+    .scenario-features li { font-size: .8rem; color: var(--text-mid); display: flex; align-items: center; gap: 7px; }
+    .scenario-features li::before { content: ''; width: 6px; height: 6px; background: var(--blue); border-radius: 50%; flex-shrink: 0; }
+    .scenario-cta { display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; font-size: .83rem; font-weight: 800; color: var(--blue); transition: gap .2s; }
+    .scenario-cta:hover { gap: 10px; }
+
+    /* ── SERVICES LIST ── */
+    .services-full { padding: 80px 0; background: var(--dark); }
+    .services-full .section-header h2 { color: white; }
+    .services-full .section-header p { color: rgba(255,255,255,.6); }
+    .services-full .section-tag { background: rgba(37,99,235,.15); color: var(--blue-light); }
+    .services-list-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: rgba(255,255,255,.05); border-radius: 14px; overflow: hidden; }
+    .service-item {
+      background: rgba(255,255,255,.03); padding: 20px 22px;
+      display: flex; align-items: center; gap: 14px;
+      border-bottom: 1px solid rgba(255,255,255,.04);
+      transition: background .2s;
+    }
+    .service-item:hover { background: rgba(37,99,235,.12); }
+    .service-item-icon { font-size: 1.3rem; flex-shrink: 0; }
+    .service-item-text strong { display: block; font-size: .88rem; font-weight: 700; color: white; }
+    .service-item-text span { font-size: .77rem; color: rgba(255,255,255,.5); }
+
+    /* ── LOCK TYPES ── */
+    .lock-types { padding: 80px 0; background: var(--white); }
+    .lock-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .lock-card {
+      border: 1px solid var(--border); border-radius: 14px; padding: 24px 20px; text-align: center;
+      transition: box-shadow .2s;
+    }
+    .lock-card:hover { box-shadow: 0 6px 24px rgba(37,99,235,.08); border-color: var(--blue-mid); }
+    .lock-emoji { font-size: 2rem; display: block; margin-bottom: 10px; }
+    .lock-card h3 { font-size: .93rem; font-weight: 800; margin-bottom: 6px; }
+    .lock-card p { font-size: .8rem; color: var(--text-mid); }
+
+    /* ── COVERAGE ZONES ── */
+    .coverage { padding: 80px 0; background: var(--off-white); }
+    .coverage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+    .coverage-left h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 900; letter-spacing: -.03em; margin-bottom: 14px; }
+    .coverage-left p { font-size: .93rem; color: var(--text-mid); margin-bottom: 28px; }
+    .zone-list { display: flex; flex-direction: column; gap: 12px; }
+    .zone-row {
+      background: white; border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .zone-name { font-size: .9rem; font-weight: 700; }
+    .zone-boroughs { font-size: .78rem; color: var(--text-muted); margin-top: 2px; }
+    .zone-time {
+      background: var(--blue-pale); color: var(--blue); padding: 5px 12px; border-radius: 20px;
+      font-size: .78rem; font-weight: 800; white-space: nowrap;
+    }
+    .zone-time.fast { background: #DCFCE7; color: #166534; }
+    .coverage-right { display: flex; flex-direction: column; gap: 16px; padding-top: 8px; }
+    .coverage-stat {
+      background: white; border: 1px solid var(--border); border-radius: 14px; padding: 22px 20px;
+      display: flex; align-items: center; gap: 18px;
+    }
+    .cstat-icon { font-size: 1.8rem; flex-shrink: 0; }
+    .cstat-num { font-size: 1.8rem; font-weight: 900; color: var(--blue); line-height: 1; }
+    .cstat-lbl { font-size: .78rem; color: var(--text-muted); font-weight: 600; }
+
+    /* ── GUARANTEES ── */
+    .guarantees { padding: 56px 0; background: var(--dark); }
+    .guarantees-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .guarantee-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); border-radius: 14px; padding: 24px 18px; text-align: center; }
+    .g-icon { font-size: 1.8rem; display: block; margin-bottom: 10px; }
+    .g-title { font-size: .9rem; font-weight: 800; color: white; margin-bottom: 5px; }
+    .g-desc { font-size: .78rem; color: rgba(255,255,255,.55); }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { padding: 80px 0; background: var(--white); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .review-card { background: var(--off-white); border: 1px solid var(--border); border-radius: 16px; padding: 26px 22px; }
+    .review-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+    .reviewer { display: flex; align-items: center; gap: 10px; }
+    .reviewer-avatar { width: 40px; height: 40px; background: var(--dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .85rem; font-weight: 900; color: white; }
+    .reviewer-name { font-size: .88rem; font-weight: 800; }
+    .reviewer-loc { font-size: .74rem; color: var(--text-muted); }
+    .stars { color: var(--yellow); font-size: .88rem; }
+    .review-text { font-size: .85rem; color: var(--text-mid); line-height: 1.65; font-style: italic; }
+    .review-tag { display: inline-block; margin-top: 12px; background: var(--blue-pale); color: var(--blue); font-size: .68rem; font-weight: 700; padding: 2px 9px; border-radius: 4px; }
+    .review-time { font-size: .72rem; color: var(--text-muted); margin-top: 6px; }
+
+    /* ── CONTACT ── */
+    .contact { padding: 80px 0; background: var(--dark); }
+    .contact .section-header h2 { color: white; }
+    .contact .section-header p { color: rgba(255,255,255,.6); }
+    .contact .section-tag { background: rgba(37,99,235,.15); color: var(--blue-light); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+    .contact-options { display: flex; flex-direction: column; gap: 14px; }
+    .contact-option {
+      background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 14px; padding: 20px 22px;
+      display: flex; align-items: center; gap: 16px; transition: background .2s;
+    }
+    .contact-option:hover { background: rgba(255,255,255,.09); }
+    .contact-option.primary { background: rgba(37,99,235,.15); border-color: rgba(37,99,235,.4); }
+    .co-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .co-text strong { display: block; font-size: .82rem; font-weight: 700; color: rgba(255,255,255,.55); margin-bottom: 2px; }
+    .co-text a { color: white; font-size: .97rem; font-weight: 800; transition: color .2s; }
+    .co-text a:hover { color: var(--blue-light); }
+    .contact-form { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 18px; padding: 32px 28px; }
+    .contact-form h3 { font-size: 1.05rem; font-weight: 800; color: white; margin-bottom: 22px; }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-size: .8rem; font-weight: 700; color: rgba(255,255,255,.6); margin-bottom: 5px; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px 13px; border: 1.5px solid rgba(255,255,255,.1); border-radius: 7px; font-family: inherit; font-size: .88rem; color: white; background: rgba(255,255,255,.06); outline: none; transition: border-color .2s; }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,.3); }
+    .form-group select { color: rgba(255,255,255,.8); }
+    .form-group select option { background: var(--dark-mid); color: white; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--blue); }
+    .form-group textarea { min-height: 80px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .btn-submit { width: 100%; background: var(--blue); color: white; border: none; padding: 13px; border-radius: 9px; font-family: inherit; font-size: .97rem; font-weight: 800; cursor: pointer; transition: background .2s; }
+    .btn-submit:hover { background: var(--blue-mid); }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--black); color: white; padding: 48px 0 24px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
+    .footer-brand p { font-size: .83rem; color: rgba(255,255,255,.45); max-width: 280px; margin-top: 12px; }
+    .footer-logo { display: flex; align-items: center; gap: 10px; }
+    .footer-logo-mark { width: 32px; height: 32px; background: var(--blue); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: .85rem; }
+    .footer-logo-text { font-size: 1rem; font-weight: 900; color: white; }
+    .footer-col h4 { font-size: .77rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 13px; color: rgba(255,255,255,.3); }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { font-size: .85rem; color: rgba(255,255,255,.5); transition: color .2s; }
+    .footer-col ul a:hover { color: var(--blue-light); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.06); padding-top: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .footer-bottom p { font-size: .78rem; color: rgba(255,255,255,.3); }
+    .footer-bottom a { color: var(--blue-light); }
+
+    /* ── FLOATING CTA ── */
+    .floating-cta { display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--blue); color: white; padding: 13px 26px; border-radius: 50px; font-size: .93rem; font-weight: 800; box-shadow: 0 4px 20px rgba(37,99,235,.5); z-index: 500; white-space: nowrap; }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .5s ease, transform .5s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .scenarios-grid { grid-template-columns: 1fr; }
+      .services-list-grid { grid-template-columns: 1fr 1fr; }
+      .lock-grid { grid-template-columns: 1fr 1fr; }
+      .coverage-grid { grid-template-columns: 1fr; }
+      .guarantees-inner { grid-template-columns: 1fr 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .nav-phone { display: none; }
+      .hamburger { display: flex; }
+      .hero-stats { flex-direction: column; border: none; gap: 0; }
+      .hero-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); }
+      .hero-stat:last-child { border-bottom: none; }
+      .services-list-grid { grid-template-columns: 1fr; }
+      .lock-grid { grid-template-columns: 1fr 1fr; }
+      .guarantees-inner { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .floating-cta { display: flex; }
+      .form-row { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-<header class="topbar">
-  <div class="container">
-    <div class="topbar-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text">Graft<span>Digital</span></span>
-      </a>
-      <a href="../index.html#industries" class="back-link">&larr; All Templates</a>
-    </div>
-  </div>
-</header>
 
-<section class="hero">
-  <div class="hero-grid"></div>
-  <div class="container">
-    <div class="hero-content">
-      <div class="preview-banner">
-        <span style="font-size:1.2rem;flex-shrink:0;">&#128065;</span>
-        <p>This is a <strong>sample template</strong> for a Locksmith business. Your real site will be fully customised with your branding, photos &amp; details. <a href="#get-started" style="color:var(--gold);font-weight:700;">Request this template &darr;</a></p>
-      </div>
-      <div class="hero-tag">&#128205; London Trade Template</div>
-      <span class="hero-icon">&#128273;</span>
-      <h1>London&rsquo;s Trusted<br><span>Locksmith</span><br>Specialists</h1>
-      <p>24/7 emergency locksmith covering all London boroughs.</p>
-      <div class="hero-ctas">
-        <a href="#get-started" class="btn btn-gold">Get a Free Quote</a>
-        <a href="tel:+447479531509" class="btn btn-outline">&#128222; Call Now</a>
-      </div>
-    </div>
+  <!-- TEMPLATE BANNER -->
+  <div class="template-banner">
+    <span class="template-badge">Template Preview</span>
+    <a href="https://graftdigital.london" class="template-back">&#8592; Back to Graft Digital</a>
   </div>
-</section>
 
-<section class="services">
-  <div class="container">
-    <h2>Our Services</h2>
-    <p class="sub">Professional Locksmith services across all London boroughs</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <span class="sc-icon">&#10003;</span>
-        <div class="sc-title">Residential</div>
-        <p class="sc-desc">Trusted by homeowners across London for reliable, high-quality work done right first time.</p>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="logo">
+        <div class="logo-mark">&#128272;</div>
+        <span class="logo-name">Swift <span>Locksmith</span></span>
       </div>
-      <div class="service-card">
-        <span class="sc-icon">&#127970;</span>
-        <div class="sc-title">Commercial</div>
-        <p class="sc-desc">We work with businesses, landlords and property managers throughout Greater London.</p>
-      </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128241;</span>
-        <div class="sc-title">Emergency Callouts</div>
-        <p class="sc-desc">Fast response when you need it most. We cover all London postcodes, seven days a week.</p>
-      </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128205;</span>
-        <div class="sc-title">All London Boroughs</div>
-        <p class="sc-desc">From Hackney to Hammersmith, Croydon to Camden &mdash; we cover the entire Greater London area.</p>
+      <ul class="nav-links">
+        <li><a href="#scenarios">Services</a></li>
+        <li><a href="#lock-types">Lock Types</a></li>
+        <li><a href="#coverage">Coverage</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="tel:+447479531509" class="nav-phone">&#128222; +44 7479 531509</a>
+        <a href="#contact" class="nav-cta">Book Now</a>
+        <div class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+          <span></span><span></span><span></span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#scenarios" onclick="document.getElementById('mobileMenu').classList.remove('open')">Services</a>
+      <a href="#lock-types" onclick="document.getElementById('mobileMenu').classList.remove('open')">Lock Types</a>
+      <a href="#coverage" onclick="document.getElementById('mobileMenu').classList.remove('open')">Coverage</a>
+      <a href="#reviews" onclick="document.getElementById('mobileMenu').classList.remove('open')">Reviews</a>
+      <a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Book Now</a>
+    </div>
+  </nav>
 
-<section class="why">
-  <div class="container">
-    <h2>Why Choose Us?</h2>
-    <p class="sub">Trusted by hundreds of London customers</p>
-    <div class="trust-items">
-      <div class="trust-item"><div class="trust-num">500+</div><div class="trust-lbl">Jobs Completed</div></div>
-      <div class="trust-item"><div class="trust-num">5&#9733;</div><div class="trust-lbl">Google Rating</div></div>
-      <div class="trust-item"><div class="trust-num">10+</div><div class="trust-lbl">Years Experience</div></div>
-      <div class="trust-item"><div class="trust-num">32</div><div class="trust-lbl">London Boroughs Covered</div></div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="response-badge">
+        <span class="response-dot"></span>
+        Average response time: <strong>28 minutes</strong>
+      </div>
+      <h1>London&#8217;s Fastest <span class="highlight">24/7 Locksmith</span></h1>
+      <p class="hero-sub">Locked out? Lost your keys? Lock broken? Our certified locksmiths reach you in under 30 minutes — day or night, anywhere in London.</p>
+      <div class="hero-btns">
+        <a href="tel:+447479531509" class="btn-blue">&#128222; Call Now — We&#8217;re Ready</a>
+        <a href="#contact" class="btn-white">Book Online</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="h-num"><span>28</span> min</div>
+          <div class="h-lbl">Avg response time</div>
+        </div>
+        <div class="hero-stat">
+          <div class="h-num"><span>24</span>/7</div>
+          <div class="h-lbl">Always available</div>
+        </div>
+        <div class="hero-stat">
+          <div class="h-num"><span>0</span></div>
+          <div class="h-lbl">Call-out fee</div>
+        </div>
+        <div class="hero-stat">
+          <div class="h-num"><span>4.9</span>&#11088;</div>
+          <div class="h-lbl">Customer rating</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENARIO CARDS -->
+  <section class="scenarios" id="scenarios">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">What&#8217;s Your Situation?</div>
+        <h2>We Handle Every Lock Emergency</h2>
+        <p>Whatever brought you here — we have a fast, affordable solution ready to go right now.</p>
+      </div>
+      <div class="scenarios-grid">
+        <div class="scenario-card reveal">
+          <div class="scenario-icon-wrap">&#128272;</div>
+          <div>
+            <h3>Locked Out of Your Home</h3>
+            <p>Whether you&#8217;ve lost your keys, left them inside or the lock has jammed — we open any lock without damage and can replace it on the spot.</p>
+            <ul class="scenario-features">
+              <li>Non-destructive entry where possible</li>
+              <li>All lock types — Yale, mortice, UPVC, euro</li>
+              <li>New lock fitted same visit if required</li>
+              <li>Average arrival under 30 minutes</li>
+            </ul>
+            <a href="tel:+447479531509" class="scenario-cta">Call Now &#8594;</a>
+          </div>
+        </div>
+        <div class="scenario-card reveal">
+          <div class="scenario-icon-wrap">&#128273;</div>
+          <div>
+            <h3>Lost or Stolen Keys</h3>
+            <p>If your keys are lost or stolen, don&#8217;t wait — anyone could use them. We can change all your locks immediately so you&#8217;re secure again.</p>
+            <ul class="scenario-features">
+              <li>Full lock change from £79</li>
+              <li>Key cutting service available</li>
+              <li>Upgrade to high-security locks</li>
+              <li>Landlord re-key service available</li>
+            </ul>
+            <a href="#contact" class="scenario-cta">Book Online &#8594;</a>
+          </div>
+        </div>
+        <div class="scenario-card reveal">
+          <div class="scenario-icon-wrap">&#128296;</div>
+          <div>
+            <h3>Broken or Damaged Lock</h3>
+            <p>Snapped key in the lock? Lock mechanism failed? Damaged by an attempted break-in? We carry stock of all major lock brands and can repair or replace on the spot.</p>
+            <ul class="scenario-features">
+              <li>Snapped key extraction</li>
+              <li>Lock mechanism repair</li>
+              <li>Anti-snap upgrade available</li>
+              <li>Insurance-approved replacements</li>
+            </ul>
+            <a href="#contact" class="scenario-cta">Book Online &#8594;</a>
+          </div>
+        </div>
+        <div class="scenario-card reveal">
+          <div class="scenario-icon-wrap">&#127968;</div>
+          <div>
+            <h3>Security Upgrade</h3>
+            <p>Want better locks? Moving into a new home? We supply and fit the best high-security, anti-snap and smart locks for London homes and businesses.</p>
+            <ul class="scenario-features">
+              <li>Anti-snap, anti-pick, anti-drill locks</li>
+              <li>Smart locks and keypad entry</li>
+              <li>BS3621 insurance-approved locks</li>
+              <li>Free security assessment included</li>
+            </ul>
+            <a href="#contact" class="scenario-cta">Get a Quote &#8594;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL SERVICES LIST -->
+  <section class="services-full" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">All Services</div>
+        <h2>Everything We Do</h2>
+        <p>A full-service locksmith covering residential, commercial and automotive.</p>
+      </div>
+      <div class="services-list-grid reveal">
+        <div class="service-item"><span class="service-item-icon">&#128272;</span><div class="service-item-text"><strong>Emergency Lock Opening</strong><span>24/7 non-destructive entry</span></div></div>
+        <div class="service-item"><span class="service-item-icon">&#128273;</span><div class="service-item-text"><strong>Lock Change &amp; Rekey</strong><span>All lock types, same day</span></div></div>
+        <div class="service-item"><span class="service-item-icon">&#128296;</span><div class="service-item-text"><strong>Broken Key Extraction</strong><span>Removed without damage</span></div></div>
+        <div class="service-item"><span class="service-item-icon">&#128712;</span><div class="service-item-text"><strong>UPVC Lock Repair</strong><span>Multipoint mechanism specialists</span></div></div>
+        <div class="service-item"><span class="service-item-icon">&#128274;</span><div class="service-item-text"><strong>Padlock &amp; Shutter</strong><span>Garages, roller shutters, gates</span></div></div>
+        <div class="service-item"><span class="service-item-icon">&#127968;</span><div class="service-item-text"><strong>Smart Lock Installation</strong><span>Yale, Ultion, August, Nest</span></div></div>
+        <div class="service-item"><span class="service-item-icon">&#128205;</span><div class="service-item-text"><strong>Key Cutting</strong><span>All blanks stocked, cut on-site</span></div></div>
+        <div class="service-item"><span class="service-item-icon">&#128188;</span><div class="service-item-text"><strong>Commercial Locksmith</strong><span>Offices, retail, warehouses</span></div></div>
+        <div class="service-item"><span class="service-item-icon">&#128663;</span><div class="service-item-text"><strong>Auto Locksmith</strong><span>Car locks, key programming</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCK TYPES -->
+  <section class="lock-types" id="lock-types">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Lock Types</div>
+        <h2>We Work on Every Lock</h2>
+        <p>Our technicians carry stock of all major lock brands and are trained on every common lock type found in London homes.</p>
+      </div>
+      <div class="lock-grid reveal">
+        <div class="lock-card">
+          <span class="lock-emoji">&#128272;</span>
+          <h3>Yale &amp; Rim Locks</h3>
+          <p>The classic London nightlatch — opened, repaired and replaced on all properties.</p>
+        </div>
+        <div class="lock-card">
+          <span class="lock-emoji">&#128274;</span>
+          <h3>Mortice Deadbolts</h3>
+          <p>5-lever and 3-lever mortice locks opened and replaced to BS3621 standard.</p>
+        </div>
+        <div class="lock-card">
+          <span class="lock-emoji">&#128712;</span>
+          <h3>UPVC Multipoint</h3>
+          <p>Multipoint locking mechanisms on UPVC doors — gearbox repair and replacement.</p>
+        </div>
+        <div class="lock-card">
+          <span class="lock-emoji">&#128273;</span>
+          <h3>Euro Cylinder</h3>
+          <p>Anti-snap euro cylinders fitted as standard — protecting against the most common attack.</p>
+        </div>
+        <div class="lock-card">
+          <span class="lock-emoji">&#128394;</span>
+          <h3>Smart &amp; Digital</h3>
+          <p>Smart locks, keypad entry and Bluetooth access control installed and programmed.</p>
+        </div>
+        <div class="lock-card">
+          <span class="lock-emoji">&#128274;</span>
+          <h3>Padlocks &amp; Hasps</h3>
+          <p>Security padlocks for sheds, gates, garages and storage units — opened and replaced.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVERAGE ZONES -->
+  <section class="coverage" id="coverage">
+    <div class="container">
+      <div class="coverage-grid">
+        <div class="coverage-left reveal">
+          <div class="section-tag">Coverage</div>
+          <h2>Across All 33 London Boroughs</h2>
+          <p>We have technicians stationed across London for the fastest possible response time wherever you are.</p>
+          <div class="zone-list">
+            <div class="zone-row">
+              <div>
+                <div class="zone-name">&#128308; Zone 1 &amp; 2 — Central London</div>
+                <div class="zone-boroughs">Westminster, City, Islington, Hackney, Southwark, Lambeth</div>
+              </div>
+              <span class="zone-time fast">~20 min</span>
+            </div>
+            <div class="zone-row">
+              <div>
+                <div class="zone-name">&#128992; Zone 3 &amp; 4 — Inner London</div>
+                <div class="zone-boroughs">Hammersmith, Lewisham, Greenwich, Wandsworth, Haringey</div>
+              </div>
+              <span class="zone-time">~30 min</span>
+            </div>
+            <div class="zone-row">
+              <div>
+                <div class="zone-name">&#128309; Zone 5 &amp; 6 — Outer London</div>
+                <div class="zone-boroughs">Barnet, Bromley, Croydon, Enfield, Havering, Hillingdon</div>
+              </div>
+              <span class="zone-time">~45 min</span>
+            </div>
+          </div>
+        </div>
+        <div class="coverage-right reveal">
+          <div class="coverage-stat">
+            <div class="cstat-icon">&#128272;</div>
+            <div><div class="cstat-num">5,400+</div><div class="cstat-lbl">Locks opened this year</div></div>
+          </div>
+          <div class="coverage-stat">
+            <div class="cstat-icon">&#128338;</div>
+            <div><div class="cstat-num">28 min</div><div class="cstat-lbl">Average response time</div></div>
+          </div>
+          <div class="coverage-stat">
+            <div class="cstat-icon">&#9733;</div>
+            <div><div class="cstat-num">4.9 / 5</div><div class="cstat-lbl">Customer satisfaction</div></div>
+          </div>
+          <div class="coverage-stat">
+            <div class="cstat-icon">&#128664;</div>
+            <div><div class="cstat-num">12+</div><div class="cstat-lbl">Technicians across London</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEES -->
+  <div class="guarantees">
+    <div class="container">
+      <div class="guarantees-inner reveal">
+        <div class="guarantee-card">
+          <span class="g-icon">&#128664;</span>
+          <div class="g-title">No Call-Out Fee</div>
+          <div class="g-desc">We never charge just to come out — you only pay for the work done</div>
+        </div>
+        <div class="guarantee-card">
+          <span class="g-icon">&#9989;</span>
+          <div class="g-title">No Fix, No Fee</div>
+          <div class="g-desc">If we can&#8217;t open your lock, you don&#8217;t pay a penny</div>
+        </div>
+        <div class="guarantee-card">
+          <span class="g-icon">&#128272;</span>
+          <div class="g-title">DBS &amp; Vetted</div>
+          <div class="g-desc">All technicians are DBS-checked and fully insured to £2M</div>
+        </div>
+        <div class="guarantee-card">
+          <span class="g-icon">&#127942;</span>
+          <div class="g-title">MLA Approved</div>
+          <div class="g-desc">Master Locksmiths Association approved — the industry gold standard</div>
+        </div>
+      </div>
     </div>
   </div>
-</section>
 
-<section class="cta-section">
-  <div class="container">
-    <h2>Ready to Book? Get a Free Quote Today.</h2>
-    <p>No call centres, no pressure. Just a quick chat and a fair, honest price.</p>
-    <a href="#get-started" class="btn btn-gold">Request a Free Quote</a>
-  </div>
-</section>
-
-<section class="contact-mini" id="get-started">
-  <div class="container">
-    <h2>Request This Template</h2>
-    <p class="sub">Like what you see? Contact Yoel at Graft Digital to get your own Locksmith website live within days.</p>
-    <div class="mini-form">
-      <form id="reqForm">
-        <div class="fg"><label>Your Name</label><input type="text" placeholder="John Smith" required></div>
-        <div class="fg"><label>Email</label><input type="email" placeholder="john@yourcompany.co.uk" required></div>
-        <div class="fg"><label>Phone</label><input type="tel" placeholder="+44 7XXX XXX XXX"></div>
-        <div class="fg"><label>Tell me about your business</label><textarea placeholder="Where in London are you based? Do you have a logo or existing site?"></textarea></div>
-        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;font-size:.97rem;">Send Enquiry to Graft Digital &rarr;</button>
-      </form>
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="reviews">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Reviews</div>
+        <h2>What Customers Say</h2>
+        <p>Real reviews from verified London customers — no fixed-up testimonials.</p>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card reveal">
+          <div class="review-top">
+            <div class="reviewer">
+              <div class="reviewer-avatar">K</div>
+              <div><div class="reviewer-name">Kirra M.</div><div class="reviewer-loc">Hackney, E8</div></div>
+            </div>
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+          <p class="review-text">"Locked out at 11pm on a Sunday. Called Swift and the technician was at my door in 22 minutes. In and out in 15 minutes, very fair price. No damage to the door at all. Absolute lifesaver — will always call them first."</p>
+          <span class="review-tag">Emergency Lockout</span>
+          <div class="review-time">Sunday 11:08pm</div>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-top">
+            <div class="reviewer">
+              <div class="reviewer-avatar">A</div>
+              <div><div class="reviewer-name">Andrew P.</div><div class="reviewer-loc">Clapham, SW4</div></div>
+            </div>
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+          <p class="review-text">"Had all the locks changed on a new flat purchase. The technician upgraded everything to anti-snap cylinders, explained exactly what he&#8217;d done and why, and gave me a full receipt for the insurance. Excellent professional service."</p>
+          <span class="review-tag">Lock Change</span>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-top">
+            <div class="reviewer">
+              <div class="reviewer-avatar">F</div>
+              <div><div class="reviewer-name">Fatima K.</div><div class="reviewer-loc">Stratford, E15</div></div>
+            </div>
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+          <p class="review-text">"Key snapped in the front door lock on a Friday morning. Swift came out within 35 minutes, extracted the key and fitted a brand new high-security cylinder. Transparent pricing, no nasty surprises. Would definitely use again."</p>
+          <span class="review-tag">Broken Key</span>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text" style="color:#fff;">Graft<span style="color:var(--gold);">Digital</span></span>
-      </a>
-      <span class="footer-copy">&copy; 2025 <strong>Graft Digital</strong> &mdash; Built by Yoel Gutierrez &middot; London</span>
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Get Help Now</div>
+        <h2>Call, WhatsApp or Book Online</h2>
+        <p>For emergencies, always call — we respond fastest by phone. For non-urgent bookings, use the form.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-options reveal">
+          <div class="contact-option primary">
+            <div class="co-icon">&#9889;</div>
+            <div class="co-text">
+              <strong>Emergency — Call 24/7</strong>
+              <a href="tel:+447479531509">+44 7479 531509</a>
+            </div>
+          </div>
+          <div class="contact-option">
+            <div class="co-icon">&#128172;</div>
+            <div class="co-text">
+              <strong>WhatsApp</strong>
+              <a href="tel:+447479531509">+44 7479 531509</a>
+            </div>
+          </div>
+          <div class="contact-option">
+            <div class="co-icon">&#9993;</div>
+            <div class="co-text">
+              <strong>Email</strong>
+              <a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a>
+            </div>
+          </div>
+          <div class="contact-option">
+            <div class="co-icon">&#128337;</div>
+            <div class="co-text">
+              <strong>Availability</strong>
+              <a>24 hours / 7 days a week</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form reveal">
+          <h3>Non-Urgent Booking</h3>
+          <form onsubmit="handleContact(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" id="cFirst" placeholder="Andrew" required>
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" id="cLast" placeholder="Park" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="tel" id="cPhone" placeholder="+44 7xxx xxxxxx" required>
+            </div>
+            <div class="form-group">
+              <label>Postcode</label>
+              <input type="text" id="cPost" placeholder="e.g. SW4 7AB">
+            </div>
+            <div class="form-group">
+              <label>Service Needed</label>
+              <select id="cService">
+                <option value="">Select service...</option>
+                <option>Emergency Lockout</option>
+                <option>Lock Change / Rekey</option>
+                <option>Broken Key Extraction</option>
+                <option>UPVC Lock Repair</option>
+                <option>Smart Lock Installation</option>
+                <option>Security Upgrade</option>
+                <option>Commercial Locksmith</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Additional Details</label>
+              <textarea id="cMsg" placeholder="e.g. Need all locks changed on a new flat purchase in Clapham, 3 external doors..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Send Booking Request &#8594;</button>
+          </form>
+        </div>
+      </div>
     </div>
-  </div>
-</footer>
-<script>
-  document.getElementById('reqForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    const f=this;
-    const btn=f.querySelector('button[type=submit]');
-    const inp=f.querySelector('input[name=template]');
-    const tmpl=inp?inp.value:'General';
-    const name=f.querySelector('input[type=text]').value;
-    const email=f.querySelector('input[type=email]').value;
-    const phone=f.querySelector('input[type=tel]').value;
-    const msg=f.querySelector('textarea').value;
-    const body='Name: '+name+'\nEmail: '+email+'\nPhone: '+phone+'\nTemplate: '+tmpl+'\n\nMessage:\n'+msg;
-    window.location.href='mailto:sales@graftdigital.london?subject='+encodeURIComponent('Template Request – '+tmpl+' – '+name)+'&body='+encodeURIComponent(body);
-    btn.textContent='✓ Opening your email app…';
-    btn.style.background='#22c55e'; btn.style.color='#fff'; btn.disabled=true;
-  });
-</script>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-mark">&#128272;</div>
+            <span class="footer-logo-text">Swift Locksmith London</span>
+          </div>
+          <p>London&#8217;s fastest 24/7 locksmith. MLA approved, DBS-checked, no call-out fee. Average response 28 minutes across all 33 boroughs.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#scenarios">Emergency Lockout</a></li>
+            <li><a href="#scenarios">Lock Change</a></li>
+            <li><a href="#scenarios">Broken Key</a></li>
+            <li><a href="#scenarios">Security Upgrade</a></li>
+            <li><a href="#services">Smart Locks</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+447479531509">+44 7479 531509 (24/7)</a></li>
+            <li><a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a></li>
+            <li><a href="#contact">Book Online</a></li>
+            <li><a href="#coverage">Coverage Map</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&#169; 2025 Swift Locksmith London. All rights reserved.</p>
+        <p>Website by <a href="https://graftdigital.london">Graft Digital</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING CTA -->
+  <a href="tel:+447479531509" class="floating-cta">&#128222; Emergency: +44 7479 531509</a>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => obs.observe(el));
+
+    function handleContact(e) {
+      e.preventDefault();
+      const first = document.getElementById('cFirst').value;
+      const last = document.getElementById('cLast').value;
+      const phone = document.getElementById('cPhone').value;
+      const post = document.getElementById('cPost').value;
+      const service = document.getElementById('cService').value || 'Not specified';
+      const msg = document.getElementById('cMsg').value;
+      const subject = 'Locksmith Booking \u2013 ' + first + ' ' + last + ' \u2013 ' + service;
+      const body = 'Name: ' + first + ' ' + last + '\nPhone: ' + phone + '\nPostcode: ' + post + '\nService: ' + service + '\n\nDetails:\n' + msg;
+      window.location.href = 'mailto:sales@graftdigital.london?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    }
+  </script>
 </body>
 </html>
