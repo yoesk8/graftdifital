@@ -3,215 +3,862 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landscaping &amp; Lawn Care Website Template | Graft Digital</title>
-  <meta name="description" content="Garden design, maintenance and lawn care for London homes and estates.">
-  <meta name="keywords" content="landscaping London, garden maintenance">
+  <title>Verdant Gardens London | Landscaping &amp; Grounds Maintenance</title>
+  <meta name="description" content="Award-winning landscaping, garden design and grounds maintenance across London. RHS-qualified designers, sustainable practices, stunning results.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:#0A1628; --navy-mid:#0F2040; --gold:#F5A623; --gold-dark:#C98010;
-      --gold-light:#FFB84D; --white:#FFFFFF; --off-white:#F7F9FC;
-      --text:#1A2332; --text-mid:#4A5568; --border:#E2E8F0;
+      --forest: #1B3A2D;
+      --forest-mid: #2D5A42;
+      --forest-light: #3D7A5A;
+      --amber: #C47E1A;
+      --amber-light: #E8A030;
+      --amber-pale: #FEF3DC;
+      --cream: #FAF7F1;
+      --stone: #F0EBE0;
+      --white: #FFFFFF;
+      --text: #1A1A1A;
+      --text-mid: #4A4A4A;
+      --text-muted: #7A7A7A;
+      --border: #E2D9CA;
     }
     html { scroll-behavior: smooth; }
-    body { font-family:'Inter',-apple-system,sans-serif; color:var(--text); background:var(--white); line-height:1.6; }
-    a { text-decoration:none; color:inherit; }
-    .container { max-width:1100px; margin:0 auto; padding:0 24px; }
-    /* TOPBAR */
-    .topbar { background:var(--navy); padding:14px 0; position:sticky; top:0; z-index:100; box-shadow:0 2px 12px rgba(0,0,0,.25); }
-    .topbar-inner { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-    .logo { display:flex; align-items:center; gap:9px; }
-    .logo-mark { width:34px; height:34px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:900; color:var(--navy); }
-    .logo-text { font-size:1.1rem; font-weight:900; color:#fff; letter-spacing:-.03em; }
-    .logo-text span { color:var(--gold); }
-    .back-link { color:rgba(255,255,255,.7); font-size:.85rem; font-weight:500; display:flex; align-items:center; gap:6px; transition:color .2s; }
-    .back-link:hover { color:var(--gold); }
-    /* HERO */
-    .hero { background:var(--navy); background-image:radial-gradient(ellipse at 15% 60%,rgba(26,53,96,.6) 0%,transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(245,166,35,.07) 0%,transparent 50%); min-height:480px; display:flex; align-items:center; padding:72px 0 64px; position:relative; overflow:hidden; }
-    .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px); background-size:54px 54px; }
-    .hero-content { position:relative; z-index:2; max-width:680px; }
-    .preview-banner { background:rgba(245,166,35,.1); border:1px solid rgba(245,166,35,.3); border-radius:10px; padding:15px 20px; margin-bottom:36px; display:flex; align-items:flex-start; gap:11px; max-width:600px; }
-    .preview-banner p { color:rgba(255,255,255,.8); font-size:.86rem; line-height:1.55; margin:0; }
-    .preview-banner strong { color:var(--gold); }
-    .hero-tag { display:inline-flex; align-items:center; gap:7px; background:rgba(245,166,35,.13); border:1px solid rgba(245,166,35,.28); color:var(--gold-light); padding:6px 15px; border-radius:100px; font-size:.8rem; font-weight:600; margin-bottom:20px; }
-    .hero-icon { font-size:3.2rem; margin-bottom:10px; display:block; line-height:1; }
-    .hero h1 { font-size:clamp(2.1rem,4.5vw,3.4rem); color:#fff; letter-spacing:-.04em; margin-bottom:16px; line-height:1.15; font-weight:900; }
-    .hero h1 span { color:var(--gold); }
-    .hero > .container > .hero-content > p { color:rgba(255,255,255,.68); font-size:1.05rem; max-width:520px; margin-bottom:32px; }
-    .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
-    .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:8px; font-size:.95rem; font-weight:700; cursor:pointer; transition:all .22s ease; border:none; font-family:inherit; }
-    .btn-gold { background:var(--gold); color:var(--navy); }
-    .btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 20px rgba(245,166,35,.35); }
-    .btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.35); }
-    .btn-outline:hover { border-color:#fff; background:rgba(255,255,255,.08); }
-    /* SERVICES */
-    .services { padding:80px 0; background:var(--off-white); }
-    .services h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .services .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
-    .service-card { background:#fff; border-radius:12px; padding:28px 24px; border:1px solid var(--border); transition:all .22s ease; }
-    .service-card:hover { transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.08); border-color:rgba(245,166,35,.3); }
-    .sc-icon { font-size:1.8rem; margin-bottom:12px; display:block; }
-    .sc-title { font-size:1rem; font-weight:700; margin-bottom:6px; }
-    .sc-desc { font-size:.88rem; color:var(--text-mid); line-height:1.65; }
-    /* TRUST */
-    .why { padding:80px 0; background:var(--white); }
-    .why h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .why .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .trust-items { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; text-align:center; }
-    .trust-item { padding:28px 16px; }
-    .trust-num { font-size:2.4rem; font-weight:900; color:var(--gold-dark); line-height:1; margin-bottom:6px; }
-    .trust-lbl { font-size:.88rem; color:var(--text-mid); }
-    /* CTA */
-    .cta-section { padding:72px 0; background:var(--navy); background-image:radial-gradient(ellipse at 80% 50%,rgba(245,166,35,.08) 0%,transparent 55%); text-align:center; }
-    .cta-section h2 { color:#fff; font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; margin-bottom:14px; }
-    .cta-section p { color:rgba(255,255,255,.65); font-size:1rem; margin-bottom:32px; max-width:480px; margin-left:auto; margin-right:auto; }
-    /* FORM */
-    .contact-mini { padding:80px 0; background:var(--off-white); }
-    .contact-mini h2 { font-size:clamp(1.5rem,3vw,2rem); font-weight:800; text-align:center; margin-bottom:8px; }
-    .contact-mini .sub { text-align:center; color:var(--text-mid); font-size:.97rem; margin-bottom:32px; }
-    .mini-form { max-width:520px; margin:0 auto; background:#fff; border-radius:16px; padding:36px; border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,0,0,.06); }
-    .fg { margin-bottom:16px; }
-    .fg label { display:block; font-size:.84rem; font-weight:600; margin-bottom:6px; }
-    .fg input,.fg textarea { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:8px; font-size:.92rem; font-family:inherit; color:var(--text); outline:none; transition:border .2s; }
-    .fg input:focus,.fg textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(245,166,35,.12); }
-    .fg textarea { resize:vertical; min-height:88px; }
-    /* FOOTER */
-    footer { background:#050D1A; padding:32px 0; border-top:1px solid rgba(255,255,255,.05); }
-    .footer-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
-    .footer-copy { color:rgba(255,255,255,.35); font-size:.82rem; }
-    .footer-copy strong { color:var(--gold); }
-    @media(max-width:600px){ .hero-ctas{flex-direction:column;} .hero-ctas .btn{justify-content:center;} }
+    body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .serif { font-family: 'Playfair Display', Georgia, serif; }
+
+    /* ── TEMPLATE BANNER ── */
+    .template-banner {
+      background: var(--forest);
+      padding: 10px 24px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    }
+    .template-badge { background: var(--amber-light); color: var(--forest); font-size: .72rem; font-weight: 800; padding: 3px 10px; border-radius: 20px; letter-spacing: .04em; text-transform: uppercase; }
+    .template-back { color: rgba(255,255,255,.7); font-size: .82rem; font-weight: 500; display: flex; align-items: center; gap: 6px; transition: color .2s; }
+    .template-back:hover { color: var(--amber-light); }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      background: var(--forest);
+      padding: 9px 24px;
+      display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap;
+    }
+    .topbar-item { color: rgba(255,255,255,.7); font-size: .82rem; font-weight: 500; display: flex; align-items: center; gap: 7px; }
+    .topbar-item a { color: rgba(255,255,255,.85); transition: color .2s; }
+    .topbar-item a:hover { color: var(--amber-light); }
+    .topbar-item .dot { color: rgba(255,255,255,.25); }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 2px 16px rgba(0,0,0,.06);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: 1100px; margin: 0 auto; }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark { width: 40px; height: 40px; background: var(--forest); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+    .logo-name { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--forest); letter-spacing: -.01em; }
+    .logo-name span { color: var(--amber); }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: .88rem; font-weight: 600; color: var(--text-mid); transition: color .2s; }
+    .nav-links a:hover { color: var(--forest); }
+    .nav-cta { background: var(--forest); color: white; padding: 10px 22px; border-radius: 8px; font-size: .88rem; font-weight: 700; transition: background .2s; }
+    .nav-cta:hover { background: var(--forest-mid); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--forest); border-radius: 2px; }
+    .mobile-menu { display: none; background: var(--cream); border-top: 1px solid var(--border); }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; padding: 14px 24px; font-size: .95rem; font-weight: 600; color: var(--text-mid); border-bottom: 1px solid var(--border); }
+    .mobile-menu a:last-child { color: var(--forest); font-weight: 700; }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--forest);
+      position: relative; overflow: hidden;
+      padding: 88px 0 96px;
+      min-height: 540px; display: flex; align-items: center;
+    }
+    /* Decorative layered organic shapes */
+    .hero::before {
+      content: '';
+      position: absolute; right: -60px; top: -40px;
+      width: 560px; height: 560px;
+      background: radial-gradient(ellipse 60% 70% at 65% 40%, rgba(196,126,26,.18) 0%, transparent 70%);
+      border-radius: 40% 60% 60% 40% / 40% 40% 60% 60%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; right: 80px; bottom: -80px;
+      width: 340px; height: 340px;
+      background: rgba(61,122,90,.35);
+      border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
+    }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; position: relative; z-index: 2; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(196,126,26,.2); border: 1px solid rgba(196,126,26,.4);
+      color: var(--amber-light); padding: 6px 14px; border-radius: 20px;
+      font-size: .78rem; font-weight: 700; margin-bottom: 20px; letter-spacing: .04em; text-transform: uppercase;
+    }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 900; line-height: 1.1; color: white; margin-bottom: 22px; }
+    .hero h1 em { font-style: italic; color: var(--amber-light); }
+    .hero-sub { font-size: 1rem; color: rgba(255,255,255,.75); margin-bottom: 36px; max-width: 460px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary { background: var(--amber); color: white; padding: 13px 28px; border-radius: 8px; font-size: .95rem; font-weight: 800; transition: background .2s; }
+    .btn-primary:hover { background: var(--amber-light); }
+    .btn-secondary { background: rgba(255,255,255,.1); color: white; border: 1.5px solid rgba(255,255,255,.3); padding: 13px 28px; border-radius: 8px; font-size: .95rem; font-weight: 700; transition: all .2s; }
+    .btn-secondary:hover { background: rgba(255,255,255,.2); }
+
+    /* Hero visual panel */
+    .hero-visual {
+      display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 14px;
+    }
+    .hero-stat-card {
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px; padding: 24px 20px; text-align: center;
+    }
+    .hero-stat-card.large { grid-column: span 2; display: flex; align-items: center; gap: 20px; text-align: left; padding: 24px 28px; }
+    .hero-stat-card .num { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; color: var(--amber-light); line-height: 1; }
+    .hero-stat-card .lbl { font-size: .78rem; color: rgba(255,255,255,.6); font-weight: 600; margin-top: 4px; letter-spacing: .02em; }
+    .hero-stat-card .icon { font-size: 2rem; margin-bottom: 8px; display: block; }
+    .hero-stat-card.large .icon { font-size: 2.4rem; flex-shrink: 0; }
+
+    /* ── ACCREDITATIONS ── */
+    .accreditations { background: var(--cream); border-bottom: 1px solid var(--border); padding: 24px 0; }
+    .accred-inner { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .accred-badge {
+      display: flex; flex-direction: column; align-items: center; gap: 3px;
+      font-size: .7rem; font-weight: 800; color: var(--forest); letter-spacing: .06em; text-transform: uppercase;
+    }
+    .accred-badge .badge-icon { font-size: 1.5rem; }
+
+    /* ── SERVICES ── */
+    .services { padding: 88px 0; background: var(--white); }
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-tag { display: inline-block; background: var(--amber-pale); color: var(--amber); font-size: .73rem; font-weight: 800; padding: 5px 14px; border-radius: 20px; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 12px; border: 1px solid rgba(196,126,26,.2); }
+    .section-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 900; letter-spacing: -.02em; margin-bottom: 12px; color: var(--forest); }
+    .section-header p { font-size: .97rem; color: var(--text-mid); max-width: 520px; margin: 0 auto; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .service-card {
+      background: var(--cream); border: 1px solid var(--border); border-radius: 18px;
+      overflow: hidden; transition: box-shadow .25s, transform .25s;
+    }
+    .service-card:hover { box-shadow: 0 12px 40px rgba(27,58,45,.12); transform: translateY(-5px); }
+    .svc-header {
+      padding: 36px 28px 24px;
+      display: flex; align-items: flex-start; gap: 16px;
+    }
+    .svc-icon-wrap {
+      width: 54px; height: 54px; background: var(--forest); border-radius: 14px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;
+    }
+    .svc-title { font-size: 1.05rem; font-weight: 800; color: var(--forest); margin-bottom: 5px; }
+    .svc-desc { font-size: .85rem; color: var(--text-mid); line-height: 1.55; }
+    .svc-footer {
+      padding: 16px 28px 24px;
+      border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .svc-from { font-size: .8rem; font-weight: 700; color: var(--amber); }
+    .svc-link { font-size: .8rem; font-weight: 700; color: var(--forest-mid); display: flex; align-items: center; gap: 4px; transition: gap .2s; }
+    .svc-link:hover { gap: 8px; }
+
+    /* ── SEASONAL TABS ── */
+    .seasonal { padding: 88px 0; background: var(--stone); }
+    .tab-bar {
+      display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 40px;
+    }
+    .tab-btn {
+      padding: 10px 24px; border-radius: 24px; border: 2px solid var(--border);
+      background: white; font-family: inherit; font-size: .9rem; font-weight: 700;
+      color: var(--text-mid); cursor: pointer; transition: all .2s;
+    }
+    .tab-btn.active { background: var(--forest); color: white; border-color: var(--forest); }
+    .tab-btn:hover:not(.active) { border-color: var(--forest-mid); color: var(--forest); }
+    .tab-content { display: none; }
+    .tab-content.active { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 800px; margin: 0 auto; }
+    .season-item {
+      background: white; border-radius: 14px; padding: 22px 20px;
+      border: 1px solid var(--border); display: flex; align-items: flex-start; gap: 14px;
+    }
+    .season-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+    .season-item h4 { font-size: .92rem; font-weight: 800; color: var(--forest); margin-bottom: 4px; }
+    .season-item p { font-size: .82rem; color: var(--text-mid); }
+
+    /* ── PORTFOLIO ── */
+    .portfolio { padding: 88px 0; background: var(--white); }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto auto; gap: 20px; }
+    .portfolio-card {
+      border-radius: 16px; overflow: hidden; position: relative;
+      aspect-ratio: 4/3; background: var(--forest);
+      cursor: pointer;
+    }
+    .portfolio-card.tall { grid-row: span 2; aspect-ratio: unset; }
+    .portfolio-bg {
+      position: absolute; inset: 0;
+      transition: transform .4s ease;
+    }
+    .portfolio-card:hover .portfolio-bg { transform: scale(1.04); }
+    .portfolio-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(27,58,45,.85) 0%, transparent 55%);
+      display: flex; flex-direction: column; justify-content: flex-end; padding: 22px;
+      opacity: 0; transition: opacity .3s;
+    }
+    .portfolio-card:hover .portfolio-overlay { opacity: 1; }
+    .portfolio-overlay h4 { font-size: .95rem; font-weight: 800; color: white; margin-bottom: 4px; }
+    .portfolio-overlay p { font-size: .78rem; color: rgba(255,255,255,.75); }
+    .portfolio-label {
+      position: absolute; top: 14px; left: 14px;
+      background: var(--amber); color: white;
+      font-size: .7rem; font-weight: 800; padding: 4px 10px; border-radius: 20px;
+    }
+    /* CSS colour fills for portfolio tiles */
+    .tile-1 { background: linear-gradient(135deg, #2D5A42 0%, #1B3A2D 50%, #3D7A5A 100%); }
+    .tile-2 { background: linear-gradient(135deg, #4a7c59 0%, #2d5a42 100%); }
+    .tile-3 { background: linear-gradient(135deg, #3d6644 0%, #1B3A2D 100%); }
+    .tile-4 { background: linear-gradient(135deg, #2a5235 0%, #3d7a5a 100%); }
+    .tile-5 { background: linear-gradient(135deg, #1B3A2D 0%, #4a7c59 100%); }
+    /* Geometric pattern overlay */
+    .tile-pattern::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.03) 0px, rgba(255,255,255,.03) 1px, transparent 1px, transparent 40px);
+    }
+    .portfolio-icon {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      font-size: 4rem; opacity: .25;
+    }
+    .portfolio-card.tall .portfolio-icon { font-size: 6rem; }
+
+    /* ── SUSTAINABILITY ── */
+    .sustainability { padding: 88px 0; background: var(--forest); }
+    .sustainability .section-header h2 { color: white; }
+    .sustainability .section-header p { color: rgba(255,255,255,.65); }
+    .sustainability .section-tag { background: rgba(196,126,26,.2); color: var(--amber-light); border: 1px solid rgba(196,126,26,.3); }
+    .sustain-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; }
+    .sustain-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .sustain-stat {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 16px; padding: 28px 20px; text-align: center;
+    }
+    .sustain-stat .big { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900; color: var(--amber-light); }
+    .sustain-stat .sm { font-size: .78rem; color: rgba(255,255,255,.6); font-weight: 600; letter-spacing: .03em; }
+    .sustain-content h3 { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 900; color: white; margin-bottom: 16px; }
+    .sustain-content p { font-size: .9rem; color: rgba(255,255,255,.7); margin-bottom: 24px; }
+    .sustain-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .sustain-list li { display: flex; align-items: flex-start; gap: 10px; font-size: .88rem; color: rgba(255,255,255,.75); }
+    .sustain-list li::before { content: '&#10003;'; color: var(--amber-light); font-weight: 800; flex-shrink: 0; margin-top: 2px; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { padding: 88px 0; background: var(--cream); }
+    .testimonials .section-header h2 { color: var(--forest); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .review-card { background: white; border: 1px solid var(--border); border-radius: 18px; padding: 28px 24px; }
+    .review-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .reviewer { display: flex; align-items: center; gap: 12px; }
+    .reviewer-avatar { width: 44px; height: 44px; background: var(--forest); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .95rem; font-weight: 900; color: white; }
+    .reviewer-name { font-size: .9rem; font-weight: 800; color: var(--forest); }
+    .reviewer-loc { font-size: .77rem; color: var(--text-muted); }
+    .stars { color: var(--amber); font-size: .9rem; letter-spacing: 1px; }
+    .review-text { font-size: .88rem; color: var(--text-mid); line-height: 1.65; font-style: italic; }
+    .review-service { display: inline-block; margin-top: 14px; background: var(--amber-pale); color: var(--amber); font-size: .72rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; }
+
+    /* ── CONTACT ── */
+    .contact { padding: 88px 0; background: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .contact-left h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 900; color: var(--forest); margin-bottom: 14px; }
+    .contact-left p { font-size: .95rem; color: var(--text-mid); margin-bottom: 32px; }
+    .contact-details { display: flex; flex-direction: column; gap: 16px; }
+    .contact-row { display: flex; align-items: flex-start; gap: 14px; }
+    .contact-icon { width: 44px; height: 44px; background: var(--amber-pale); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; border: 1px solid rgba(196,126,26,.2); }
+    .contact-row-text strong { display: block; font-size: .83rem; font-weight: 700; color: var(--text-muted); margin-bottom: 2px; }
+    .contact-row-text a { color: var(--forest); font-size: .95rem; font-weight: 700; transition: color .2s; }
+    .contact-row-text a:hover { color: var(--amber); }
+    .contact-form { background: var(--cream); border-radius: 20px; padding: 36px 32px; border: 1px solid var(--border); }
+    .contact-form h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 800; color: var(--forest); margin-bottom: 24px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: .82rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 11px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-family: inherit; font-size: .9rem; color: var(--text); background: white; outline: none; transition: border-color .2s; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--forest); }
+    .form-group textarea { min-height: 90px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .btn-submit { width: 100%; background: var(--forest); color: white; border: none; padding: 14px; border-radius: 10px; font-family: inherit; font-size: 1rem; font-weight: 800; cursor: pointer; transition: background .2s; margin-top: 4px; }
+    .btn-submit:hover { background: var(--forest-mid); }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--forest); color: white; padding: 56px 0 28px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand .footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .footer-logo-mark { width: 36px; height: 36px; background: var(--amber); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+    .footer-logo-text { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: white; }
+    .footer-brand p { font-size: .85rem; color: rgba(255,255,255,.55); max-width: 280px; }
+    .footer-col h4 { font-size: .78rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 14px; color: rgba(255,255,255,.4); }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { font-size: .87rem; color: rgba(255,255,255,.6); transition: color .2s; }
+    .footer-col ul a:hover { color: var(--amber-light); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .footer-bottom p { font-size: .8rem; color: rgba(255,255,255,.35); }
+    .footer-bottom a { color: var(--amber-light); }
+
+    /* ── FLOATING CTA ── */
+    .floating-cta { display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--forest); color: white; padding: 14px 28px; border-radius: 50px; font-size: .95rem; font-weight: 800; box-shadow: 0 4px 24px rgba(27,58,45,.4); z-index: 500; white-space: nowrap; }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .55s ease, transform .55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr 1fr; }
+      .portfolio-card.tall { grid-row: span 1; aspect-ratio: 4/3; }
+      .sustain-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .tab-content.active { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .services-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .portfolio-card.tall { grid-row: span 1; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .floating-cta { display: flex; }
+      .topbar { gap: 14px; }
+      .accred-inner { gap: 20px; }
+      .sustain-stats { grid-template-columns: 1fr 1fr; }
+    }
   </style>
 </head>
 <body>
-<header class="topbar">
-  <div class="container">
-    <div class="topbar-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text">Graft<span>Digital</span></span>
-      </a>
-      <a href="../index.html#industries" class="back-link">&larr; All Templates</a>
-    </div>
-  </div>
-</header>
 
-<section class="hero">
-  <div class="hero-grid"></div>
-  <div class="container">
-    <div class="hero-content">
-      <div class="preview-banner">
-        <span style="font-size:1.2rem;flex-shrink:0;">&#128065;</span>
-        <p>This is a <strong>sample template</strong> for a Landscaping &amp; Lawn Care business. Your real site will be fully customised with your branding, photos &amp; details. <a href="#get-started" style="color:var(--gold);font-weight:700;">Request this template &darr;</a></p>
-      </div>
-      <div class="hero-tag">&#128205; London Trade Template</div>
-      <span class="hero-icon">&#127807;</span>
-      <h1>London&rsquo;s Trusted<br><span>Landscaping &amp; Lawn Care</span><br>Specialists</h1>
-      <p>Garden design, maintenance and lawn care for London homes and estates.</p>
-      <div class="hero-ctas">
-        <a href="#get-started" class="btn btn-gold">Get a Free Quote</a>
-        <a href="tel:+447895628993" class="btn btn-outline">&#128222; Call Now</a>
-      </div>
-    </div>
+  <!-- TEMPLATE BANNER -->
+  <div class="template-banner">
+    <span class="template-badge">Template Preview</span>
+    <a href="https://graftdigital.london" class="template-back">&#8592; Back to Graft Digital</a>
   </div>
-</section>
 
-<section class="services">
-  <div class="container">
-    <h2>Our Services</h2>
-    <p class="sub">Professional Landscaping &amp; Lawn Care services across all London boroughs</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <span class="sc-icon">&#10003;</span>
-        <div class="sc-title">Residential</div>
-        <p class="sc-desc">Trusted by homeowners across London for reliable, high-quality work done right first time.</p>
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <span class="topbar-item">&#128222; <a href="tel:+447895628993">+44 7895 628993</a></span>
+    <span class="topbar-item dot">|</span>
+    <span class="topbar-item">&#9993; <a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a></span>
+    <span class="topbar-item dot">|</span>
+    <span class="topbar-item">&#128338; Mon&#8211;Sat 7am&#8211;6pm</span>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="logo">
+        <div class="logo-mark">&#127807;</div>
+        <span class="logo-name">Verdant <span>Gardens</span></span>
       </div>
-      <div class="service-card">
-        <span class="sc-icon">&#127970;</span>
-        <div class="sc-title">Commercial</div>
-        <p class="sc-desc">We work with businesses, landlords and property managers throughout Greater London.</p>
-      </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128241;</span>
-        <div class="sc-title">Emergency Callouts</div>
-        <p class="sc-desc">Fast response when you need it most. We cover all London postcodes, seven days a week.</p>
-      </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128205;</span>
-        <div class="sc-title">All London Boroughs</div>
-        <p class="sc-desc">From Hackney to Hammersmith, Croydon to Camden &mdash; we cover the entire Greater London area.</p>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#seasonal">Seasonal</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#sustainability">Sustainability</a></li>
+        <li><a href="#contact" class="nav-cta">Free Quote</a></li>
+      </ul>
+      <div class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+        <span></span><span></span><span></span>
       </div>
     </div>
-  </div>
-</section>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#services" onclick="document.getElementById('mobileMenu').classList.remove('open')">Services</a>
+      <a href="#seasonal" onclick="document.getElementById('mobileMenu').classList.remove('open')">Seasonal</a>
+      <a href="#portfolio" onclick="document.getElementById('mobileMenu').classList.remove('open')">Portfolio</a>
+      <a href="#sustainability" onclick="document.getElementById('mobileMenu').classList.remove('open')">Sustainability</a>
+      <a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Free Quote</a>
+    </div>
+  </nav>
 
-<section class="why">
-  <div class="container">
-    <h2>Why Choose Us?</h2>
-    <p class="sub">Trusted by hundreds of London customers</p>
-    <div class="trust-items">
-      <div class="trust-item"><div class="trust-num">500+</div><div class="trust-lbl">Jobs Completed</div></div>
-      <div class="trust-item"><div class="trust-num">5&#9733;</div><div class="trust-lbl">Google Rating</div></div>
-      <div class="trust-item"><div class="trust-num">10+</div><div class="trust-lbl">Years Experience</div></div>
-      <div class="trust-item"><div class="trust-num">32</div><div class="trust-lbl">London Boroughs Covered</div></div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-eyebrow">RHS-Qualified &#183; Award-Winning &#183; London</div>
+          <h1>London Gardens Designed to <em>Thrive</em></h1>
+          <p class="hero-sub">From bespoke garden design to year-round grounds maintenance — we create and care for exceptional outdoor spaces across all 33 London boroughs.</p>
+          <div class="hero-btns">
+            <a href="#contact" class="btn-primary">Get a Free Quote</a>
+            <a href="#portfolio" class="btn-secondary">View Our Work</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-stat-card">
+            <span class="icon">&#127807;</span>
+            <div class="num">500+</div>
+            <div class="lbl">Gardens Transformed</div>
+          </div>
+          <div class="hero-stat-card">
+            <span class="icon">&#11088;</span>
+            <div class="num">4.9</div>
+            <div class="lbl">Average Rating</div>
+          </div>
+          <div class="hero-stat-card large">
+            <span class="icon">&#127748;</span>
+            <div>
+              <div class="num">15 Years</div>
+              <div class="lbl">Serving London gardens</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCREDITATIONS -->
+  <div class="accreditations">
+    <div class="container">
+      <div class="accred-inner">
+        <div class="accred-badge"><span class="badge-icon">&#127807;</span>RHS Qualified</div>
+        <div class="accred-badge"><span class="badge-icon">&#127942;</span>BALI Member</div>
+        <div class="accred-badge"><span class="badge-icon">&#9989;</span>Checkatrade</div>
+        <div class="accred-badge"><span class="badge-icon">&#128272;</span>Fully Insured</div>
+        <div class="accred-badge"><span class="badge-icon">&#9851;</span>Sustainable</div>
+        <div class="accred-badge"><span class="badge-icon">&#128176;</span>TrustMark</div>
+      </div>
     </div>
   </div>
-</section>
 
-<section class="cta-section">
-  <div class="container">
-    <h2>Ready to Book? Get a Free Quote Today.</h2>
-    <p>No call centres, no pressure. Just a quick chat and a fair, honest price.</p>
-    <a href="#get-started" class="btn btn-gold">Request a Free Quote</a>
-  </div>
-</section>
-
-<section class="contact-mini" id="get-started">
-  <div class="container">
-    <h2>Request This Template</h2>
-    <p class="sub">Like what you see? Contact Yoel at Graft Digital to get your own Landscaping &amp; Lawn Care website live within days.</p>
-    <div class="mini-form">
-      <form id="reqForm">
-        <div class="fg"><label>Your Name</label><input type="text" placeholder="John Smith" required></div>
-        <div class="fg"><label>Email</label><input type="email" placeholder="john@yourcompany.co.uk" required></div>
-        <div class="fg"><label>Phone</label><input type="tel" placeholder="+44 7XXX XXX XXX"></div>
-        <div class="fg"><label>Tell me about your business</label><textarea placeholder="Where in London are you based? Do you have a logo or existing site?"></textarea></div>
-        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;font-size:.97rem;">Send Enquiry to Graft Digital &rarr;</button>
-      </form>
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">What We Do</div>
+        <h2>Complete Garden &amp; Grounds Services</h2>
+        <p>From a single hedge trim to a full landscape transformation — we handle every aspect of your outdoor space.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="svc-header">
+            <div class="svc-icon-wrap">&#127817;</div>
+            <div>
+              <div class="svc-title">Garden Design</div>
+              <div class="svc-desc">Bespoke planting plans and hard landscaping concepts from our RHS-qualified designers, tailored to your space and lifestyle.</div>
+            </div>
+          </div>
+          <div class="svc-footer">
+            <span class="svc-from">From £450</span>
+            <a href="#contact" class="svc-link">Enquire &#8594;</a>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="svc-header">
+            <div class="svc-icon-wrap">&#9921;</div>
+            <div>
+              <div class="svc-title">Lawn Care &amp; Maintenance</div>
+              <div class="svc-desc">Regular mowing, scarification, aeration and overseeding programmes to keep your lawn looking immaculate year-round.</div>
+            </div>
+          </div>
+          <div class="svc-footer">
+            <span class="svc-from">From £45/visit</span>
+            <a href="#contact" class="svc-link">Enquire &#8594;</a>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="svc-header">
+            <div class="svc-icon-wrap">&#127795;</div>
+            <div>
+              <div class="svc-title">Hedge Trimming</div>
+              <div class="svc-desc">Precise shaping and trimming of hedges, topiary and formal borders by skilled craftspeople with the right tools for the job.</div>
+            </div>
+          </div>
+          <div class="svc-footer">
+            <span class="svc-from">From £75</span>
+            <a href="#contact" class="svc-link">Enquire &#8594;</a>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="svc-header">
+            <div class="svc-icon-wrap">&#127796;</div>
+            <div>
+              <div class="svc-title">Planting &amp; Borders</div>
+              <div class="svc-desc">Seasonal planting schemes, border restocking and perennial planting designed for colour through every season.</div>
+            </div>
+          </div>
+          <div class="svc-footer">
+            <span class="svc-from">From £150</span>
+            <a href="#contact" class="svc-link">Enquire &#8594;</a>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="svc-header">
+            <div class="svc-icon-wrap">&#127959;</div>
+            <div>
+              <div class="svc-title">Hard Landscaping</div>
+              <div class="svc-desc">Patios, pathways, raised beds, fencing, decking and water features installed to the highest standards.</div>
+            </div>
+          </div>
+          <div class="svc-footer">
+            <span class="svc-from">From £POA</span>
+            <a href="#contact" class="svc-link">Enquire &#8594;</a>
+          </div>
+        </div>
+        <div class="service-card reveal">
+          <div class="svc-header">
+            <div class="svc-icon-wrap">&#127970;</div>
+            <div>
+              <div class="svc-title">Grounds Maintenance</div>
+              <div class="svc-desc">Commercial and residential grounds contracts — reliable, scheduled maintenance programmes with a dedicated account manager.</div>
+            </div>
+          </div>
+          <div class="svc-footer">
+            <span class="svc-from">From £POA</span>
+            <a href="#contact" class="svc-link">Enquire &#8594;</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text" style="color:#fff;">Graft<span style="color:var(--gold);">Digital</span></span>
-      </a>
-      <span class="footer-copy">&copy; 2025 <strong>Graft Digital</strong> &mdash; Built by Yoel Gutierrez &middot; London</span>
+  <!-- SEASONAL TABS -->
+  <section class="seasonal" id="seasonal">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Year-Round Care</div>
+        <h2>Your Garden Through the Seasons</h2>
+        <p>Every season brings different priorities. We plan ahead so your garden always looks its best.</p>
+      </div>
+      <div class="tab-bar reveal" id="tabBar">
+        <button class="tab-btn active" onclick="switchTab('spring')">&#127800; Spring</button>
+        <button class="tab-btn" onclick="switchTab('summer')">&#9728; Summer</button>
+        <button class="tab-btn" onclick="switchTab('autumn')">&#127811; Autumn</button>
+        <button class="tab-btn" onclick="switchTab('winter')">&#10052; Winter</button>
+      </div>
+      <div class="tab-content active reveal" id="tab-spring">
+        <div class="season-item"><div class="season-icon">&#127807;</div><div><h4>First Cut &amp; Lawn Feed</h4><p>First mow of the year, fertiliser application and weed treatment to wake the lawn up.</p></div></div>
+        <div class="season-item"><div class="season-icon">&#127817;</div><div><h4>Border Planting</h4><p>Spring bulb tidying, new seasonal planting schemes and perennial division.</p></div></div>
+        <div class="season-item"><div class="season-icon">&#127795;</div><div><h4>Hedge &amp; Shrub Pruning</h4><p>Early season shape and structure work before the main growing surge begins.</p></div></div>
+        <div class="season-item"><div class="season-icon">&#128167;</div><div><h4>Irrigation Check</h4><p>Commission irrigation systems, check drip feeds and replace any winter-damaged components.</p></div></div>
+      </div>
+      <div class="tab-content" id="tab-summer">
+        <div class="season-item"><div class="season-icon">&#9921;</div><div><h4>Regular Lawn Maintenance</h4><p>Weekly or fortnightly mowing, edging and stripe for pristine presentation all summer.</p></div></div>
+        <div class="season-item"><div class="season-icon">&#127800;</div><div><h4>Deadheading &amp; Feeding</h4><p>Keep borders blooming with regular deadheading, feeding and pest monitoring.</p></div></div>
+        <div class="season-item"><div class="season-icon">&#127795;</div><div><h4>Formal Hedge Trim</h4><p>Main summer cut to maintain crisp lines and encourage dense, healthy growth.</p></div></div>
+        <div class="season-item"><div class="season-icon">&#9960;</div><div><h4>Patio &amp; Surface Care</h4><p>Jet washing, weed treatment between paving and sealing of decking and timber.</p></div></div>
+      </div>
+      <div class="tab-content" id="tab-autumn">
+        <div class="season-item"><div class="season-icon">&#127811;</div><div><h4>Leaf Clearance</h4><p>Regular clearance of fallen leaves from lawns, borders, gutters and hardstanding.</p></div></div>
+        <div class="season-item"><div class="season-icon">&#9926;</div><div><h4>Lawn Aeration &amp; Scarifying</h4><p>Annual scarification removes thatch buildup, followed by aeration and overseeding.</p></div></div>
+        <div class="season-item"><div class="season-icon">&#127796;</div><div><h4>Bulb Planting</h4><p>Spring bulb planting for tulips, daffodils and alliums — invest now for a spectacular spring.</p></div></div>
+        <div class="season-item"><div class="season-icon">&#127795;</div><div><h4>Shrub &amp; Rose Prep</h4><p>Autumn pruning of roses, shrubs and climbers to structure before winter sets in.</p></div></div>
+      </div>
+      <div class="tab-content" id="tab-winter">
+        <div class="season-item"><div class="season-icon">&#10052;</div><div><h4>Winter Clearance</h4><p>Tidying beds, cutting back herbaceous perennials and protecting tender plants from frost.</p></div></div>
+        <div class="season-item"><div class="season-icon">&#127795;</div><div><h4>Structural Pruning</h4><p>The best time for formative pruning of deciduous trees, shrubs and climbers.</p></div></div>
+        <div class="season-item"><div class="season-icon">&#9928;</div><div><h4>Planning for Spring</h4><p>Consultation and design sessions to plan new features, borders or a garden refresh.</p></div></div>
+        <div class="season-item"><div class="season-icon">&#127959;</div><div><h4>Hard Landscaping</h4><p>Ideal season for patio, pathway and structural groundwork before the growing season returns.</p></div></div>
+      </div>
     </div>
-  </div>
-</footer>
-<script>
-  document.getElementById('reqForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    const f=this;
-    const btn=f.querySelector('button[type=submit]');
-    const inp=f.querySelector('input[name=template]');
-    const tmpl=inp?inp.value:'General';
-    const name=f.querySelector('input[type=text]').value;
-    const email=f.querySelector('input[type=email]').value;
-    const phone=f.querySelector('input[type=tel]').value;
-    const msg=f.querySelector('textarea').value;
-    const body='Name: '+name+'\nEmail: '+email+'\nPhone: '+phone+'\nTemplate: '+tmpl+'\n\nMessage:\n'+msg;
-    window.location.href='mailto:sales@graftdigital.london?subject='+encodeURIComponent('Template Request – '+tmpl+' – '+name)+'&body='+encodeURIComponent(body);
-    btn.textContent='✓ Opening your email app…';
-    btn.style.background='#22c55e'; btn.style.color='#fff'; btn.disabled=true;
-  });
-</script>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Our Work</div>
+        <h2>Recent Projects Across London</h2>
+        <p>From intimate courtyard gardens to extensive estate grounds — a selection of our recent transformations.</p>
+      </div>
+      <div class="portfolio-grid reveal">
+        <div class="portfolio-card tall">
+          <div class="portfolio-bg tile-1 tile-pattern"></div>
+          <div class="portfolio-icon">&#127807;</div>
+          <span class="portfolio-label">Garden Design</span>
+          <div class="portfolio-overlay">
+            <h4>Chelsea Townhouse Garden</h4>
+            <p>Complete redesign — formal planting, stone terrace</p>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <div class="portfolio-bg tile-2 tile-pattern"></div>
+          <div class="portfolio-icon">&#9921;</div>
+          <span class="portfolio-label">Lawn Care</span>
+          <div class="portfolio-overlay">
+            <h4>Wimbledon Estate Lawn</h4>
+            <p>Annual lawn restoration programme</p>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <div class="portfolio-bg tile-3 tile-pattern"></div>
+          <div class="portfolio-icon">&#127795;</div>
+          <span class="portfolio-label">Hedge Trimming</span>
+          <div class="portfolio-overlay">
+            <h4>Kensington Formal Hedges</h4>
+            <p>Quarterly box and yew maintenance</p>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <div class="portfolio-bg tile-4 tile-pattern"></div>
+          <div class="portfolio-icon">&#127959;</div>
+          <span class="portfolio-label">Hard Landscaping</span>
+          <div class="portfolio-overlay">
+            <h4>Islington Courtyard Patio</h4>
+            <p>Natural stone paving with raised planters</p>
+          </div>
+        </div>
+        <div class="portfolio-card">
+          <div class="portfolio-bg tile-5 tile-pattern"></div>
+          <div class="portfolio-icon">&#127800;</div>
+          <span class="portfolio-label">Planting Design</span>
+          <div class="portfolio-overlay">
+            <h4>Richmond Cottage Garden</h4>
+            <p>Four-season border planting scheme</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUSTAINABILITY -->
+  <section class="sustainability" id="sustainability">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Our Commitment</div>
+        <h2>Gardening That Gives Back to Nature</h2>
+        <p>We believe beautiful gardens and environmental responsibility go hand in hand.</p>
+      </div>
+      <div class="sustain-grid">
+        <div class="sustain-stats reveal">
+          <div class="sustain-stat">
+            <div class="big">100%</div>
+            <div class="sm">Green Waste Composted</div>
+          </div>
+          <div class="sustain-stat">
+            <div class="big">2,000+</div>
+            <div class="sm">Tonnes Recycled Yearly</div>
+          </div>
+          <div class="sustain-stat">
+            <div class="big">Zero</div>
+            <div class="sm">Single-Use Plastics</div>
+          </div>
+          <div class="sustain-stat">
+            <div class="big">EV Fleet</div>
+            <div class="sm">Electric Vehicles by 2026</div>
+          </div>
+        </div>
+        <div class="sustain-content reveal">
+          <h3>Sustainable by Design</h3>
+          <p>From seed to skip, we minimise our environmental impact at every step. All green waste is composted or chipped on-site, we use peat-free composts as standard, and our planting designs prioritise native and pollinator-friendly species.</p>
+          <ul class="sustain-list">
+            <li>Peat-free composts and responsible sourcing</li>
+            <li>Native and pollinator-friendly planting design</li>
+            <li>All green waste composted, nothing to landfill</li>
+            <li>Water-wise irrigation and rainwater harvesting</li>
+            <li>Electric tools where operationally possible</li>
+            <li>Wildlife habitats — log piles, bee hotels, bird boxes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="reviews">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Reviews</div>
+        <h2>What Our Clients Say</h2>
+        <p>Trusted by homeowners, estates and commercial clients across London.</p>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card reveal">
+          <div class="review-top">
+            <div class="reviewer">
+              <div class="reviewer-avatar">C</div>
+              <div><div class="reviewer-name">Caroline H.</div><div class="reviewer-loc">Richmond, TW9</div></div>
+            </div>
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+          <p class="review-text">"Verdant transformed our tired, overgrown garden into something we actually want to spend time in. The design consultation was thorough and the planting choices are inspired. Best money we've ever spent on the house."</p>
+          <span class="review-service">Garden Design</span>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-top">
+            <div class="reviewer">
+              <div class="reviewer-avatar">R</div>
+              <div><div class="reviewer-name">Robert P.</div><div class="reviewer-loc">Wimbledon, SW19</div></div>
+            </div>
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+          <p class="review-text">"Been on their monthly maintenance programme for two years. The lawn is immaculate — neighbours regularly ask who does it. Reliable, professional and you can trust them completely. Couldn't run the garden without them."</p>
+          <span class="review-service">Grounds Maintenance</span>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-top">
+            <div class="reviewer">
+              <div class="reviewer-avatar">N</div>
+              <div><div class="reviewer-name">Natalie W.</div><div class="reviewer-loc">Islington, N1</div></div>
+            </div>
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+          <p class="review-text">"Had the courtyard completely re-paved with natural stone and raised planters added. The team were tidy, quick and the result is stunning. Such a difference to have a proper outdoor space in London. Highly recommend."</p>
+          <span class="review-service">Hard Landscaping</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left reveal">
+          <div class="section-tag">Free Quote</div>
+          <h2>Let's Talk About Your Garden</h2>
+          <p>Tell us about your outdoor space and we'll come out for a free no-obligation site visit and quote within 48 hours.</p>
+          <div class="contact-details">
+            <div class="contact-row">
+              <div class="contact-icon">&#128222;</div>
+              <div class="contact-row-text">
+                <strong>Call or WhatsApp</strong>
+                <a href="tel:+447895628993">+44 7895 628993</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-icon">&#9993;</div>
+              <div class="contact-row-text">
+                <strong>Email</strong>
+                <a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-icon">&#128337;</div>
+              <div class="contact-row-text">
+                <strong>Hours</strong>
+                <a>Monday&#8211;Saturday 7am&#8211;6pm</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form reveal">
+          <h3>Request a Free Site Visit</h3>
+          <form onsubmit="handleContact(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" id="cFirst" placeholder="James" required>
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" id="cLast" placeholder="Wilson" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="tel" id="cPhone" placeholder="+44 7xxx xxxxxx" required>
+            </div>
+            <div class="form-group">
+              <label>Postcode</label>
+              <input type="text" id="cPost" placeholder="e.g. SW19 4AB">
+            </div>
+            <div class="form-group">
+              <label>Service Interested In</label>
+              <select id="cService">
+                <option value="">Select service...</option>
+                <option>Garden Design</option>
+                <option>Lawn Care &amp; Maintenance</option>
+                <option>Hedge Trimming</option>
+                <option>Planting &amp; Borders</option>
+                <option>Hard Landscaping</option>
+                <option>Grounds Maintenance Contract</option>
+                <option>General Enquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Tell Us About Your Garden</label>
+              <textarea id="cMsg" placeholder="e.g. 50ft rear garden in Wimbledon, overgrown, needs full redesign with lawn and planting..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Request Free Site Visit &#8594;</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-mark">&#127807;</div>
+            <span class="footer-logo-text">Verdant Gardens</span>
+          </div>
+          <p>Award-winning landscaping and grounds maintenance serving London for over 15 years. RHS-qualified, fully insured, sustainably minded.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Garden Design</a></li>
+            <li><a href="#services">Lawn Care</a></li>
+            <li><a href="#services">Hedge Trimming</a></li>
+            <li><a href="#services">Hard Landscaping</a></li>
+            <li><a href="#services">Grounds Maintenance</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+447895628993">+44 7895 628993</a></li>
+            <li><a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a></li>
+            <li><a href="#contact">Free Site Visit</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&#169; 2025 Verdant Gardens London. All rights reserved.</p>
+        <p>Website by <a href="https://graftdigital.london">Graft Digital</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING CTA -->
+  <a href="#contact" class="floating-cta">Free Garden Quote &#8594;</a>
+
+  <script>
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => obs.observe(el));
+
+    // Seasonal tabs
+    function switchTab(season) {
+      document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('tab-' + season).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    // Contact form
+    function handleContact(e) {
+      e.preventDefault();
+      const first = document.getElementById('cFirst').value;
+      const last = document.getElementById('cLast').value;
+      const phone = document.getElementById('cPhone').value;
+      const post = document.getElementById('cPost').value;
+      const service = document.getElementById('cService').value || 'Not specified';
+      const msg = document.getElementById('cMsg').value;
+      const subject = 'Garden Enquiry \u2013 ' + first + ' ' + last + ' \u2013 ' + service;
+      const body = 'Name: ' + first + ' ' + last + '\nPhone: ' + phone + '\nPostcode: ' + post + '\nService: ' + service + '\n\nDetails:\n' + msg;
+      window.location.href = 'mailto:sales@graftdigital.london?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    }
+  </script>
 </body>
 </html>
