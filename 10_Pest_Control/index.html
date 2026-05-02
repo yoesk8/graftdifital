@@ -3,215 +3,788 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pest Control Website Template | Graft Digital</title>
-  <meta name="description" content="Fast response pest removal for homes and businesses across London.">
-  <meta name="keywords" content="pest control London, exterminator">
+  <title>Shield Pest Control London | 24/7 Emergency Pest Removal</title>
+  <meta name="description" content="London's trusted pest control specialists. Same-day response, 24/7 emergency call-out. Rats, mice, bed bugs, cockroaches, wasps and more. BPCA certified technicians.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:#0A1628; --navy-mid:#0F2040; --gold:#F5A623; --gold-dark:#C98010;
-      --gold-light:#FFB84D; --white:#FFFFFF; --off-white:#F7F9FC;
-      --text:#1A2332; --text-mid:#4A5568; --border:#E2E8F0;
+      --navy: #0F1F3D;
+      --navy-mid: #1A2F54;
+      --navy-light: #243C6B;
+      --orange: #EA580C;
+      --orange-mid: #F97316;
+      --orange-pale: #FFF7ED;
+      --white: #FFFFFF;
+      --off-white: #F8FAFC;
+      --text: #0F1F3D;
+      --text-mid: #475569;
+      --text-muted: #94A3B8;
+      --border: #E2E8F0;
+      --green: #16A34A;
+      --green-pale: #F0FDF4;
     }
     html { scroll-behavior: smooth; }
-    body { font-family:'Inter',-apple-system,sans-serif; color:var(--text); background:var(--white); line-height:1.6; }
-    a { text-decoration:none; color:inherit; }
-    .container { max-width:1100px; margin:0 auto; padding:0 24px; }
-    /* TOPBAR */
-    .topbar { background:var(--navy); padding:14px 0; position:sticky; top:0; z-index:100; box-shadow:0 2px 12px rgba(0,0,0,.25); }
-    .topbar-inner { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-    .logo { display:flex; align-items:center; gap:9px; }
-    .logo-mark { width:34px; height:34px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:900; color:var(--navy); }
-    .logo-text { font-size:1.1rem; font-weight:900; color:#fff; letter-spacing:-.03em; }
-    .logo-text span { color:var(--gold); }
-    .back-link { color:rgba(255,255,255,.7); font-size:.85rem; font-weight:500; display:flex; align-items:center; gap:6px; transition:color .2s; }
-    .back-link:hover { color:var(--gold); }
-    /* HERO */
-    .hero { background:var(--navy); background-image:radial-gradient(ellipse at 15% 60%,rgba(26,53,96,.6) 0%,transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(245,166,35,.07) 0%,transparent 50%); min-height:480px; display:flex; align-items:center; padding:72px 0 64px; position:relative; overflow:hidden; }
-    .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px); background-size:54px 54px; }
-    .hero-content { position:relative; z-index:2; max-width:680px; }
-    .preview-banner { background:rgba(245,166,35,.1); border:1px solid rgba(245,166,35,.3); border-radius:10px; padding:15px 20px; margin-bottom:36px; display:flex; align-items:flex-start; gap:11px; max-width:600px; }
-    .preview-banner p { color:rgba(255,255,255,.8); font-size:.86rem; line-height:1.55; margin:0; }
-    .preview-banner strong { color:var(--gold); }
-    .hero-tag { display:inline-flex; align-items:center; gap:7px; background:rgba(245,166,35,.13); border:1px solid rgba(245,166,35,.28); color:var(--gold-light); padding:6px 15px; border-radius:100px; font-size:.8rem; font-weight:600; margin-bottom:20px; }
-    .hero-icon { font-size:3.2rem; margin-bottom:10px; display:block; line-height:1; }
-    .hero h1 { font-size:clamp(2.1rem,4.5vw,3.4rem); color:#fff; letter-spacing:-.04em; margin-bottom:16px; line-height:1.15; font-weight:900; }
-    .hero h1 span { color:var(--gold); }
-    .hero > .container > .hero-content > p { color:rgba(255,255,255,.68); font-size:1.05rem; max-width:520px; margin-bottom:32px; }
-    .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
-    .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:8px; font-size:.95rem; font-weight:700; cursor:pointer; transition:all .22s ease; border:none; font-family:inherit; }
-    .btn-gold { background:var(--gold); color:var(--navy); }
-    .btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 20px rgba(245,166,35,.35); }
-    .btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.35); }
-    .btn-outline:hover { border-color:#fff; background:rgba(255,255,255,.08); }
-    /* SERVICES */
-    .services { padding:80px 0; background:var(--off-white); }
-    .services h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .services .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
-    .service-card { background:#fff; border-radius:12px; padding:28px 24px; border:1px solid var(--border); transition:all .22s ease; }
-    .service-card:hover { transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.08); border-color:rgba(245,166,35,.3); }
-    .sc-icon { font-size:1.8rem; margin-bottom:12px; display:block; }
-    .sc-title { font-size:1rem; font-weight:700; margin-bottom:6px; }
-    .sc-desc { font-size:.88rem; color:var(--text-mid); line-height:1.65; }
-    /* TRUST */
-    .why { padding:80px 0; background:var(--white); }
-    .why h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .why .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .trust-items { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; text-align:center; }
-    .trust-item { padding:28px 16px; }
-    .trust-num { font-size:2.4rem; font-weight:900; color:var(--gold-dark); line-height:1; margin-bottom:6px; }
-    .trust-lbl { font-size:.88rem; color:var(--text-mid); }
-    /* CTA */
-    .cta-section { padding:72px 0; background:var(--navy); background-image:radial-gradient(ellipse at 80% 50%,rgba(245,166,35,.08) 0%,transparent 55%); text-align:center; }
-    .cta-section h2 { color:#fff; font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; margin-bottom:14px; }
-    .cta-section p { color:rgba(255,255,255,.65); font-size:1rem; margin-bottom:32px; max-width:480px; margin-left:auto; margin-right:auto; }
-    /* FORM */
-    .contact-mini { padding:80px 0; background:var(--off-white); }
-    .contact-mini h2 { font-size:clamp(1.5rem,3vw,2rem); font-weight:800; text-align:center; margin-bottom:8px; }
-    .contact-mini .sub { text-align:center; color:var(--text-mid); font-size:.97rem; margin-bottom:32px; }
-    .mini-form { max-width:520px; margin:0 auto; background:#fff; border-radius:16px; padding:36px; border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,0,0,.06); }
-    .fg { margin-bottom:16px; }
-    .fg label { display:block; font-size:.84rem; font-weight:600; margin-bottom:6px; }
-    .fg input,.fg textarea { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:8px; font-size:.92rem; font-family:inherit; color:var(--text); outline:none; transition:border .2s; }
-    .fg input:focus,.fg textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(245,166,35,.12); }
-    .fg textarea { resize:vertical; min-height:88px; }
-    /* FOOTER */
-    footer { background:#050D1A; padding:32px 0; border-top:1px solid rgba(255,255,255,.05); }
-    .footer-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
-    .footer-copy { color:rgba(255,255,255,.35); font-size:.82rem; }
-    .footer-copy strong { color:var(--gold); }
-    @media(max-width:600px){ .hero-ctas{flex-direction:column;} .hero-ctas .btn{justify-content:center;} }
+    body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── TEMPLATE BANNER ── */
+    .template-banner { background: var(--navy); padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .template-badge { background: var(--orange); color: white; font-size: .72rem; font-weight: 800; padding: 3px 10px; border-radius: 4px; letter-spacing: .04em; text-transform: uppercase; }
+    .template-back { color: rgba(255,255,255,.7); font-size: .82rem; font-weight: 500; display: flex; align-items: center; gap: 6px; transition: color .2s; }
+    .template-back:hover { color: var(--orange-mid); }
+
+    /* ── EMERGENCY BAR ── */
+    .emergency-bar { background: var(--orange); padding: 11px 24px; display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .emg-text { font-size: .88rem; font-weight: 700; color: white; display: flex; align-items: center; gap: 8px; }
+    .emg-dot { width: 9px; height: 9px; background: white; border-radius: 50%; animation: blink 1.2s infinite; flex-shrink: 0; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+    .emg-cta { background: white; color: var(--orange); font-size: .88rem; font-weight: 900; padding: 6px 18px; border-radius: 6px; transition: opacity .2s; }
+    .emg-cta:hover { opacity: .88; }
+
+    /* ── NAVBAR ── */
+    .navbar { background: var(--navy); position: sticky; top: 0; z-index: 200; box-shadow: 0 2px 16px rgba(0,0,0,.3); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 15px 24px; max-width: 1100px; margin: 0 auto; }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark { width: 38px; height: 38px; background: var(--orange); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+    .logo-name { font-size: 1.05rem; font-weight: 900; color: white; letter-spacing: -.02em; }
+    .logo-name span { color: var(--orange-mid); }
+    .nav-links { display: flex; align-items: center; gap: 24px; list-style: none; }
+    .nav-links a { font-size: .87rem; font-weight: 600; color: rgba(255,255,255,.7); transition: color .2s; }
+    .nav-links a:hover { color: white; }
+    .nav-phone { color: white; font-size: .87rem; font-weight: 800; display: flex; align-items: center; gap: 6px; }
+    .nav-cta { background: var(--orange); color: white; padding: 9px 20px; border-radius: 7px; font-size: .87rem; font-weight: 800; transition: background .2s; }
+    .nav-cta:hover { background: var(--orange-mid); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; }
+    .mobile-menu { display: none; background: var(--navy-mid); border-top: 1px solid rgba(255,255,255,.08); }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; padding: 13px 24px; font-size: .93rem; font-weight: 600; color: rgba(255,255,255,.75); border-bottom: 1px solid rgba(255,255,255,.06); }
+    .mobile-menu a:last-child { color: var(--orange-mid); }
+
+    /* ── HERO ── */
+    .hero { background: var(--navy); padding: 72px 0 0; position: relative; overflow: hidden; }
+    .hero::before {
+      content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%;
+      background: linear-gradient(135deg, transparent 0%, rgba(234,88,12,.06) 100%);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1fr 420px; gap: 56px; align-items: end; position: relative; z-index: 1; }
+    .hero-content { padding-bottom: 72px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(234,88,12,.15); border: 1px solid rgba(234,88,12,.4);
+      color: var(--orange-mid); padding: 6px 14px; border-radius: 6px;
+      font-size: .78rem; font-weight: 800; margin-bottom: 20px; letter-spacing: .05em; text-transform: uppercase;
+    }
+    .hero h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 900; line-height: 1.08; color: white; margin-bottom: 20px; letter-spacing: -.03em; }
+    .hero h1 span { color: var(--orange-mid); }
+    .hero-sub { font-size: .97rem; color: rgba(255,255,255,.65); margin-bottom: 28px; max-width: 460px; }
+    .hero-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 36px; }
+    .hero-bullets li { display: flex; align-items: center; gap: 10px; font-size: .9rem; color: rgba(255,255,255,.8); font-weight: 500; }
+    .hero-bullets li::before { content: ''; width: 18px; height: 18px; background: var(--orange); border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M2 5l2 2 4-4' stroke='white' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-orange { background: var(--orange); color: white; padding: 13px 28px; border-radius: 8px; font-size: .95rem; font-weight: 800; transition: background .2s; }
+    .btn-orange:hover { background: var(--orange-mid); }
+    .btn-ghost { border: 1.5px solid rgba(255,255,255,.3); color: white; padding: 13px 28px; border-radius: 8px; font-size: .95rem; font-weight: 700; transition: all .2s; }
+    .btn-ghost:hover { border-color: white; background: rgba(255,255,255,.07); }
+
+    /* Hero pest grid */
+    .hero-pest-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+      background: rgba(255,255,255,.05); border-radius: 16px 16px 0 0; overflow: hidden;
+    }
+    .pest-cell {
+      background: rgba(255,255,255,.04); padding: 20px 14px; text-align: center;
+      cursor: pointer; transition: background .2s;
+      border-right: 1px solid rgba(255,255,255,.05);
+      border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+    .pest-cell:hover { background: rgba(234,88,12,.15); }
+    .pest-cell:nth-child(3n) { border-right: none; }
+    .pest-emoji { font-size: 1.6rem; display: block; margin-bottom: 4px; }
+    .pest-name { font-size: .72rem; font-weight: 700; color: rgba(255,255,255,.65); letter-spacing: .03em; }
+
+    /* ── TRUST STRIP ── */
+    .trust-strip { background: var(--off-white); border-bottom: 1px solid var(--border); padding: 18px 0; }
+    .trust-inner { display: flex; align-items: center; justify-content: center; gap: 36px; flex-wrap: wrap; }
+    .trust-item { display: flex; align-items: center; gap: 8px; font-size: .85rem; font-weight: 700; color: var(--text); }
+    .trust-icon { font-size: 1.1rem; }
+
+    /* ── SERVICES / PEST TYPES ── */
+    .pests { padding: 80px 0; background: var(--white); }
+    .section-header { text-align: center; margin-bottom: 52px; }
+    .section-tag { display: inline-flex; align-items: center; gap: 6px; background: var(--orange-pale); color: var(--orange); font-size: .73rem; font-weight: 800; padding: 5px 14px; border-radius: 6px; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 12px; border: 1px solid rgba(234,88,12,.2); }
+    .section-header h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 900; letter-spacing: -.03em; margin-bottom: 12px; }
+    .section-header p { font-size: .95rem; color: var(--text-mid); max-width: 520px; margin: 0 auto; }
+
+    .pest-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .pest-card {
+      border: 1.5px solid var(--border); border-radius: 14px; padding: 22px 16px; text-align: center;
+      transition: border-color .2s, box-shadow .2s, transform .2s;
+    }
+    .pest-card:hover { border-color: var(--orange); box-shadow: 0 6px 24px rgba(234,88,12,.1); transform: translateY(-3px); }
+    .pest-card .big-emoji { font-size: 2.2rem; display: block; margin-bottom: 10px; }
+    .pest-card h3 { font-size: .9rem; font-weight: 800; margin-bottom: 5px; }
+    .pest-card p { font-size: .78rem; color: var(--text-mid); margin-bottom: 10px; }
+    .pest-urgency { display: inline-block; font-size: .68rem; font-weight: 800; padding: 2px 8px; border-radius: 4px; letter-spacing: .03em; }
+    .urgency-high { background: #FEE2E2; color: #DC2626; }
+    .urgency-med { background: #FEF3C7; color: #D97706; }
+    .urgency-low { background: var(--green-pale); color: var(--green); }
+
+    /* ── PRICING TABLE ── */
+    .pricing { padding: 80px 0; background: var(--off-white); }
+    .pricing-table { border-radius: 16px; overflow: hidden; border: 1px solid var(--border); }
+    .pt-header { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; background: var(--navy); }
+    .pt-col-head { padding: 18px 20px; font-size: .82rem; font-weight: 800; color: rgba(255,255,255,.7); letter-spacing: .04em; text-transform: uppercase; }
+    .pt-col-head.highlight { color: var(--orange-mid); }
+    .pt-row { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; background: white; border-bottom: 1px solid var(--border); }
+    .pt-row:last-child { border-bottom: none; }
+    .pt-row:nth-child(even) { background: var(--off-white); }
+    .pt-cell { padding: 16px 20px; font-size: .88rem; color: var(--text-mid); display: flex; align-items: center; }
+    .pt-cell.label { font-weight: 700; color: var(--text); }
+    .pt-cell.price { font-weight: 800; color: var(--navy); font-size: .97rem; }
+    .pt-cell.highlight { color: var(--orange); font-weight: 800; }
+    .pt-note { padding: 14px 20px; background: var(--navy-mid); font-size: .78rem; color: rgba(255,255,255,.6); }
+    .pt-note strong { color: rgba(255,255,255,.85); }
+
+    /* ── TECHNICIANS ── */
+    .technicians { padding: 80px 0; background: var(--white); }
+    .tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .tech-card { border: 1px solid var(--border); border-radius: 16px; padding: 28px 24px; text-align: center; transition: box-shadow .2s; }
+    .tech-card:hover { box-shadow: 0 8px 28px rgba(15,31,61,.08); }
+    .tech-avatar { width: 72px; height: 72px; border-radius: 50%; margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 900; color: white; border: 3px solid var(--border); }
+    .av-1 { background: linear-gradient(135deg, var(--navy), var(--navy-mid)); }
+    .av-2 { background: linear-gradient(135deg, var(--orange), var(--orange-mid)); }
+    .av-3 { background: linear-gradient(135deg, #1A3A1A, #2D6A2D); }
+    .tech-name { font-size: 1rem; font-weight: 800; margin-bottom: 4px; }
+    .tech-title { font-size: .78rem; color: var(--text-muted); margin-bottom: 12px; }
+    .tech-rating { display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 10px; }
+    .tech-stars { color: #F59E0B; font-size: .85rem; }
+    .tech-rating-val { font-size: .85rem; font-weight: 800; color: var(--text); }
+    .tech-jobs { font-size: .78rem; color: var(--text-muted); }
+    .tech-certs { display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+    .tech-cert { background: var(--off-white); border: 1px solid var(--border); color: var(--text-mid); font-size: .67rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; letter-spacing: .03em; }
+
+    /* ── PROCESS ── */
+    .process { padding: 80px 0; background: var(--navy); }
+    .process .section-header h2 { color: white; }
+    .process .section-header p { color: rgba(255,255,255,.6); }
+    .process .section-tag { background: rgba(234,88,12,.15); color: var(--orange-mid); border-color: rgba(234,88,12,.3); }
+    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .step-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); border-radius: 14px; padding: 28px 20px; text-align: center; }
+    .step-num { width: 44px; height: 44px; background: var(--orange); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 900; color: white; margin: 0 auto 14px; }
+    .step-card h3 { font-size: .92rem; font-weight: 800; color: white; margin-bottom: 8px; }
+    .step-card p { font-size: .81rem; color: rgba(255,255,255,.6); }
+
+    /* ── GUARANTEE ── */
+    .guarantee { padding: 56px 0; background: var(--green-pale); border-top: 1px solid #BBF7D0; border-bottom: 1px solid #BBF7D0; }
+    .guarantee-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 28px; }
+    .guarantee-text h3 { font-size: 1.2rem; font-weight: 900; color: #166534; margin-bottom: 6px; }
+    .guarantee-text p { font-size: .9rem; color: #4B7A57; max-width: 480px; }
+    .guarantee-badges { display: flex; gap: 16px; flex-wrap: wrap; }
+    .g-badge { background: white; border: 1px solid #BBF7D0; border-radius: 12px; padding: 16px 18px; text-align: center; min-width: 100px; }
+    .g-badge .gi { font-size: 1.4rem; display: block; margin-bottom: 4px; }
+    .g-badge .gv { font-size: .92rem; font-weight: 900; color: #166534; }
+    .g-badge .gl { font-size: .7rem; color: #4B7A57; font-weight: 600; }
+
+    /* ── FAQ ── */
+    .faq { padding: 80px 0; background: var(--white); }
+    .faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      width: 100%; background: none; border: none; text-align: left; padding: 20px 24px;
+      font-family: inherit; font-size: .93rem; font-weight: 700; color: var(--text);
+      cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      transition: background .2s;
+    }
+    .faq-q:hover { background: var(--off-white); }
+    .faq-q.open { background: var(--orange-pale); color: var(--orange); }
+    .faq-arrow { font-size: .8rem; transition: transform .25s; flex-shrink: 0; }
+    .faq-q.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a { display: none; padding: 0 24px 20px; font-size: .88rem; color: var(--text-mid); line-height: 1.7; }
+    .faq-a.open { display: block; }
+
+    /* ── CONTACT ── */
+    .contact { padding: 80px 0; background: var(--off-white); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+    .contact-left h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 900; letter-spacing: -.03em; margin-bottom: 14px; }
+    .contact-left p { font-size: .93rem; color: var(--text-mid); margin-bottom: 28px; }
+    .contact-details { display: flex; flex-direction: column; gap: 14px; }
+    .contact-row { display: flex; align-items: flex-start; gap: 14px; }
+    .contact-icon { width: 44px; height: 44px; background: var(--orange-pale); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; border: 1px solid rgba(234,88,12,.2); }
+    .contact-row-text strong { display: block; font-size: .8rem; font-weight: 700; color: var(--text-muted); margin-bottom: 2px; }
+    .contact-row-text a { color: var(--navy); font-size: .93rem; font-weight: 700; transition: color .2s; }
+    .contact-row-text a:hover { color: var(--orange); }
+    .contact-form { background: white; border-radius: 18px; padding: 34px 30px; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(0,0,0,.06); }
+    .contact-form h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 22px; }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-size: .81rem; font-weight: 700; margin-bottom: 5px; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px 13px; border: 1.5px solid var(--border); border-radius: 7px; font-family: inherit; font-size: .88rem; color: var(--text); outline: none; transition: border-color .2s; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--orange); }
+    .form-group textarea { min-height: 80px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .btn-submit { width: 100%; background: var(--orange); color: white; border: none; padding: 13px; border-radius: 9px; font-family: inherit; font-size: .97rem; font-weight: 800; cursor: pointer; transition: background .2s; }
+    .btn-submit:hover { background: var(--orange-mid); }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--navy); color: white; padding: 52px 0 26px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
+    .footer-brand p { font-size: .84rem; color: rgba(255,255,255,.5); max-width: 280px; margin-top: 12px; }
+    .footer-logo { display: flex; align-items: center; gap: 10px; }
+    .footer-logo-mark { width: 34px; height: 34px; background: var(--orange); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: .9rem; }
+    .footer-logo-text { font-size: 1rem; font-weight: 900; color: white; }
+    .footer-col h4 { font-size: .77rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 13px; color: rgba(255,255,255,.35); }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { font-size: .86rem; color: rgba(255,255,255,.55); transition: color .2s; }
+    .footer-col ul a:hover { color: var(--orange-mid); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 22px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .footer-bottom p { font-size: .79rem; color: rgba(255,255,255,.35); }
+    .footer-bottom a { color: var(--orange-mid); }
+
+    /* ── FLOATING CTA ── */
+    .floating-cta { display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--orange); color: white; padding: 13px 26px; border-radius: 50px; font-size: .93rem; font-weight: 800; box-shadow: 0 4px 20px rgba(234,88,12,.5); z-index: 500; white-space: nowrap; }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .5s ease, transform .5s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-pest-grid { display: none; }
+      .pest-grid { grid-template-columns: repeat(3, 1fr); }
+      .tech-grid { grid-template-columns: 1fr 1fr; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .pt-header, .pt-row { grid-template-columns: 1.5fr 1fr 1fr; }
+      .pt-col-head:last-child, .pt-cell:last-child { display: none; }
+    }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .nav-phone { display: none; }
+      .hamburger { display: flex; }
+      .pest-grid { grid-template-columns: repeat(2, 1fr); }
+      .tech-grid { grid-template-columns: 1fr; max-width: 340px; margin: 0 auto; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .floating-cta { display: flex; }
+      .form-row { grid-template-columns: 1fr; }
+      .pt-header, .pt-row { grid-template-columns: 1.5fr 1fr; }
+      .pt-col-head:nth-child(3), .pt-cell:nth-child(3) { display: none; }
+    }
   </style>
 </head>
 <body>
-<header class="topbar">
-  <div class="container">
-    <div class="topbar-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text">Graft<span>Digital</span></span>
-      </a>
-      <a href="../index.html#industries" class="back-link">&larr; All Templates</a>
-    </div>
-  </div>
-</header>
 
-<section class="hero">
-  <div class="hero-grid"></div>
-  <div class="container">
-    <div class="hero-content">
-      <div class="preview-banner">
-        <span style="font-size:1.2rem;flex-shrink:0;">&#128065;</span>
-        <p>This is a <strong>sample template</strong> for a Pest Control business. Your real site will be fully customised with your branding, photos &amp; details. <a href="#get-started" style="color:var(--gold);font-weight:700;">Request this template &darr;</a></p>
-      </div>
-      <div class="hero-tag">&#128205; London Trade Template</div>
-      <span class="hero-icon">&#128027;</span>
-      <h1>London&rsquo;s Trusted<br><span>Pest Control</span><br>Specialists</h1>
-      <p>Fast response pest removal for homes and businesses across London.</p>
-      <div class="hero-ctas">
-        <a href="#get-started" class="btn btn-gold">Get a Free Quote</a>
-        <a href="tel:+447479531509" class="btn btn-outline">&#128222; Call Now</a>
-      </div>
-    </div>
+  <!-- TEMPLATE BANNER -->
+  <div class="template-banner">
+    <span class="template-badge">Template Preview</span>
+    <a href="https://graftdigital.london" class="template-back">&#8592; Back to Graft Digital</a>
   </div>
-</section>
 
-<section class="services">
-  <div class="container">
-    <h2>Our Services</h2>
-    <p class="sub">Professional Pest Control services across all London boroughs</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <span class="sc-icon">&#10003;</span>
-        <div class="sc-title">Residential</div>
-        <p class="sc-desc">Trusted by homeowners across London for reliable, high-quality work done right first time.</p>
+  <!-- EMERGENCY BAR -->
+  <div class="emergency-bar">
+    <span class="emg-text"><span class="emg-dot"></span> Pest Emergency? Same-Day Response Available Across London</span>
+    <a href="tel:+447479531509" class="emg-cta">Call Now: +44 7479 531509</a>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="logo">
+        <div class="logo-mark">&#128737;</div>
+        <span class="logo-name">Shield <span>Pest Control</span></span>
       </div>
-      <div class="service-card">
-        <span class="sc-icon">&#127970;</span>
-        <div class="sc-title">Commercial</div>
-        <p class="sc-desc">We work with businesses, landlords and property managers throughout Greater London.</p>
-      </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128241;</span>
-        <div class="sc-title">Emergency Callouts</div>
-        <p class="sc-desc">Fast response when you need it most. We cover all London postcodes, seven days a week.</p>
-      </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128205;</span>
-        <div class="sc-title">All London Boroughs</div>
-        <p class="sc-desc">From Hackney to Hammersmith, Croydon to Camden &mdash; we cover the entire Greater London area.</p>
+      <ul class="nav-links">
+        <li><a href="#pests">Pests</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#technicians">Our Team</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a href="tel:+447479531509" class="nav-phone">&#128222; +44 7479 531509</a>
+      <a href="#contact" class="nav-cta">Book Now</a>
+      <div class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+        <span></span><span></span><span></span>
       </div>
     </div>
-  </div>
-</section>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#pests" onclick="document.getElementById('mobileMenu').classList.remove('open')">Pests We Treat</a>
+      <a href="#pricing" onclick="document.getElementById('mobileMenu').classList.remove('open')">Pricing</a>
+      <a href="#technicians" onclick="document.getElementById('mobileMenu').classList.remove('open')">Our Team</a>
+      <a href="#faq" onclick="document.getElementById('mobileMenu').classList.remove('open')">FAQ</a>
+      <a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Book Now</a>
+    </div>
+  </nav>
 
-<section class="why">
-  <div class="container">
-    <h2>Why Choose Us?</h2>
-    <p class="sub">Trusted by hundreds of London customers</p>
-    <div class="trust-items">
-      <div class="trust-item"><div class="trust-num">500+</div><div class="trust-lbl">Jobs Completed</div></div>
-      <div class="trust-item"><div class="trust-num">5&#9733;</div><div class="trust-lbl">Google Rating</div></div>
-      <div class="trust-item"><div class="trust-num">10+</div><div class="trust-lbl">Years Experience</div></div>
-      <div class="trust-item"><div class="trust-num">32</div><div class="trust-lbl">London Boroughs Covered</div></div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">&#128737; BPCA Certified &middot; London&#8217;s #1 Pest Control</div>
+          <h1>Fast, Discreet Pest Control <span>Across London</span></h1>
+          <p class="hero-sub">BPCA-certified technicians. Same-day call-out. Guaranteed results or we return free of charge.</p>
+          <ul class="hero-bullets">
+            <li>Same-day and 24/7 emergency response</li>
+            <li>BPCA-certified, DBS-checked technicians</li>
+            <li>Discreet unmarked vehicles available</li>
+            <li>Child &amp; pet-safe treatments</li>
+            <li>Free follow-up visit if pests return</li>
+          </ul>
+          <div class="hero-btns">
+            <a href="#contact" class="btn-orange">Book a Treatment</a>
+            <a href="tel:+447479531509" class="btn-ghost">&#128222; 24/7 Emergency</a>
+          </div>
+        </div>
+        <div class="hero-pest-grid">
+          <div class="pest-cell"><span class="pest-emoji">&#128000;</span><span class="pest-name">Rats</span></div>
+          <div class="pest-cell"><span class="pest-emoji">&#128001;</span><span class="pest-name">Mice</span></div>
+          <div class="pest-cell"><span class="pest-emoji">&#129415;</span><span class="pest-name">Cockroaches</span></div>
+          <div class="pest-cell"><span class="pest-emoji">&#129425;</span><span class="pest-name">Bed Bugs</span></div>
+          <div class="pest-cell"><span class="pest-emoji">&#128028;</span><span class="pest-name">Wasps</span></div>
+          <div class="pest-cell"><span class="pest-emoji">&#127787;</span><span class="pest-name">Fleas</span></div>
+          <div class="pest-cell"><span class="pest-emoji">&#129440;</span><span class="pest-name">Ants</span></div>
+          <div class="pest-cell"><span class="pest-emoji">&#128027;</span><span class="pest-name">Woodworm</span></div>
+          <div class="pest-cell"><span class="pest-emoji">&#129421;</span><span class="pest-name">Pigeons</span></div>
+          <div class="pest-cell"><span class="pest-emoji">&#129422;</span><span class="pest-name">Squirrels</span></div>
+          <div class="pest-cell"><span class="pest-emoji">&#128030;</span><span class="pest-name">Moths</span></div>
+          <div class="pest-cell"><span class="pest-emoji">&#129410;</span><span class="pest-name">Foxes</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="container">
+      <div class="trust-inner">
+        <div class="trust-item"><span class="trust-icon">&#127942;</span> BPCA Certified</div>
+        <div class="trust-item"><span class="trust-icon">&#11088;</span> 4.9 / 5.0 Rating</div>
+        <div class="trust-item"><span class="trust-icon">&#128272;</span> DBS-Checked Staff</div>
+        <div class="trust-item"><span class="trust-icon">&#9989;</span> Results Guaranteed</div>
+        <div class="trust-item"><span class="trust-icon">&#128663;</span> Unmarked Vehicles</div>
+        <div class="trust-item"><span class="trust-icon">&#128176;</span> £5M Insured</div>
+      </div>
     </div>
   </div>
-</section>
 
-<section class="cta-section">
-  <div class="container">
-    <h2>Ready to Book? Get a Free Quote Today.</h2>
-    <p>No call centres, no pressure. Just a quick chat and a fair, honest price.</p>
-    <a href="#get-started" class="btn btn-gold">Request a Free Quote</a>
-  </div>
-</section>
+  <!-- PESTS WE TREAT -->
+  <section class="pests" id="pests">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Pests We Treat</div>
+        <h2>We Deal with Every London Pest</h2>
+        <p>From rodents and insects to birds and wildlife — our certified technicians are trained to identify, treat and prevent every common London pest.</p>
+      </div>
+      <div class="pest-grid">
+        <div class="pest-card reveal">
+          <span class="big-emoji">&#128000;</span>
+          <h3>Rats</h3>
+          <p>Bait stations, traps and proofing to eliminate rat infestations fast.</p>
+          <span class="pest-urgency urgency-high">High Priority</span>
+        </div>
+        <div class="pest-card reveal">
+          <span class="big-emoji">&#128001;</span>
+          <h3>Mice</h3>
+          <p>Rodenticide bait, glue boards and entry-point proofing for complete removal.</p>
+          <span class="pest-urgency urgency-high">High Priority</span>
+        </div>
+        <div class="pest-card reveal">
+          <span class="big-emoji">&#129415;</span>
+          <h3>Cockroaches</h3>
+          <p>Gel baiting, insecticide spray and IGR treatment to break the breeding cycle.</p>
+          <span class="pest-urgency urgency-high">High Priority</span>
+        </div>
+        <div class="pest-card reveal">
+          <span class="big-emoji">&#129425;</span>
+          <h3>Bed Bugs</h3>
+          <p>Heat treatment or insecticide programme with bed bug-proof mattress covers.</p>
+          <span class="pest-urgency urgency-high">High Priority</span>
+        </div>
+        <div class="pest-card reveal">
+          <span class="big-emoji">&#128028;</span>
+          <h3>Wasps &amp; Bees</h3>
+          <p>Safe nest treatment — wasps destroyed, bee colonies relocated where possible.</p>
+          <span class="pest-urgency urgency-med">Seasonal</span>
+        </div>
+        <div class="pest-card reveal">
+          <span class="big-emoji">&#127787;</span>
+          <h3>Fleas</h3>
+          <p>Full-room spray treatment with IGR to prevent re-infestation from eggs.</p>
+          <span class="pest-urgency urgency-med">Medium</span>
+        </div>
+        <div class="pest-card reveal">
+          <span class="big-emoji">&#129440;</span>
+          <h3>Ants</h3>
+          <p>Residual insecticide and bait gel targeting the queen and colony at source.</p>
+          <span class="pest-urgency urgency-low">Low</span>
+        </div>
+        <div class="pest-card reveal">
+          <span class="big-emoji">&#129421;</span>
+          <h3>Pigeons &amp; Birds</h3>
+          <p>Spikes, netting, wire systems and bird scarer devices to deter roosting.</p>
+          <span class="pest-urgency urgency-med">Proofing</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="contact-mini" id="get-started">
-  <div class="container">
-    <h2>Request This Template</h2>
-    <p class="sub">Like what you see? Contact Yoel at Graft Digital to get your own Pest Control website live within days.</p>
-    <div class="mini-form">
-      <form id="reqForm">
-        <div class="fg"><label>Your Name</label><input type="text" placeholder="John Smith" required></div>
-        <div class="fg"><label>Email</label><input type="email" placeholder="john@yourcompany.co.uk" required></div>
-        <div class="fg"><label>Phone</label><input type="tel" placeholder="+44 7XXX XXX XXX"></div>
-        <div class="fg"><label>Tell me about your business</label><textarea placeholder="Where in London are you based? Do you have a logo or existing site?"></textarea></div>
-        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;font-size:.97rem;">Send Enquiry to Graft Digital &rarr;</button>
-      </form>
+  <!-- PRICING TABLE -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Transparent Pricing</div>
+        <h2>No Hidden Charges. Ever.</h2>
+        <p>All prices include the treatment visit, products and a free follow-up if required. No call-out fees on top.</p>
+      </div>
+      <div class="pricing-table reveal">
+        <div class="pt-header">
+          <div class="pt-col-head">Pest Type</div>
+          <div class="pt-col-head">1&#8211;2 Bed</div>
+          <div class="pt-col-head">3&#8211;4 Bed</div>
+          <div class="pt-col-head highlight">5+ Bed / Commercial</div>
+        </div>
+        <div class="pt-row">
+          <div class="pt-cell label">&#128000; Rats &amp; Mice</div>
+          <div class="pt-cell price">From £149</div>
+          <div class="pt-cell price">From £199</div>
+          <div class="pt-cell highlight">POA</div>
+        </div>
+        <div class="pt-row">
+          <div class="pt-cell label">&#129415; Cockroaches</div>
+          <div class="pt-cell price">From £179</div>
+          <div class="pt-cell price">From £229</div>
+          <div class="pt-cell highlight">POA</div>
+        </div>
+        <div class="pt-row">
+          <div class="pt-cell label">&#129425; Bed Bugs</div>
+          <div class="pt-cell price">From £199</div>
+          <div class="pt-cell price">From £289</div>
+          <div class="pt-cell highlight">POA</div>
+        </div>
+        <div class="pt-row">
+          <div class="pt-cell label">&#128028; Wasps (nest)</div>
+          <div class="pt-cell price">From £79</div>
+          <div class="pt-cell price">From £99</div>
+          <div class="pt-cell highlight">POA</div>
+        </div>
+        <div class="pt-row">
+          <div class="pt-cell label">&#127787; Fleas</div>
+          <div class="pt-cell price">From £119</div>
+          <div class="pt-cell price">From £159</div>
+          <div class="pt-cell highlight">POA</div>
+        </div>
+        <div class="pt-row">
+          <div class="pt-cell label">&#129440; Ants</div>
+          <div class="pt-cell price">From £89</div>
+          <div class="pt-cell price">From £119</div>
+          <div class="pt-cell highlight">POA</div>
+        </div>
+        <div class="pt-note">
+          <strong>All prices include:</strong> Initial treatment, all products, free follow-up if required. No congestion charge or parking surcharges added without prior agreement.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICIANS -->
+  <section class="technicians" id="technicians">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Our Team</div>
+        <h2>Meet Your Certified Technicians</h2>
+        <p>Every Shield technician is BPCA-certified, DBS-checked and has completed hundreds of successful treatments across London.</p>
+      </div>
+      <div class="tech-grid">
+        <div class="tech-card reveal">
+          <div class="tech-avatar av-1">M</div>
+          <div class="tech-name">Marcus T.</div>
+          <div class="tech-title">Senior Pest Technician</div>
+          <div class="tech-rating">
+            <span class="tech-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="tech-rating-val">4.9</span>
+          </div>
+          <div class="tech-jobs">1,240+ treatments completed</div>
+          <div class="tech-certs">
+            <span class="tech-cert">BPCA Level 2</span>
+            <span class="tech-cert">RSPH</span>
+            <span class="tech-cert">DBS Checked</span>
+          </div>
+        </div>
+        <div class="tech-card reveal">
+          <div class="tech-avatar av-2">S</div>
+          <div class="tech-name">Sandra K.</div>
+          <div class="tech-title">Rodent &amp; Insect Specialist</div>
+          <div class="tech-rating">
+            <span class="tech-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="tech-rating-val">4.8</span>
+          </div>
+          <div class="tech-jobs">890+ treatments completed</div>
+          <div class="tech-certs">
+            <span class="tech-cert">BPCA Level 2</span>
+            <span class="tech-cert">Bed Bug Spec.</span>
+            <span class="tech-cert">DBS Checked</span>
+          </div>
+        </div>
+        <div class="tech-card reveal">
+          <div class="tech-avatar av-3">J</div>
+          <div class="tech-name">James O.</div>
+          <div class="tech-title">Bird &amp; Wildlife Control</div>
+          <div class="tech-rating">
+            <span class="tech-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="tech-rating-val">4.9</span>
+          </div>
+          <div class="tech-jobs">640+ treatments completed</div>
+          <div class="tech-certs">
+            <span class="tech-cert">BPCA Level 3</span>
+            <span class="tech-cert">CRRU Trained</span>
+            <span class="tech-cert">DBS Checked</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">How It Works</div>
+        <h2>Four Steps to a Pest-Free Home</h2>
+        <p>Fast, professional and discreet — from first call to clear result.</p>
+      </div>
+      <div class="steps-grid reveal">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <h3>Call or Book Online</h3>
+          <p>Tell us the pest and your location — we confirm availability and pricing immediately.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <h3>Same-Day Visit</h3>
+          <p>A certified technician arrives in an unmarked vehicle at your chosen time — discreet and prompt.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <h3>Professional Treatment</h3>
+          <p>Safe, targeted treatment using the most effective products — child and pet-safe options available.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">4</div>
+          <h3>Follow-Up &amp; Guarantee</h3>
+          <p>If the pests return within our guarantee period, we come back and treat again — completely free.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <div class="guarantee">
+    <div class="container">
+      <div class="guarantee-inner">
+        <div class="guarantee-text">
+          <h3>Our Pest-Free Guarantee</h3>
+          <p>Every treatment we carry out is backed by our written pest-free guarantee. If pests return within the guarantee period — typically 3 months — we return and retreat at no additional cost to you.</p>
+        </div>
+        <div class="guarantee-badges">
+          <div class="g-badge"><span class="gi">&#9989;</span><div class="gv">3 Month</div><div class="gl">Guarantee</div></div>
+          <div class="g-badge"><span class="gi">&#128272;</span><div class="gv">£5M</div><div class="gl">Insured</div></div>
+          <div class="g-badge"><span class="gi">&#11088;</span><div class="gv">4.9★</div><div class="gl">Rating</div></div>
+          <div class="g-badge"><span class="gi">&#127942;</span><div class="gv">BPCA</div><div class="gl">Certified</div></div>
+        </div>
+      </div>
     </div>
   </div>
-</section>
 
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text" style="color:#fff;">Graft<span style="color:var(--gold);">Digital</span></span>
-      </a>
-      <span class="footer-copy">&copy; 2025 <strong>Graft Digital</strong> &mdash; Built by Yoel Gutierrez &middot; London</span>
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">FAQ</div>
+        <h2>Common Questions</h2>
+        <p>Everything you need to know before booking your treatment.</p>
+      </div>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">How quickly can you come out? <span class="faq-arrow">&#9660;</span></button>
+          <div class="faq-a">In most cases we can attend the same day, often within 2&#8211;4 hours. For genuine emergencies — such as a wasp nest indoors or a rat inside a property — we prioritise immediate dispatch.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Are your treatments safe for children and pets? <span class="faq-arrow">&#9660;</span></button>
+          <div class="faq-a">Yes. We use professional-grade products that are approved for use in domestic environments. We'll advise you on any precautions — typically keeping children and pets out of treated areas for 1&#8211;4 hours after treatment.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Do you use unmarked vehicles? <span class="faq-arrow">&#9660;</span></button>
+          <div class="faq-a">Yes. We understand that discretion matters. All our technicians carry ID and arrive in plain, unmarked vans. There is no signage that would identify us as a pest control company to your neighbours.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">How many visits does treatment take? <span class="faq-arrow">&#9660;</span></button>
+          <div class="faq-a">It depends on the pest and severity. Many treatments — particularly wasps and ants — are resolved in a single visit. Rodent and insect infestations typically require 2&#8211;3 visits to ensure complete eradication. All follow-up visits are included in our quoted price.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">What does your guarantee cover? <span class="faq-arrow">&#9660;</span></button>
+          <div class="faq-a">Our 3-month pest-free guarantee means that if the same pest returns to the treated area within 3 months of your final treatment visit, we will return and re-treat at no charge. The guarantee applies to the same property and pest species.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)">Do you treat commercial properties? <span class="faq-arrow">&#9660;</span></button>
+          <div class="faq-a">Yes — we work with restaurants, offices, warehouses, retail spaces, schools and landlords across London. Commercial clients can arrange service contracts with regular inspection visits and priority call-out response. Contact us for a tailored commercial quote.</div>
+        </div>
+      </div>
     </div>
-  </div>
-</footer>
-<script>
-  document.getElementById('reqForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    const f=this;
-    const btn=f.querySelector('button[type=submit]');
-    const inp=f.querySelector('input[name=template]');
-    const tmpl=inp?inp.value:'General';
-    const name=f.querySelector('input[type=text]').value;
-    const email=f.querySelector('input[type=email]').value;
-    const phone=f.querySelector('input[type=tel]').value;
-    const msg=f.querySelector('textarea').value;
-    const body='Name: '+name+'\nEmail: '+email+'\nPhone: '+phone+'\nTemplate: '+tmpl+'\n\nMessage:\n'+msg;
-    window.location.href='mailto:sales@graftdigital.london?subject='+encodeURIComponent('Template Request – '+tmpl+' – '+name)+'&body='+encodeURIComponent(body);
-    btn.textContent='✓ Opening your email app…';
-    btn.style.background='#22c55e'; btn.style.color='#fff'; btn.disabled=true;
-  });
-</script>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left reveal">
+          <div class="section-tag">Book Now</div>
+          <h2>Get Rid of Pests Today</h2>
+          <p>Fill in the form and we&#8217;ll confirm your same-day booking within 15 minutes. Or call us now for immediate assistance.</p>
+          <div class="contact-details">
+            <div class="contact-row">
+              <div class="contact-icon">&#9889;</div>
+              <div class="contact-row-text">
+                <strong>24/7 Emergency Line</strong>
+                <a href="tel:+447479531509">+44 7479 531509</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-icon">&#9993;</div>
+              <div class="contact-row-text">
+                <strong>Email</strong>
+                <a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-icon">&#128337;</div>
+              <div class="contact-row-text">
+                <strong>Office Hours</strong>
+                <a>Mon&#8211;Sun 7am&#8211;10pm (Emergency: 24/7)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form reveal">
+          <h3>Book a Treatment</h3>
+          <form onsubmit="handleContact(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" id="cFirst" placeholder="Marcus" required>
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" id="cLast" placeholder="Brown" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="tel" id="cPhone" placeholder="+44 7xxx xxxxxx" required>
+            </div>
+            <div class="form-group">
+              <label>Postcode</label>
+              <input type="text" id="cPost" placeholder="e.g. E8 3AB">
+            </div>
+            <div class="form-group">
+              <label>Pest Type</label>
+              <select id="cService">
+                <option value="">Select pest...</option>
+                <option>Rats</option>
+                <option>Mice</option>
+                <option>Cockroaches</option>
+                <option>Bed Bugs</option>
+                <option>Wasps / Bees</option>
+                <option>Fleas</option>
+                <option>Ants</option>
+                <option>Pigeons / Birds</option>
+                <option>Squirrels</option>
+                <option>Other / Not Sure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Additional Details</label>
+              <textarea id="cMsg" placeholder="e.g. Hearing rats in the loft, 2-bed flat in Hackney, need urgent visit..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Book Treatment &#8594;</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-mark">&#128737;</div>
+            <span class="footer-logo-text">Shield Pest Control</span>
+          </div>
+          <p>London&#8217;s trusted BPCA-certified pest control specialists. Same-day response, 3-month guarantee, 24/7 emergency line.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Pests We Treat</h4>
+          <ul>
+            <li><a href="#pests">Rats &amp; Mice</a></li>
+            <li><a href="#pests">Cockroaches</a></li>
+            <li><a href="#pests">Bed Bugs</a></li>
+            <li><a href="#pests">Wasps &amp; Bees</a></li>
+            <li><a href="#pests">Fleas &amp; Ants</a></li>
+            <li><a href="#pests">Birds &amp; Wildlife</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+447479531509">+44 7479 531509 (24/7)</a></li>
+            <li><a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a></li>
+            <li><a href="#contact">Book Online</a></li>
+            <li><a href="#pricing">View Pricing</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&#169; 2025 Shield Pest Control London. All rights reserved.</p>
+        <p>Website by <a href="https://graftdigital.london">Graft Digital</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING CTA -->
+  <a href="tel:+447479531509" class="floating-cta">&#9889; 24/7: +44 7479 531509</a>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => obs.observe(el));
+
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const isOpen = btn.classList.contains('open');
+      document.querySelectorAll('.faq-q').forEach(b => { b.classList.remove('open'); b.nextElementSibling.classList.remove('open'); });
+      if (!isOpen) { btn.classList.add('open'); answer.classList.add('open'); }
+    }
+
+    function handleContact(e) {
+      e.preventDefault();
+      const first = document.getElementById('cFirst').value;
+      const last = document.getElementById('cLast').value;
+      const phone = document.getElementById('cPhone').value;
+      const post = document.getElementById('cPost').value;
+      const service = document.getElementById('cService').value || 'Not specified';
+      const msg = document.getElementById('cMsg').value;
+      const subject = 'Pest Control Booking \u2013 ' + first + ' ' + last + ' \u2013 ' + service;
+      const body = 'Name: ' + first + ' ' + last + '\nPhone: ' + phone + '\nPostcode: ' + post + '\nPest: ' + service + '\n\nDetails:\n' + msg;
+      window.location.href = 'mailto:sales@graftdigital.london?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    }
+  </script>
 </body>
 </html>
