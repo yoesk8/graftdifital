@@ -3,215 +3,1016 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cleaning Services Website Template | Graft Digital</title>
-  <meta name="description" content="Domestic, commercial and end-of-tenancy cleaning throughout Greater London.">
-  <meta name="keywords" content="cleaning company London, end of tenancy clean">
+  <title>Spotless London | Professional Cleaning Services</title>
+  <meta name="description" content="London's most trusted cleaning company. Domestic, commercial & end-of-tenancy cleaning. Instant online booking. Fully insured. 7-day guarantee.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:#0A1628; --navy-mid:#0F2040; --gold:#F5A623; --gold-dark:#C98010;
-      --gold-light:#FFB84D; --white:#FFFFFF; --off-white:#F7F9FC;
-      --text:#1A2332; --text-mid:#4A5568; --border:#E2E8F0;
+      --green: #16a34a;
+      --green-dark: #052e16;
+      --green-mid: #166534;
+      --green-light: #dcfce7;
+      --green-pale: #f0fdf4;
+      --amber: #f59e0b;
+      --amber-dark: #d97706;
+      --white: #ffffff;
+      --text: #111827;
+      --text-mid: #374151;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --shadow: 0 4px 24px rgba(0,0,0,.08);
     }
     html { scroll-behavior: smooth; }
-    body { font-family:'Inter',-apple-system,sans-serif; color:var(--text); background:var(--white); line-height:1.6; }
-    a { text-decoration:none; color:inherit; }
-    .container { max-width:1100px; margin:0 auto; padding:0 24px; }
-    /* TOPBAR */
-    .topbar { background:var(--navy); padding:14px 0; position:sticky; top:0; z-index:100; box-shadow:0 2px 12px rgba(0,0,0,.25); }
-    .topbar-inner { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-    .logo { display:flex; align-items:center; gap:9px; }
-    .logo-mark { width:34px; height:34px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:900; color:var(--navy); }
-    .logo-text { font-size:1.1rem; font-weight:900; color:#fff; letter-spacing:-.03em; }
-    .logo-text span { color:var(--gold); }
-    .back-link { color:rgba(255,255,255,.7); font-size:.85rem; font-weight:500; display:flex; align-items:center; gap:6px; transition:color .2s; }
-    .back-link:hover { color:var(--gold); }
-    /* HERO */
-    .hero { background:var(--navy); background-image:radial-gradient(ellipse at 15% 60%,rgba(26,53,96,.6) 0%,transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(245,166,35,.07) 0%,transparent 50%); min-height:480px; display:flex; align-items:center; padding:72px 0 64px; position:relative; overflow:hidden; }
-    .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px); background-size:54px 54px; }
-    .hero-content { position:relative; z-index:2; max-width:680px; }
-    .preview-banner { background:rgba(245,166,35,.1); border:1px solid rgba(245,166,35,.3); border-radius:10px; padding:15px 20px; margin-bottom:36px; display:flex; align-items:flex-start; gap:11px; max-width:600px; }
-    .preview-banner p { color:rgba(255,255,255,.8); font-size:.86rem; line-height:1.55; margin:0; }
-    .preview-banner strong { color:var(--gold); }
-    .hero-tag { display:inline-flex; align-items:center; gap:7px; background:rgba(245,166,35,.13); border:1px solid rgba(245,166,35,.28); color:var(--gold-light); padding:6px 15px; border-radius:100px; font-size:.8rem; font-weight:600; margin-bottom:20px; }
-    .hero-icon { font-size:3.2rem; margin-bottom:10px; display:block; line-height:1; }
-    .hero h1 { font-size:clamp(2.1rem,4.5vw,3.4rem); color:#fff; letter-spacing:-.04em; margin-bottom:16px; line-height:1.15; font-weight:900; }
-    .hero h1 span { color:var(--gold); }
-    .hero > .container > .hero-content > p { color:rgba(255,255,255,.68); font-size:1.05rem; max-width:520px; margin-bottom:32px; }
-    .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
-    .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:8px; font-size:.95rem; font-weight:700; cursor:pointer; transition:all .22s ease; border:none; font-family:inherit; }
-    .btn-gold { background:var(--gold); color:var(--navy); }
-    .btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 20px rgba(245,166,35,.35); }
-    .btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.35); }
-    .btn-outline:hover { border-color:#fff; background:rgba(255,255,255,.08); }
-    /* SERVICES */
-    .services { padding:80px 0; background:var(--off-white); }
-    .services h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .services .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
-    .service-card { background:#fff; border-radius:12px; padding:28px 24px; border:1px solid var(--border); transition:all .22s ease; }
-    .service-card:hover { transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.08); border-color:rgba(245,166,35,.3); }
-    .sc-icon { font-size:1.8rem; margin-bottom:12px; display:block; }
-    .sc-title { font-size:1rem; font-weight:700; margin-bottom:6px; }
-    .sc-desc { font-size:.88rem; color:var(--text-mid); line-height:1.65; }
-    /* TRUST */
-    .why { padding:80px 0; background:var(--white); }
-    .why h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .why .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .trust-items { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; text-align:center; }
-    .trust-item { padding:28px 16px; }
-    .trust-num { font-size:2.4rem; font-weight:900; color:var(--gold-dark); line-height:1; margin-bottom:6px; }
-    .trust-lbl { font-size:.88rem; color:var(--text-mid); }
-    /* CTA */
-    .cta-section { padding:72px 0; background:var(--navy); background-image:radial-gradient(ellipse at 80% 50%,rgba(245,166,35,.08) 0%,transparent 55%); text-align:center; }
-    .cta-section h2 { color:#fff; font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; margin-bottom:14px; }
-    .cta-section p { color:rgba(255,255,255,.65); font-size:1rem; margin-bottom:32px; max-width:480px; margin-left:auto; margin-right:auto; }
-    /* FORM */
-    .contact-mini { padding:80px 0; background:var(--off-white); }
-    .contact-mini h2 { font-size:clamp(1.5rem,3vw,2rem); font-weight:800; text-align:center; margin-bottom:8px; }
-    .contact-mini .sub { text-align:center; color:var(--text-mid); font-size:.97rem; margin-bottom:32px; }
-    .mini-form { max-width:520px; margin:0 auto; background:#fff; border-radius:16px; padding:36px; border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,0,0,.06); }
-    .fg { margin-bottom:16px; }
-    .fg label { display:block; font-size:.84rem; font-weight:600; margin-bottom:6px; }
-    .fg input,.fg textarea { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:8px; font-size:.92rem; font-family:inherit; color:var(--text); outline:none; transition:border .2s; }
-    .fg input:focus,.fg textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(245,166,35,.12); }
-    .fg textarea { resize:vertical; min-height:88px; }
-    /* FOOTER */
-    footer { background:#050D1A; padding:32px 0; border-top:1px solid rgba(255,255,255,.05); }
-    .footer-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
-    .footer-copy { color:rgba(255,255,255,.35); font-size:.82rem; }
-    .footer-copy strong { color:var(--gold); }
-    @media(max-width:600px){ .hero-ctas{flex-direction:column;} .hero-ctas .btn{justify-content:center;} }
+    body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── TEMPLATE BANNER ── */
+    .template-banner {
+      background: var(--green-dark);
+      padding: 10px 24px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    }
+    .template-badge {
+      background: var(--amber); color: var(--green-dark);
+      font-size: .72rem; font-weight: 800; padding: 3px 10px; border-radius: 20px; letter-spacing: .04em; text-transform: uppercase;
+    }
+    .template-back {
+      color: rgba(255,255,255,.75); font-size: .82rem; font-weight: 500;
+      display: flex; align-items: center; gap: 6px; transition: color .2s;
+    }
+    .template-back:hover { color: var(--amber); }
+
+    /* ── PROMO BAR ── */
+    .promo-bar {
+      background: var(--green);
+      color: white;
+      text-align: center;
+      padding: 10px 24px;
+      font-size: .88rem;
+      font-weight: 600;
+      letter-spacing: .01em;
+    }
+    .promo-bar span { background: rgba(255,255,255,.2); padding: 2px 10px; border-radius: 4px; margin-left: 8px; font-weight: 800; letter-spacing: .05em; }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 24px; max-width: 1100px; margin: 0 auto;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark {
+      width: 38px; height: 38px; background: var(--green); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; font-weight: 900; color: white;
+    }
+    .logo-name { font-size: 1.15rem; font-weight: 900; color: var(--text); letter-spacing: -.03em; }
+    .logo-name span { color: var(--green); }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: .9rem; font-weight: 600; color: var(--text-mid); transition: color .2s; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-cta {
+      background: var(--green); color: white;
+      padding: 10px 22px; border-radius: 8px;
+      font-size: .9rem; font-weight: 700; transition: background .2s;
+    }
+    .nav-cta:hover { background: var(--green-mid); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; }
+    .mobile-menu { display: none; background: white; border-top: 1px solid var(--border); }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; padding: 14px 24px; font-size: .95rem; font-weight: 600; color: var(--text-mid); border-bottom: 1px solid var(--border); }
+    .mobile-menu a:last-child { color: var(--green); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--green-pale);
+      padding: 72px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -60px; right: -80px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(22,163,74,.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 420px; gap: 56px; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green-light); color: var(--green-mid);
+      padding: 6px 14px; border-radius: 20px;
+      font-size: .8rem; font-weight: 700; margin-bottom: 20px;
+      border: 1px solid rgba(22,163,74,.2);
+    }
+    .hero-eyebrow::before { content: ''; width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.3)} }
+    .hero h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; line-height: 1.1; color: var(--text); margin-bottom: 20px; letter-spacing: -.03em; }
+    .hero h1 em { font-style: normal; color: var(--green); }
+    .hero-sub { font-size: 1.05rem; color: var(--text-mid); margin-bottom: 32px; max-width: 480px; }
+    .hero-trust {
+      display: flex; flex-wrap: wrap; gap: 16px;
+    }
+    .trust-badge {
+      display: flex; align-items: center; gap: 7px;
+      font-size: .82rem; font-weight: 600; color: var(--text-mid);
+    }
+    .trust-badge-icon { font-size: 1rem; }
+
+    /* Quick-quote card */
+    .quote-card {
+      background: white;
+      border-radius: 20px;
+      padding: 36px 32px;
+      box-shadow: 0 8px 48px rgba(0,0,0,.12);
+      border: 1px solid var(--border);
+    }
+    .quote-card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 4px; color: var(--text); }
+    .quote-card p { font-size: .85rem; color: var(--text-muted); margin-bottom: 24px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: .82rem; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+    .form-group input,
+    .form-group select { width: 100%; padding: 11px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-family: inherit; font-size: .9rem; color: var(--text); outline: none; transition: border-color .2s; }
+    .form-group input:focus,
+    .form-group select:focus { border-color: var(--green); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .btn-book {
+      width: 100%; background: var(--green); color: white;
+      border: none; padding: 14px; border-radius: 10px;
+      font-family: inherit; font-size: 1rem; font-weight: 800;
+      cursor: pointer; margin-top: 8px; transition: background .2s;
+    }
+    .btn-book:hover { background: var(--green-mid); }
+    .quote-note { font-size: .75rem; color: var(--text-muted); text-align: center; margin-top: 10px; }
+
+    /* ── TRUST STRIP ── */
+    .trust-strip {
+      background: var(--green-dark);
+      padding: 24px 0;
+    }
+    .trust-strip-inner {
+      display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 36px;
+    }
+    .trust-item {
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+      color: white;
+    }
+    .trust-item .trust-icon { font-size: 1.5rem; }
+    .trust-item .trust-label { font-size: .75rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; opacity: .7; }
+    .trust-item .trust-val { font-size: .9rem; font-weight: 700; }
+
+    /* ── SERVICES ── */
+    .services { padding: 80px 0; background: var(--white); }
+    .section-header { text-align: center; margin-bottom: 52px; }
+    .section-tag {
+      display: inline-block; background: var(--green-light); color: var(--green-mid);
+      font-size: .75rem; font-weight: 700; padding: 5px 14px; border-radius: 20px;
+      letter-spacing: .05em; text-transform: uppercase; margin-bottom: 12px;
+    }
+    .section-header h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; letter-spacing: -.03em; margin-bottom: 12px; }
+    .section-header p { font-size: 1rem; color: var(--text-mid); max-width: 520px; margin: 0 auto; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .service-card {
+      border: 1.5px solid var(--border); border-radius: 16px; padding: 28px 24px;
+      transition: border-color .2s, box-shadow .2s, transform .2s;
+    }
+    .service-card:hover { border-color: var(--green); box-shadow: 0 8px 32px rgba(22,163,74,.1); transform: translateY(-4px); }
+    .svc-icon {
+      width: 52px; height: 52px; background: var(--green-pale); border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 16px;
+    }
+    .service-card h3 { font-size: 1rem; font-weight: 800; margin-bottom: 8px; }
+    .service-card p { font-size: .87rem; color: var(--text-mid); margin-bottom: 16px; }
+    .svc-features { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+    .svc-features li { font-size: .82rem; color: var(--text-mid); display: flex; align-items: center; gap: 6px; }
+    .svc-features li::before { content: ''; width: 6px; height: 6px; background: var(--green); border-radius: 50%; flex-shrink: 0; }
+    .svc-from { font-size: .8rem; font-weight: 700; color: var(--green); margin-top: 14px; }
+
+    /* ── PRICING ── */
+    .pricing { padding: 80px 0; background: var(--green-pale); }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .pricing-card {
+      background: white; border-radius: 20px; padding: 36px 28px;
+      border: 2px solid var(--border); position: relative;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .pricing-card.featured {
+      border-color: var(--green);
+      box-shadow: 0 8px 48px rgba(22,163,74,.18);
+    }
+    .pricing-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,.1); }
+    .popular-badge {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--green); color: white;
+      font-size: .72rem; font-weight: 800; padding: 4px 16px; border-radius: 20px;
+      letter-spacing: .04em; text-transform: uppercase; white-space: nowrap;
+    }
+    .pricing-card h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 8px; }
+    .pricing-card .price { font-size: 2.4rem; font-weight: 900; color: var(--green); line-height: 1; }
+    .pricing-card .price span { font-size: .9rem; font-weight: 500; color: var(--text-muted); }
+    .pricing-card .price-note { font-size: .8rem; color: var(--text-muted); margin-bottom: 24px; margin-top: 4px; }
+    .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .pricing-features li {
+      font-size: .88rem; color: var(--text-mid);
+      display: flex; align-items: flex-start; gap: 8px;
+    }
+    .pricing-features li::before {
+      content: '\2713'; color: var(--green); font-weight: 800; flex-shrink: 0; margin-top: 1px;
+    }
+    .pricing-features li.not::before { content: '\00d7'; color: var(--text-muted); }
+    .pricing-features li.not { opacity: .5; }
+    .btn-price {
+      display: block; width: 100%; text-align: center;
+      padding: 12px; border-radius: 10px;
+      font-size: .95rem; font-weight: 700; transition: all .2s;
+    }
+    .btn-price.outline {
+      border: 2px solid var(--green); color: var(--green);
+    }
+    .btn-price.outline:hover { background: var(--green); color: white; }
+    .btn-price.solid { background: var(--green); color: white; }
+    .btn-price.solid:hover { background: var(--green-mid); }
+
+    /* ── ECO STRIP ── */
+    .eco-strip { background: var(--green); padding: 40px 0; }
+    .eco-inner {
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px;
+    }
+    .eco-left h3 { font-size: 1.3rem; font-weight: 900; color: white; margin-bottom: 6px; }
+    .eco-left p { font-size: .9rem; color: rgba(255,255,255,.8); max-width: 500px; }
+    .eco-badges { display: flex; gap: 20px; flex-wrap: wrap; }
+    .eco-badge {
+      background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3);
+      color: white; padding: 8px 16px; border-radius: 8px;
+      font-size: .82rem; font-weight: 700; display: flex; align-items: center; gap: 8px;
+    }
+
+    /* ── WHAT'S INCLUDED ── */
+    .included { padding: 80px 0; background: white; }
+    .included-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+    .included-content h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 900; letter-spacing: -.03em; margin-bottom: 16px; }
+    .included-content p { font-size: .95rem; color: var(--text-mid); margin-bottom: 28px; }
+    .checklist { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .checklist li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: .9rem; color: var(--text-mid);
+    }
+    .check-icon {
+      width: 22px; height: 22px; background: var(--green-light); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .72rem; color: var(--green); font-weight: 900; flex-shrink: 0; margin-top: 1px;
+    }
+    .included-visual {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    }
+    .stat-tile {
+      background: var(--green-pale); border-radius: 16px; padding: 28px 20px;
+      text-align: center; border: 1px solid rgba(22,163,74,.15);
+    }
+    .stat-tile .num { font-size: 2.2rem; font-weight: 900; color: var(--green); line-height: 1; }
+    .stat-tile .lbl { font-size: .8rem; font-weight: 600; color: var(--text-mid); margin-top: 4px; }
+    .stat-tile.accent { background: var(--green); }
+    .stat-tile.accent .num { color: white; }
+    .stat-tile.accent .lbl { color: rgba(255,255,255,.8); }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { padding: 80px 0; background: var(--green-dark); }
+    .testimonials .section-header h2 { color: white; }
+    .testimonials .section-header p { color: rgba(255,255,255,.65); }
+    .testimonials .section-tag { background: rgba(255,255,255,.1); color: rgba(255,255,255,.8); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .review-card {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 16px; padding: 28px 24px;
+    }
+    .review-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .reviewer-info { display: flex; align-items: center; gap: 12px; }
+    .reviewer-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--green); display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; font-weight: 800; color: white;
+    }
+    .reviewer-name { font-size: .9rem; font-weight: 700; color: white; }
+    .reviewer-meta { font-size: .77rem; color: rgba(255,255,255,.5); }
+    .stars { color: var(--amber); font-size: .9rem; letter-spacing: 1px; }
+    .review-text { font-size: .88rem; color: rgba(255,255,255,.75); line-height: 1.65; font-style: italic; }
+    .review-service {
+      display: inline-block; margin-top: 14px;
+      background: rgba(22,163,74,.25); color: #86efac;
+      font-size: .72rem; font-weight: 700; padding: 3px 10px; border-radius: 20px;
+    }
+
+    /* ── BOROUGHS ── */
+    .boroughs { padding: 80px 0; background: var(--white); }
+    .boroughs-intro { text-align: center; margin-bottom: 36px; }
+    .boroughs-intro h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 900; letter-spacing: -.03em; margin-bottom: 10px; }
+    .boroughs-intro p { font-size: .95rem; color: var(--text-mid); }
+    .borough-grid {
+      display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+    }
+    .borough-pill {
+      background: var(--green-pale); border: 1px solid rgba(22,163,74,.2);
+      color: var(--green-mid); padding: 7px 16px; border-radius: 20px;
+      font-size: .82rem; font-weight: 600; transition: all .2s;
+    }
+    .borough-pill:hover { background: var(--green); color: white; }
+
+    /* ── CONTACT ── */
+    .contact { padding: 80px 0; background: var(--green-pale); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+    .contact-info h2 { font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 900; letter-spacing: -.03em; margin-bottom: 14px; }
+    .contact-info p { font-size: .95rem; color: var(--text-mid); margin-bottom: 32px; }
+    .contact-details { display: flex; flex-direction: column; gap: 16px; }
+    .contact-row { display: flex; align-items: flex-start; gap: 14px; }
+    .contact-icon {
+      width: 44px; height: 44px; background: var(--green-light); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;
+    }
+    .contact-row-text strong { display: block; font-size: .85rem; font-weight: 700; margin-bottom: 2px; }
+    .contact-row-text a { color: var(--green); font-size: .95rem; font-weight: 600; }
+    .contact-form { background: white; border-radius: 20px; padding: 36px 32px; box-shadow: var(--shadow); }
+    .contact-form h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 24px; }
+    .form-group textarea { width: 100%; padding: 11px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-family: inherit; font-size: .9rem; color: var(--text); outline: none; resize: vertical; min-height: 100px; transition: border-color .2s; }
+    .form-group textarea:focus { border-color: var(--green); }
+    .btn-submit {
+      width: 100%; background: var(--green); color: white; border: none;
+      padding: 14px; border-radius: 10px; font-family: inherit;
+      font-size: 1rem; font-weight: 800; cursor: pointer; transition: background .2s;
+    }
+    .btn-submit:hover { background: var(--green-mid); }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--green-dark); color: white; padding: 52px 0 28px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand p { font-size: .88rem; color: rgba(255,255,255,.6); margin-top: 12px; max-width: 280px; }
+    .footer-col h4 { font-size: .85rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 14px; color: rgba(255,255,255,.5); }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { font-size: .88rem; color: rgba(255,255,255,.6); transition: color .2s; }
+    .footer-col ul a:hover { color: var(--amber); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08); padding-top: 24px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+    }
+    .footer-bottom p { font-size: .8rem; color: rgba(255,255,255,.4); }
+    .footer-bottom a { color: var(--amber); }
+    .footer-logo { display: flex; align-items: center; gap: 9px; }
+    .footer-logo-mark { width: 32px; height: 32px; background: var(--green); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: .9rem; font-weight: 900; color: white; }
+    .footer-logo-text { font-size: 1rem; font-weight: 900; letter-spacing: -.02em; }
+
+    /* ── FLOATING CTA ── */
+    .floating-cta {
+      display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+      background: var(--green); color: white; padding: 14px 28px; border-radius: 50px;
+      font-size: .95rem; font-weight: 800; box-shadow: 0 4px 24px rgba(22,163,74,.4); z-index: 500;
+      white-space: nowrap;
+    }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .55s ease, transform .55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .quote-card { max-width: 480px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+      .included-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .services-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .included-visual { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .floating-cta { display: flex; }
+      .trust-strip-inner { gap: 20px; }
+      .eco-inner { flex-direction: column; }
+      .eco-badges { justify-content: center; }
+    }
   </style>
 </head>
 <body>
-<header class="topbar">
-  <div class="container">
-    <div class="topbar-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text">Graft<span>Digital</span></span>
-      </a>
-      <a href="../index.html#industries" class="back-link">&larr; All Templates</a>
-    </div>
-  </div>
-</header>
 
-<section class="hero">
-  <div class="hero-grid"></div>
-  <div class="container">
-    <div class="hero-content">
-      <div class="preview-banner">
-        <span style="font-size:1.2rem;flex-shrink:0;">&#128065;</span>
-        <p>This is a <strong>sample template</strong> for a Cleaning Services business. Your real site will be fully customised with your branding, photos &amp; details. <a href="#get-started" style="color:var(--gold);font-weight:700;">Request this template &darr;</a></p>
-      </div>
-      <div class="hero-tag">&#128205; London Trade Template</div>
-      <span class="hero-icon">&#129529;</span>
-      <h1>London&rsquo;s Trusted<br><span>Cleaning Services</span><br>Specialists</h1>
-      <p>Domestic, commercial and end-of-tenancy cleaning throughout Greater London.</p>
-      <div class="hero-ctas">
-        <a href="#get-started" class="btn btn-gold">Get a Free Quote</a>
-        <a href="tel:+447895628993" class="btn btn-outline">&#128222; Call Now</a>
-      </div>
-    </div>
+  <!-- TEMPLATE BANNER -->
+  <div class="template-banner">
+    <span class="template-badge">Template Preview</span>
+    <a href="https://graftdigital.london" class="template-back">&#8592; Back to Graft Digital</a>
   </div>
-</section>
 
-<section class="services">
-  <div class="container">
-    <h2>Our Services</h2>
-    <p class="sub">Professional Cleaning Services services across all London boroughs</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <span class="sc-icon">&#10003;</span>
-        <div class="sc-title">Residential</div>
-        <p class="sc-desc">Trusted by homeowners across London for reliable, high-quality work done right first time.</p>
+  <!-- PROMO BAR -->
+  <div class="promo-bar">
+    New customers save 10% — use code <span>CLEAN10</span> at checkout
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="logo">
+        <div class="logo-mark">S</div>
+        <span class="logo-name">Spotless <span>London</span></span>
       </div>
-      <div class="service-card">
-        <span class="sc-icon">&#127970;</span>
-        <div class="sc-title">Commercial</div>
-        <p class="sc-desc">We work with businesses, landlords and property managers throughout Greater London.</p>
-      </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128241;</span>
-        <div class="sc-title">Emergency Callouts</div>
-        <p class="sc-desc">Fast response when you need it most. We cover all London postcodes, seven days a week.</p>
-      </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128205;</span>
-        <div class="sc-title">All London Boroughs</div>
-        <p class="sc-desc">From Hackney to Hammersmith, Croydon to Camden &mdash; we cover the entire Greater London area.</p>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#included">What's Included</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Book Online</a></li>
+      </ul>
+      <div class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+        <span></span><span></span><span></span>
       </div>
     </div>
-  </div>
-</section>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#services" onclick="document.getElementById('mobileMenu').classList.remove('open')">Services</a>
+      <a href="#pricing" onclick="document.getElementById('mobileMenu').classList.remove('open')">Pricing</a>
+      <a href="#included" onclick="document.getElementById('mobileMenu').classList.remove('open')">What's Included</a>
+      <a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contact</a>
+      <a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Book Online</a>
+    </div>
+  </nav>
 
-<section class="why">
-  <div class="container">
-    <h2>Why Choose Us?</h2>
-    <p class="sub">Trusted by hundreds of London customers</p>
-    <div class="trust-items">
-      <div class="trust-item"><div class="trust-num">500+</div><div class="trust-lbl">Jobs Completed</div></div>
-      <div class="trust-item"><div class="trust-num">5&#9733;</div><div class="trust-lbl">Google Rating</div></div>
-      <div class="trust-item"><div class="trust-num">10+</div><div class="trust-lbl">Years Experience</div></div>
-      <div class="trust-item"><div class="trust-num">32</div><div class="trust-lbl">London Boroughs Covered</div></div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-eyebrow">Available 7 days a week across London</div>
+          <h1>Book Your Clean in <em>Minutes.</em> Results That Last.</h1>
+          <p class="hero-sub">Professional domestic, commercial and end-of-tenancy cleaning across all 33 London boroughs. Fully insured, DBS-checked, and satisfaction guaranteed.</p>
+          <div class="hero-trust">
+            <div class="trust-badge"><span class="trust-badge-icon">&#10003;</span> Insured to £5M</div>
+            <div class="trust-badge"><span class="trust-badge-icon">&#10003;</span> DBS-Checked Staff</div>
+            <div class="trust-badge"><span class="trust-badge-icon">&#10003;</span> 7-Day Guarantee</div>
+            <div class="trust-badge"><span class="trust-badge-icon">&#10003;</span> Same-Day Available</div>
+          </div>
+        </div>
+        <div class="quote-card">
+          <h3>Get an Instant Quote</h3>
+          <p>No obligation — receive your price in seconds</p>
+          <form onsubmit="handleQuote(event)">
+            <div class="form-group">
+              <label>Service Type</label>
+              <select id="qService">
+                <option value="">Select a service...</option>
+                <option>Regular Domestic Cleaning</option>
+                <option>One-Off Deep Clean</option>
+                <option>End of Tenancy Clean</option>
+                <option>After Builders Clean</option>
+                <option>Office / Commercial Clean</option>
+                <option>Carpet Cleaning</option>
+                <option>Move In / Move Out Clean</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Bedrooms</label>
+                <select id="qBeds">
+                  <option>Studio</option>
+                  <option>1 Bed</option>
+                  <option>2 Bed</option>
+                  <option>3 Bed</option>
+                  <option>4 Bed</option>
+                  <option>5+ Bed</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Postcode</label>
+                <input type="text" id="qPostcode" placeholder="e.g. SW1A 1AA">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" id="qName" placeholder="First name">
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" id="qPhone" placeholder="+44 7xxx xxxxxx">
+            </div>
+            <button type="submit" class="btn-book">Get My Free Quote &#8594;</button>
+          </form>
+          <p class="quote-note">We'll call you back within 30 minutes</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="container">
+      <div class="trust-strip-inner">
+        <div class="trust-item">
+          <div class="trust-icon">&#11088;</div>
+          <div class="trust-val">4.9 / 5.0</div>
+          <div class="trust-label">Google Rating</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">&#128222;</div>
+          <div class="trust-val">Same-Day</div>
+          <div class="trust-label">Bookings Available</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">&#128272;</div>
+          <div class="trust-val">DBS Checked</div>
+          <div class="trust-label">All Staff Vetted</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">&#9989;</div>
+          <div class="trust-val">7-Day</div>
+          <div class="trust-label">Satisfaction Guarantee</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">&#128176;</div>
+          <div class="trust-val">£5M</div>
+          <div class="trust-label">Public Liability</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">&#127757;</div>
+          <div class="trust-val">Eco Products</div>
+          <div class="trust-label">Planet-Friendly</div>
+        </div>
+      </div>
     </div>
   </div>
-</section>
 
-<section class="cta-section">
-  <div class="container">
-    <h2>Ready to Book? Get a Free Quote Today.</h2>
-    <p>No call centres, no pressure. Just a quick chat and a fair, honest price.</p>
-    <a href="#get-started" class="btn btn-gold">Request a Free Quote</a>
-  </div>
-</section>
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Our Services</div>
+        <h2>A Clean for Every Situation</h2>
+        <p>From weekly domestic visits to intensive one-off cleans, we cover every need across London.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="svc-icon">&#127968;</div>
+          <h3>Regular Domestic Cleaning</h3>
+          <p>Weekly or fortnightly visits from a trusted, regular cleaner who knows your home.</p>
+          <ul class="svc-features">
+            <li>Consistent assigned cleaner</li>
+            <li>Kitchen & bathroom deep clean</li>
+            <li>Vacuuming & mopping all floors</li>
+            <li>Dusting, surfaces & mirrors</li>
+            <li>Flexible scheduling</li>
+          </ul>
+          <p class="svc-from">From £18/hr</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="svc-icon">&#10024;</div>
+          <h3>One-Off Deep Clean</h3>
+          <p>A thorough top-to-bottom clean to refresh your home, ideal before or after a big event.</p>
+          <ul class="svc-features">
+            <li>Inside oven & fridge</li>
+            <li>Limescale removal</li>
+            <li>Skirting boards & light fittings</li>
+            <li>Window sills inside</li>
+            <li>Behind furniture</li>
+          </ul>
+          <p class="svc-from">From £149</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="svc-icon">&#128216;</div>
+          <h3>End of Tenancy Clean</h3>
+          <p>Deposit-back guaranteed cleaning that meets the strictest landlord and agency checklists.</p>
+          <ul class="svc-features">
+            <li>Full inventory checklist</li>
+            <li>Free re-clean if needed</li>
+            <li>Agency-approved standards</li>
+            <li>24-hour turnaround available</li>
+            <li>Certificate of completion</li>
+          </ul>
+          <p class="svc-from">From £199</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="svc-icon">&#127959;</div>
+          <h3>After Builders Clean</h3>
+          <p>Remove dust, debris and paint splatter after renovations. Left spotless and move-in ready.</p>
+          <ul class="svc-features">
+            <li>Fine dust removal</li>
+            <li>Paint splatter & adhesive</li>
+            <li>Window & frame cleaning</li>
+            <li>Protective film removal</li>
+            <li>Deep sanitisation</li>
+          </ul>
+          <p class="svc-from">From £249</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="svc-icon">&#127970;</div>
+          <h3>Office & Commercial</h3>
+          <p>Flexible commercial cleaning contracts for offices, retail, and hospitality spaces across London.</p>
+          <ul class="svc-features">
+            <li>Early morning or evening slots</li>
+            <li>Communal areas & kitchens</li>
+            <li>Reception & client-facing spaces</li>
+            <li>COSHH-compliant products</li>
+            <li>Monthly billing available</li>
+          </ul>
+          <p class="svc-from">From £POA</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="svc-icon">&#128164;</div>
+          <h3>Carpet & Upholstery</h3>
+          <p>Professional hot-water extraction to lift stubborn stains and revive tired carpets and sofas.</p>
+          <ul class="svc-features">
+            <li>Hot-water extraction</li>
+            <li>Stain pre-treatment</li>
+            <li>Pet odour neutraliser</li>
+            <li>Dry within 2–4 hours</li>
+            <li>Protector spray available</li>
+          </ul>
+          <p class="svc-from">From £89</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="contact-mini" id="get-started">
-  <div class="container">
-    <h2>Request This Template</h2>
-    <p class="sub">Like what you see? Contact Yoel at Graft Digital to get your own Cleaning Services website live within days.</p>
-    <div class="mini-form">
-      <form id="reqForm">
-        <div class="fg"><label>Your Name</label><input type="text" placeholder="John Smith" required></div>
-        <div class="fg"><label>Email</label><input type="email" placeholder="john@yourcompany.co.uk" required></div>
-        <div class="fg"><label>Phone</label><input type="tel" placeholder="+44 7XXX XXX XXX"></div>
-        <div class="fg"><label>Tell me about your business</label><textarea placeholder="Where in London are you based? Do you have a logo or existing site?"></textarea></div>
-        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;font-size:.97rem;">Send Enquiry to Graft Digital &rarr;</button>
-      </form>
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Simple Pricing</div>
+        <h2>Transparent Packages. No Surprises.</h2>
+        <p>All prices include products, equipment and travel within Greater London.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card reveal">
+          <h3>Regular Clean</h3>
+          <div class="price">£18 <span>/hr</span></div>
+          <p class="price-note">Minimum 2 hours. Weekly or fortnightly.</p>
+          <ul class="pricing-features">
+            <li>Assigned regular cleaner</li>
+            <li>Kitchen & bathrooms</li>
+            <li>Vacuuming & mopping</li>
+            <li>Dusting & surfaces</li>
+            <li class="not">Inside oven or fridge</li>
+            <li class="not">Carpet cleaning</li>
+          </ul>
+          <a href="#contact" class="btn-price outline">Book Regular Clean</a>
+        </div>
+        <div class="pricing-card featured reveal">
+          <div class="popular-badge">Most Popular</div>
+          <h3>Deep Clean</h3>
+          <div class="price">£149 <span>/ visit</span></div>
+          <p class="price-note">One-off. 1–3 bed flat. Larger homes from £199.</p>
+          <ul class="pricing-features">
+            <li>Everything in Regular Clean</li>
+            <li>Inside oven & fridge</li>
+            <li>Limescale & grout scrub</li>
+            <li>Behind & under furniture</li>
+            <li>Skirting boards & fixtures</li>
+            <li class="not">Carpet cleaning</li>
+          </ul>
+          <a href="#contact" class="btn-price solid">Book Deep Clean</a>
+        </div>
+        <div class="pricing-card reveal">
+          <h3>End of Tenancy</h3>
+          <div class="price">£199 <span>/ clean</span></div>
+          <p class="price-note">Studio–1 bed. Larger properties quoted individually.</p>
+          <ul class="pricing-features">
+            <li>Full checklist clean</li>
+            <li>Agency-approved standard</li>
+            <li>Free re-clean guarantee</li>
+            <li>Certificate provided</li>
+            <li>24hr booking available</li>
+            <li>Carpet clean add-on available</li>
+          </ul>
+          <a href="#contact" class="btn-price outline">Book EOT Clean</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ECO STRIP -->
+  <div class="eco-strip">
+    <div class="container">
+      <div class="eco-inner">
+        <div class="eco-left">
+          <h3>Cleaning That Cares for the Planet</h3>
+          <p>We use certified eco-friendly, biodegradable products that are tough on grime but gentle on your family, pets and the environment.</p>
+        </div>
+        <div class="eco-badges">
+          <div class="eco-badge">&#127807; Biodegradable Products</div>
+          <div class="eco-badge">&#9851; Plastic-Free Packaging</div>
+          <div class="eco-badge">&#128168; Vegan & Cruelty-Free</div>
+          <div class="eco-badge">&#10003; Pet Safe</div>
+        </div>
+      </div>
     </div>
   </div>
-</section>
 
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text" style="color:#fff;">Graft<span style="color:var(--gold);">Digital</span></span>
-      </a>
-      <span class="footer-copy">&copy; 2025 <strong>Graft Digital</strong> &mdash; Built by Yoel Gutierrez &middot; London</span>
+  <!-- WHAT'S INCLUDED -->
+  <section class="included" id="included">
+    <div class="container">
+      <div class="included-grid">
+        <div class="included-content reveal">
+          <div class="section-tag">What You Get</div>
+          <h2>Every Clean Includes These Essentials</h2>
+          <p>No hidden charges. Every service comes fully equipped with professional-grade products and all the equipment your cleaner needs.</p>
+          <ul class="checklist">
+            <li><div class="check-icon">&#10003;</div><span>All eco-certified cleaning products supplied</span></li>
+            <li><div class="check-icon">&#10003;</div><span>Professional-grade equipment brought on every visit</span></li>
+            <li><div class="check-icon">&#10003;</div><span>DBS-checked, trained and insured cleaners</span></li>
+            <li><div class="check-icon">&#10003;</div><span>Online booking confirmation and arrival reminders</span></li>
+            <li><div class="check-icon">&#10003;</div><span>Post-clean inspection and sign-off checklist</span></li>
+            <li><div class="check-icon">&#10003;</div><span>7-day satisfaction guarantee — we'll return free of charge</span></li>
+            <li><div class="check-icon">&#10003;</div><span>£5M public liability insurance on every job</span></li>
+          </ul>
+        </div>
+        <div class="included-visual reveal">
+          <div class="stat-tile accent">
+            <div class="num">2,400+</div>
+            <div class="lbl">Happy Customers</div>
+          </div>
+          <div class="stat-tile">
+            <div class="num">4.9&#11088;</div>
+            <div class="lbl">Average Rating</div>
+          </div>
+          <div class="stat-tile">
+            <div class="num">97%</div>
+            <div class="lbl">Rebook Rate</div>
+          </div>
+          <div class="stat-tile accent">
+            <div class="num">7 Days</div>
+            <div class="lbl">Guarantee</div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</footer>
-<script>
-  document.getElementById('reqForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    const f=this;
-    const btn=f.querySelector('button[type=submit]');
-    const inp=f.querySelector('input[name=template]');
-    const tmpl=inp?inp.value:'General';
-    const name=f.querySelector('input[type=text]').value;
-    const email=f.querySelector('input[type=email]').value;
-    const phone=f.querySelector('input[type=tel]').value;
-    const msg=f.querySelector('textarea').value;
-    const body='Name: '+name+'\nEmail: '+email+'\nPhone: '+phone+'\nTemplate: '+tmpl+'\n\nMessage:\n'+msg;
-    window.location.href='mailto:sales@graftdigital.london?subject='+encodeURIComponent('Template Request – '+tmpl+' – '+name)+'&body='+encodeURIComponent(body);
-    btn.textContent='✓ Opening your email app…';
-    btn.style.background='#22c55e'; btn.style.color='#fff'; btn.disabled=true;
-  });
-</script>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="reviews">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Reviews</div>
+        <h2>What Our Customers Say</h2>
+        <p>Real reviews from verified Spotless London customers across the city.</p>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card reveal">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">S</div>
+              <div>
+                <div class="reviewer-name">Sophie T.</div>
+                <div class="reviewer-meta">Clapham, SW4</div>
+              </div>
+            </div>
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+          <p class="review-text">"I've used Spotless London every fortnight for six months now. My flat has honestly never been so consistently clean. My cleaner is punctual, thorough and lovely. Couldn't recommend more highly."</p>
+          <span class="review-service">Regular Clean</span>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">J</div>
+              <div>
+                <div class="reviewer-name">James M.</div>
+                <div class="reviewer-meta">Canary Wharf, E14</div>
+              </div>
+            </div>
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+          <p class="review-text">"Got the end of tenancy clean done in 48 hours' notice. The team were absolutely brilliant — my landlord and letting agent were both blown away. Got my full deposit back without question."</p>
+          <span class="review-service">End of Tenancy</span>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">A</div>
+              <div>
+                <div class="reviewer-name">Aisha K.</div>
+                <div class="reviewer-meta">Hackney, E8</div>
+              </div>
+            </div>
+            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          </div>
+          <p class="review-text">"The deep clean before my move-in was incredible. I could see and smell the difference immediately. The oven looked brand new. Such professional, friendly staff. Already booked a regular slot."</p>
+          <span class="review-service">Deep Clean</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOROUGHS -->
+  <section class="boroughs">
+    <div class="container">
+      <div class="boroughs-intro reveal">
+        <div class="section-tag">Coverage</div>
+        <h2>We Cover All 33 London Boroughs</h2>
+        <p>From zone 1 to the outer boroughs — same-day bookings available across the whole of Greater London.</p>
+      </div>
+      <div class="borough-grid reveal">
+        <span class="borough-pill">Barking & Dagenham</span>
+        <span class="borough-pill">Barnet</span>
+        <span class="borough-pill">Bexley</span>
+        <span class="borough-pill">Brent</span>
+        <span class="borough-pill">Bromley</span>
+        <span class="borough-pill">Camden</span>
+        <span class="borough-pill">City of London</span>
+        <span class="borough-pill">Croydon</span>
+        <span class="borough-pill">Ealing</span>
+        <span class="borough-pill">Enfield</span>
+        <span class="borough-pill">Greenwich</span>
+        <span class="borough-pill">Hackney</span>
+        <span class="borough-pill">Hammersmith & Fulham</span>
+        <span class="borough-pill">Haringey</span>
+        <span class="borough-pill">Harrow</span>
+        <span class="borough-pill">Havering</span>
+        <span class="borough-pill">Hillingdon</span>
+        <span class="borough-pill">Hounslow</span>
+        <span class="borough-pill">Islington</span>
+        <span class="borough-pill">Kensington & Chelsea</span>
+        <span class="borough-pill">Kingston upon Thames</span>
+        <span class="borough-pill">Lambeth</span>
+        <span class="borough-pill">Lewisham</span>
+        <span class="borough-pill">Merton</span>
+        <span class="borough-pill">Newham</span>
+        <span class="borough-pill">Redbridge</span>
+        <span class="borough-pill">Richmond upon Thames</span>
+        <span class="borough-pill">Southwark</span>
+        <span class="borough-pill">Sutton</span>
+        <span class="borough-pill">Tower Hamlets</span>
+        <span class="borough-pill">Waltham Forest</span>
+        <span class="borough-pill">Wandsworth</span>
+        <span class="borough-pill">Westminster</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="section-tag">Get in Touch</div>
+          <h2>Ready for a Spotless Home?</h2>
+          <p>Fill in the form and we'll get back to you with a fixed price within 30 minutes. No obligation, no hidden fees.</p>
+          <div class="contact-details">
+            <div class="contact-row">
+              <div class="contact-icon">&#128222;</div>
+              <div class="contact-row-text">
+                <strong>Call or WhatsApp</strong>
+                <a href="tel:+447895628993">+44 7895 628993</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-icon">&#9993;</div>
+              <div class="contact-row-text">
+                <strong>Email Us</strong>
+                <a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-icon">&#128337;</div>
+              <div class="contact-row-text">
+                <strong>Hours</strong>
+                <a>Mon–Sat 7am–8pm, Sun 8am–6pm</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form reveal">
+          <h3>Request a Quote</h3>
+          <form onsubmit="handleContact(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" id="cFirst" placeholder="Sarah" required>
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" id="cLast" placeholder="Johnson" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" id="cPhone" placeholder="+44 7xxx xxxxxx" required>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" id="cEmail" placeholder="sarah@email.com">
+            </div>
+            <div class="form-group">
+              <label>Service Required</label>
+              <select id="cService">
+                <option value="">Select service...</option>
+                <option>Regular Domestic Cleaning</option>
+                <option>One-Off Deep Clean</option>
+                <option>End of Tenancy Clean</option>
+                <option>After Builders Clean</option>
+                <option>Office / Commercial Clean</option>
+                <option>Carpet Cleaning</option>
+                <option>Move In / Move Out Clean</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message / Additional Details</label>
+              <textarea id="cMsg" placeholder="e.g. 2-bed flat in Clapham, needs deep clean before move-in next Friday..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Send Enquiry &#8594;</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-mark">S</div>
+            <span class="footer-logo-text">Spotless London</span>
+          </div>
+          <p>London's trusted cleaning specialists. Domestic, commercial and end-of-tenancy cleaning with a 7-day guarantee.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Regular Domestic</a></li>
+            <li><a href="#services">Deep Clean</a></li>
+            <li><a href="#services">End of Tenancy</a></li>
+            <li><a href="#services">After Builders</a></li>
+            <li><a href="#services">Office Cleaning</a></li>
+            <li><a href="#services">Carpet Cleaning</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+447895628993">+44 7895 628993</a></li>
+            <li><a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a></li>
+            <li><a href="#contact">Book Online</a></li>
+            <li><a href="#boroughs">Coverage Area</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&#169; 2025 Spotless London. All rights reserved.</p>
+        <p>Website by <a href="https://graftdigital.london">Graft Digital</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING CTA -->
+  <a href="#contact" class="floating-cta">Book a Clean &#8594;</a>
+
+  <script>
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    // Hero quote form
+    function handleQuote(e) {
+      e.preventDefault();
+      const service = document.getElementById('qService').value || 'Not specified';
+      const beds = document.getElementById('qBeds').value;
+      const postcode = document.getElementById('qPostcode').value;
+      const name = document.getElementById('qName').value;
+      const phone = document.getElementById('qPhone').value;
+      const subject = 'Quick Quote Request – ' + name + ' – ' + service;
+      const body = 'Name: ' + name + '\nPhone: ' + phone + '\nService: ' + service + '\nProperty size: ' + beds + '\nPostcode: ' + postcode;
+      window.location.href = 'mailto:sales@graftdigital.london?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    }
+
+    // Contact form
+    function handleContact(e) {
+      e.preventDefault();
+      const first = document.getElementById('cFirst').value;
+      const last = document.getElementById('cLast').value;
+      const phone = document.getElementById('cPhone').value;
+      const email = document.getElementById('cEmail').value;
+      const service = document.getElementById('cService').value || 'Not specified';
+      const msg = document.getElementById('cMsg').value;
+      const subject = 'Cleaning Enquiry – ' + first + ' ' + last + ' – ' + service;
+      const body = 'Name: ' + first + ' ' + last + '\nPhone: ' + phone + '\nEmail: ' + email + '\nService: ' + service + '\n\nMessage:\n' + msg;
+      window.location.href = 'mailto:sales@graftdigital.london?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    }
+  </script>
 </body>
 </html>
