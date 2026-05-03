@@ -3,214 +3,805 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tiling Website Template | Graft Digital</title>
-  <meta name="description" content="Professional wall and floor tiling for kitchens, bathrooms and more in London.">
-  <meta name="keywords" content="tiler London, tiling services">
+  <title>Tessera Tiling London | Expert Tilers for Bathrooms, Kitchens &amp; Floors</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:#0A1628; --navy-mid:#0F2040; --gold:#F5A623; --gold-dark:#C98010;
-      --gold-light:#FFB84D; --white:#FFFFFF; --off-white:#F7F9FC;
-      --text:#1A2332; --text-mid:#4A5568; --border:#E2E8F0;
+      --jet: #1A1A1A;
+      --dark: #2C2C2C;
+      --mid: #5A5A5A;
+      --grout: #C8C4BE;
+      --tile: #F0EBE3;
+      --cream: #FAFAF8;
+      --white: #FFFFFF;
+      --brass: #B8965A;
+      --brass-light: #D4B27A;
+      --text: #1A1A1A;
+      --text-muted: #6B6B6B;
     }
-    html { scroll-behavior: smooth; }
-    body { font-family:'Inter',-apple-system,sans-serif; color:var(--text); background:var(--white); line-height:1.6; }
-    a { text-decoration:none; color:inherit; }
-    .container { max-width:1100px; margin:0 auto; padding:0 24px; }
-    /* TOPBAR */
-    .topbar { background:var(--navy); padding:14px 0; position:sticky; top:0; z-index:100; box-shadow:0 2px 12px rgba(0,0,0,.25); }
-    .topbar-inner { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-    .logo { display:flex; align-items:center; gap:9px; }
-    .logo-mark { width:34px; height:34px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:900; color:var(--navy); }
-    .logo-text { font-size:1.1rem; font-weight:900; color:#fff; letter-spacing:-.03em; }
-    .logo-text span { color:var(--gold); }
-    .back-link { color:rgba(255,255,255,.7); font-size:.85rem; font-weight:500; display:flex; align-items:center; gap:6px; transition:color .2s; }
-    .back-link:hover { color:var(--gold); }
-    /* HERO */
-    .hero { background:var(--navy); background-image:radial-gradient(ellipse at 15% 60%,rgba(26,53,96,.6) 0%,transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(245,166,35,.07) 0%,transparent 50%); min-height:480px; display:flex; align-items:center; padding:72px 0 64px; position:relative; overflow:hidden; }
-    .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px); background-size:54px 54px; }
-    .hero-content { position:relative; z-index:2; max-width:680px; }
-    .preview-banner { background:rgba(245,166,35,.1); border:1px solid rgba(245,166,35,.3); border-radius:10px; padding:15px 20px; margin-bottom:36px; display:flex; align-items:flex-start; gap:11px; max-width:600px; }
-    .preview-banner p { color:rgba(255,255,255,.8); font-size:.86rem; line-height:1.55; margin:0; }
-    .preview-banner strong { color:var(--gold); }
-    .hero-tag { display:inline-flex; align-items:center; gap:7px; background:rgba(245,166,35,.13); border:1px solid rgba(245,166,35,.28); color:var(--gold-light); padding:6px 15px; border-radius:100px; font-size:.8rem; font-weight:600; margin-bottom:20px; }
-    .hero-icon { font-size:3.2rem; margin-bottom:10px; display:block; line-height:1; }
-    .hero h1 { font-size:clamp(2.1rem,4.5vw,3.4rem); color:#fff; letter-spacing:-.04em; margin-bottom:16px; line-height:1.15; font-weight:900; }
-    .hero h1 span { color:var(--gold); }
-    .hero > .container > .hero-content > p { color:rgba(255,255,255,.68); font-size:1.05rem; max-width:520px; margin-bottom:32px; }
-    .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
-    .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:8px; font-size:.95rem; font-weight:700; cursor:pointer; transition:all .22s ease; border:none; font-family:inherit; }
-    .btn-gold { background:var(--gold); color:var(--navy); }
-    .btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 20px rgba(245,166,35,.35); }
-    .btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.35); }
-    .btn-outline:hover { border-color:#fff; background:rgba(255,255,255,.08); }
-    /* SERVICES */
-    .services { padding:80px 0; background:var(--off-white); }
-    .services h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .services .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
-    .service-card { background:#fff; border-radius:12px; padding:28px 24px; border:1px solid var(--border); transition:all .22s ease; }
-    .service-card:hover { transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.08); border-color:rgba(245,166,35,.3); }
-    .sc-icon { font-size:1.8rem; margin-bottom:12px; display:block; }
-    .sc-title { font-size:1rem; font-weight:700; margin-bottom:6px; }
-    .sc-desc { font-size:.88rem; color:var(--text-mid); line-height:1.65; }
-    /* TRUST */
-    .why { padding:80px 0; background:var(--white); }
-    .why h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .why .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .trust-items { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; text-align:center; }
-    .trust-item { padding:28px 16px; }
-    .trust-num { font-size:2.4rem; font-weight:900; color:var(--gold-dark); line-height:1; margin-bottom:6px; }
-    .trust-lbl { font-size:.88rem; color:var(--text-mid); }
-    /* CTA */
-    .cta-section { padding:72px 0; background:var(--navy); background-image:radial-gradient(ellipse at 80% 50%,rgba(245,166,35,.08) 0%,transparent 55%); text-align:center; }
-    .cta-section h2 { color:#fff; font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; margin-bottom:14px; }
-    .cta-section p { color:rgba(255,255,255,.65); font-size:1rem; margin-bottom:32px; max-width:480px; margin-left:auto; margin-right:auto; }
-    /* FORM */
-    .contact-mini { padding:80px 0; background:var(--off-white); }
-    .contact-mini h2 { font-size:clamp(1.5rem,3vw,2rem); font-weight:800; text-align:center; margin-bottom:8px; }
-    .contact-mini .sub { text-align:center; color:var(--text-mid); font-size:.97rem; margin-bottom:32px; }
-    .mini-form { max-width:520px; margin:0 auto; background:#fff; border-radius:16px; padding:36px; border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,0,0,.06); }
-    .fg { margin-bottom:16px; }
-    .fg label { display:block; font-size:.84rem; font-weight:600; margin-bottom:6px; }
-    .fg input,.fg textarea { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:8px; font-size:.92rem; font-family:inherit; color:var(--text); outline:none; transition:border .2s; }
-    .fg input:focus,.fg textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(245,166,35,.12); }
-    .fg textarea { resize:vertical; min-height:88px; }
-    /* FOOTER */
-    footer { background:#050D1A; padding:32px 0; border-top:1px solid rgba(255,255,255,.05); }
-    .footer-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
-    .footer-copy { color:rgba(255,255,255,.35); font-size:.82rem; }
-    .footer-copy strong { color:var(--gold); }
-    @media(max-width:600px){ .hero-ctas{flex-direction:column;} .hero-ctas .btn{justify-content:center;} }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); }
+
+    /* Template Banner */
+    .template-banner { background: #1e293b; color: #94a3b8; text-align: center; padding: 8px 16px; font-size: 12px; }
+    .template-banner a { color: #fbbf24; text-decoration: none; }
+
+    /* Topbar */
+    .topbar { background: var(--jet); color: #9CA3AF; padding: 8px 0; font-size: 12px; }
+    .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; }
+    .topbar-trust { display: flex; gap: 20px; align-items: center; }
+    .topbar-trust span { display: flex; align-items: center; gap: 6px; }
+    .topbar-trust span::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--brass); display: inline-block; }
+    .topbar-contacts { display: flex; gap: 16px; }
+    .topbar-contacts a { color: #9CA3AF; text-decoration: none; }
+    .topbar-contacts a:hover { color: var(--brass-light); }
+
+    /* Navbar */
+    nav { background: var(--white); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #EAEAE6; box-shadow: 0 1px 8px rgba(0,0,0,.05); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; height: 68px; }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-tile { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; width: 36px; height: 36px; }
+    .lt { border-radius: 2px; }
+    .lt-1 { background: var(--brass); }
+    .lt-2 { background: var(--jet); }
+    .lt-3 { background: var(--jet); }
+    .lt-4 { background: var(--brass); }
+    .logo-text { font-family: 'Josefin Sans', sans-serif; font-size: 20px; font-weight: 700; color: var(--jet); letter-spacing: 1px; text-transform: uppercase; }
+    .logo-sub { font-size: 11px; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; margin-top: -2px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text); font-size: 13px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
+    .nav-links a:hover { color: var(--brass); }
+    .nav-cta { background: var(--jet); color: var(--white) !important; padding: 10px 22px; border-radius: 4px; }
+    .nav-cta:hover { background: var(--dark) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { width: 24px; height: 2px; background: var(--jet); border-radius: 2px; display: block; }
+    .mobile-menu { display: none; background: var(--white); border-top: 1px solid #EAEAE6; padding: 16px 24px; }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; padding: 10px 0; color: var(--text); text-decoration: none; font-weight: 600; border-bottom: 1px solid #F5F5F0; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* Hero */
+    .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; overflow: hidden; }
+    .hero-left { background: var(--cream); padding: 80px 60px 80px 80px; display: flex; flex-direction: column; justify-content: center; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: var(--brass); color: var(--white); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px; border-radius: 2px; margin-bottom: 24px; width: fit-content; }
+    .hero h1 { font-family: 'Josefin Sans', sans-serif; font-size: clamp(36px, 4.5vw, 58px); font-weight: 700; color: var(--jet); line-height: 1.05; letter-spacing: -0.5px; margin-bottom: 20px; text-transform: uppercase; }
+    .hero h1 span { color: var(--brass); }
+    .hero-sub { color: var(--text-muted); font-size: 17px; line-height: 1.65; margin-bottom: 36px; max-width: 420px; }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+    .btn-jet { background: var(--jet); color: var(--white); padding: 14px 28px; font-weight: 700; text-decoration: none; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; transition: background .2s; display: inline-block; }
+    .btn-jet:hover { background: var(--dark); }
+    .btn-outline-jet { border: 2px solid var(--jet); color: var(--jet); padding: 12px 26px; font-weight: 700; text-decoration: none; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; transition: all .2s; display: inline-block; }
+    .btn-outline-jet:hover { background: var(--jet); color: var(--white); }
+    .hero-trust { display: flex; gap: 24px; flex-wrap: wrap; }
+    .hero-trust-item { font-size: 12px; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
+    .hero-trust-item strong { display: block; font-size: 20px; font-family: 'Josefin Sans', sans-serif; color: var(--jet); letter-spacing: -0.5px; }
+
+    /* Hero tile wall */
+    .hero-right { position: relative; overflow: hidden; }
+    .tile-wall { width: 100%; height: 100%; position: absolute; inset: 0; }
+    /* Subway tile pattern: offset rows */
+    .tile-row { display: flex; height: 72px; border-bottom: 2px solid var(--grout); }
+    .tile-row.offset { margin-left: -60px; }
+    .t-block { flex-shrink: 0; height: 100%; border-right: 2px solid var(--grout); }
+    .tc-1 { background: #F2EDE5; width: 118px; }
+    .tc-2 { background: #EDE8E0; width: 118px; }
+    .tc-3 { background: #E8E3DB; width: 118px; }
+    .tc-4 { background: #F0EBE3; width: 118px; }
+    .tc-5 { background: #ECE7DF; width: 118px; }
+    .hero-right-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,26,0.5) 0%, rgba(26,26,26,0.1) 50%, transparent 100%); }
+    .hero-right-text { position: absolute; bottom: 40px; left: 40px; right: 40px; }
+    .hero-right-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--brass); color: var(--white); font-family: 'Josefin Sans', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 10px 20px; }
+    .hero-right-badge span { font-size: 20px; font-weight: 700; }
+
+    /* Shared */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-label { font-family: 'Josefin Sans', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--brass); margin-bottom: 10px; }
+    .section-title { font-family: 'Josefin Sans', sans-serif; font-size: clamp(26px, 4vw, 40px); font-weight: 700; color: var(--jet); margin-bottom: 14px; letter-spacing: -0.5px; text-transform: uppercase; }
+    .section-sub { color: var(--text-muted); font-size: 16px; max-width: 560px; line-height: 1.65; margin-bottom: 48px; }
+
+    /* Services */
+    .services { background: var(--white); padding: 80px 0; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--grout); }
+    .service-card { background: var(--cream); padding: 32px 28px; transition: background .2s; }
+    .service-card:hover { background: var(--jet); }
+    .service-card:hover h3, .service-card:hover p { color: var(--white); }
+    .service-card:hover .service-tag { background: rgba(184,150,90,0.2); color: var(--brass-light); }
+    .service-icon { font-size: 28px; margin-bottom: 16px; display: block; }
+    .service-card h3 { font-family: 'Josefin Sans', sans-serif; font-size: 16px; font-weight: 700; color: var(--jet); margin-bottom: 10px; letter-spacing: 0.5px; text-transform: uppercase; transition: color .2s; }
+    .service-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; transition: color .2s; }
+    .service-tag { display: inline-block; background: #F0EBE3; color: var(--mid); font-size: 11px; font-weight: 700; padding: 3px 10px; letter-spacing: 1px; text-transform: uppercase; transition: all .2s; }
+
+    /* Materials */
+    .materials { background: var(--jet); padding: 32px 0; }
+    .materials-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .material-item { display: flex; align-items: center; gap: 10px; }
+    .material-swatch { width: 32px; height: 32px; border-radius: 3px; }
+    .ms-porcelain { background: linear-gradient(135deg, #E8E4E0 0%, #D8D4D0 100%); }
+    .ms-ceramic { background: linear-gradient(135deg, #F0EBE3 0%, #E0DDD6 100%); }
+    .ms-stone { background: linear-gradient(135deg, #B8B0A8 0%, #A8A098 100%); }
+    .ms-glass { background: linear-gradient(135deg, #90C8D8 0%, #70A8B8 100%); }
+    .ms-terracotta { background: linear-gradient(135deg, #C47850 0%, #A86038 100%); }
+    .ms-mosaic { background: linear-gradient(45deg, #C9A06A 25%, #8A7868 25%, #8A7868 50%, #9AA07A 50%, #9AA07A 75%, #C8C4C0 75%); background-size: 8px 8px; }
+    .material-name { font-family: 'Josefin Sans', sans-serif; font-size: 12px; font-weight: 700; color: #9CA3AF; letter-spacing: 1px; text-transform: uppercase; }
+
+    /* Tile Patterns */
+    .patterns { background: var(--cream); padding: 80px 0; }
+    .patterns-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--grout); margin-top: 0; }
+    .pattern-card { background: var(--white); overflow: hidden; cursor: pointer; transition: transform .2s; }
+    .pattern-card:hover { z-index: 1; transform: scale(1.02); box-shadow: 0 8px 32px rgba(0,0,0,.15); }
+    .pattern-visual { height: 180px; position: relative; overflow: hidden; }
+    /* Subway tile */
+    .pv-subway { background:
+      repeating-linear-gradient(0deg, var(--grout) 0px, var(--grout) 2px, transparent 2px, transparent 74px),
+      repeating-linear-gradient(90deg, var(--grout) 0px, var(--grout) 2px, transparent 2px, transparent 152px),
+      #F0EBE3; }
+    /* Hexagon simulated with circles */
+    .pv-hex { background:
+      radial-gradient(circle at 25% 50%, #E8E4E0 28%, transparent 29%),
+      radial-gradient(circle at 75% 50%, #E8E4E0 28%, transparent 29%),
+      radial-gradient(circle at 50% 100%, #DEDAD4 28%, transparent 29%),
+      radial-gradient(circle at 0% 100%, #E8E4E0 28%, transparent 29%),
+      radial-gradient(circle at 100% 100%, #E8E4E0 28%, transparent 29%),
+      radial-gradient(circle at 50% 0%, #DEDAD4 28%, transparent 29%);
+      background-size: 60px 52px; background-color: var(--grout); }
+    /* Herringbone */
+    .pv-herring { background:
+      repeating-linear-gradient(45deg, #E8E3DB 0px, #E8E3DB 18px, var(--grout) 18px, var(--grout) 20px, #DDD8D0 20px, #DDD8D0 38px, var(--grout) 38px, var(--grout) 40px),
+      repeating-linear-gradient(-45deg, transparent 0px, transparent 18px, transparent 18px, transparent 20px, transparent 20px);
+      background-color: #F0EBE3; }
+    /* Large format */
+    .pv-large { background:
+      repeating-linear-gradient(0deg, var(--grout) 0px, var(--grout) 2px, transparent 2px, transparent 102px),
+      repeating-linear-gradient(90deg, var(--grout) 0px, var(--grout) 2px, transparent 2px, transparent 102px),
+      #ECE7DF; }
+    /* Chevron */
+    .pv-chevron { background:
+      repeating-linear-gradient(60deg, #E8E3DB 0px, #E8E3DB 14px, var(--grout) 14px, var(--grout) 16px, #DDD8D0 16px, #DDD8D0 30px, var(--grout) 30px, var(--grout) 32px),
+      #F0EBE3; }
+    /* Encaustic/Moroccan — geometric pattern */
+    .pv-moroccan { background:
+      repeating-linear-gradient(0deg, var(--grout) 0, var(--grout) 2px, transparent 2px, transparent 40px),
+      repeating-linear-gradient(90deg, var(--grout) 0, var(--grout) 2px, transparent 2px, transparent 40px),
+      repeating-linear-gradient(45deg, transparent 0, transparent 14px, #C8BDB0 14px, #C8BDB0 16px, transparent 16px, transparent 24px),
+      repeating-linear-gradient(-45deg, transparent 0, transparent 14px, #C8BDB0 14px, #C8BDB0 16px, transparent 16px, transparent 24px),
+      #E8E0D8; }
+    .pattern-info { padding: 18px 20px; border-top: 2px solid var(--grout); }
+    .pattern-info h4 { font-family: 'Josefin Sans', sans-serif; font-size: 14px; font-weight: 700; color: var(--jet); letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 4px; }
+    .pattern-info p { font-size: 12px; color: var(--text-muted); }
+    .pattern-info .p-tag { display: inline-block; margin-top: 8px; background: var(--jet); color: var(--white); font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; }
+
+    /* Portfolio */
+    .portfolio { background: var(--white); padding: 80px 0; }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 200px 200px; gap: 2px; background: var(--grout); }
+    .portfolio-tile { position: relative; overflow: hidden; cursor: pointer; }
+    .portfolio-tile:first-child { grid-row: span 2; }
+    .pt-bg { width: 100%; height: 100%; transition: transform .4s; }
+    .portfolio-tile:hover .pt-bg { transform: scale(1.05); }
+    .pg-1 { background: linear-gradient(135deg, #1A1A1A 0%, #3C3C3C 60%, #5A5A5A 100%); }
+    .pg-2 { background: linear-gradient(135deg, #2C2C40 0%, #4A4A70 60%, #7878A0 100%); }
+    .pg-3 { background: linear-gradient(135deg, #1A2C1A 0%, #3C5A3C 60%, #5A805A 100%); }
+    .pg-4 { background: linear-gradient(135deg, #3C2C1A 0%, #6A4A2C 60%, #9A7850 100%); }
+    .pg-5 { background: linear-gradient(135deg, #2C1A1A 0%, #5A3030 60%, #8A5050 100%); }
+    .pt-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 55%); opacity: 0; transition: opacity .3s; display: flex; align-items: flex-end; padding: 20px; }
+    .portfolio-tile:hover .pt-overlay { opacity: 1; }
+    .pt-label strong { display: block; font-family: 'Josefin Sans', sans-serif; font-size: 14px; font-weight: 700; color: var(--white); text-transform: uppercase; letter-spacing: 0.5px; }
+    .pt-label span { font-size: 12px; color: rgba(255,255,255,0.7); }
+    .pt-badge { position: absolute; top: 14px; left: 14px; background: var(--brass); color: var(--white); font-family: 'Josefin Sans', sans-serif; font-size: 10px; font-weight: 700; padding: 4px 10px; letter-spacing: 1px; text-transform: uppercase; }
+
+    /* Process */
+    .process { background: var(--jet); padding: 80px 0; }
+    .process .section-title { color: var(--white); }
+    .process .section-sub { color: #6B6B6B; }
+    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: rgba(255,255,255,0.06); margin-top: 48px; }
+    .process-step { background: var(--jet); padding: 32px 24px; border-top: 2px solid transparent; transition: border-color .2s; }
+    .process-step:hover { border-top-color: var(--brass); }
+    .ps-num { font-family: 'Josefin Sans', sans-serif; font-size: 48px; font-weight: 700; color: rgba(184,150,90,0.2); margin-bottom: 12px; line-height: 1; }
+    .ps-icon { font-size: 24px; margin-bottom: 12px; display: block; }
+    .process-step h4 { font-family: 'Josefin Sans', sans-serif; font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 8px; letter-spacing: 0.5px; text-transform: uppercase; }
+    .process-step p { font-size: 13px; color: #6B6B6B; line-height: 1.6; }
+
+    /* Why Us */
+    .why-us { background: var(--cream); padding: 80px 0; }
+    .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--grout); margin-top: 48px; }
+    .why-item { background: var(--white); padding: 28px 24px; transition: background .2s; }
+    .why-item:hover { background: #F5F0E8; }
+    .why-icon { font-size: 28px; margin-bottom: 14px; display: block; }
+    .why-item h3 { font-family: 'Josefin Sans', sans-serif; font-size: 14px; font-weight: 700; color: var(--jet); margin-bottom: 8px; letter-spacing: 0.5px; text-transform: uppercase; }
+    .why-item p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    /* Testimonials */
+    .testimonials { background: var(--white); padding: 80px 0; }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--grout); margin-top: 48px; }
+    .testi-card { background: var(--cream); padding: 28px; transition: background .2s; }
+    .testi-card:hover { background: var(--white); }
+    .testi-stars { color: var(--brass); font-size: 14px; margin-bottom: 14px; letter-spacing: 3px; }
+    .testi-text { color: var(--text-muted); font-size: 14px; line-height: 1.7; font-style: italic; margin-bottom: 18px; }
+    .testi-author { font-family: 'Josefin Sans', sans-serif; font-weight: 700; color: var(--jet); font-size: 13px; letter-spacing: 0.5px; text-transform: uppercase; }
+    .testi-loc { font-size: 12px; color: var(--text-muted); }
+    .testi-job { font-size: 12px; color: var(--brass); font-weight: 600; margin-top: 3px; }
+
+    /* Contact */
+    .contact { background: var(--dark); padding: 80px 0; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 56px; }
+    .contact-info h2 { font-family: 'Josefin Sans', sans-serif; font-size: 32px; font-weight: 700; color: var(--white); margin-bottom: 14px; letter-spacing: -0.5px; text-transform: uppercase; }
+    .contact-info p { color: #6B6B6B; line-height: 1.7; margin-bottom: 28px; }
+    .contact-details { display: flex; flex-direction: column; gap: 16px; }
+    .contact-detail { display: flex; align-items: flex-start; gap: 12px; }
+    .cd-icon { width: 38px; height: 38px; background: rgba(184,150,90,0.15); border: 1px solid rgba(184,150,90,0.3); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+    .cd-text { font-size: 14px; color: #6B6B6B; }
+    .cd-text strong { display: block; color: var(--white); }
+    .contact-form-wrap { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 36px; }
+    .contact-form-wrap h3 { font-family: 'Josefin Sans', sans-serif; font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 24px; letter-spacing: 0.5px; text-transform: uppercase; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-size: 11px; font-weight: 700; color: #9CA3AF; margin-bottom: 6px; letter-spacing: 1px; text-transform: uppercase; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); padding: 11px 14px; color: var(--white); font-size: 14px; font-family: 'Inter', sans-serif; outline: none; transition: border .2s; }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: #4B4B4B; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--brass); }
+    .form-group select option { background: var(--dark); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-submit { width: 100%; background: var(--brass); color: var(--white); border: none; padding: 14px; font-size: 13px; font-weight: 700; cursor: pointer; font-family: 'Josefin Sans', sans-serif; letter-spacing: 1px; text-transform: uppercase; transition: background .2s; }
+    .form-submit:hover { background: var(--brass-light); }
+
+    /* Footer */
+    footer { background: var(--jet); padding: 48px 0 24px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 36px; margin-bottom: 36px; }
+    .footer-brand p { color: #3A3A3A; font-size: 14px; line-height: 1.6; margin-top: 10px; max-width: 260px; }
+    .footer-col h4 { font-family: 'Josefin Sans', sans-serif; font-size: 11px; font-weight: 700; color: var(--brass); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .footer-col a { color: #3A3A3A; text-decoration: none; font-size: 13px; transition: color .2s; }
+    .footer-col a:hover { color: var(--brass-light); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .footer-bottom p { color: #2C2C2C; font-size: 13px; }
+    .footer-bottom a { color: #2C2C2C; text-decoration: none; }
+    .footer-bottom a:hover { color: var(--brass-light); }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 60px 24px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .patterns-grid { grid-template-columns: repeat(2, 1fr); }
+      .portfolio-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .portfolio-tile:first-child { grid-row: span 1; }
+      .portfolio-tile { height: 180px; }
+      .process-steps { grid-template-columns: repeat(2, 1fr); }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .testi-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .topbar-trust { display: none; }
+      .materials-inner { justify-content: flex-start; gap: 20px; }
+    }
+    @media (max-width: 600px) {
+      .services-grid, .patterns-grid, .process-steps, .why-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+    }
   </style>
 </head>
 <body>
-<header class="topbar">
-  <div class="container">
-    <div class="topbar-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text">Graft<span>Digital</span></span>
-      </a>
-      <a href="../index.html#industries" class="back-link">&larr; All Templates</a>
+
+<!-- Template Banner -->
+<div class="template-banner">
+  This is a template by <a href="https://graftdigital.london" target="_blank">Graft Digital</a> &mdash; bespoke websites for London tradespeople
+</div>
+
+<!-- Topbar -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-trust">
+      <span>CTDA Registered Tilers</span>
+      <span>Fully Insured &pound;2M</span>
+      <span>&#9733; 5.0 Google Rating</span>
+      <span>Free Estimates</span>
+    </div>
+    <div class="topbar-contacts">
+      <a href="tel:+447479531509">+44 7479 531509</a>
+      <a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a>
     </div>
   </div>
-</header>
+</div>
 
+<!-- Navbar -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-tile">
+        <div class="lt lt-1"></div>
+        <div class="lt lt-2"></div>
+        <div class="lt lt-3"></div>
+        <div class="lt lt-4"></div>
+      </div>
+      <div>
+        <div class="logo-text">Tessera</div>
+        <div class="logo-sub">Tiling &middot; London</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#patterns">Tile Styles</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact" class="nav-cta">Free Quote</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a>
+    <a href="#patterns">Tile Styles</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Free Quote</a>
+  </div>
+</nav>
+
+<!-- Hero -->
 <section class="hero">
-  <div class="hero-grid"></div>
-  <div class="container">
-    <div class="hero-content">
-      <div class="preview-banner">
-        <span style="font-size:1.2rem;flex-shrink:0;">&#128065;</span>
-        <p>This is a <strong>sample template</strong> for a Tiling business. Your real site will be fully customised with your branding, photos &amp; details. <a href="#get-started" style="color:var(--gold);font-weight:700;">Request this template &darr;</a></p>
-      </div>
-      <div class="hero-tag">&#128205; London Trade Template</div>
-      <span class="hero-icon">&#9638;</span>
-      <h1>London&rsquo;s Trusted<br><span>Tiling</span><br>Specialists</h1>
-      <p>Professional wall and floor tiling for kitchens, bathrooms and more in London.</p>
-      <div class="hero-ctas">
-        <a href="#get-started" class="btn btn-gold">Get a Free Quote</a>
-        <a href="tel:+447479531509" class="btn btn-outline">&#128222; Call Now</a>
-      </div>
+  <div class="hero-left">
+    <div class="hero-tag">&#11835; London Tiling Specialists</div>
+    <h1>Precision<br>Tiling,<br><span>Perfect</span><br>Finish.</h1>
+    <p class="hero-sub">Expert bathroom, kitchen and floor tiling across London. Every joint perfectly aligned, every surface flawlessly finished.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-jet">Get a Free Quote</a>
+      <a href="#patterns" class="btn-outline-jet">Browse Tile Styles</a>
+    </div>
+    <div class="hero-trust">
+      <div class="hero-trust-item"><strong>10yr</strong>Workmanship Guarantee</div>
+      <div class="hero-trust-item"><strong>800+</strong>Projects Completed</div>
+      <div class="hero-trust-item"><strong>CTDA</strong>Registered</div>
+      <div class="hero-trust-item"><strong>5&#9733;</strong>Google Rating</div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="tile-wall">
+      <div class="tile-row"><div class="t-block tc-1"></div><div class="t-block tc-2"></div><div class="t-block tc-3"></div><div class="t-block tc-4"></div><div class="t-block tc-5"></div><div class="t-block tc-1"></div><div class="t-block tc-2"></div></div>
+      <div class="tile-row offset"><div class="t-block tc-3"></div><div class="t-block tc-4"></div><div class="t-block tc-5"></div><div class="t-block tc-1"></div><div class="t-block tc-2"></div><div class="t-block tc-3"></div><div class="t-block tc-4"></div></div>
+      <div class="tile-row"><div class="t-block tc-5"></div><div class="t-block tc-1"></div><div class="t-block tc-2"></div><div class="t-block tc-3"></div><div class="t-block tc-4"></div><div class="t-block tc-5"></div><div class="t-block tc-1"></div></div>
+      <div class="tile-row offset"><div class="t-block tc-2"></div><div class="t-block tc-3"></div><div class="t-block tc-4"></div><div class="t-block tc-5"></div><div class="t-block tc-1"></div><div class="t-block tc-2"></div><div class="t-block tc-3"></div></div>
+      <div class="tile-row"><div class="t-block tc-4"></div><div class="t-block tc-5"></div><div class="t-block tc-1"></div><div class="t-block tc-2"></div><div class="t-block tc-3"></div><div class="t-block tc-4"></div><div class="t-block tc-5"></div></div>
+      <div class="tile-row offset"><div class="t-block tc-1"></div><div class="t-block tc-2"></div><div class="t-block tc-3"></div><div class="t-block tc-4"></div><div class="t-block tc-5"></div><div class="t-block tc-1"></div><div class="t-block tc-2"></div></div>
+      <div class="tile-row"><div class="t-block tc-3"></div><div class="t-block tc-4"></div><div class="t-block tc-5"></div><div class="t-block tc-1"></div><div class="t-block tc-2"></div><div class="t-block tc-3"></div><div class="t-block tc-4"></div></div>
+      <div class="tile-row offset"><div class="t-block tc-5"></div><div class="t-block tc-1"></div><div class="t-block tc-2"></div><div class="t-block tc-3"></div><div class="t-block tc-4"></div><div class="t-block tc-5"></div><div class="t-block tc-1"></div></div>
+    </div>
+    <div class="hero-right-overlay"></div>
+    <div class="hero-right-text">
+      <div class="hero-right-badge">&#10003; &nbsp;<span>10yr</span>&nbsp; Workmanship Guarantee on Every Job</div>
     </div>
   </div>
 </section>
 
-<section class="services">
+<!-- Services -->
+<section class="services" id="services">
   <div class="container">
-    <h2>Our Services</h2>
-    <p class="sub">Professional Tiling services across all London boroughs</p>
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Our Tiling Services</h2>
+    <p class="section-sub">From single bathroom walls to entire property refits, we deliver precision tiling with immaculate grouting and long-lasting results.</p>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px">
     <div class="services-grid">
       <div class="service-card">
-        <span class="sc-icon">&#10003;</span>
-        <div class="sc-title">Residential</div>
-        <p class="sc-desc">Trusted by homeowners across London for reliable, high-quality work done right first time.</p>
+        <span class="service-icon">&#128703;</span>
+        <h3>Bathroom Tiling</h3>
+        <p>Full bathroom tiling from floor to ceiling. Waterproofing, backer boards, perfect alignment and premium grout finish as standard.</p>
+        <span class="service-tag">Most Popular</span>
       </div>
       <div class="service-card">
-        <span class="sc-icon">&#127970;</span>
-        <div class="sc-title">Commercial</div>
-        <p class="sc-desc">We work with businesses, landlords and property managers throughout Greater London.</p>
+        <span class="service-icon">&#127859;</span>
+        <h3>Kitchen Tiling</h3>
+        <p>Splashbacks, full wall tiling and floor-to-ceiling kitchen tiles. We work around fitted kitchens with precision cutting.</p>
+        <span class="service-tag">Residential</span>
       </div>
       <div class="service-card">
-        <span class="sc-icon">&#128241;</span>
-        <div class="sc-title">Emergency Callouts</div>
-        <p class="sc-desc">Fast response when you need it most. We cover all London postcodes, seven days a week.</p>
+        <span class="service-icon">&#127968;</span>
+        <h3>Floor Tiling</h3>
+        <p>All room types — porcelain, natural stone, encaustic and large-format floor tiles laid with perfectly straight grout joints.</p>
+        <span class="service-tag">All Rooms</span>
       </div>
       <div class="service-card">
-        <span class="sc-icon">&#128205;</span>
-        <div class="sc-title">All London Boroughs</div>
-        <p class="sc-desc">From Hackney to Hammersmith, Croydon to Camden &mdash; we cover the entire Greater London area.</p>
+        <span class="service-icon">&#128704;</span>
+        <h3>Wet Rooms</h3>
+        <p>Specialist wet room installation including gradient screeding, full tanking membranes and slip-resistant floor tiles.</p>
+        <span class="service-tag">Specialist</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">&#11835;</span>
+        <h3>Mosaic &amp; Feature Walls</h3>
+        <p>Glass mosaic, marble mosaic and decorative feature wall tiling. Intricate layouts and pattern matching executed perfectly.</p>
+        <span class="service-tag">Bespoke</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">&#128296;</span>
+        <h3>Re-grouting &amp; Repair</h3>
+        <p>Replace damaged grout, re-seal silicone joints, fix cracked or loose tiles. We restore tired tiling to a fresh finish.</p>
+        <span class="service-tag">Restoration</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="why">
+<!-- Materials Strip -->
+<div class="materials">
+  <div class="materials-inner">
+    <div class="material-item"><div class="material-swatch ms-porcelain"></div><span class="material-name">Porcelain</span></div>
+    <div class="material-item"><div class="material-swatch ms-ceramic"></div><span class="material-name">Ceramic</span></div>
+    <div class="material-item"><div class="material-swatch ms-stone"></div><span class="material-name">Natural Stone</span></div>
+    <div class="material-item"><div class="material-swatch ms-glass"></div><span class="material-name">Glass</span></div>
+    <div class="material-item"><div class="material-swatch ms-terracotta"></div><span class="material-name">Terracotta</span></div>
+    <div class="material-item"><div class="material-swatch ms-mosaic"></div><span class="material-name">Mosaic</span></div>
+  </div>
+</div>
+
+<!-- Tile Patterns -->
+<section class="patterns" id="patterns">
   <div class="container">
-    <h2>Why Choose Us?</h2>
-    <p class="sub">Trusted by hundreds of London customers</p>
-    <div class="trust-items">
-      <div class="trust-item"><div class="trust-num">500+</div><div class="trust-lbl">Jobs Completed</div></div>
-      <div class="trust-item"><div class="trust-num">5&#9733;</div><div class="trust-lbl">Google Rating</div></div>
-      <div class="trust-item"><div class="trust-num">10+</div><div class="trust-lbl">Years Experience</div></div>
-      <div class="trust-item"><div class="trust-num">32</div><div class="trust-lbl">London Boroughs Covered</div></div>
+    <div class="section-label">Laying Patterns</div>
+    <h2 class="section-title">Tile Styles We Install</h2>
+    <p class="section-sub">The laying pattern is as important as the tile itself. Here are the most popular styles our clients choose &mdash; all executed with precision.</p>
+  </div>
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px">
+    <div class="patterns-grid">
+      <div class="pattern-card">
+        <div class="pattern-visual pv-subway"></div>
+        <div class="pattern-info">
+          <h4>Subway / Metro</h4>
+          <p>Classic horizontal brick bond. Timeless for bathrooms and kitchens.</p>
+          <span class="p-tag">Most Popular</span>
+        </div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-visual pv-hex"></div>
+        <div class="pattern-info">
+          <h4>Hexagonal</h4>
+          <p>Honeycomb layout — striking on floors and feature walls.</p>
+          <span class="p-tag">Trending</span>
+        </div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-visual pv-herring"></div>
+        <div class="pattern-info">
+          <h4>Herringbone</h4>
+          <p>45&deg; diagonal interlocking pattern. Adds movement and texture.</p>
+          <span class="p-tag">Premium</span>
+        </div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-visual pv-large"></div>
+        <div class="pattern-info">
+          <h4>Large Format</h4>
+          <p>Minimal grout lines for a seamless, contemporary look.</p>
+          <span class="p-tag">Modern</span>
+        </div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-visual pv-chevron"></div>
+        <div class="pattern-info">
+          <h4>Chevron</h4>
+          <p>V-shaped mitre-cut pattern — sophisticated and directional.</p>
+          <span class="p-tag">Bespoke</span>
+        </div>
+      </div>
+      <div class="pattern-card">
+        <div class="pattern-visual pv-moroccan"></div>
+        <div class="pattern-info">
+          <h4>Encaustic / Geometric</h4>
+          <p>Bold patterned tiles with intricate geometric designs.</p>
+          <span class="p-tag">Feature</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="cta-section">
+<!-- Portfolio -->
+<section class="portfolio" id="portfolio">
   <div class="container">
-    <h2>Ready to Book? Get a Free Quote Today.</h2>
-    <p>No call centres, no pressure. Just a quick chat and a fair, honest price.</p>
-    <a href="#get-started" class="btn btn-gold">Request a Free Quote</a>
+    <div class="section-label">Our Work</div>
+    <h2 class="section-title">Recent Projects</h2>
+    <p class="section-sub">A selection of recently completed tiling projects across London.</p>
   </div>
-</section>
-
-<section class="contact-mini" id="get-started">
-  <div class="container">
-    <h2>Request This Template</h2>
-    <p class="sub">Like what you see? Contact Yoel at Graft Digital to get your own Tiling website live within days.</p>
-    <div class="mini-form">
-      <form id="reqForm">
-        <div class="fg"><label>Your Name</label><input type="text" placeholder="John Smith" required></div>
-        <div class="fg"><label>Email</label><input type="email" placeholder="john@yourcompany.co.uk" required></div>
-        <div class="fg"><label>Phone</label><input type="tel" placeholder="+44 7XXX XXX XXX"></div>
-        <div class="fg"><label>Tell me about your business</label><textarea placeholder="Where in London are you based? Do you have a logo or existing site?"></textarea></div>
-        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;font-size:.97rem;">Send Enquiry to Graft Digital &rarr;</button>
-      </form>
+  <div style="max-width:1200px;margin:16px auto 0;padding:0 24px">
+    <div class="portfolio-grid">
+      <div class="portfolio-tile">
+        <div class="pt-bg pg-1" style="height:100%"></div>
+        <span class="pt-badge">Bathroom</span>
+        <div class="pt-overlay">
+          <div class="pt-label"><strong>Kensington Master Bathroom</strong><span>Full tiling &middot; Herringbone marble &middot; 2024</span></div>
+        </div>
+      </div>
+      <div class="portfolio-tile">
+        <div class="pt-bg pg-2" style="height:100%"></div>
+        <span class="pt-badge">Kitchen</span>
+        <div class="pt-overlay">
+          <div class="pt-label"><strong>Brixton Kitchen Splashback</strong><span>Metro tile &middot; Navy gloss &middot; 2024</span></div>
+        </div>
+      </div>
+      <div class="portfolio-tile">
+        <div class="pt-bg pg-3" style="height:100%"></div>
+        <span class="pt-badge">Wet Room</span>
+        <div class="pt-overlay">
+          <div class="pt-label"><strong>Hackney Wet Room</strong><span>Full tanking &middot; Hexagonal floor &middot; 2023</span></div>
+        </div>
+      </div>
+      <div class="portfolio-tile">
+        <div class="pt-bg pg-4" style="height:100%"></div>
+        <span class="pt-badge">Floor</span>
+        <div class="pt-overlay">
+          <div class="pt-label"><strong>Notting Hill Hallway</strong><span>Encaustic floor &middot; Geometric pattern &middot; 2024</span></div>
+        </div>
+      </div>
+      <div class="portfolio-tile">
+        <div class="pt-bg pg-5" style="height:100%"></div>
+        <span class="pt-badge">Feature Wall</span>
+        <div class="pt-overlay">
+          <div class="pt-label"><strong>Clapham Feature Wall</strong><span>Glass mosaic &middot; Chevron &middot; 2023</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- Process -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="section-label" style="color:var(--brass)">How We Work</div>
+    <h2 class="section-title">From Quote to Finish</h2>
+    <p class="section-sub">A professional, transparent process with no surprises &mdash; just a perfect result.</p>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="ps-num">01</div>
+        <span class="ps-icon">&#128203;</span>
+        <h4>Free Quote</h4>
+        <p>We visit your property, take precise measurements and give you a detailed written quote with no hidden costs.</p>
+      </div>
+      <div class="process-step">
+        <div class="ps-num">02</div>
+        <span class="ps-icon">&#127912;</span>
+        <h4>Tile Selection</h4>
+        <p>We help you choose the right tile, pattern and grout colour for your space and advise on quantities.</p>
+      </div>
+      <div class="process-step">
+        <div class="ps-num">03</div>
+        <span class="ps-icon">&#128296;</span>
+        <h4>Precision Installation</h4>
+        <p>Surface preparation, waterproofing where needed, then expert tile laying with perfectly aligned joints.</p>
+      </div>
+      <div class="process-step">
+        <div class="ps-num">04</div>
+        <span class="ps-icon">&#9989;</span>
+        <h4>Grout &amp; Seal</h4>
+        <p>Premium grouting, silicone sealing and a full clean-down. We don't leave until it's perfect.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Us -->
+<section class="why-us">
+  <div class="container">
+    <div class="section-label">Why Tessera</div>
+    <h2 class="section-title">The Standard You Deserve</h2>
+    <div class="why-grid">
+      <div class="why-item">
+        <span class="why-icon">&#127942;</span>
+        <h3>CTDA Registered</h3>
+        <p>Members of the Contract Tile Distributors Association &mdash; the industry's professional standard for tile installation.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-icon">&#128737;</span>
+        <h3>Insured to &pound;2 Million</h3>
+        <p>Full public liability cover for complete peace of mind. Your property is fully protected on every job.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-icon">&#9989;</span>
+        <h3>10yr Guarantee</h3>
+        <p>We back our workmanship with a 10-year guarantee. If grout cracks or tiles lift, we return and fix it free.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-icon">&#128679;</span>
+        <h3>Clean &amp; Tidy Workers</h3>
+        <p>We protect your home with dust sheets and remove all waste. You'll find your room cleaner than we found it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-label">Client Reviews</div>
+    <h2 class="section-title">What Our Clients Say</h2>
+  </div>
+  <div style="max-width:1200px;margin:48px auto 0;padding:0 24px">
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">"Our bathroom looks like something from a design magazine. Every tile is perfectly level, the grout lines are immaculate and the whole thing was done in two days. Absolutely brilliant."</p>
+        <div class="testi-author">Sophie &amp; Ben M.</div>
+        <div class="testi-loc">Islington, London</div>
+        <div class="testi-job">Full Bathroom Tiling &mdash; Herringbone Marble</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">"Had the kitchen splashback and hall floor done. The geometric floor tiles were tricky but the result is stunning — so many compliments from visitors. Price was very fair for the quality."</p>
+        <div class="testi-author">Patrick O.</div>
+        <div class="testi-loc">Notting Hill, London</div>
+        <div class="testi-job">Kitchen &amp; Hallway Tiling</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">"Tessera transformed our tired wet room completely. The tanking, the gradient floor, the large-format porcelain &mdash; executed flawlessly. Very professional team from start to finish."</p>
+        <div class="testi-author">Anita R.</div>
+        <div class="testi-loc">Hackney, London</div>
+        <div class="testi-job">Wet Room Conversion</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Get Your Free Quote</h2>
+        <p>Describe your tiling project and we'll arrange a convenient time to visit, measure up and provide a detailed written quote at no charge.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="cd-icon">&#128222;</div>
+            <div class="cd-text">
+              <strong><a href="tel:+447479531509" style="color:inherit;text-decoration:none">+44 7479 531509</a></strong>
+              Mon&ndash;Sat 7am&ndash;6pm
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon">&#9993;</div>
+            <div class="cd-text">
+              <strong><a href="mailto:sales@graftdigital.london" style="color:inherit;text-decoration:none">sales@graftdigital.london</a></strong>
+              We reply same day
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon">&#128205;</div>
+            <div class="cd-text">
+              <strong>All London Boroughs</strong>
+              We cover all of Greater London
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon">&#128203;</div>
+            <div class="cd-text">
+              <strong>Free Written Quote</strong>
+              Detailed, itemised &mdash; no hidden extras
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <h3>Request a Free Quote</h3>
+        <form onsubmit="handleEnquiry(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" id="cName" placeholder="Full name" required>
+            </div>
+            <div class="form-group">
+              <label>Phone *</label>
+              <input type="tel" id="cPhone" placeholder="+44..." required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" id="cEmail" placeholder="your@email.com" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Service Required</label>
+              <select id="cService">
+                <option value="">Select service</option>
+                <option>Bathroom Tiling</option>
+                <option>Kitchen Tiling</option>
+                <option>Floor Tiling</option>
+                <option>Wet Room</option>
+                <option>Mosaic / Feature Wall</option>
+                <option>Re-grouting / Repair</option>
+                <option>Full Property</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>London Borough</label>
+              <input type="text" id="cArea" placeholder="e.g. Islington, Hackney...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Tell Us About Your Project</label>
+            <textarea id="cMessage" placeholder="Room size, tile type in mind, any existing tiles to remove, timescale..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Request Free Quote &rarr;</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
 <footer>
   <div class="container">
-    <div class="footer-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text" style="color:#fff;">Graft<span style="color:var(--gold);">Digital</span></span>
-      </a>
-      <span class="footer-copy">&copy; 2025 <strong>Graft Digital</strong> &mdash; Built by Yoel Gutierrez &middot; London</span>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:#3A3A3A;letter-spacing:1px;text-transform:uppercase">Tessera Tiling London</div>
+        <p>Expert tiling services across London. CTDA registered, fully insured, 10yr workmanship guarantee on every installation.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Bathroom Tiling</a></li>
+          <li><a href="#services">Kitchen Tiling</a></li>
+          <li><a href="#services">Floor Tiling</a></li>
+          <li><a href="#services">Wet Rooms</a></li>
+          <li><a href="#services">Re-grouting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Tile Styles</h4>
+        <ul>
+          <li><a href="#patterns">Subway / Metro</a></li>
+          <li><a href="#patterns">Herringbone</a></li>
+          <li><a href="#patterns">Hexagonal</a></li>
+          <li><a href="#patterns">Large Format</a></li>
+          <li><a href="#patterns">Encaustic</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+447479531509">+44 7479 531509</a></li>
+          <li><a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a></li>
+          <li><a href="#contact">Free Quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Tessera Tiling London. All rights reserved.</p>
+      <p>Website by <a href="https://graftdigital.london" target="_blank">Graft Digital</a></p>
     </div>
   </div>
 </footer>
+
 <script>
-  document.getElementById('reqForm').addEventListener('submit',function(e){
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  function handleEnquiry(e) {
     e.preventDefault();
-    const f=this;
-    const btn=f.querySelector('button[type=submit]');
-    const inp=f.querySelector('input[name=template]');
-    const tmpl=inp?inp.value:'General';
-    const name=f.querySelector('input[type=text]').value;
-    const email=f.querySelector('input[type=email]').value;
-    const phone=f.querySelector('input[type=tel]').value;
-    const msg=f.querySelector('textarea').value;
-    const body='Name: '+name+'\nEmail: '+email+'\nPhone: '+phone+'\nTemplate: '+tmpl+'\n\nMessage:\n'+msg;
-    window.location.href='mailto:sales@graftdigital.london?subject='+encodeURIComponent('Template Request – '+tmpl+' – '+name)+'&body='+encodeURIComponent(body);
-    btn.textContent='✓ Opening your email app…';
-    btn.style.background='#22c55e'; btn.style.color='#fff'; btn.disabled=true;
+    var name = document.getElementById('cName').value;
+    var phone = document.getElementById('cPhone').value;
+    var email = document.getElementById('cEmail').value;
+    var service = document.getElementById('cService').value || 'Not specified';
+    var area = document.getElementById('cArea').value || 'Not specified';
+    var message = document.getElementById('cMessage').value;
+    var subject = 'Tiling Quote \u2013 ' + name + ' \u2013 ' + service;
+    var body = 'Name: ' + name + '\nPhone: ' + phone + '\nEmail: ' + email + '\nService: ' + service + '\nArea: ' + area + '\n\nProject Details:\n' + message;
+    window.location.href = 'mailto:sales@graftdigital.london?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  }
+
+  // Scroll reveal
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.service-card, .pattern-card, .portfolio-tile, .testi-card, .why-item, .process-step').forEach(function(el) {
+    el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'opacity .5s, transform .5s';
+    observer.observe(el);
   });
 </script>
 </body>
