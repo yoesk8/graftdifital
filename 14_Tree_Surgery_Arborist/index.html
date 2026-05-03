@@ -3,214 +3,812 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tree Surgery Website Template | Graft Digital</title>
-  <meta name="description" content="Tree removal, pruning and stump grinding by qualified arborists in London.">
-  <meta name="keywords" content="tree surgeon London, arborist">
+  <title>Crown Tree Care London | Professional Tree Surgery &amp; Arborist Services</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:#0A1628; --navy-mid:#0F2040; --gold:#F5A623; --gold-dark:#C98010;
-      --gold-light:#FFB84D; --white:#FFFFFF; --off-white:#F7F9FC;
-      --text:#1A2332; --text-mid:#4A5568; --border:#E2E8F0;
+      --forest: #0D1F0D;
+      --deep: #162B1A;
+      --canopy: #2D6A4F;
+      --leaf: #4A7C59;
+      --sage: #6B8F5E;
+      --bark: #7C5230;
+      --amber: #D97706;
+      --amber-light: #FEF3C7;
+      --parchment: #F5F0E8;
+      --white: #FFFFFF;
+      --text: #1A2E1A;
+      --text-muted: #6B7280;
     }
-    html { scroll-behavior: smooth; }
-    body { font-family:'Inter',-apple-system,sans-serif; color:var(--text); background:var(--white); line-height:1.6; }
-    a { text-decoration:none; color:inherit; }
-    .container { max-width:1100px; margin:0 auto; padding:0 24px; }
-    /* TOPBAR */
-    .topbar { background:var(--navy); padding:14px 0; position:sticky; top:0; z-index:100; box-shadow:0 2px 12px rgba(0,0,0,.25); }
-    .topbar-inner { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-    .logo { display:flex; align-items:center; gap:9px; }
-    .logo-mark { width:34px; height:34px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:900; color:var(--navy); }
-    .logo-text { font-size:1.1rem; font-weight:900; color:#fff; letter-spacing:-.03em; }
-    .logo-text span { color:var(--gold); }
-    .back-link { color:rgba(255,255,255,.7); font-size:.85rem; font-weight:500; display:flex; align-items:center; gap:6px; transition:color .2s; }
-    .back-link:hover { color:var(--gold); }
-    /* HERO */
-    .hero { background:var(--navy); background-image:radial-gradient(ellipse at 15% 60%,rgba(26,53,96,.6) 0%,transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(245,166,35,.07) 0%,transparent 50%); min-height:480px; display:flex; align-items:center; padding:72px 0 64px; position:relative; overflow:hidden; }
-    .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px); background-size:54px 54px; }
-    .hero-content { position:relative; z-index:2; max-width:680px; }
-    .preview-banner { background:rgba(245,166,35,.1); border:1px solid rgba(245,166,35,.3); border-radius:10px; padding:15px 20px; margin-bottom:36px; display:flex; align-items:flex-start; gap:11px; max-width:600px; }
-    .preview-banner p { color:rgba(255,255,255,.8); font-size:.86rem; line-height:1.55; margin:0; }
-    .preview-banner strong { color:var(--gold); }
-    .hero-tag { display:inline-flex; align-items:center; gap:7px; background:rgba(245,166,35,.13); border:1px solid rgba(245,166,35,.28); color:var(--gold-light); padding:6px 15px; border-radius:100px; font-size:.8rem; font-weight:600; margin-bottom:20px; }
-    .hero-icon { font-size:3.2rem; margin-bottom:10px; display:block; line-height:1; }
-    .hero h1 { font-size:clamp(2.1rem,4.5vw,3.4rem); color:#fff; letter-spacing:-.04em; margin-bottom:16px; line-height:1.15; font-weight:900; }
-    .hero h1 span { color:var(--gold); }
-    .hero > .container > .hero-content > p { color:rgba(255,255,255,.68); font-size:1.05rem; max-width:520px; margin-bottom:32px; }
-    .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
-    .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:8px; font-size:.95rem; font-weight:700; cursor:pointer; transition:all .22s ease; border:none; font-family:inherit; }
-    .btn-gold { background:var(--gold); color:var(--navy); }
-    .btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 20px rgba(245,166,35,.35); }
-    .btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.35); }
-    .btn-outline:hover { border-color:#fff; background:rgba(255,255,255,.08); }
-    /* SERVICES */
-    .services { padding:80px 0; background:var(--off-white); }
-    .services h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .services .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
-    .service-card { background:#fff; border-radius:12px; padding:28px 24px; border:1px solid var(--border); transition:all .22s ease; }
-    .service-card:hover { transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.08); border-color:rgba(245,166,35,.3); }
-    .sc-icon { font-size:1.8rem; margin-bottom:12px; display:block; }
-    .sc-title { font-size:1rem; font-weight:700; margin-bottom:6px; }
-    .sc-desc { font-size:.88rem; color:var(--text-mid); line-height:1.65; }
-    /* TRUST */
-    .why { padding:80px 0; background:var(--white); }
-    .why h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .why .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .trust-items { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; text-align:center; }
-    .trust-item { padding:28px 16px; }
-    .trust-num { font-size:2.4rem; font-weight:900; color:var(--gold-dark); line-height:1; margin-bottom:6px; }
-    .trust-lbl { font-size:.88rem; color:var(--text-mid); }
-    /* CTA */
-    .cta-section { padding:72px 0; background:var(--navy); background-image:radial-gradient(ellipse at 80% 50%,rgba(245,166,35,.08) 0%,transparent 55%); text-align:center; }
-    .cta-section h2 { color:#fff; font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; margin-bottom:14px; }
-    .cta-section p { color:rgba(255,255,255,.65); font-size:1rem; margin-bottom:32px; max-width:480px; margin-left:auto; margin-right:auto; }
-    /* FORM */
-    .contact-mini { padding:80px 0; background:var(--off-white); }
-    .contact-mini h2 { font-size:clamp(1.5rem,3vw,2rem); font-weight:800; text-align:center; margin-bottom:8px; }
-    .contact-mini .sub { text-align:center; color:var(--text-mid); font-size:.97rem; margin-bottom:32px; }
-    .mini-form { max-width:520px; margin:0 auto; background:#fff; border-radius:16px; padding:36px; border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,0,0,.06); }
-    .fg { margin-bottom:16px; }
-    .fg label { display:block; font-size:.84rem; font-weight:600; margin-bottom:6px; }
-    .fg input,.fg textarea { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:8px; font-size:.92rem; font-family:inherit; color:var(--text); outline:none; transition:border .2s; }
-    .fg input:focus,.fg textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(245,166,35,.12); }
-    .fg textarea { resize:vertical; min-height:88px; }
-    /* FOOTER */
-    footer { background:#050D1A; padding:32px 0; border-top:1px solid rgba(255,255,255,.05); }
-    .footer-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
-    .footer-copy { color:rgba(255,255,255,.35); font-size:.82rem; }
-    .footer-copy strong { color:var(--gold); }
-    @media(max-width:600px){ .hero-ctas{flex-direction:column;} .hero-ctas .btn{justify-content:center;} }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); }
+
+    /* Template Banner */
+    .template-banner { background: #1e293b; color: #94a3b8; text-align: center; padding: 8px 16px; font-size: 12px; }
+    .template-banner a { color: #4ade80; text-decoration: none; }
+
+    /* Storm Bar */
+    .storm-bar { background: var(--amber); color: var(--forest); padding: 9px 24px; text-align: center; font-size: 13px; font-weight: 600; }
+    .storm-bar a { color: var(--forest); font-weight: 700; text-decoration: underline; }
+
+    /* Topbar */
+    .topbar { background: var(--deep); color: #9CA3AF; padding: 7px 0; font-size: 12px; }
+    .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; }
+    .topbar-creds { display: flex; gap: 18px; align-items: center; }
+    .topbar-cred { display: flex; align-items: center; gap: 6px; }
+    .topbar-cred-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage); }
+    .topbar-contacts { display: flex; gap: 16px; }
+    .topbar-contacts a { color: #9CA3AF; text-decoration: none; }
+    .topbar-contacts a:hover { color: #4ade80; }
+
+    /* Navbar */
+    nav { background: var(--white); position: sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--parchment); box-shadow: 0 2px 16px rgba(0,0,0,.07); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; height: 68px; }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-mark { width: 42px; height: 42px; background: var(--canopy); border-radius: 8px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .logo-tree { position: absolute; }
+    .logo-tree-trunk { width: 6px; height: 14px; background: var(--bark); border-radius: 2px; position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%); }
+    .logo-tree-canopy { width: 0; height: 0; border-left: 14px solid transparent; border-right: 14px solid transparent; border-bottom: 22px solid rgba(255,255,255,0.85); position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); }
+    .logo-tree-canopy2 { width: 0; height: 0; border-left: 11px solid transparent; border-right: 11px solid transparent; border-bottom: 17px solid rgba(255,255,255,0.65); position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); }
+    .logo-text { font-family: 'Lora', serif; font-size: 17px; font-weight: 700; color: var(--forest); line-height: 1.2; }
+    .logo-sub { font-size: 11px; color: var(--text-muted); letter-spacing: 0.5px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500; }
+    .nav-links a:hover { color: var(--canopy); }
+    .nav-cta { background: var(--canopy); color: var(--white) !important; padding: 10px 22px; border-radius: 6px; font-weight: 600 !important; }
+    .nav-cta:hover { background: var(--leaf) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { width: 24px; height: 2px; background: var(--forest); border-radius: 2px; display: block; }
+    .mobile-menu { display: none; background: var(--white); border-top: 1px solid var(--parchment); padding: 16px 24px; }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; padding: 10px 0; color: var(--text); text-decoration: none; font-weight: 500; border-bottom: 1px solid var(--parchment); }
+
+    /* Hero */
+    .hero { background: var(--forest); min-height: 600px; position: relative; overflow: hidden; display: flex; align-items: center; }
+    .hero-bg-leaves { position: absolute; inset: 0; background:
+      radial-gradient(ellipse at 30% 20%, rgba(45,106,79,0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(74,124,89,0.1) 0%, transparent 40%); }
+    .tree-rings { position: absolute; right: 80px; top: 50%; transform: translateY(-50%); width: 340px; height: 340px; }
+    .ring { position: absolute; border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .ring-1 { width: 340px; height: 340px; border: 1px solid rgba(74,124,89,0.18); background: rgba(45,106,79,0.04); }
+    .ring-2 { width: 288px; height: 288px; border: 1px solid rgba(74,124,89,0.22); background: rgba(45,106,79,0.06); }
+    .ring-3 { width: 236px; height: 236px; border: 1px solid rgba(74,124,89,0.28); background: rgba(45,106,79,0.07); }
+    .ring-4 { width: 184px; height: 184px; border: 1px solid rgba(74,124,89,0.35); background: rgba(45,106,79,0.09); }
+    .ring-5 { width: 132px; height: 132px; border: 1px solid rgba(74,124,89,0.44); background: rgba(45,106,79,0.12); }
+    .ring-6 { width: 80px; height: 80px; border: 1px solid rgba(74,124,89,0.55); background: rgba(45,106,79,0.18); }
+    .ring-7 { width: 36px; height: 36px; background: var(--leaf); box-shadow: 0 0 24px rgba(74,124,89,0.6); }
+    .ring-label { position: absolute; top: -24px; left: 50%; transform: translateX(-50%); font-size: 11px; color: rgba(107,143,94,0.6); white-space: nowrap; font-family: 'Inter', sans-serif; letter-spacing: 1px; text-transform: uppercase; }
+    .hero-content { position: relative; z-index: 2; padding: 80px 24px; margin-left: 80px; max-width: 580px; }
+    .hero-eyebrow { color: var(--sage); font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--sage); display: inline-block; }
+    .hero h1 { font-family: 'Lora', serif; font-size: clamp(34px, 5vw, 52px); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 20px; }
+    .hero h1 em { font-style: italic; color: #86EFAC; }
+    .hero-sub { color: #9CA3AF; font-size: 17px; line-height: 1.65; margin-bottom: 36px; max-width: 460px; }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+    .btn-green { background: var(--canopy); color: var(--white); padding: 13px 26px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 15px; transition: background .2s; display: inline-block; }
+    .btn-green:hover { background: var(--leaf); }
+    .btn-ghost { border: 1px solid rgba(255,255,255,0.25); color: var(--white); padding: 13px 26px; border-radius: 6px; font-weight: 500; text-decoration: none; font-size: 15px; transition: all .2s; display: inline-block; }
+    .btn-ghost:hover { border-color: #86EFAC; color: #86EFAC; }
+    .hero-badges { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-badge { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 6px; padding: 8px 14px; font-size: 12px; color: #D1FAE5; font-weight: 500; }
+    .hero-badge strong { display: block; font-size: 15px; color: #86EFAC; }
+
+    /* Shared */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-label { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--canopy); margin-bottom: 10px; }
+    .section-title { font-family: 'Lora', serif; font-size: clamp(26px, 4vw, 38px); font-weight: 700; color: var(--forest); margin-bottom: 14px; }
+    .section-sub { color: var(--text-muted); font-size: 16px; max-width: 560px; line-height: 1.65; margin-bottom: 44px; }
+
+    /* Services */
+    .services { background: var(--parchment); padding: 80px 0; }
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .service-card { background: var(--white); border-radius: 10px; padding: 24px; border-top: 3px solid var(--canopy); box-shadow: 0 2px 16px rgba(0,0,0,.05); transition: transform .2s, box-shadow .2s; }
+    .service-card:hover { transform: translateY(-3px); box-shadow: 0 6px 28px rgba(0,0,0,.09); }
+    .service-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+    .service-card h3 { font-family: 'Lora', serif; font-size: 16px; font-weight: 700; color: var(--forest); margin-bottom: 8px; }
+    .service-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 12px; }
+    .service-tag { display: inline-block; background: var(--parchment); color: var(--canopy); font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 4px; }
+    .service-tag.urgent { background: #FEF3C7; color: #92400E; }
+
+    /* Certifications */
+    .certs { background: var(--forest); padding: 28px 0; }
+    .certs-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap; }
+    .cert-item { display: flex; align-items: center; gap: 10px; }
+    .cert-badge-box { width: 44px; height: 44px; background: rgba(74,124,89,0.2); border: 1px solid rgba(74,124,89,0.4); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+    .cert-item-text { font-size: 13px; color: #9CA3AF; }
+    .cert-item-text strong { display: block; color: #D1FAE5; font-size: 13px; }
+
+    /* Why Us */
+    .why-us { background: var(--white); padding: 80px 0; }
+    .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
+    .why-card { text-align: center; padding: 32px 20px; border-radius: 12px; background: var(--parchment); transition: transform .2s; }
+    .why-card:hover { transform: translateY(-3px); }
+    .why-icon-wrap { width: 64px; height: 64px; border-radius: 50%; background: var(--canopy); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 26px; }
+    .why-card h3 { font-family: 'Lora', serif; font-size: 17px; font-weight: 700; color: var(--forest); margin-bottom: 8px; }
+    .why-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    /* Species */
+    .species { background: var(--deep); padding: 80px 0; }
+    .species .section-title { color: var(--white); }
+    .species .section-sub { color: #9CA3AF; }
+    .species .section-label { color: #6B8F5E; }
+    .species-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+    .species-tile { border-radius: 10px; padding: 18px 14px; text-align: center; border: 1px solid rgba(255,255,255,0.08); transition: border-color .2s, transform .2s; cursor: default; }
+    .species-tile:hover { border-color: rgba(74,124,89,0.5); transform: translateY(-2px); }
+    .species-swatch { width: 36px; height: 36px; border-radius: 50%; margin: 0 auto 10px; }
+    .species-tile h4 { font-family: 'Lora', serif; font-size: 13px; font-weight: 600; color: #E5E7EB; margin-bottom: 4px; }
+    .species-tile p { font-size: 11px; color: #6B7280; }
+    /* bark colours */
+    .s-oak { background: #8B6914; }
+    .s-ash { background: #A0968C; }
+    .s-beech { background: #B5A898; }
+    .s-pine { background: #5C4033; }
+    .s-birch { background: #D4CFC8; }
+    .s-sycamore { background: #7D8C5A; }
+    .s-cherry { background: #8B3A3A; }
+    .s-elm { background: #6B7C4A; }
+    .s-hawthorn { background: #7A6038; }
+    .s-willow { background: #8C9E5E; }
+    .s-maple { background: #B06020; }
+    .s-lime { background: #9AAB5A; }
+
+    /* Coverage */
+    .coverage { background: var(--parchment); padding: 72px 0; }
+    .boroughs { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+    .borough { background: var(--white); border: 1px solid #D1D5DB; border-radius: 20px; padding: 6px 14px; font-size: 13px; color: var(--text-muted); transition: all .15s; }
+    .borough:hover { background: var(--canopy); color: var(--white); border-color: var(--canopy); }
+
+    /* Process */
+    .process { background: var(--white); padding: 80px 0; }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; margin-top: 48px; }
+    .process-grid::before { content: ''; position: absolute; top: 30px; left: 12.5%; right: 12.5%; height: 2px; background: repeating-linear-gradient(to right, var(--canopy) 0px, var(--canopy) 8px, transparent 8px, transparent 16px); z-index: 0; }
+    .process-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 16px; position: relative; z-index: 1; }
+    .step-circle { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 16px; border: 2px solid; }
+    .sc-1 { background: var(--parchment); border-color: var(--canopy); }
+    .sc-2 { background: var(--canopy); border-color: var(--canopy); }
+    .sc-3 { background: var(--parchment); border-color: var(--leaf); }
+    .sc-4 { background: var(--bark); border-color: var(--bark); }
+    .process-step h4 { font-family: 'Lora', serif; font-weight: 700; font-size: 15px; color: var(--forest); margin-bottom: 6px; }
+    .process-step p { font-size: 13px; color: var(--text-muted); line-height: 1.55; }
+
+    /* Testimonials */
+    .testimonials { background: var(--parchment); padding: 80px 0; }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
+    .testi-card { background: var(--white); border-radius: 10px; padding: 26px; border-bottom: 3px solid var(--canopy); box-shadow: 0 2px 12px rgba(0,0,0,.04); }
+    .testi-stars { color: var(--amber); font-size: 15px; margin-bottom: 12px; letter-spacing: 2px; }
+    .testi-text { color: var(--text-muted); font-size: 14px; line-height: 1.7; font-style: italic; margin-bottom: 18px; }
+    .testi-author { font-weight: 700; color: var(--forest); font-size: 14px; }
+    .testi-loc { font-size: 12px; color: var(--text-muted); }
+    .testi-service { font-size: 12px; color: var(--canopy); font-weight: 600; margin-top: 3px; }
+
+    /* Emergency CTA */
+    .emergency { background: linear-gradient(135deg, var(--bark) 0%, #5C3D1E 100%); padding: 60px 0; }
+    .emergency-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
+    .emergency h2 { font-family: 'Lora', serif; font-size: 28px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .emergency p { color: #FDE68A; font-size: 16px; }
+    .emergency-actions { display: flex; gap: 12px; flex-direction: column; align-items: flex-end; }
+    .emergency-phone { font-family: 'Lora', serif; font-size: 26px; font-weight: 700; color: var(--white); text-decoration: none; white-space: nowrap; }
+    .emergency-phone:hover { color: #FDE68A; }
+    .btn-amber { background: var(--amber); color: var(--forest); padding: 12px 24px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 14px; transition: background .2s; display: inline-block; white-space: nowrap; }
+    .btn-amber:hover { background: #F59E0B; }
+
+    /* Contact */
+    .contact { background: var(--deep); padding: 80px 0; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; }
+    .contact-info h2 { font-family: 'Lora', serif; font-size: 30px; color: var(--white); margin-bottom: 14px; }
+    .contact-info p { color: #9CA3AF; line-height: 1.7; margin-bottom: 28px; }
+    .contact-details { display: flex; flex-direction: column; gap: 14px; }
+    .contact-detail { display: flex; align-items: flex-start; gap: 12px; }
+    .contact-detail-icon { width: 38px; height: 38px; background: rgba(74,124,89,0.2); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+    .contact-detail-text { font-size: 14px; color: #9CA3AF; }
+    .contact-detail-text strong { display: block; color: var(--white); font-size: 14px; }
+    .contact-form-wrap { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 34px; }
+    .contact-form-wrap h3 { font-family: 'Lora', serif; font-size: 20px; color: var(--white); margin-bottom: 22px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 600; color: #D1FAE5; margin-bottom: 5px; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 7px; padding: 10px 13px; color: var(--white); font-size: 14px; font-family: 'Inter', sans-serif; outline: none; transition: border .2s; }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: #4B5563; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--sage); }
+    .form-group select option { background: var(--deep); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-submit { width: 100%; background: var(--canopy); color: var(--white); border: none; padding: 13px; border-radius: 7px; font-size: 15px; font-weight: 700; cursor: pointer; font-family: 'Inter', sans-serif; transition: background .2s; }
+    .form-submit:hover { background: var(--leaf); }
+
+    /* Footer */
+    footer { background: var(--forest); padding: 48px 0 24px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 36px; margin-bottom: 36px; }
+    .footer-brand p { color: #4B5563; font-size: 14px; line-height: 1.6; margin-top: 10px; max-width: 260px; }
+    .footer-col h4 { font-family: 'Lora', serif; font-size: 13px; color: var(--sage); letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .footer-col a { color: #4B5563; text-decoration: none; font-size: 14px; transition: color .2s; }
+    .footer-col a:hover { color: #86EFAC; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .footer-bottom p { color: #374151; font-size: 13px; }
+    .footer-bottom a { color: #374151; text-decoration: none; }
+    .footer-bottom a:hover { color: #86EFAC; }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .species-grid { grid-template-columns: repeat(3, 1fr); }
+      .testi-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .process-grid::before { display: none; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .emergency-inner { grid-template-columns: 1fr; }
+      .emergency-actions { align-items: flex-start; }
+      .tree-rings { display: none; }
+      .hero-content { margin-left: 24px; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .topbar-creds { display: none; }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .species-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-<header class="topbar">
-  <div class="container">
-    <div class="topbar-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text">Graft<span>Digital</span></span>
-      </a>
-      <a href="../index.html#industries" class="back-link">&larr; All Templates</a>
+
+<!-- Template Banner -->
+<div class="template-banner">
+  This is a template by <a href="https://graftdigital.london" target="_blank">Graft Digital</a> &mdash; bespoke websites for London tradespeople
+</div>
+
+<!-- Storm Bar -->
+<div class="storm-bar">
+  &#9889; Storm damage? Emergency tree removal available 24/7 &mdash; <a href="tel:+447479531509">call +44 7479 531509 now</a>
+</div>
+
+<!-- Topbar -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-creds">
+      <div class="topbar-cred"><div class="topbar-cred-dot"></div>NPTC Certified Arborists</div>
+      <div class="topbar-cred"><div class="topbar-cred-dot"></div>Arboricultural Association Approved</div>
+      <div class="topbar-cred"><div class="topbar-cred-dot"></div>&#10026; 5.0 Google Rating &middot; 200+ Reviews</div>
+      <div class="topbar-cred"><div class="topbar-cred-dot"></div>Insured to &pound;5 Million</div>
+    </div>
+    <div class="topbar-contacts">
+      <a href="tel:+447479531509">+44 7479 531509</a>
+      <a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a>
     </div>
   </div>
-</header>
+</div>
 
+<!-- Navbar -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">
+        <div class="logo-tree">
+          <div class="logo-tree-trunk"></div>
+          <div class="logo-tree-canopy"></div>
+          <div class="logo-tree-canopy2"></div>
+        </div>
+      </div>
+      <div>
+        <div class="logo-text">Crown Tree Care</div>
+        <div class="logo-sub">London</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#species">Tree Species</a></li>
+      <li><a href="#coverage">Coverage</a></li>
+      <li><a href="#contact">Free Quote</a></li>
+      <li><a href="tel:+447479531509" class="nav-cta">Call Now</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a>
+    <a href="#species">Tree Species</a>
+    <a href="#coverage">Coverage</a>
+    <a href="#contact">Free Quote</a>
+    <a href="tel:+447479531509">Call +44 7479 531509</a>
+  </div>
+</nav>
+
+<!-- Hero -->
 <section class="hero">
-  <div class="hero-grid"></div>
-  <div class="container">
-    <div class="hero-content">
-      <div class="preview-banner">
-        <span style="font-size:1.2rem;flex-shrink:0;">&#128065;</span>
-        <p>This is a <strong>sample template</strong> for a Tree Surgery business. Your real site will be fully customised with your branding, photos &amp; details. <a href="#get-started" style="color:var(--gold);font-weight:700;">Request this template &darr;</a></p>
-      </div>
-      <div class="hero-tag">&#128205; London Trade Template</div>
-      <span class="hero-icon">&#127795;</span>
-      <h1>London&rsquo;s Trusted<br><span>Tree Surgery</span><br>Specialists</h1>
-      <p>Tree removal, pruning and stump grinding by qualified arborists in London.</p>
-      <div class="hero-ctas">
-        <a href="#get-started" class="btn btn-gold">Get a Free Quote</a>
-        <a href="tel:+447479531509" class="btn btn-outline">&#128222; Call Now</a>
-      </div>
+  <div class="hero-bg-leaves"></div>
+  <div class="tree-rings">
+    <div class="ring ring-1"><div class="ring-label">Growth Rings</div></div>
+    <div class="ring ring-2"></div>
+    <div class="ring ring-3"></div>
+    <div class="ring ring-4"></div>
+    <div class="ring ring-5"></div>
+    <div class="ring ring-6"></div>
+    <div class="ring ring-7"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Professional Arborists &middot; London &amp; Surrounding Areas</div>
+    <h1>Expert Tree Surgery,<br><em>Rooted in Care.</em></h1>
+    <p class="hero-sub">NPTC certified arborists providing safe, professional tree surgery, felling, pruning and emergency callouts across London since 2009.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-green">Get a Free Quote</a>
+      <a href="#services" class="btn-ghost">View Our Services</a>
+    </div>
+    <div class="hero-badges">
+      <div class="hero-badge"><strong>15yr</strong>In Business</div>
+      <div class="hero-badge"><strong>2,000+</strong>Trees Managed</div>
+      <div class="hero-badge"><strong>&pound;5M</strong>Public Liability</div>
+      <div class="hero-badge"><strong>24/7</strong>Emergency Cover</div>
     </div>
   </div>
 </section>
 
-<section class="services">
+<!-- Services -->
+<section class="services" id="services">
   <div class="container">
-    <h2>Our Services</h2>
-    <p class="sub">Professional Tree Surgery services across all London boroughs</p>
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Our Tree Surgery Services</h2>
+    <p class="section-sub">From routine crown work to emergency storm callouts, our fully certified team handles every aspect of tree care with precision and professionalism.</p>
     <div class="services-grid">
       <div class="service-card">
-        <span class="sc-icon">&#10003;</span>
-        <div class="sc-title">Residential</div>
-        <p class="sc-desc">Trusted by homeowners across London for reliable, high-quality work done right first time.</p>
+        <span class="service-icon">&#127807;</span>
+        <h3>Tree Felling</h3>
+        <p>Safe removal of trees of all sizes using sectional felling techniques where access is restricted.</p>
+        <span class="service-tag">Residential &amp; Commercial</span>
       </div>
       <div class="service-card">
-        <span class="sc-icon">&#127970;</span>
-        <div class="sc-title">Commercial</div>
-        <p class="sc-desc">We work with businesses, landlords and property managers throughout Greater London.</p>
+        <span class="service-icon">&#9986;</span>
+        <h3>Crown Reduction</h3>
+        <p>Reducing the overall size of the canopy while maintaining the tree's natural shape and health.</p>
+        <span class="service-tag">Most Popular</span>
       </div>
       <div class="service-card">
-        <span class="sc-icon">&#128241;</span>
-        <div class="sc-title">Emergency Callouts</div>
-        <p class="sc-desc">Fast response when you need it most. We cover all London postcodes, seven days a week.</p>
+        <span class="service-icon">&#127795;</span>
+        <h3>Crown Thinning</h3>
+        <p>Selective removal of branches to increase light and air movement through the canopy.</p>
+        <span class="service-tag">Residential</span>
       </div>
       <div class="service-card">
-        <span class="sc-icon">&#128205;</span>
-        <div class="sc-title">All London Boroughs</div>
-        <p class="sc-desc">From Hackney to Hammersmith, Croydon to Camden &mdash; we cover the entire Greater London area.</p>
+        <span class="service-icon">&#11014;</span>
+        <h3>Crown Lifting</h3>
+        <p>Removal of lower branches to raise the crown base height for clearance and light.</p>
+        <span class="service-tag">Residential</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">&#128296;</span>
+        <h3>Stump Grinding</h3>
+        <p>Complete removal of tree stumps below ground level using professional grinding equipment.</p>
+        <span class="service-tag">Add-on Service</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">&#127795;</span>
+        <h3>Pollarding</h3>
+        <p>Periodic hard pruning to maintain trees at a manageable size and encourage vigorous regrowth.</p>
+        <span class="service-tag">Scheduled</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">&#9889;</span>
+        <h3>Emergency Callout</h3>
+        <p>24/7 emergency response for storm-damaged, fallen or dangerous trees threatening property.</p>
+        <span class="service-tag urgent">24/7 Available</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">&#127981;</span>
+        <h3>Commercial &amp; Council</h3>
+        <p>Contract tree management for housing associations, local authorities and commercial estates.</p>
+        <span class="service-tag">B2B</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="why">
+<!-- Certs Strip -->
+<div class="certs">
+  <div class="certs-inner">
+    <div class="cert-item">
+      <div class="cert-badge-box">&#127942;</div>
+      <div class="cert-item-text"><strong>NPTC Certified</strong>All operatives hold current NPTC certificates</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-badge-box">&#129412;</div>
+      <div class="cert-item-text"><strong>AA Approved</strong>Arboricultural Association member</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-badge-box">&#128737;</div>
+      <div class="cert-item-text"><strong>&pound;5M Insured</strong>Full public liability cover</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-badge-box">&#9851;</div>
+      <div class="cert-item-text"><strong>Waste Licensed</strong>Registered waste carrier &amp; chip recycling</div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-badge-box">&#128203;</div>
+      <div class="cert-item-text"><strong>CHAS Accredited</strong>Contractors Health &amp; Safety</div>
+    </div>
+  </div>
+</div>
+
+<!-- Why Us -->
+<section class="why-us">
   <div class="container">
-    <h2>Why Choose Us?</h2>
-    <p class="sub">Trusted by hundreds of London customers</p>
-    <div class="trust-items">
-      <div class="trust-item"><div class="trust-num">500+</div><div class="trust-lbl">Jobs Completed</div></div>
-      <div class="trust-item"><div class="trust-num">5&#9733;</div><div class="trust-lbl">Google Rating</div></div>
-      <div class="trust-item"><div class="trust-num">10+</div><div class="trust-lbl">Years Experience</div></div>
-      <div class="trust-item"><div class="trust-num">32</div><div class="trust-lbl">London Boroughs Covered</div></div>
+    <div class="section-label">Why Choose Us</div>
+    <h2 class="section-title">London's Trusted Arborists</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon-wrap">&#127795;</div>
+        <h3>NPTC Certified</h3>
+        <p>Every member of our team holds current NPTC qualifications. No cowboys, no untrained workers — just certified professionals.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon-wrap">&#128737;</div>
+        <h3>Fully Insured to &pound;5M</h3>
+        <p>We carry comprehensive public liability insurance to &pound;5 million. Your property is always protected.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon-wrap">&#128197;</div>
+        <h3>15 Years Experience</h3>
+        <p>Established in 2009, we've managed over 2,000 trees across London. We understand local species, TPOs and council requirements.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon-wrap">&#9851;</div>
+        <h3>Zero Waste to Landfill</h3>
+        <p>All arisings are chipped on-site or taken away for composting. We're committed to sustainable, eco-conscious tree care.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="cta-section">
+<!-- Tree Species -->
+<section class="species" id="species">
   <div class="container">
-    <h2>Ready to Book? Get a Free Quote Today.</h2>
-    <p>No call centres, no pressure. Just a quick chat and a fair, honest price.</p>
-    <a href="#get-started" class="btn btn-gold">Request a Free Quote</a>
-  </div>
-</section>
-
-<section class="contact-mini" id="get-started">
-  <div class="container">
-    <h2>Request This Template</h2>
-    <p class="sub">Like what you see? Contact Yoel at Graft Digital to get your own Tree Surgery website live within days.</p>
-    <div class="mini-form">
-      <form id="reqForm">
-        <div class="fg"><label>Your Name</label><input type="text" placeholder="John Smith" required></div>
-        <div class="fg"><label>Email</label><input type="email" placeholder="john@yourcompany.co.uk" required></div>
-        <div class="fg"><label>Phone</label><input type="tel" placeholder="+44 7XXX XXX XXX"></div>
-        <div class="fg"><label>Tell me about your business</label><textarea placeholder="Where in London are you based? Do you have a logo or existing site?"></textarea></div>
-        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;font-size:.97rem;">Send Enquiry to Graft Digital &rarr;</button>
-      </form>
+    <div class="section-label">Species Knowledge</div>
+    <h2 class="section-title">Trees We Work With</h2>
+    <p class="section-sub">Our arborists are trained in the biology and safe management of all native and common amenity tree species found across London.</p>
+    <div class="species-grid">
+      <div class="species-tile">
+        <div class="species-swatch s-oak"></div>
+        <h4>Oak</h4>
+        <p>TPO &amp; veteran specialist</p>
+      </div>
+      <div class="species-tile">
+        <div class="species-swatch s-ash"></div>
+        <h4>Ash</h4>
+        <p>Ash dieback assessment</p>
+      </div>
+      <div class="species-tile">
+        <div class="species-swatch s-beech"></div>
+        <h4>Beech</h4>
+        <p>Crown &amp; canopy work</p>
+      </div>
+      <div class="species-tile">
+        <div class="species-swatch s-pine"></div>
+        <h4>Pine</h4>
+        <p>Scots &amp; maritime pine</p>
+      </div>
+      <div class="species-tile">
+        <div class="species-swatch s-birch"></div>
+        <h4>Silver Birch</h4>
+        <p>Pruning &amp; reduction</p>
+      </div>
+      <div class="species-tile">
+        <div class="species-swatch s-sycamore"></div>
+        <h4>Sycamore</h4>
+        <p>Felling &amp; thinning</p>
+      </div>
+      <div class="species-tile">
+        <div class="species-swatch s-cherry"></div>
+        <h4>Cherry</h4>
+        <p>Fruit tree pruning</p>
+      </div>
+      <div class="species-tile">
+        <div class="species-swatch s-elm"></div>
+        <h4>Elm</h4>
+        <p>Dutch elm management</p>
+      </div>
+      <div class="species-tile">
+        <div class="species-swatch s-hawthorn"></div>
+        <h4>Hawthorn</h4>
+        <p>Hedge &amp; tree work</p>
+      </div>
+      <div class="species-tile">
+        <div class="species-swatch s-willow"></div>
+        <h4>Willow</h4>
+        <p>Pollarding &amp; reduction</p>
+      </div>
+      <div class="species-tile">
+        <div class="species-swatch s-maple"></div>
+        <h4>Maple</h4>
+        <p>Ornamental &amp; field</p>
+      </div>
+      <div class="species-tile">
+        <div class="species-swatch s-lime"></div>
+        <h4>Lime</h4>
+        <p>London street trees</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- Coverage -->
+<section class="coverage" id="coverage">
+  <div class="container">
+    <div class="section-label">Where We Work</div>
+    <h2 class="section-title">Covering All of London &amp; Beyond</h2>
+    <p class="section-sub">We operate across all London boroughs and extend into the surrounding Home Counties for larger projects and commercial contracts.</p>
+    <div class="boroughs">
+      <span class="borough">Barnet</span>
+      <span class="borough">Camden</span>
+      <span class="borough">Islington</span>
+      <span class="borough">Hackney</span>
+      <span class="borough">Tower Hamlets</span>
+      <span class="borough">Southwark</span>
+      <span class="borough">Lambeth</span>
+      <span class="borough">Wandsworth</span>
+      <span class="borough">Richmond</span>
+      <span class="borough">Kingston</span>
+      <span class="borough">Merton</span>
+      <span class="borough">Croydon</span>
+      <span class="borough">Bromley</span>
+      <span class="borough">Lewisham</span>
+      <span class="borough">Greenwich</span>
+      <span class="borough">Bexley</span>
+      <span class="borough">Havering</span>
+      <span class="borough">Redbridge</span>
+      <span class="borough">Waltham Forest</span>
+      <span class="borough">Haringey</span>
+      <span class="borough">Enfield</span>
+      <span class="borough">Ealing</span>
+      <span class="borough">Hillingdon</span>
+      <span class="borough">Hounslow</span>
+      <span class="borough">Surrey</span>
+      <span class="borough">Kent</span>
+      <span class="borough">Essex</span>
+      <span class="borough">Hertfordshire</span>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section class="process">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">From Enquiry to Completion</h2>
+    <p class="section-sub">A straightforward, transparent process with no hidden costs and a clear written quote before any work begins.</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-circle sc-1">&#128222;</div>
+        <h4>1. Contact Us</h4>
+        <p>Call, email or fill in the form. Describe your tree and we'll arrange a convenient visit.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle sc-2">&#128203;</div>
+        <h4>2. Free Survey</h4>
+        <p>One of our arborists visits to assess the tree, check for TPOs and provide a written quote.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle sc-3">&#127807;</div>
+        <h4>3. We Get to Work</h4>
+        <p>Our team arrives on the agreed date fully equipped. All work is done safely and efficiently.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-circle sc-4">&#9851;</div>
+        <h4>4. Clean &amp; Clear</h4>
+        <p>We remove all arisings, chip on-site and leave your garden spotless. No hidden extras.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-label">Client Reviews</div>
+    <h2 class="section-title">What Londoners Say</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">"Had a large oak overhanging our house — Crown sorted it in a morning. Polite, professional and left the garden immaculate. Couldn't ask for more."</p>
+        <div class="testi-author">Michael H.</div>
+        <div class="testi-loc">Richmond, London</div>
+        <div class="testi-service">Crown Reduction &mdash; Oak</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">"Storm brought a large branch down blocking our driveway at 11pm. They were there within 2 hours, sorted everything and charged a completely fair rate. Exceptional service."</p>
+        <div class="testi-author">Priya S.</div>
+        <div class="testi-loc">Wimbledon, London</div>
+        <div class="testi-service">Emergency Callout &mdash; Storm Damage</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">"We have 6 mature trees managed annually by Crown Tree Care. Their knowledge of species and TPO regulations is excellent, and their team is always reliable."</p>
+        <div class="testi-author">Janet &amp; David R.</div>
+        <div class="testi-loc">Barnet, London</div>
+        <div class="testi-service">Annual Tree Management Contract</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Emergency CTA -->
+<section class="emergency">
+  <div class="emergency-inner">
+    <div>
+      <h2>&#9889; Storm Damage or Dangerous Tree?</h2>
+      <p>Don't wait. Our emergency arborists are available around the clock, 365 days a year. We respond fast across all London boroughs.</p>
+    </div>
+    <div class="emergency-actions">
+      <a href="tel:+447479531509" class="emergency-phone">+44 7479 531509</a>
+      <a href="#contact" class="btn-amber">Send an Emergency Enquiry</a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Get Your Free Quote</h2>
+        <p>Describe your tree work and we'll arrange a convenient site visit. All quotes are free, written and with no obligation.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="contact-detail-icon">&#128222;</div>
+            <div class="contact-detail-text">
+              <strong><a href="tel:+447479531509" style="color:inherit;text-decoration:none">+44 7479 531509</a></strong>
+              Mon&ndash;Sat 7am&ndash;6pm &middot; 24/7 Emergency Line
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">&#9993;</div>
+            <div class="contact-detail-text">
+              <strong><a href="mailto:sales@graftdigital.london" style="color:inherit;text-decoration:none">sales@graftdigital.london</a></strong>
+              We reply within a few hours
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">&#128205;</div>
+            <div class="contact-detail-text">
+              <strong>All London Boroughs</strong>
+              Plus Surrey, Kent, Essex &amp; Hertfordshire
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">&#128203;</div>
+            <div class="contact-detail-text">
+              <strong>TPO Advice Included</strong>
+              We check tree preservation orders as part of every survey
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <h3>Request a Free Quote</h3>
+        <form onsubmit="handleQuote(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" id="qName" placeholder="Full name" required>
+            </div>
+            <div class="form-group">
+              <label>Phone *</label>
+              <input type="tel" id="qPhone" placeholder="+44..." required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" id="qEmail" placeholder="your@email.com" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Service Required</label>
+              <select id="qService">
+                <option value="">Select service</option>
+                <option>Tree Felling</option>
+                <option>Crown Reduction</option>
+                <option>Crown Thinning</option>
+                <option>Crown Lifting</option>
+                <option>Stump Grinding</option>
+                <option>Pollarding</option>
+                <option>Emergency Callout</option>
+                <option>Commercial / Contract</option>
+                <option>Hedge Trimming</option>
+                <option>Other / Unsure</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>London Borough</label>
+              <input type="text" id="qArea" placeholder="e.g. Barnet, Richmond...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Tell Us About the Tree</label>
+            <textarea id="qMessage" placeholder="Species (if known), approximate height, location on your property, any urgency..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Request Free Quote &rarr;</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
 <footer>
   <div class="container">
-    <div class="footer-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text" style="color:#fff;">Graft<span style="color:var(--gold);">Digital</span></span>
-      </a>
-      <span class="footer-copy">&copy; 2025 <strong>Graft Digital</strong> &mdash; Built by Yoel Gutierrez &middot; London</span>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="font-family:'Lora',serif;font-size:19px;font-weight:700;color:#D1FAE5">Crown Tree Care London</div>
+        <p>Professional, certified tree surgery and arborist services across London and the Home Counties. NPTC certified, AA approved, insured to &pound;5M.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Tree Felling</a></li>
+          <li><a href="#services">Crown Work</a></li>
+          <li><a href="#services">Stump Grinding</a></li>
+          <li><a href="#services">Emergency Callout</a></li>
+          <li><a href="#services">Commercial</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Information</h4>
+        <ul>
+          <li><a href="#species">Tree Species</a></li>
+          <li><a href="#coverage">Coverage Areas</a></li>
+          <li><a href="#process">Our Process</a></li>
+          <li><a href="#contact">Free Quote</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+447479531509">+44 7479 531509</a></li>
+          <li><a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a></li>
+          <li><a href="#coverage">London &amp; Home Counties</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Crown Tree Care London. All rights reserved.</p>
+      <p>Website by <a href="https://graftdigital.london" target="_blank">Graft Digital</a></p>
     </div>
   </div>
 </footer>
+
 <script>
-  document.getElementById('reqForm').addEventListener('submit',function(e){
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  function handleQuote(e) {
     e.preventDefault();
-    const f=this;
-    const btn=f.querySelector('button[type=submit]');
-    const inp=f.querySelector('input[name=template]');
-    const tmpl=inp?inp.value:'General';
-    const name=f.querySelector('input[type=text]').value;
-    const email=f.querySelector('input[type=email]').value;
-    const phone=f.querySelector('input[type=tel]').value;
-    const msg=f.querySelector('textarea').value;
-    const body='Name: '+name+'\nEmail: '+email+'\nPhone: '+phone+'\nTemplate: '+tmpl+'\n\nMessage:\n'+msg;
-    window.location.href='mailto:sales@graftdigital.london?subject='+encodeURIComponent('Template Request – '+tmpl+' – '+name)+'&body='+encodeURIComponent(body);
-    btn.textContent='✓ Opening your email app…';
-    btn.style.background='#22c55e'; btn.style.color='#fff'; btn.disabled=true;
+    var name = document.getElementById('qName').value;
+    var phone = document.getElementById('qPhone').value;
+    var email = document.getElementById('qEmail').value;
+    var service = document.getElementById('qService').value || 'Not specified';
+    var area = document.getElementById('qArea').value || 'Not specified';
+    var message = document.getElementById('qMessage').value;
+    var subject = 'Tree Surgery Quote \u2013 ' + name + ' \u2013 ' + service;
+    var body = 'Name: ' + name + '\nPhone: ' + phone + '\nEmail: ' + email + '\nService: ' + service + '\nArea: ' + area + '\n\nTree Details:\n' + message;
+    window.location.href = 'mailto:sales@graftdigital.london?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  }
+
+  // Scroll reveal
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.service-card, .why-card, .testi-card, .species-tile').forEach(function(el) {
+    el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'opacity .5s, transform .5s';
+    observer.observe(el);
   });
 </script>
 </body>
