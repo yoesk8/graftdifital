@@ -3,215 +3,780 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solar Energy Website Template | Graft Digital</title>
-  <meta name="description" content="Solar panel installation and battery storage for London homes and businesses.">
-  <meta name="keywords" content="solar panels London, solar installation">
+  <title>Apex Solar London | Solar Panel Installation, Battery Storage &amp; EV Charging</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:#0A1628; --navy-mid:#0F2040; --gold:#F5A623; --gold-dark:#C98010;
-      --gold-light:#FFB84D; --white:#FFFFFF; --off-white:#F7F9FC;
-      --text:#1A2332; --text-mid:#4A5568; --border:#E2E8F0;
+      --space: #06101E;
+      --space-mid: #0D1C2E;
+      --space-light: #142A40;
+      --solar: #F59E0B;
+      --solar-bright: #FBBF24;
+      --green: #22C55E;
+      --green-dark: #16A34A;
+      --sky: #0EA5E9;
+      --cream: #FAFAF8;
+      --white: #FFFFFF;
+      --text: #0A1628;
+      --muted: #64748B;
     }
-    html { scroll-behavior: smooth; }
-    body { font-family:'Inter',-apple-system,sans-serif; color:var(--text); background:var(--white); line-height:1.6; }
-    a { text-decoration:none; color:inherit; }
-    .container { max-width:1100px; margin:0 auto; padding:0 24px; }
-    /* TOPBAR */
-    .topbar { background:var(--navy); padding:14px 0; position:sticky; top:0; z-index:100; box-shadow:0 2px 12px rgba(0,0,0,.25); }
-    .topbar-inner { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-    .logo { display:flex; align-items:center; gap:9px; }
-    .logo-mark { width:34px; height:34px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:900; color:var(--navy); }
-    .logo-text { font-size:1.1rem; font-weight:900; color:#fff; letter-spacing:-.03em; }
-    .logo-text span { color:var(--gold); }
-    .back-link { color:rgba(255,255,255,.7); font-size:.85rem; font-weight:500; display:flex; align-items:center; gap:6px; transition:color .2s; }
-    .back-link:hover { color:var(--gold); }
-    /* HERO */
-    .hero { background:var(--navy); background-image:radial-gradient(ellipse at 15% 60%,rgba(26,53,96,.6) 0%,transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(245,166,35,.07) 0%,transparent 50%); min-height:480px; display:flex; align-items:center; padding:72px 0 64px; position:relative; overflow:hidden; }
-    .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px); background-size:54px 54px; }
-    .hero-content { position:relative; z-index:2; max-width:680px; }
-    .preview-banner { background:rgba(245,166,35,.1); border:1px solid rgba(245,166,35,.3); border-radius:10px; padding:15px 20px; margin-bottom:36px; display:flex; align-items:flex-start; gap:11px; max-width:600px; }
-    .preview-banner p { color:rgba(255,255,255,.8); font-size:.86rem; line-height:1.55; margin:0; }
-    .preview-banner strong { color:var(--gold); }
-    .hero-tag { display:inline-flex; align-items:center; gap:7px; background:rgba(245,166,35,.13); border:1px solid rgba(245,166,35,.28); color:var(--gold-light); padding:6px 15px; border-radius:100px; font-size:.8rem; font-weight:600; margin-bottom:20px; }
-    .hero-icon { font-size:3.2rem; margin-bottom:10px; display:block; line-height:1; }
-    .hero h1 { font-size:clamp(2.1rem,4.5vw,3.4rem); color:#fff; letter-spacing:-.04em; margin-bottom:16px; line-height:1.15; font-weight:900; }
-    .hero h1 span { color:var(--gold); }
-    .hero > .container > .hero-content > p { color:rgba(255,255,255,.68); font-size:1.05rem; max-width:520px; margin-bottom:32px; }
-    .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
-    .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:8px; font-size:.95rem; font-weight:700; cursor:pointer; transition:all .22s ease; border:none; font-family:inherit; }
-    .btn-gold { background:var(--gold); color:var(--navy); }
-    .btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 20px rgba(245,166,35,.35); }
-    .btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.35); }
-    .btn-outline:hover { border-color:#fff; background:rgba(255,255,255,.08); }
-    /* SERVICES */
-    .services { padding:80px 0; background:var(--off-white); }
-    .services h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .services .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
-    .service-card { background:#fff; border-radius:12px; padding:28px 24px; border:1px solid var(--border); transition:all .22s ease; }
-    .service-card:hover { transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.08); border-color:rgba(245,166,35,.3); }
-    .sc-icon { font-size:1.8rem; margin-bottom:12px; display:block; }
-    .sc-title { font-size:1rem; font-weight:700; margin-bottom:6px; }
-    .sc-desc { font-size:.88rem; color:var(--text-mid); line-height:1.65; }
-    /* TRUST */
-    .why { padding:80px 0; background:var(--white); }
-    .why h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .why .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .trust-items { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; text-align:center; }
-    .trust-item { padding:28px 16px; }
-    .trust-num { font-size:2.4rem; font-weight:900; color:var(--gold-dark); line-height:1; margin-bottom:6px; }
-    .trust-lbl { font-size:.88rem; color:var(--text-mid); }
-    /* CTA */
-    .cta-section { padding:72px 0; background:var(--navy); background-image:radial-gradient(ellipse at 80% 50%,rgba(245,166,35,.08) 0%,transparent 55%); text-align:center; }
-    .cta-section h2 { color:#fff; font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; margin-bottom:14px; }
-    .cta-section p { color:rgba(255,255,255,.65); font-size:1rem; margin-bottom:32px; max-width:480px; margin-left:auto; margin-right:auto; }
-    /* FORM */
-    .contact-mini { padding:80px 0; background:var(--off-white); }
-    .contact-mini h2 { font-size:clamp(1.5rem,3vw,2rem); font-weight:800; text-align:center; margin-bottom:8px; }
-    .contact-mini .sub { text-align:center; color:var(--text-mid); font-size:.97rem; margin-bottom:32px; }
-    .mini-form { max-width:520px; margin:0 auto; background:#fff; border-radius:16px; padding:36px; border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,0,0,.06); }
-    .fg { margin-bottom:16px; }
-    .fg label { display:block; font-size:.84rem; font-weight:600; margin-bottom:6px; }
-    .fg input,.fg textarea { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:8px; font-size:.92rem; font-family:inherit; color:var(--text); outline:none; transition:border .2s; }
-    .fg input:focus,.fg textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(245,166,35,.12); }
-    .fg textarea { resize:vertical; min-height:88px; }
-    /* FOOTER */
-    footer { background:#050D1A; padding:32px 0; border-top:1px solid rgba(255,255,255,.05); }
-    .footer-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
-    .footer-copy { color:rgba(255,255,255,.35); font-size:.82rem; }
-    .footer-copy strong { color:var(--gold); }
-    @media(max-width:600px){ .hero-ctas{flex-direction:column;} .hero-ctas .btn{justify-content:center;} }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); }
+
+    /* Template Banner */
+    .template-banner { background: #1e293b; color: #94a3b8; text-align: center; padding: 8px 16px; font-size: 12px; }
+    .template-banner a { color: #fbbf24; text-decoration: none; }
+
+    /* Topbar */
+    .topbar { background: var(--space); color: #64748B; padding: 8px 0; font-size: 12px; }
+    .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; }
+    .topbar-certs { display: flex; gap: 18px; align-items: center; }
+    .topbar-cert { display: flex; align-items: center; gap: 5px; color: #94A3B8; }
+    .tc-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--green); }
+    .topbar-contacts { display: flex; gap: 16px; }
+    .topbar-contacts a { color: #64748B; text-decoration: none; }
+    .topbar-contacts a:hover { color: var(--solar); }
+
+    /* Navbar */
+    nav { background: var(--space); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; height: 68px; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo-mark { width: 38px; height: 38px; position: relative; }
+    .logo-sun { width: 24px; height: 24px; border-radius: 50%; background: radial-gradient(circle, var(--solar-bright) 30%, var(--solar) 70%, rgba(245,158,11,0) 100%); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); box-shadow: 0 0 16px rgba(251,191,36,0.6); }
+    .logo-ray { position: absolute; width: 100%; height: 100%; top: 0; left: 0; }
+    .logo-ray::before, .logo-ray::after { content: ''; position: absolute; background: var(--solar); border-radius: 2px; }
+    .logo-ray::before { width: 3px; height: 10px; top: 0; left: 50%; transform: translateX(-50%); }
+    .logo-ray::after { width: 10px; height: 3px; top: 50%; right: 0; transform: translateY(-50%); }
+    .logo-text { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; color: var(--white); }
+    .logo-sub { font-size: 11px; color: #64748B; margin-top: -2px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { text-decoration: none; color: #94A3B8; font-size: 14px; font-weight: 500; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { background: var(--solar); color: var(--space) !important; padding: 10px 22px; border-radius: 6px; font-weight: 700 !important; color: var(--space) !important; }
+    .nav-cta:hover { background: var(--solar-bright) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { width: 24px; height: 2px; background: #94A3B8; border-radius: 2px; display: block; }
+    .mobile-menu { display: none; background: var(--space-mid); border-top: 1px solid rgba(255,255,255,0.06); padding: 16px 24px; }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; padding: 10px 0; color: #94A3B8; text-decoration: none; font-weight: 500; border-bottom: 1px solid rgba(255,255,255,0.05); }
+
+    /* Hero */
+    .hero { background: var(--space); min-height: 640px; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
+    .hero-left { padding: 80px 60px 80px 80px; display: flex; flex-direction: column; justify-content: center; position: relative; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25); color: var(--green); font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 22px; width: fit-content; }
+    .hero h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(34px, 4.5vw, 54px); font-weight: 700; color: var(--white); line-height: 1.1; margin-bottom: 18px; letter-spacing: -0.5px; }
+    .hero h1 span { color: var(--solar); }
+    .hero-sub { color: #64748B; font-size: 17px; line-height: 1.65; margin-bottom: 36px; max-width: 440px; }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+    .btn-solar { background: var(--solar); color: var(--space); padding: 13px 26px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 15px; transition: all .2s; display: inline-block; }
+    .btn-solar:hover { background: var(--solar-bright); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(245,158,11,0.4); }
+    .btn-ghost-light { border: 1px solid rgba(255,255,255,0.2); color: var(--white); padding: 13px 26px; border-radius: 6px; font-weight: 500; text-decoration: none; font-size: 15px; transition: all .2s; display: inline-block; }
+    .btn-ghost-light:hover { border-color: var(--solar); color: var(--solar); }
+    .hero-badges { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-badge { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09); border-radius: 8px; padding: 10px 14px; font-size: 12px; }
+    .hero-badge strong { display: block; font-size: 18px; font-family: 'Space Grotesk', sans-serif; color: var(--solar); font-weight: 700; }
+    .hero-badge span { color: #64748B; }
+
+    /* Solar Panel Array */
+    .hero-right { background: var(--space-mid); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .hero-glow { position: absolute; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(245,158,11,0.12) 0%, transparent 70%); top: 20%; left: 50%; transform: translateX(-50%); }
+    .solar-array { position: relative; z-index: 2; }
+    .solar-array-label { font-family: 'Space Grotesk', sans-serif; font-size: 11px; color: #475569; text-align: center; margin-bottom: 12px; letter-spacing: 2px; text-transform: uppercase; }
+    .panel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; }
+    .solar-cell { height: 54px; width: 72px; background: linear-gradient(135deg, #0A1F40 0%, #0D2848 50%, #0A1F3A 100%); border-radius: 3px; position: relative; overflow: hidden; transition: all .4s; }
+    .solar-cell::before { content: ''; position: absolute; inset: 0; background:
+      linear-gradient(to right, rgba(14,165,233,0.05) 0px, rgba(14,165,233,0.05) 1px, transparent 1px, transparent 18px, rgba(14,165,233,0.05) 18px),
+      linear-gradient(to bottom, rgba(14,165,233,0.05) 0px, rgba(14,165,233,0.05) 1px, transparent 1px, transparent 18px, rgba(14,165,233,0.05) 18px);
+      background-size: 18px 18px; }
+    .solar-cell::after { content: ''; position: absolute; top: 2px; left: 2px; right: 50%; bottom: 50%; background: linear-gradient(135deg, rgba(14,165,233,0.12), transparent); border-radius: 2px; }
+    .solar-cell.lit { animation: cell-light 3s ease-in-out infinite; }
+    .solar-cell.lit:nth-child(2) { animation-delay: 0.4s; }
+    .solar-cell.lit:nth-child(3) { animation-delay: 0.8s; }
+    .solar-cell.lit:nth-child(5) { animation-delay: 1.2s; }
+    .solar-cell.lit:nth-child(7) { animation-delay: 0.6s; }
+    .solar-cell.lit:nth-child(9) { animation-delay: 1.6s; }
+    .solar-cell.lit:nth-child(11) { animation-delay: 1.0s; }
+    @keyframes cell-light {
+      0%,100% { background: linear-gradient(135deg, #0A1F40 0%, #0D2848 50%, #0A1F3A 100%); }
+      50% { background: linear-gradient(135deg, #0F2F60 0%, #153A78 50%, #0F2F60 100%); box-shadow: 0 0 14px rgba(14,165,233,0.25), inset 0 0 8px rgba(14,165,233,0.1); }
+    }
+    .panel-row-label { font-size: 10px; color: #2D4A64; text-align: center; margin-top: 8px; font-family: 'Space Grotesk', sans-serif; letter-spacing: 1px; }
+    .energy-flow { display: flex; align-items: center; gap: 12px; margin-top: 20px; padding: 12px 16px; background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.15); border-radius: 8px; }
+    .energy-flow-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse-green 1.5s ease-in-out infinite; flex-shrink: 0; }
+    @keyframes pulse-green { 0%,100%{ box-shadow: 0 0 0 0 rgba(34,197,94,0.5); } 50%{ box-shadow: 0 0 0 6px rgba(34,197,94,0); } }
+    .energy-flow-text { font-size: 12px; color: var(--green); font-weight: 600; font-family: 'Space Grotesk', sans-serif; }
+    .energy-flow-text span { color: #94A3B8; font-weight: 400; margin-left: 4px; }
+
+    /* Shared */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-label { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
+    .section-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 4vw, 38px); font-weight: 700; color: var(--text); margin-bottom: 14px; letter-spacing: -0.5px; }
+    .section-sub { color: var(--muted); font-size: 16px; max-width: 560px; line-height: 1.65; margin-bottom: 48px; }
+
+    /* Stats Strip */
+    .stats-strip { background: var(--green-dark); padding: 28px 0; }
+    .stats-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .stat-item { text-align: center; }
+    .stat-num { font-family: 'Space Grotesk', sans-serif; font-size: 36px; font-weight: 700; color: var(--white); letter-spacing: -1px; }
+    .stat-lbl { font-size: 13px; color: rgba(255,255,255,0.7); margin-top: 3px; }
+
+    /* Services */
+    .services { background: var(--cream); padding: 80px 0; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .svc-card { background: var(--white); border-radius: 14px; padding: 28px 24px; border: 1px solid #E8E4DE; box-shadow: 0 2px 12px rgba(0,0,0,.04); transition: all .2s; }
+    .svc-card:hover { border-color: var(--green); transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,.08); }
+    .svc-icon { font-size: 32px; margin-bottom: 14px; display: block; }
+    .svc-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .svc-card p { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 14px; }
+    .svc-tag { display: inline-block; background: rgba(34,197,94,0.08); color: var(--green-dark); font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 10px; border: 1px solid rgba(34,197,94,0.2); }
+
+    /* Savings Calculator */
+    .calculator { background: var(--space); padding: 80px 0; }
+    .calc-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .calc-left h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 4vw, 40px); font-weight: 700; color: var(--white); margin-bottom: 14px; letter-spacing: -0.5px; }
+    .calc-left p { color: #64748B; line-height: 1.7; margin-bottom: 28px; }
+    .calc-inputs { display: flex; flex-direction: column; gap: 16px; }
+    .calc-field label { display: block; font-size: 12px; font-weight: 600; color: #94A3B8; margin-bottom: 6px; letter-spacing: 1px; text-transform: uppercase; }
+    .calc-field select, .calc-field input[type=range] { width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 11px 14px; color: var(--white); font-size: 14px; font-family: 'Inter', sans-serif; outline: none; }
+    .calc-field select:focus { border-color: var(--solar); }
+    .calc-field select option { background: var(--space-mid); }
+    .calc-result { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 36px; text-align: center; }
+    .calc-result-label { font-size: 13px; color: #64748B; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; font-weight: 600; }
+    .calc-saving-num { font-family: 'Space Grotesk', sans-serif; font-size: 64px; font-weight: 700; color: var(--solar); letter-spacing: -2px; line-height: 1; margin-bottom: 4px; }
+    .calc-saving-sub { font-size: 14px; color: #64748B; margin-bottom: 24px; }
+    .calc-breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+    .cb-item { background: rgba(255,255,255,0.04); border-radius: 8px; padding: 14px; text-align: center; }
+    .cb-num { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: var(--green); }
+    .cb-lbl { font-size: 11px; color: #64748B; margin-top: 3px; }
+    .calc-disclaimer { font-size: 11px; color: #374151; margin-top: 8px; }
+    .btn-calc { width: 100%; background: var(--solar); color: var(--space); border: none; padding: 13px; border-radius: 8px; font-size: 15px; font-weight: 700; cursor: pointer; font-family: 'Space Grotesk', sans-serif; transition: background .2s; margin-bottom: 12px; }
+    .btn-calc:hover { background: var(--solar-bright); }
+
+    /* System Packages */
+    .packages { background: var(--cream); padding: 80px 0; }
+    .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    .pkg-card { background: var(--white); border-radius: 16px; padding: 32px; border: 1px solid #E8E4DE; transition: all .2s; }
+    .pkg-card.featured { background: var(--space); border-color: var(--solar); transform: translateY(-8px); position: relative; }
+    .pkg-card:hover:not(.featured) { border-color: var(--green); transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,.08); }
+    .pkg-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--solar); color: var(--space); font-size: 11px; font-weight: 700; padding: 4px 16px; border-radius: 12px; white-space: nowrap; font-family: 'Space Grotesk', sans-serif; }
+    .pkg-name { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .pkg-card.featured .pkg-name { color: var(--white); }
+    .pkg-panels { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+    .pkg-card.featured .pkg-panels { color: #64748B; }
+    .pkg-price { font-family: 'Space Grotesk', sans-serif; font-size: 38px; font-weight: 700; color: var(--text); letter-spacing: -1px; margin-bottom: 4px; }
+    .pkg-card.featured .pkg-price { color: var(--solar); }
+    .pkg-price-sub { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+    .pkg-card.featured .pkg-price-sub { color: #64748B; }
+    .pkg-features { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+    .pkg-features li { font-size: 13px; color: var(--muted); padding-left: 20px; position: relative; }
+    .pkg-card.featured .pkg-features li { color: #94A3B8; }
+    .pkg-features li::before { content: '\2714'; position: absolute; left: 0; color: var(--green); font-weight: 700; font-size: 12px; }
+    .pkg-cta { display: block; text-align: center; padding: 12px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; transition: all .2s; font-family: 'Space Grotesk', sans-serif; }
+    .pkg-cta.outline { border: 1px solid #E8E4DE; color: var(--text); }
+    .pkg-cta.outline:hover { border-color: var(--green); color: var(--green); }
+    .pkg-cta.solid { background: var(--solar); color: var(--space); }
+    .pkg-cta.solid:hover { background: var(--solar-bright); }
+
+    /* How It Works */
+    .how-it-works { background: var(--white); padding: 80px 0; }
+    .how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
+    .how-step { text-align: center; padding: 28px 20px; border-radius: 12px; background: var(--cream); transition: transform .2s; }
+    .how-step:hover { transform: translateY(-2px); }
+    .how-icon-wrap { width: 64px; height: 64px; border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 26px; }
+    .hi-1 { background: rgba(34,197,94,0.12); }
+    .hi-2 { background: rgba(245,158,11,0.12); }
+    .hi-3 { background: rgba(14,165,233,0.12); }
+    .hi-4 { background: rgba(34,197,94,0.12); }
+    .how-step h4 { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .how-step p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .how-step-num { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; color: var(--green); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+
+    /* Certifications */
+    .certs { background: var(--space); padding: 32px 0; }
+    .certs-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
+    .cert-item { display: flex; align-items: center; gap: 10px; }
+    .cert-box { width: 42px; height: 42px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+    .cert-text { font-size: 13px; color: #64748B; }
+    .cert-text strong { display: block; color: var(--solar); font-size: 12px; letter-spacing: 0.5px; font-family: 'Space Grotesk', sans-serif; }
+
+    /* Testimonials */
+    .testimonials { background: var(--cream); padding: 80px 0; }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+    .testi-card { background: var(--white); border-radius: 14px; padding: 26px; border: 1px solid #E8E4DE; box-shadow: 0 2px 10px rgba(0,0,0,.04); }
+    .testi-stars { color: var(--solar); font-size: 14px; margin-bottom: 12px; letter-spacing: 2px; }
+    .testi-text { color: var(--muted); font-size: 14px; line-height: 1.75; font-style: italic; margin-bottom: 18px; }
+    .testi-author { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--text); font-size: 14px; }
+    .testi-loc { font-size: 12px; color: var(--muted); }
+    .testi-system { font-size: 12px; color: var(--green-dark); font-weight: 600; margin-top: 3px; }
+
+    /* Contact */
+    .contact { background: var(--space-mid); padding: 80px 0; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; }
+    .contact-info h2 { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; color: var(--white); margin-bottom: 14px; }
+    .contact-info p { color: #64748B; line-height: 1.7; margin-bottom: 28px; }
+    .contact-details { display: flex; flex-direction: column; gap: 16px; }
+    .contact-detail { display: flex; align-items: flex-start; gap: 12px; }
+    .cd-icon { width: 40px; height: 40px; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+    .cd-text { font-size: 14px; color: #64748B; }
+    .cd-text strong { display: block; color: var(--white); }
+    .contact-form-wrap { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 36px; }
+    .contact-form-wrap h3 { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 600; color: #94A3B8; margin-bottom: 5px; letter-spacing: 0.5px; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 11px 14px; color: var(--white); font-size: 14px; font-family: 'Inter', sans-serif; outline: none; transition: border .2s; }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: #374151; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--solar); }
+    .form-group select option { background: var(--space-mid); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-submit { width: 100%; background: var(--solar); color: var(--space); border: none; padding: 14px; border-radius: 8px; font-size: 15px; font-weight: 700; cursor: pointer; font-family: 'Space Grotesk', sans-serif; transition: background .2s; }
+    .form-submit:hover { background: var(--solar-bright); }
+
+    /* Footer */
+    footer { background: var(--space); padding: 48px 0 24px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 36px; margin-bottom: 36px; }
+    .footer-brand p { color: #1E3A5A; font-size: 14px; line-height: 1.6; margin-top: 10px; max-width: 260px; }
+    .footer-col h4 { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700; color: var(--solar); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .footer-col a { color: #1E3A5A; text-decoration: none; font-size: 14px; transition: color .2s; }
+    .footer-col a:hover { color: var(--solar); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.04); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .footer-bottom p { color: #142030; font-size: 13px; }
+    .footer-bottom a { color: #142030; text-decoration: none; }
+    .footer-bottom a:hover { color: var(--solar); }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 60px 24px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .packages-grid { grid-template-columns: 1fr; }
+      .pkg-card.featured { transform: none; }
+      .how-grid { grid-template-columns: repeat(2, 1fr); }
+      .calc-inner { grid-template-columns: 1fr; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .topbar-certs { display: none; }
+    }
+    @media (max-width: 600px) {
+      .services-grid, .how-grid { grid-template-columns: 1fr; }
+      .calc-breakdown { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-<header class="topbar">
-  <div class="container">
-    <div class="topbar-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text">Graft<span>Digital</span></span>
-      </a>
-      <a href="../index.html#industries" class="back-link">&larr; All Templates</a>
+
+<!-- Template Banner -->
+<div class="template-banner">
+  This is a template by <a href="https://graftdigital.london" target="_blank">Graft Digital</a> &mdash; bespoke websites for London tradespeople
+</div>
+
+<!-- Topbar -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-certs">
+      <div class="topbar-cert"><div class="tc-dot"></div>MCS Certified Installer</div>
+      <div class="topbar-cert"><div class="tc-dot"></div>Which? Trusted Trader</div>
+      <div class="topbar-cert"><div class="tc-dot"></div>25yr Panel Warranty</div>
+      <div class="topbar-cert"><div class="tc-dot"></div>Trustpilot 4.9 &#9733;</div>
+    </div>
+    <div class="topbar-contacts">
+      <a href="tel:+447479531509">+44 7479 531509</a>
+      <a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a>
     </div>
   </div>
-</header>
+</div>
 
+<!-- Navbar -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">
+        <div class="logo-sun"></div>
+        <div class="logo-ray"></div>
+      </div>
+      <div>
+        <div class="logo-text">Apex Solar</div>
+        <div class="logo-sub">London</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#calculator">Savings Calc</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a>
+    <a href="#calculator">Savings Calculator</a>
+    <a href="#packages">Packages</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#contact">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- Hero -->
 <section class="hero">
-  <div class="hero-grid"></div>
-  <div class="container">
-    <div class="hero-content">
-      <div class="preview-banner">
-        <span style="font-size:1.2rem;flex-shrink:0;">&#128065;</span>
-        <p>This is a <strong>sample template</strong> for a Solar Energy business. Your real site will be fully customised with your branding, photos &amp; details. <a href="#get-started" style="color:var(--gold);font-weight:700;">Request this template &darr;</a></p>
+  <div class="hero-left">
+    <div class="hero-eyebrow">&#9889; MCS Certified &middot; London &amp; Home Counties</div>
+    <h1>Power Your Home<br>with <span>Clean Energy.</span><br>Cut Bills by 70%.</h1>
+    <p class="hero-sub">MCS certified solar panel installation, battery storage and EV charging for London homes and businesses. Free survey, fixed-price quote.</p>
+    <div class="hero-btns">
+      <a href="#calculator" class="btn-solar">Calculate Your Savings</a>
+      <a href="#packages" class="btn-ghost-light">View Packages</a>
+    </div>
+    <div class="hero-badges">
+      <div class="hero-badge"><strong>25yr</strong><span>Panel Warranty</span></div>
+      <div class="hero-badge"><strong>10yr</strong><span>Workmanship</span></div>
+      <div class="hero-badge"><strong>70%</strong><span>Bill Reduction</span></div>
+      <div class="hero-badge"><strong>4.9&#9733;</strong><span>Trustpilot</span></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-glow"></div>
+    <div class="solar-array">
+      <div class="solar-array-label">Live System &mdash; 12 Panels &mdash; 4.8 kWp</div>
+      <div class="panel-grid">
+        <div class="solar-cell lit"></div>
+        <div class="solar-cell lit"></div>
+        <div class="solar-cell"></div>
+        <div class="solar-cell lit"></div>
+        <div class="solar-cell"></div>
+        <div class="solar-cell lit"></div>
+        <div class="solar-cell lit"></div>
+        <div class="solar-cell"></div>
+        <div class="solar-cell lit"></div>
+        <div class="solar-cell"></div>
+        <div class="solar-cell lit"></div>
+        <div class="solar-cell"></div>
       </div>
-      <div class="hero-tag">&#128205; London Trade Template</div>
-      <span class="hero-icon">&#9728;</span>
-      <h1>London&rsquo;s Trusted<br><span>Solar Energy</span><br>Specialists</h1>
-      <p>Solar panel installation and battery storage for London homes and businesses.</p>
-      <div class="hero-ctas">
-        <a href="#get-started" class="btn btn-gold">Get a Free Quote</a>
-        <a href="tel:+447479531509" class="btn btn-outline">&#128222; Call Now</a>
+      <div class="panel-row-label">400W Monocrystalline &middot; South-Facing 35&deg;</div>
+      <div class="energy-flow">
+        <div class="energy-flow-dot"></div>
+        <div class="energy-flow-text">Generating 3.2 kW <span>right now &mdash; 94% battery charged</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="services">
+<!-- Stats Strip -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-item"><div class="stat-num">1,200+</div><div class="stat-lbl">Solar systems installed</div></div>
+    <div class="stat-item"><div class="stat-num">£850</div><div class="stat-lbl">Average annual saving per home</div></div>
+    <div class="stat-item"><div class="stat-num">25yr</div><div class="stat-lbl">Panel performance warranty</div></div>
+    <div class="stat-item"><div class="stat-num">4.9&#9733;</div><div class="stat-lbl">Trustpilot customer rating</div></div>
+  </div>
+</div>
+
+<!-- Services -->
+<section class="services" id="services">
   <div class="container">
-    <h2>Our Services</h2>
-    <p class="sub">Professional Solar Energy services across all London boroughs</p>
+    <div class="section-label">What We Install</div>
+    <h2 class="section-title">Complete Home Energy Solutions</h2>
+    <p class="section-sub">From solar panels to EV chargers, we install everything you need to generate, store and use clean energy at home.</p>
     <div class="services-grid">
-      <div class="service-card">
-        <span class="sc-icon">&#10003;</span>
-        <div class="sc-title">Residential</div>
-        <p class="sc-desc">Trusted by homeowners across London for reliable, high-quality work done right first time.</p>
+      <div class="svc-card">
+        <span class="svc-icon">&#9728;</span>
+        <h3>Solar PV Panels</h3>
+        <p>Rooftop solar panel installation for homes and businesses. MCS certified, fully scaffolded and connected to your consumer unit.</p>
+        <span class="svc-tag">Most Popular</span>
       </div>
-      <div class="service-card">
-        <span class="sc-icon">&#127970;</span>
-        <div class="sc-title">Commercial</div>
-        <p class="sc-desc">We work with businesses, landlords and property managers throughout Greater London.</p>
+      <div class="svc-card">
+        <span class="svc-icon">&#128267;</span>
+        <h3>Battery Storage</h3>
+        <p>Store the energy your panels generate and use it after dark. Compatible with all major inverters including GivEnergy, Fox ESS and SolarEdge.</p>
+        <span class="svc-tag">High Demand</span>
       </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128241;</span>
-        <div class="sc-title">Emergency Callouts</div>
-        <p class="sc-desc">Fast response when you need it most. We cover all London postcodes, seven days a week.</p>
+      <div class="svc-card">
+        <span class="svc-icon">&#128663;</span>
+        <h3>EV Charging</h3>
+        <p>Smart home EV charger installation — charge your electric vehicle from your solar panels for truly free motoring.</p>
+        <span class="svc-tag">OZEV Approved</span>
       </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128205;</span>
-        <div class="sc-title">All London Boroughs</div>
-        <p class="sc-desc">From Hackney to Hammersmith, Croydon to Camden &mdash; we cover the entire Greater London area.</p>
+      <div class="svc-card">
+        <span class="svc-icon">&#127981;</span>
+        <h3>Commercial Solar</h3>
+        <p>Large-scale rooftop and ground-mounted solar systems for warehouses, offices and industrial units. Maximise your ROI.</p>
+        <span class="svc-tag">Commercial</span>
+      </div>
+      <div class="svc-card">
+        <span class="svc-icon">&#128200;</span>
+        <h3>Solar Monitoring</h3>
+        <p>App-based real-time monitoring of your generation, consumption and battery state. Know exactly what your system is doing.</p>
+        <span class="svc-tag">Free with Install</span>
+      </div>
+      <div class="svc-card">
+        <span class="svc-icon">&#128296;</span>
+        <h3>Inverter Repair &amp; Service</h3>
+        <p>Fault diagnosis, inverter replacement and system health checks for existing solar installations across London.</p>
+        <span class="svc-tag">Maintenance</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="why">
-  <div class="container">
-    <h2>Why Choose Us?</h2>
-    <p class="sub">Trusted by hundreds of London customers</p>
-    <div class="trust-items">
-      <div class="trust-item"><div class="trust-num">500+</div><div class="trust-lbl">Jobs Completed</div></div>
-      <div class="trust-item"><div class="trust-num">5&#9733;</div><div class="trust-lbl">Google Rating</div></div>
-      <div class="trust-item"><div class="trust-num">10+</div><div class="trust-lbl">Years Experience</div></div>
-      <div class="trust-item"><div class="trust-num">32</div><div class="trust-lbl">London Boroughs Covered</div></div>
+<!-- Savings Calculator -->
+<section class="calculator" id="calculator">
+  <div class="calc-inner">
+    <div class="calc-left">
+      <div class="section-label" style="color:var(--solar)">Savings Calculator</div>
+      <h2>How Much Could You Save?</h2>
+      <p>Our instant estimator gives you a ballpark figure based on your home size and current energy use. For a precise quote, book a free survey.</p>
+      <div class="calc-inputs">
+        <div class="calc-field">
+          <label>Home Size</label>
+          <select id="houseType" onchange="calcSavings()">
+            <option value="small">1&ndash;2 Bed Flat / Small House</option>
+            <option value="medium" selected>3 Bed Semi / Terraced</option>
+            <option value="large">4+ Bed Detached House</option>
+            <option value="xlarge">Large Detached / Commercial</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label>Current Annual Electricity Bill</label>
+          <select id="billSize" onchange="calcSavings()">
+            <option value="800">Under &pound;800</option>
+            <option value="1200" selected>&pound;800 &ndash; &pound;1,400</option>
+            <option value="1800">&pound;1,400 &ndash; &pound;2,200</option>
+            <option value="2800">Over &pound;2,200</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label>Include Battery Storage?</label>
+          <select id="battery" onchange="calcSavings()">
+            <option value="no">No &mdash; panels only</option>
+            <option value="yes" selected>Yes &mdash; panels + battery</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="calc-result" id="calcResult">
+      <div class="calc-result-label">Estimated Annual Saving</div>
+      <div class="calc-saving-num" id="savingNum">&pound;856</div>
+      <div class="calc-saving-sub">based on average London solar irradiation</div>
+      <div class="calc-breakdown">
+        <div class="cb-item"><div class="cb-num" id="co2Num">1.8t</div><div class="cb-lbl">CO&sup2; saved / year</div></div>
+        <div class="cb-item"><div class="cb-num" id="paybackNum">7.2yr</div><div class="cb-lbl">Est. payback period</div></div>
+      </div>
+      <a href="#contact" class="btn-calc" onclick="return false;" style="display:block;padding:13px;border-radius:8px;background:var(--solar);color:var(--space);font-weight:700;text-decoration:none;text-align:center;font-family:'Space Grotesk',sans-serif">Get My Precise Quote &rarr;</a>
+      <p class="calc-disclaimer">Estimate only. Actual savings vary by roof aspect, shading and tariff.</p>
     </div>
   </div>
 </section>
 
-<section class="cta-section">
+<!-- System Packages -->
+<section class="packages" id="packages">
   <div class="container">
-    <h2>Ready to Book? Get a Free Quote Today.</h2>
-    <p>No call centres, no pressure. Just a quick chat and a fair, honest price.</p>
-    <a href="#get-started" class="btn btn-gold">Request a Free Quote</a>
-  </div>
-</section>
-
-<section class="contact-mini" id="get-started">
-  <div class="container">
-    <h2>Request This Template</h2>
-    <p class="sub">Like what you see? Contact Yoel at Graft Digital to get your own Solar Energy website live within days.</p>
-    <div class="mini-form">
-      <form id="reqForm">
-        <div class="fg"><label>Your Name</label><input type="text" placeholder="John Smith" required></div>
-        <div class="fg"><label>Email</label><input type="email" placeholder="john@yourcompany.co.uk" required></div>
-        <div class="fg"><label>Phone</label><input type="tel" placeholder="+44 7XXX XXX XXX"></div>
-        <div class="fg"><label>Tell me about your business</label><textarea placeholder="Where in London are you based? Do you have a logo or existing site?"></textarea></div>
-        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;font-size:.97rem;">Send Enquiry to Graft Digital &rarr;</button>
-      </form>
+    <div class="section-label">System Packages</div>
+    <h2 class="section-title">Choose Your System</h2>
+    <p class="section-sub">All packages include MCS-certified installation, scaffolding, grid connection and 25-year panel warranty. Prices include VAT (0% VAT on residential solar).</p>
+    <div class="packages-grid">
+      <div class="pkg-card">
+        <div class="pkg-name">Starter</div>
+        <div class="pkg-panels">6 panels &middot; 2.4 kWp &middot; 1-2 bed</div>
+        <div class="pkg-price">&pound;4,995</div>
+        <div class="pkg-price-sub">inc. installation &amp; 0% VAT</div>
+        <ul class="pkg-features">
+          <li>6 &times; 400W monocrystalline panels</li>
+          <li>3.6kW hybrid inverter</li>
+          <li>Generation meter &amp; monitoring app</li>
+          <li>25yr panel warranty</li>
+          <li>10yr workmanship guarantee</li>
+          <li>MCS certificate &amp; DNO notification</li>
+        </ul>
+        <a href="#contact" class="pkg-cta outline">Get a Quote</a>
+      </div>
+      <div class="pkg-card featured">
+        <span class="pkg-badge">MOST POPULAR</span>
+        <div class="pkg-name" style="color:#FBBF24">Family</div>
+        <div class="pkg-panels" style="color:#64748B">12 panels &middot; 4.8 kWp &middot; 3-4 bed</div>
+        <div class="pkg-price">&pound;8,495</div>
+        <div class="pkg-price-sub" style="color:#64748B">inc. 10kWh battery storage</div>
+        <ul class="pkg-features">
+          <li>12 &times; 400W monocrystalline panels</li>
+          <li>5kW hybrid inverter</li>
+          <li>10kWh battery storage unit</li>
+          <li>Smart monitoring app</li>
+          <li>25yr panel + 10yr battery warranty</li>
+          <li>MCS certificate &amp; DNO notification</li>
+        </ul>
+        <a href="#contact" class="pkg-cta solid">Get a Quote</a>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-name">Premium</div>
+        <div class="pkg-panels">18 panels &middot; 7.2 kWp &middot; 4+ bed</div>
+        <div class="pkg-price">&pound;13,495</div>
+        <div class="pkg-price-sub">inc. 20kWh battery &amp; EV charger</div>
+        <ul class="pkg-features">
+          <li>18 &times; 400W monocrystalline panels</li>
+          <li>8kW hybrid inverter</li>
+          <li>20kWh battery storage</li>
+          <li>7kW smart EV charger</li>
+          <li>Premium monitoring dashboard</li>
+          <li>MCS certificate &amp; DNO notification</li>
+        </ul>
+        <a href="#contact" class="pkg-cta outline">Get a Quote</a>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- How It Works -->
+<section class="how-it-works" id="how-it-works">
+  <div class="container">
+    <div class="section-label">The Process</div>
+    <h2 class="section-title">From Survey to Switch-On</h2>
+    <p class="section-sub">A simple four-step process managed entirely by our team, with clear communication throughout.</p>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-step-num">Step 01</div>
+        <div class="how-icon-wrap hi-1">&#128203;</div>
+        <h4>Free Survey</h4>
+        <p>We visit your property to assess your roof, orientation, shading and energy use to design the optimal system.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">Step 02</div>
+        <div class="how-icon-wrap hi-2">&#128200;</div>
+        <h4>Design &amp; Quote</h4>
+        <p>We produce a detailed system design with yield forecast, fixed price and estimated ROI — no surprises.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">Step 03</div>
+        <div class="how-icon-wrap hi-3">&#9728;</div>
+        <h4>MCS Installation</h4>
+        <p>Our MCS certified team installs your system typically within one day. We handle grid notification and all paperwork.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">Step 04</div>
+        <div class="how-icon-wrap hi-4">&#9889;</div>
+        <h4>Generate &amp; Save</h4>
+        <p>Your system goes live and you start saving immediately. Monitor everything live via our app.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certifications -->
+<div class="certs">
+  <div class="certs-inner">
+    <div class="cert-item"><div class="cert-box">&#127942;</div><div class="cert-text"><strong>MCS Certified</strong>Microgeneration Certification Scheme</div></div>
+    <div class="cert-item"><div class="cert-box">&#128737;</div><div class="cert-text"><strong>RECC Member</strong>Renewable Energy Consumer Code</div></div>
+    <div class="cert-item"><div class="cert-box">&#9889;</div><div class="cert-text"><strong>NICEIC Approved</strong>Electrical installation certified</div></div>
+    <div class="cert-item"><div class="cert-box">&#128663;</div><div class="cert-text"><strong>OZEV Approved</strong>EV charger grant installer</div></div>
+    <div class="cert-item"><div class="cert-box">&#9989;</div><div class="cert-text"><strong>Which? Trader</strong>Independently verified &amp; reviewed</div></div>
+  </div>
+</div>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-label">Customer Reviews</div>
+    <h2 class="section-title">What Our Customers Say</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">"Our electricity bill has dropped from &pound;180 to under &pound;40 a month. The installation was fast, clean and the team explained everything brilliantly. The monitoring app is brilliant — I'm obsessed with it."</p>
+        <div class="testi-author">Simon &amp; Kate B.</div>
+        <div class="testi-loc">Wimbledon, London</div>
+        <div class="testi-system">12-Panel Family Package + 10kWh Battery</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">"We charge our Tesla entirely off our panels during the summer. It's genuinely transformative. Apex handled everything from the planning to the DNO submission — I just had to sign a form."</p>
+        <div class="testi-author">Mark D.</div>
+        <div class="testi-loc">Richmond, Surrey</div>
+        <div class="testi-system">Premium Package + 7kW EV Charger</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">"Had solar installed on our warehouse roof. The ROI was under 4 years and we're now exporting energy back to the grid. Apex managed the whole commercial installation flawlessly."</p>
+        <div class="testi-author">Anita R. &mdash; Operations Director</div>
+        <div class="testi-loc">Park Royal, London</div>
+        <div class="testi-system">Commercial 48-Panel System</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Get Your Free Solar Survey</h2>
+        <p>Our surveys are completely free with no obligation. We'll assess your roof, design the optimal system and give you a fixed-price quote within 24 hours.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="cd-icon">&#128222;</div>
+            <div class="cd-text"><strong><a href="tel:+447479531509" style="color:inherit;text-decoration:none">+44 7479 531509</a></strong>Mon&ndash;Sat 8am&ndash;6pm</div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon">&#9993;</div>
+            <div class="cd-text"><strong><a href="mailto:sales@graftdigital.london" style="color:inherit;text-decoration:none">sales@graftdigital.london</a></strong>Quote within 24 hours</div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon">&#128205;</div>
+            <div class="cd-text"><strong>London &amp; Home Counties</strong>All London postcodes + surrounding areas</div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon">&#128200;</div>
+            <div class="cd-text"><strong>0% VAT on Residential Solar</strong>Solar panels are zero-rated for VAT</div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <h3>Book a Free Survey</h3>
+        <form onsubmit="handleEnquiry(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" id="cName" placeholder="Full name" required>
+            </div>
+            <div class="form-group">
+              <label>Phone *</label>
+              <input type="tel" id="cPhone" placeholder="+44..." required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" id="cEmail" placeholder="your@email.com" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>System of Interest</label>
+              <select id="cSystem">
+                <option value="">Select option</option>
+                <option>Solar Panels Only</option>
+                <option>Solar + Battery Storage</option>
+                <option>Solar + Battery + EV Charger</option>
+                <option>Battery Storage Only</option>
+                <option>EV Charger Only</option>
+                <option>Commercial System</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Property Type</label>
+              <select id="cProp">
+                <option value="">Select type</option>
+                <option>Detached House</option>
+                <option>Semi-Detached</option>
+                <option>Terraced House</option>
+                <option>Flat / Apartment</option>
+                <option>Commercial / Industrial</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Anything Else?</label>
+            <textarea id="cMessage" placeholder="Roof type, shading, current energy bill, any questions..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Book Free Survey &rarr;</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
 <footer>
   <div class="container">
-    <div class="footer-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text" style="color:#fff;">Graft<span style="color:var(--gold);">Digital</span></span>
-      </a>
-      <span class="footer-copy">&copy; 2025 <strong>Graft Digital</strong> &mdash; Built by Yoel Gutierrez &middot; London</span>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:#1E3A5A">Apex Solar London</div>
+        <p>MCS certified solar panel installation, battery storage and EV charging across London. 1,200+ systems installed since 2012.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Solar Panels</a></li>
+          <li><a href="#services">Battery Storage</a></li>
+          <li><a href="#services">EV Charging</a></li>
+          <li><a href="#services">Commercial Solar</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Information</h4>
+        <ul>
+          <li><a href="#calculator">Savings Calculator</a></li>
+          <li><a href="#packages">System Packages</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#contact">Free Survey</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+447479531509">+44 7479 531509</a></li>
+          <li><a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a></li>
+          <li><a href="#contact">London &amp; Home Counties</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Apex Solar London. All rights reserved.</p>
+      <p>Website by <a href="https://graftdigital.london" target="_blank">Graft Digital</a></p>
     </div>
   </div>
 </footer>
+
 <script>
-  document.getElementById('reqForm').addEventListener('submit',function(e){
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  function calcSavings() {
+    var bill = parseInt(document.getElementById('billSize').value) || 1200;
+    var battery = document.getElementById('battery').value;
+    var multiplier = battery === 'yes' ? 0.72 : 0.52;
+    var saving = Math.round(bill * multiplier);
+    var co2 = (saving / 500).toFixed(1);
+    var systemCost = battery === 'yes' ? 8495 : 5495;
+    var payback = (systemCost / saving).toFixed(1);
+    document.getElementById('savingNum').textContent = '\u00a3' + saving.toLocaleString();
+    document.getElementById('co2Num').textContent = co2 + 't';
+    document.getElementById('paybackNum').textContent = payback + 'yr';
+  }
+
+  function handleEnquiry(e) {
     e.preventDefault();
-    const f=this;
-    const btn=f.querySelector('button[type=submit]');
-    const inp=f.querySelector('input[name=template]');
-    const tmpl=inp?inp.value:'General';
-    const name=f.querySelector('input[type=text]').value;
-    const email=f.querySelector('input[type=email]').value;
-    const phone=f.querySelector('input[type=tel]').value;
-    const msg=f.querySelector('textarea').value;
-    const body='Name: '+name+'\nEmail: '+email+'\nPhone: '+phone+'\nTemplate: '+tmpl+'\n\nMessage:\n'+msg;
-    window.location.href='mailto:sales@graftdigital.london?subject='+encodeURIComponent('Template Request – '+tmpl+' – '+name)+'&body='+encodeURIComponent(body);
-    btn.textContent='✓ Opening your email app…';
-    btn.style.background='#22c55e'; btn.style.color='#fff'; btn.disabled=true;
+    var name = document.getElementById('cName').value;
+    var phone = document.getElementById('cPhone').value;
+    var email = document.getElementById('cEmail').value;
+    var system = document.getElementById('cSystem').value || 'Not specified';
+    var prop = document.getElementById('cProp').value || 'Not specified';
+    var message = document.getElementById('cMessage').value;
+    var subject = 'Solar Enquiry \u2013 ' + name + ' \u2013 ' + system;
+    var body = 'Name: ' + name + '\nPhone: ' + phone + '\nEmail: ' + email + '\nSystem: ' + system + '\nProperty: ' + prop + '\n\nNotes:\n' + message;
+    window.location.href = 'mailto:sales@graftdigital.london?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  }
+
+  // Scroll reveal
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.svc-card, .pkg-card, .testi-card, .how-step').forEach(function(el) {
+    el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'opacity .5s, transform .5s';
+    observer.observe(el);
   });
+
+  // Init calculator
+  calcSavings();
 </script>
 </body>
 </html>
