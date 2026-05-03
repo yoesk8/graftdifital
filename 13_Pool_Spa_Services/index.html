@@ -3,214 +3,950 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pool &amp; Spa Services Website Template | Graft Digital</title>
-  <meta name="description" content="Pool installation, maintenance and spa servicing for London properties.">
-  <meta name="keywords" content="pool maintenance London">
+  <title>Azure Pools London | Bespoke Swimming Pool Design, Build &amp; Servicing</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:#0A1628; --navy-mid:#0F2040; --gold:#F5A623; --gold-dark:#C98010;
-      --gold-light:#FFB84D; --white:#FFFFFF; --off-white:#F7F9FC;
-      --text:#1A2332; --text-mid:#4A5568; --border:#E2E8F0;
+      --navy: #0B1F3A;
+      --navy-mid: #132D52;
+      --pool: #0284C7;
+      --aqua: #38BDF8;
+      --aqua-light: #BAE6FD;
+      --gold: #C9A84C;
+      --gold-light: #E8D5A3;
+      --cream: #F8FAFC;
+      --white: #FFFFFF;
+      --text: #0F172A;
+      --text-muted: #64748B;
     }
-    html { scroll-behavior: smooth; }
-    body { font-family:'Inter',-apple-system,sans-serif; color:var(--text); background:var(--white); line-height:1.6; }
-    a { text-decoration:none; color:inherit; }
-    .container { max-width:1100px; margin:0 auto; padding:0 24px; }
-    /* TOPBAR */
-    .topbar { background:var(--navy); padding:14px 0; position:sticky; top:0; z-index:100; box-shadow:0 2px 12px rgba(0,0,0,.25); }
-    .topbar-inner { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-    .logo { display:flex; align-items:center; gap:9px; }
-    .logo-mark { width:34px; height:34px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:900; color:var(--navy); }
-    .logo-text { font-size:1.1rem; font-weight:900; color:#fff; letter-spacing:-.03em; }
-    .logo-text span { color:var(--gold); }
-    .back-link { color:rgba(255,255,255,.7); font-size:.85rem; font-weight:500; display:flex; align-items:center; gap:6px; transition:color .2s; }
-    .back-link:hover { color:var(--gold); }
-    /* HERO */
-    .hero { background:var(--navy); background-image:radial-gradient(ellipse at 15% 60%,rgba(26,53,96,.6) 0%,transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(245,166,35,.07) 0%,transparent 50%); min-height:480px; display:flex; align-items:center; padding:72px 0 64px; position:relative; overflow:hidden; }
-    .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px); background-size:54px 54px; }
-    .hero-content { position:relative; z-index:2; max-width:680px; }
-    .preview-banner { background:rgba(245,166,35,.1); border:1px solid rgba(245,166,35,.3); border-radius:10px; padding:15px 20px; margin-bottom:36px; display:flex; align-items:flex-start; gap:11px; max-width:600px; }
-    .preview-banner p { color:rgba(255,255,255,.8); font-size:.86rem; line-height:1.55; margin:0; }
-    .preview-banner strong { color:var(--gold); }
-    .hero-tag { display:inline-flex; align-items:center; gap:7px; background:rgba(245,166,35,.13); border:1px solid rgba(245,166,35,.28); color:var(--gold-light); padding:6px 15px; border-radius:100px; font-size:.8rem; font-weight:600; margin-bottom:20px; }
-    .hero-icon { font-size:3.2rem; margin-bottom:10px; display:block; line-height:1; }
-    .hero h1 { font-size:clamp(2.1rem,4.5vw,3.4rem); color:#fff; letter-spacing:-.04em; margin-bottom:16px; line-height:1.15; font-weight:900; }
-    .hero h1 span { color:var(--gold); }
-    .hero > .container > .hero-content > p { color:rgba(255,255,255,.68); font-size:1.05rem; max-width:520px; margin-bottom:32px; }
-    .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
-    .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:8px; font-size:.95rem; font-weight:700; cursor:pointer; transition:all .22s ease; border:none; font-family:inherit; }
-    .btn-gold { background:var(--gold); color:var(--navy); }
-    .btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 20px rgba(245,166,35,.35); }
-    .btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.35); }
-    .btn-outline:hover { border-color:#fff; background:rgba(255,255,255,.08); }
-    /* SERVICES */
-    .services { padding:80px 0; background:var(--off-white); }
-    .services h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .services .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
-    .service-card { background:#fff; border-radius:12px; padding:28px 24px; border:1px solid var(--border); transition:all .22s ease; }
-    .service-card:hover { transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.08); border-color:rgba(245,166,35,.3); }
-    .sc-icon { font-size:1.8rem; margin-bottom:12px; display:block; }
-    .sc-title { font-size:1rem; font-weight:700; margin-bottom:6px; }
-    .sc-desc { font-size:.88rem; color:var(--text-mid); line-height:1.65; }
-    /* TRUST */
-    .why { padding:80px 0; background:var(--white); }
-    .why h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .why .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .trust-items { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; text-align:center; }
-    .trust-item { padding:28px 16px; }
-    .trust-num { font-size:2.4rem; font-weight:900; color:var(--gold-dark); line-height:1; margin-bottom:6px; }
-    .trust-lbl { font-size:.88rem; color:var(--text-mid); }
-    /* CTA */
-    .cta-section { padding:72px 0; background:var(--navy); background-image:radial-gradient(ellipse at 80% 50%,rgba(245,166,35,.08) 0%,transparent 55%); text-align:center; }
-    .cta-section h2 { color:#fff; font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; margin-bottom:14px; }
-    .cta-section p { color:rgba(255,255,255,.65); font-size:1rem; margin-bottom:32px; max-width:480px; margin-left:auto; margin-right:auto; }
-    /* FORM */
-    .contact-mini { padding:80px 0; background:var(--off-white); }
-    .contact-mini h2 { font-size:clamp(1.5rem,3vw,2rem); font-weight:800; text-align:center; margin-bottom:8px; }
-    .contact-mini .sub { text-align:center; color:var(--text-mid); font-size:.97rem; margin-bottom:32px; }
-    .mini-form { max-width:520px; margin:0 auto; background:#fff; border-radius:16px; padding:36px; border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,0,0,.06); }
-    .fg { margin-bottom:16px; }
-    .fg label { display:block; font-size:.84rem; font-weight:600; margin-bottom:6px; }
-    .fg input,.fg textarea { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:8px; font-size:.92rem; font-family:inherit; color:var(--text); outline:none; transition:border .2s; }
-    .fg input:focus,.fg textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(245,166,35,.12); }
-    .fg textarea { resize:vertical; min-height:88px; }
-    /* FOOTER */
-    footer { background:#050D1A; padding:32px 0; border-top:1px solid rgba(255,255,255,.05); }
-    .footer-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
-    .footer-copy { color:rgba(255,255,255,.35); font-size:.82rem; }
-    .footer-copy strong { color:var(--gold); }
-    @media(max-width:600px){ .hero-ctas{flex-direction:column;} .hero-ctas .btn{justify-content:center;} }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); }
+
+    /* Template Banner */
+    .template-banner { background: #1e293b; color: #94a3b8; text-align: center; padding: 8px 16px; font-size: 12px; }
+    .template-banner a { color: #38bdf8; text-decoration: none; }
+
+    /* Topbar */
+    .topbar { background: var(--navy); color: #94a3b8; padding: 8px 0; font-size: 13px; }
+    .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .topbar-badge { background: var(--gold); color: var(--navy); font-weight: 700; font-size: 11px; padding: 3px 10px; border-radius: 2px; letter-spacing: 0.5px; }
+    .topbar-contacts { display: flex; gap: 20px; align-items: center; }
+    .topbar-contacts a { color: #94a3b8; text-decoration: none; }
+    .topbar-contacts a:hover { color: var(--aqua); }
+
+    /* Navbar */
+    nav { background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #E2E8F0; box-shadow: 0 1px 12px rgba(0,0,0,.06); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; height: 68px; }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-mark { width: 40px; height: 40px; background: var(--navy); border-radius: 50%; position: relative; overflow: hidden; }
+    .logo-wave { position: absolute; inset: 0; }
+    .logo-wave::before { content: ''; position: absolute; width: 60px; height: 60px; background: var(--aqua); border-radius: 50%; top: 14px; left: -8px; opacity: 0.5; }
+    .logo-wave::after { content: ''; position: absolute; width: 50px; height: 50px; background: var(--pool); border-radius: 50%; top: 18px; left: 4px; opacity: 0.7; }
+    .logo-text { font-family: 'Cinzel', serif; font-size: 18px; font-weight: 700; color: var(--navy); }
+    .logo-sub { font-size: 11px; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; margin-top: -2px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text); font-size: 14px; font-weight: 500; }
+    .nav-links a:hover { color: var(--pool); }
+    .nav-cta { background: var(--navy); color: var(--white) !important; padding: 10px 22px; border-radius: 4px; font-weight: 600 !important; }
+    .nav-cta:hover { background: var(--pool) !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { width: 24px; height: 2px; background: var(--navy); border-radius: 2px; display: block; }
+    .mobile-menu { display: none; background: var(--white); border-top: 1px solid #E2E8F0; padding: 16px 24px; }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; padding: 10px 0; color: var(--text); text-decoration: none; font-weight: 500; border-bottom: 1px solid #F1F5F9; }
+
+    /* Hero */
+    .hero { background: var(--navy); min-height: 640px; position: relative; overflow: hidden; display: flex; align-items: center; }
+    .hero-ripple { position: absolute; right: 80px; top: 50%; transform: translateY(-50%); pointer-events: none; }
+    .ripple-ring { position: absolute; border-radius: 50%; border: 1px solid rgba(56,189,248,0.15); animation: ripple-expand 4s ease-out infinite; transform: translate(-50%, -50%); }
+    .ripple-ring:nth-child(1) { width: 200px; height: 200px; animation-delay: 0s; }
+    .ripple-ring:nth-child(2) { width: 350px; height: 350px; animation-delay: 0.8s; }
+    .ripple-ring:nth-child(3) { width: 500px; height: 500px; animation-delay: 1.6s; }
+    .ripple-ring:nth-child(4) { width: 650px; height: 650px; animation-delay: 2.4s; }
+    .ripple-ring:nth-child(5) { width: 820px; height: 820px; animation-delay: 3.2s; }
+    @keyframes ripple-expand { 0% { opacity: 0.6; } 100% { opacity: 0; } }
+    .hero-pool-visual { position: absolute; right: 120px; top: 50%; transform: translateY(-50%); width: 280px; height: 200px; }
+    .pool-shape { width: 100%; height: 100%; border-radius: 50px; background: linear-gradient(135deg, #0369A1 0%, #0284C7 40%, #38BDF8 70%, #7DD3FC 100%); position: relative; overflow: hidden; box-shadow: 0 0 60px rgba(56,189,248,0.3), 0 0 120px rgba(2,132,199,0.2); }
+    .pool-shimmer { position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.04) 10px, rgba(255,255,255,0.04) 11px); animation: shimmer-move 3s linear infinite; }
+    .pool-glint { position: absolute; top: 20%; left: 15%; width: 60%; height: 30%; background: linear-gradient(to bottom, rgba(255,255,255,0.15), transparent); border-radius: 50%; }
+    @keyframes shimmer-move { 0% { background-position: 0 0; } 100% { background-position: 60px 60px; } }
+    .hero-content { position: relative; z-index: 2; padding: 80px 24px; margin-left: 80px; max-width: 580px; }
+    .hero-eyebrow { color: var(--gold); font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+    .hero h1 { font-family: 'Cinzel', serif; font-size: clamp(34px, 5vw, 54px); font-weight: 700; color: var(--white); line-height: 1.15; margin-bottom: 20px; }
+    .hero h1 span { color: var(--aqua); }
+    .hero-sub { color: #94a3b8; font-size: 18px; line-height: 1.6; margin-bottom: 36px; max-width: 480px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary { background: var(--gold); color: var(--navy); padding: 14px 28px; border-radius: 4px; font-weight: 700; text-decoration: none; font-size: 15px; transition: all .2s; display: inline-block; }
+    .btn-primary:hover { background: var(--gold-light); }
+    .btn-outline { border: 1px solid rgba(255,255,255,0.3); color: var(--white); padding: 14px 28px; border-radius: 4px; font-weight: 600; text-decoration: none; font-size: 15px; transition: all .2s; display: inline-block; }
+    .btn-outline:hover { border-color: var(--aqua); color: var(--aqua); }
+    .hero-stats { display: flex; gap: 32px; margin-top: 40px; flex-wrap: wrap; }
+    .hero-stat-num { font-family: 'Cinzel', serif; font-size: 28px; font-weight: 700; color: var(--aqua); }
+    .hero-stat-lbl { font-size: 12px; color: #64748b; margin-top: 4px; }
+
+    /* Shared */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section-label { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--pool); margin-bottom: 12px; }
+    .section-title { font-family: 'Cinzel', serif; font-size: clamp(26px, 4vw, 40px); font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+    .section-sub { color: var(--text-muted); font-size: 16px; max-width: 560px; line-height: 1.6; margin-bottom: 48px; }
+
+    /* Service Pillars */
+    .pillars { background: var(--cream); padding: 80px 0; }
+    .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .pillar-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,.06); transition: transform .2s, box-shadow .2s; }
+    .pillar-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,.1); }
+    .pillar-top { height: 180px; display: flex; align-items: center; justify-content: center; }
+    .pillar-top.build { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); }
+    .pillar-top.refurb { background: linear-gradient(135deg, #0369A1 0%, #0284C7 100%); }
+    .pillar-top.service { background: linear-gradient(135deg, #0F766E 0%, #0D9488 100%); }
+    .pillar-icon-wrap { width: 72px; height: 72px; border-radius: 50%; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; }
+    .pillar-icon { font-size: 32px; }
+    .pillar-body { padding: 24px; }
+    .pillar-body h3 { font-family: 'Cinzel', serif; font-size: 18px; color: var(--navy); margin-bottom: 10px; }
+    .pillar-body p { color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 16px; }
+    .pillar-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .pillar-list li { font-size: 13px; color: var(--text-muted); padding-left: 16px; position: relative; }
+    .pillar-list li::before { content: '\25C6'; position: absolute; left: 0; color: var(--pool); font-size: 8px; top: 3px; }
+
+    /* Pool Types */
+    .pool-types { background: var(--navy); padding: 80px 0; }
+    .pool-types .section-title { color: var(--white); }
+    .pool-types .section-sub { color: #94a3b8; }
+    .type-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+    .type-tab { background: rgba(255,255,255,0.08); color: #94a3b8; border: 1px solid rgba(255,255,255,0.12); padding: 8px 20px; border-radius: 24px; font-size: 13px; font-weight: 500; cursor: pointer; transition: all .2s; font-family: 'Inter', sans-serif; }
+    .type-tab.active { background: var(--gold); color: var(--navy); border-color: var(--gold); font-weight: 700; }
+    .type-tab:hover:not(.active) { border-color: var(--aqua); color: var(--aqua); }
+    .type-content { display: none; }
+    .type-content.active { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .type-visual { border-radius: 16px; overflow: hidden; height: 320px; position: relative; }
+    .type-visual.indoor { background: linear-gradient(160deg, #0B1F3A 0%, #1E3A5F 40%, #0284C7 100%); }
+    .type-visual.outdoor { background: linear-gradient(160deg, #0F4C2A 0%, #166534 40%, #38BDF8 100%); }
+    .type-visual.basement { background: linear-gradient(160deg, #1C1038 0%, #2D1B69 40%, #0284C7 100%); }
+    .type-visual.hydro { background: linear-gradient(160deg, #0F2F3A 0%, #0E5E6F 40%, #22D3EE 100%); }
+    .type-visual.infinity { background: linear-gradient(160deg, #083344 0%, #0369A1 40%, #7DD3FC 100%); }
+    .type-visual.plunge { background: linear-gradient(160deg, #0B1F3A 0%, #1E3A8A 40%, #38BDF8 100%); }
+    .type-visual-pool { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); width: 70%; height: 120px; border-radius: 40px; background: rgba(56,189,248,0.25); border: 2px solid rgba(56,189,248,0.4); box-shadow: 0 0 40px rgba(56,189,248,0.3); }
+    .type-visual-pool::after { content: ''; position: absolute; top: 10px; left: 10px; right: 10px; height: 30%; background: rgba(255,255,255,0.1); border-radius: 30px; }
+    .type-text h3 { font-family: 'Cinzel', serif; font-size: 26px; color: var(--white); margin-bottom: 14px; }
+    .type-text p { color: #94a3b8; line-height: 1.7; margin-bottom: 20px; }
+    .type-features { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 24px; }
+    .type-feature { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px; font-size: 13px; color: #cbd5e1; }
+    .type-feature strong { display: block; color: var(--aqua); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+
+    /* Portfolio */
+    .portfolio { background: var(--cream); padding: 80px 0; }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 220px 220px; gap: 16px; }
+    .portfolio-tile { border-radius: 12px; overflow: hidden; position: relative; cursor: pointer; }
+    .portfolio-tile:first-child { grid-column: span 2; }
+    .portfolio-tile-bg { width: 100%; height: 100%; transition: transform .4s; }
+    .portfolio-tile:hover .portfolio-tile-bg { transform: scale(1.04); }
+    .pt-1 { background: linear-gradient(135deg, #0B1F3A 0%, #0284C7 60%, #38BDF8 100%); }
+    .pt-2 { background: linear-gradient(135deg, #0F4C2A 0%, #0D9488 60%, #38BDF8 100%); }
+    .pt-3 { background: linear-gradient(135deg, #1C1038 0%, #5B21B6 60%, #7DD3FC 100%); }
+    .pt-4 { background: linear-gradient(135deg, #0F2F3A 0%, #0369A1 60%, #BAE6FD 100%); }
+    .pt-5 { background: linear-gradient(135deg, #3D1A47 0%, #7C3AED 60%, #38BDF8 100%); }
+    .portfolio-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%); opacity: 0; transition: opacity .3s; display: flex; align-items: flex-end; padding: 20px; }
+    .portfolio-tile:hover .portfolio-overlay { opacity: 1; }
+    .portfolio-label strong { display: block; font-size: 16px; font-weight: 600; color: var(--white); }
+    .portfolio-label span { font-size: 13px; color: var(--aqua-light); }
+    .portfolio-badge { position: absolute; top: 14px; left: 14px; background: var(--gold); color: var(--navy); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 12px; }
+
+    /* Process */
+    .process { background: var(--white); padding: 80px 0; }
+    .process-steps { display: grid; grid-template-columns: repeat(5, 1fr); position: relative; margin-top: 48px; }
+    .process-steps::before { content: ''; position: absolute; top: 31px; left: 10%; right: 10%; height: 1px; background: linear-gradient(to right, var(--pool), var(--aqua), var(--gold)); z-index: 0; }
+    .process-step { display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; z-index: 1; padding: 0 8px; }
+    .step-num { width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 18px; font-weight: 700; margin-bottom: 16px; border: 2px solid; }
+    .step-num.s1 { background: var(--navy); color: var(--aqua); border-color: var(--aqua); }
+    .step-num.s2 { background: var(--pool); color: var(--white); border-color: var(--pool); }
+    .step-num.s3 { background: var(--navy); color: var(--aqua); border-color: var(--aqua); }
+    .step-num.s4 { background: var(--pool); color: var(--white); border-color: var(--pool); }
+    .step-num.s5 { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+    .process-step h4 { font-weight: 700; font-size: 14px; color: var(--navy); margin-bottom: 6px; }
+    .process-step p { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+    /* Maintenance Plans */
+    .maintenance { background: var(--navy); padding: 80px 0; }
+    .maintenance .section-title { color: var(--white); }
+    .maintenance .section-sub { color: #94a3b8; }
+    .plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    .plan-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px; transition: all .2s; }
+    .plan-card.featured { background: var(--white); border-color: var(--gold); position: relative; transform: translateY(-8px); }
+    .plan-card:hover { border-color: var(--aqua); }
+    .plan-card.featured:hover { border-color: var(--gold); }
+    .plan-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--navy); font-size: 11px; font-weight: 700; padding: 4px 16px; border-radius: 12px; white-space: nowrap; }
+    .plan-name { font-family: 'Cinzel', serif; font-size: 20px; color: var(--white); margin-bottom: 6px; }
+    .plan-card.featured .plan-name { color: var(--navy); }
+    .plan-price { margin-bottom: 20px; }
+    .plan-price-num { font-family: 'Cinzel', serif; font-size: 36px; font-weight: 700; color: var(--aqua); }
+    .plan-card.featured .plan-price-num { color: var(--pool); }
+    .plan-price-period { font-size: 14px; color: #94a3b8; }
+    .plan-card.featured .plan-price-period { color: var(--text-muted); }
+    .plan-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .plan-features li { font-size: 14px; color: #94a3b8; padding-left: 20px; position: relative; }
+    .plan-card.featured .plan-features li { color: var(--text-muted); }
+    .plan-features li::before { content: '\2713'; position: absolute; left: 0; color: var(--aqua); font-weight: 700; }
+    .plan-card.featured .plan-features li::before { color: var(--pool); }
+    .plan-features li.no::before { content: '\2715'; color: #475569; }
+    .plan-cta { display: block; text-align: center; padding: 12px; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; transition: all .2s; }
+    .plan-cta.outline { border: 1px solid rgba(255,255,255,0.2); color: var(--white); }
+    .plan-cta.outline:hover { border-color: var(--aqua); color: var(--aqua); }
+    .plan-cta.solid { background: var(--navy); color: var(--white); }
+    .plan-cta.solid:hover { background: var(--pool); }
+
+    /* Trust */
+    .trust { background: var(--cream); padding: 60px 0; }
+    .trust-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+    .trust-item { text-align: center; }
+    .trust-num { font-family: 'Cinzel', serif; font-size: 40px; font-weight: 700; color: var(--pool); }
+    .trust-lbl { font-size: 14px; color: var(--text-muted); margin-top: 6px; }
+    .cert-strip { background: var(--navy); padding: 24px 0; }
+    .cert-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
+    .cert-badge { display: flex; align-items: center; gap: 10px; }
+    .cert-icon { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+    .cert-text { font-size: 13px; color: #94a3b8; }
+    .cert-text strong { display: block; color: var(--gold); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+
+    /* Testimonials */
+    .testimonials { background: var(--white); padding: 80px 0; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    .testi-card { background: var(--cream); border-radius: 12px; padding: 28px; border-left: 4px solid var(--pool); }
+    .testi-stars { color: var(--gold); font-size: 16px; margin-bottom: 14px; letter-spacing: 2px; }
+    .testi-text { color: var(--text-muted); font-size: 15px; line-height: 1.7; font-style: italic; margin-bottom: 20px; }
+    .testi-author { font-weight: 600; color: var(--navy); font-size: 14px; }
+    .testi-location { font-size: 12px; color: var(--text-muted); }
+    .testi-project { font-size: 12px; color: var(--pool); font-weight: 600; margin-top: 4px; }
+
+    /* Contact */
+    .contact { background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 100%); padding: 80px 0; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; }
+    .contact-info h2 { font-family: 'Cinzel', serif; font-size: 32px; color: var(--white); margin-bottom: 16px; }
+    .contact-info p { color: #94a3b8; line-height: 1.7; margin-bottom: 32px; }
+    .contact-details { display: flex; flex-direction: column; gap: 16px; }
+    .contact-detail { display: flex; align-items: flex-start; gap: 12px; }
+    .contact-detail-icon { width: 40px; height: 40px; background: rgba(56,189,248,0.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .contact-detail-text { font-size: 14px; color: #94a3b8; }
+    .contact-detail-text strong { display: block; color: var(--white); font-size: 15px; }
+    .contact-form-wrap { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 36px; }
+    .contact-form-wrap h3 { font-family: 'Cinzel', serif; font-size: 22px; color: var(--white); margin-bottom: 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 600; color: #cbd5e1; margin-bottom: 6px; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 11px 14px; color: var(--white); font-size: 14px; font-family: 'Inter', sans-serif; outline: none; transition: border .2s; }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: #475569; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--aqua); }
+    .form-group select option { background: var(--navy); color: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit { width: 100%; background: var(--gold); color: var(--navy); border: none; padding: 14px; border-radius: 8px; font-size: 15px; font-weight: 700; cursor: pointer; font-family: 'Inter', sans-serif; transition: background .2s; }
+    .form-submit:hover { background: var(--gold-light); }
+
+    /* Footer */
+    footer { background: #060E1A; padding: 48px 0 24px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand p { color: #475569; font-size: 14px; line-height: 1.6; margin-top: 12px; max-width: 280px; }
+    .footer-col h4 { font-family: 'Cinzel', serif; font-size: 13px; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col a { color: #475569; text-decoration: none; font-size: 14px; transition: color .2s; }
+    .footer-col a:hover { color: var(--aqua); }
+    .footer-bottom { border-top: 1px solid #0F2040; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { color: #334155; font-size: 13px; }
+    .footer-bottom a { color: #334155; text-decoration: none; }
+    .footer-bottom a:hover { color: var(--aqua); }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .pillars-grid, .plans-grid, .testimonials-grid { grid-template-columns: 1fr; }
+      .plan-card.featured { transform: none; }
+      .process-steps { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .process-steps::before { display: none; }
+      .type-content.active { grid-template-columns: 1fr; }
+      .type-visual { height: 200px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .trust-inner { grid-template-columns: 1fr 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .portfolio-tile { height: 200px; }
+      .portfolio-tile:first-child { grid-column: span 2; }
+      .hero-pool-visual, .hero-ripple { display: none; }
+      .hero-content { margin-left: 24px; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .topbar-contacts { display: none; }
+    }
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .portfolio-tile:first-child { grid-column: span 1; }
+      .process-steps { grid-template-columns: 1fr; }
+      .type-features { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-<header class="topbar">
-  <div class="container">
-    <div class="topbar-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text">Graft<span>Digital</span></span>
-      </a>
-      <a href="../index.html#industries" class="back-link">&larr; All Templates</a>
+
+<!-- Template Banner -->
+<div class="template-banner">
+  This is a template by <a href="https://graftdigital.london" target="_blank">Graft Digital</a> &mdash; bespoke websites for London tradespeople
+</div>
+
+<!-- Topbar -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div style="display:flex;align-items:center;gap:12px">
+      <span class="topbar-badge">SPATA Member</span>
+      <span>Award-winning pool design &amp; construction across London &amp; the Home Counties</span>
+    </div>
+    <div class="topbar-contacts">
+      <a href="tel:+447479531509">+44 7479 531509</a>
+      <a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a>
     </div>
   </div>
-</header>
+</div>
 
+<!-- Navbar -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-mark">
+        <div class="logo-wave"></div>
+      </div>
+      <div>
+        <div class="logo-text">Azure Pools</div>
+        <div class="logo-sub">London</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#pool-types">Pool Types</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#maintenance">Maintenance</a></li>
+      <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Services</a>
+    <a href="#pool-types">Pool Types</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#maintenance">Maintenance</a>
+    <a href="#contact">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- Hero -->
 <section class="hero">
-  <div class="hero-grid"></div>
-  <div class="container">
-    <div class="hero-content">
-      <div class="preview-banner">
-        <span style="font-size:1.2rem;flex-shrink:0;">&#128065;</span>
-        <p>This is a <strong>sample template</strong> for a Pool &amp; Spa Services business. Your real site will be fully customised with your branding, photos &amp; details. <a href="#get-started" style="color:var(--gold);font-weight:700;">Request this template &darr;</a></p>
+  <div class="hero-ripple">
+    <div class="ripple-ring"></div>
+    <div class="ripple-ring"></div>
+    <div class="ripple-ring"></div>
+    <div class="ripple-ring"></div>
+    <div class="ripple-ring"></div>
+  </div>
+  <div class="hero-pool-visual">
+    <div class="pool-shape">
+      <div class="pool-shimmer"></div>
+      <div class="pool-glint"></div>
+    </div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Bespoke Swimming Pools &middot; London &amp; Home Counties</div>
+    <h1>Outstanding Pools.<br><span>Without Compromise.</span></h1>
+    <p class="hero-sub">From concept to completion &mdash; we design, build and maintain bespoke swimming pools for discerning London homes and commercial venues.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Request a Design Consultation</a>
+      <a href="#portfolio" class="btn-outline">View Our Portfolio</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">200+</div>
+        <div class="hero-stat-lbl">Pools Built</div>
       </div>
-      <div class="hero-tag">&#128205; London Trade Template</div>
-      <span class="hero-icon">&#127946;</span>
-      <h1>London&rsquo;s Trusted<br><span>Pool &amp; Spa Services</span><br>Specialists</h1>
-      <p>Pool installation, maintenance and spa servicing for London properties.</p>
-      <div class="hero-ctas">
-        <a href="#get-started" class="btn btn-gold">Get a Free Quote</a>
-        <a href="tel:+447479531509" class="btn btn-outline">&#128222; Call Now</a>
+      <div class="hero-stat">
+        <div class="hero-stat-num">18yr</div>
+        <div class="hero-stat-lbl">In Business</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">10yr</div>
+        <div class="hero-stat-lbl">Structural Guarantee</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">4.9&#9733;</div>
+        <div class="hero-stat-lbl">Customer Rating</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="services">
+<!-- Service Pillars -->
+<section class="pillars" id="services">
   <div class="container">
-    <h2>Our Services</h2>
-    <p class="sub">Professional Pool &amp; Spa Services services across all London boroughs</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <span class="sc-icon">&#10003;</span>
-        <div class="sc-title">Residential</div>
-        <p class="sc-desc">Trusted by homeowners across London for reliable, high-quality work done right first time.</p>
+    <div class="section-label">Our Services</div>
+    <h2 class="section-title">Everything Your Pool Needs</h2>
+    <p class="section-sub">From initial concept sketches to ongoing maintenance, we handle every aspect of your pool project with unmatched expertise.</p>
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <div class="pillar-top build">
+          <div class="pillar-icon-wrap"><span class="pillar-icon">&#127959;</span></div>
+        </div>
+        <div class="pillar-body">
+          <h3>Design &amp; Build</h3>
+          <p>Full-service pool design and construction. Our architects and engineers create bespoke pools tailored to your space, style and budget.</p>
+          <ul class="pillar-list">
+            <li>3D design visualisation</li>
+            <li>Planning permission support</li>
+            <li>Structural engineering</li>
+            <li>Full project management</li>
+            <li>Interior finishes &amp; tiling</li>
+            <li>Equipment installation</li>
+          </ul>
+        </div>
       </div>
-      <div class="service-card">
-        <span class="sc-icon">&#127970;</span>
-        <div class="sc-title">Commercial</div>
-        <p class="sc-desc">We work with businesses, landlords and property managers throughout Greater London.</p>
+      <div class="pillar-card">
+        <div class="pillar-top refurb">
+          <div class="pillar-icon-wrap"><span class="pillar-icon">&#128260;</span></div>
+        </div>
+        <div class="pillar-body">
+          <h3>Refurbishment</h3>
+          <p>Breathe new life into an existing pool. Whether cosmetic updates or full structural overhauls, we restore pools to their former glory and beyond.</p>
+          <ul class="pillar-list">
+            <li>Shell resurfacing &amp; retiling</li>
+            <li>Equipment upgrades</li>
+            <li>Heating system replacement</li>
+            <li>Filtration modernisation</li>
+            <li>Lighting &amp; automation</li>
+            <li>Surround &amp; landscaping</li>
+          </ul>
+        </div>
       </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128241;</span>
-        <div class="sc-title">Emergency Callouts</div>
-        <p class="sc-desc">Fast response when you need it most. We cover all London postcodes, seven days a week.</p>
-      </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128205;</span>
-        <div class="sc-title">All London Boroughs</div>
-        <p class="sc-desc">From Hackney to Hammersmith, Croydon to Camden &mdash; we cover the entire Greater London area.</p>
+      <div class="pillar-card">
+        <div class="pillar-top service">
+          <div class="pillar-icon-wrap"><span class="pillar-icon">&#128295;</span></div>
+        </div>
+        <div class="pillar-body">
+          <h3>Maintenance &amp; Servicing</h3>
+          <p>Keep your pool in pristine condition year-round. Our dedicated service team provides scheduled visits, chemical balancing and emergency callouts.</p>
+          <ul class="pillar-list">
+            <li>Weekly/fortnightly visits</li>
+            <li>Water chemistry management</li>
+            <li>Filter servicing &amp; cleaning</li>
+            <li>Seasonal opening &amp; closing</li>
+            <li>Emergency callout service</li>
+            <li>Annual equipment checks</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="why">
+<!-- Pool Types -->
+<section class="pool-types" id="pool-types">
   <div class="container">
-    <h2>Why Choose Us?</h2>
-    <p class="sub">Trusted by hundreds of London customers</p>
-    <div class="trust-items">
-      <div class="trust-item"><div class="trust-num">500+</div><div class="trust-lbl">Jobs Completed</div></div>
-      <div class="trust-item"><div class="trust-num">5&#9733;</div><div class="trust-lbl">Google Rating</div></div>
-      <div class="trust-item"><div class="trust-num">10+</div><div class="trust-lbl">Years Experience</div></div>
-      <div class="trust-item"><div class="trust-num">32</div><div class="trust-lbl">London Boroughs Covered</div></div>
+    <div class="section-label" style="color:var(--gold)">Pool Types</div>
+    <h2 class="section-title">Every Pool, Crafted to Perfection</h2>
+    <p class="section-sub">We specialise in a full range of pool types &mdash; from grand outdoor installations to intimate basement pools and therapeutic spas.</p>
+    <div class="type-tabs">
+      <button class="type-tab active" onclick="switchType('indoor', this)">Indoor Pools</button>
+      <button class="type-tab" onclick="switchType('outdoor', this)">Outdoor Pools</button>
+      <button class="type-tab" onclick="switchType('basement', this)">Basement Pools</button>
+      <button class="type-tab" onclick="switchType('hydro', this)">Hydrotherapy</button>
+      <button class="type-tab" onclick="switchType('infinity', this)">Infinity Pools</button>
+      <button class="type-tab" onclick="switchType('plunge', this)">Plunge Pools</button>
+    </div>
+
+    <div class="type-content active" id="type-indoor">
+      <div class="type-visual indoor"><div class="type-visual-pool"></div></div>
+      <div class="type-text">
+        <h3>Indoor Swimming Pools</h3>
+        <p>The ultimate luxury &mdash; a private indoor pool that can be enjoyed 365 days a year, regardless of the British weather. We design bespoke pool halls that complement your home's architecture.</p>
+        <div class="type-features">
+          <div class="type-feature"><strong>From</strong>&pound;120,000</div>
+          <div class="type-feature"><strong>Timeline</strong>12&ndash;20 weeks</div>
+          <div class="type-feature"><strong>Size Range</strong>4m &times; 2m to 20m &times; 5m</div>
+          <div class="type-feature"><strong>Heating</strong>Heat pump or gas</div>
+        </div>
+        <a href="#contact" class="btn-primary">Enquire About Indoor Pools</a>
+      </div>
+    </div>
+
+    <div class="type-content" id="type-outdoor">
+      <div class="type-visual outdoor"><div class="type-visual-pool"></div></div>
+      <div class="type-text">
+        <h3>Outdoor Swimming Pools</h3>
+        <p>Transform your garden into a private resort. Our outdoor pools are designed with London's climate in mind, featuring efficient heating systems and stunning landscaping integration.</p>
+        <div class="type-features">
+          <div class="type-feature"><strong>From</strong>&pound;60,000</div>
+          <div class="type-feature"><strong>Timeline</strong>8&ndash;14 weeks</div>
+          <div class="type-feature"><strong>Size Range</strong>6m &times; 3m to 25m &times; 8m</div>
+          <div class="type-feature"><strong>Heating</strong>Solar / Heat pump</div>
+        </div>
+        <a href="#contact" class="btn-primary">Enquire About Outdoor Pools</a>
+      </div>
+    </div>
+
+    <div class="type-content" id="type-basement">
+      <div class="type-visual basement"><div class="type-visual-pool"></div></div>
+      <div class="type-text">
+        <h3>Basement Swimming Pools</h3>
+        <p>Where space is limited, go underground. Basement pools are one of the most impressive additions to any London property, requiring specialist engineering and full planning support.</p>
+        <div class="type-features">
+          <div class="type-feature"><strong>From</strong>&pound;200,000</div>
+          <div class="type-feature"><strong>Timeline</strong>20&ndash;32 weeks</div>
+          <div class="type-feature"><strong>Depth</strong>Up to 4m excavation</div>
+          <div class="type-feature"><strong>Planning</strong>Full support included</div>
+        </div>
+        <a href="#contact" class="btn-primary">Enquire About Basement Pools</a>
+      </div>
+    </div>
+
+    <div class="type-content" id="type-hydro">
+      <div class="type-visual hydro"><div class="type-visual-pool"></div></div>
+      <div class="type-text">
+        <h3>Hydrotherapy &amp; Spa Pools</h3>
+        <p>Designed for recovery, relaxation and wellbeing. Our hydrotherapy pools combine precision water temperature control with therapeutic jet systems for medical and leisure use.</p>
+        <div class="type-features">
+          <div class="type-feature"><strong>From</strong>&pound;40,000</div>
+          <div class="type-feature"><strong>Timeline</strong>6&ndash;10 weeks</div>
+          <div class="type-feature"><strong>Temperature</strong>28&ndash;40&deg;C precise control</div>
+          <div class="type-feature"><strong>Jets</strong>Up to 48 hydrotherapy jets</div>
+        </div>
+        <a href="#contact" class="btn-primary">Enquire About Hydrotherapy</a>
+      </div>
+    </div>
+
+    <div class="type-content" id="type-infinity">
+      <div class="type-visual infinity"><div class="type-visual-pool"></div></div>
+      <div class="type-text">
+        <h3>Infinity &amp; Overflow Pools</h3>
+        <p>The pinnacle of pool design &mdash; infinity edges that create a seamless visual horizon. Perfect for elevated gardens and rooftop settings, creating a dramatic focal point.</p>
+        <div class="type-features">
+          <div class="type-feature"><strong>From</strong>&pound;90,000</div>
+          <div class="type-feature"><strong>Timeline</strong>14&ndash;22 weeks</div>
+          <div class="type-feature"><strong>Edge Types</strong>Infinity / Overflow / Knife</div>
+          <div class="type-feature"><strong>Siting</strong>Garden / Roof terrace</div>
+        </div>
+        <a href="#contact" class="btn-primary">Enquire About Infinity Pools</a>
+      </div>
+    </div>
+
+    <div class="type-content" id="type-plunge">
+      <div class="type-visual plunge"><div class="type-visual-pool"></div></div>
+      <div class="type-text">
+        <h3>Plunge &amp; Dip Pools</h3>
+        <p>Compact, cold-water plunge pools are rising in popularity for health-conscious Londoners. Ideal for smaller gardens, they deliver the full cold therapy experience in a space-efficient form.</p>
+        <div class="type-features">
+          <div class="type-feature"><strong>From</strong>&pound;25,000</div>
+          <div class="type-feature"><strong>Timeline</strong>4&ndash;8 weeks</div>
+          <div class="type-feature"><strong>Size</strong>2m &times; 2m minimum</div>
+          <div class="type-feature"><strong>Temperature</strong>Chilled to 10&deg;C</div>
+        </div>
+        <a href="#contact" class="btn-primary">Enquire About Plunge Pools</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="cta-section">
+<!-- Portfolio -->
+<section class="portfolio" id="portfolio">
   <div class="container">
-    <h2>Ready to Book? Get a Free Quote Today.</h2>
-    <p>No call centres, no pressure. Just a quick chat and a fair, honest price.</p>
-    <a href="#get-started" class="btn btn-gold">Request a Free Quote</a>
-  </div>
-</section>
-
-<section class="contact-mini" id="get-started">
-  <div class="container">
-    <h2>Request This Template</h2>
-    <p class="sub">Like what you see? Contact Yoel at Graft Digital to get your own Pool &amp; Spa Services website live within days.</p>
-    <div class="mini-form">
-      <form id="reqForm">
-        <div class="fg"><label>Your Name</label><input type="text" placeholder="John Smith" required></div>
-        <div class="fg"><label>Email</label><input type="email" placeholder="john@yourcompany.co.uk" required></div>
-        <div class="fg"><label>Phone</label><input type="tel" placeholder="+44 7XXX XXX XXX"></div>
-        <div class="fg"><label>Tell me about your business</label><textarea placeholder="Where in London are you based? Do you have a logo or existing site?"></textarea></div>
-        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;font-size:.97rem;">Send Enquiry to Graft Digital &rarr;</button>
-      </form>
+    <div class="section-label">Our Work</div>
+    <h2 class="section-title">A Selection of Our Projects</h2>
+    <p class="section-sub">Each pool is a unique creation &mdash; here's a glimpse into the breadth and quality of our completed work across London and beyond.</p>
+    <div class="portfolio-grid">
+      <div class="portfolio-tile">
+        <div class="portfolio-tile-bg pt-1" style="height:100%"></div>
+        <span class="portfolio-badge">Indoor</span>
+        <div class="portfolio-overlay">
+          <div class="portfolio-label"><strong>Kensington Residence</strong><span>Indoor Pool &middot; 12m &times; 5m &middot; 2023</span></div>
+        </div>
+      </div>
+      <div class="portfolio-tile">
+        <div class="portfolio-tile-bg pt-2" style="height:100%"></div>
+        <span class="portfolio-badge">Outdoor</span>
+        <div class="portfolio-overlay">
+          <div class="portfolio-label"><strong>Surrey Garden Pool</strong><span>Outdoor Heated &middot; 10m &times; 4m &middot; 2023</span></div>
+        </div>
+      </div>
+      <div class="portfolio-tile">
+        <div class="portfolio-tile-bg pt-3" style="height:100%"></div>
+        <span class="portfolio-badge">Basement</span>
+        <div class="portfolio-overlay">
+          <div class="portfolio-label"><strong>Chelsea Basement Pool</strong><span>Basement Pool + Spa &middot; 2022</span></div>
+        </div>
+      </div>
+      <div class="portfolio-tile">
+        <div class="portfolio-tile-bg pt-4" style="height:100%"></div>
+        <span class="portfolio-badge">Infinity</span>
+        <div class="portfolio-overlay">
+          <div class="portfolio-label"><strong>Notting Hill Roof Terrace</strong><span>Infinity Pool &middot; 8m &times; 3m &middot; 2023</span></div>
+        </div>
+      </div>
+      <div class="portfolio-tile">
+        <div class="portfolio-tile-bg pt-5" style="height:100%"></div>
+        <span class="portfolio-badge">Spa</span>
+        <div class="portfolio-overlay">
+          <div class="portfolio-label"><strong>Richmond Wellness Suite</strong><span>Hydrotherapy Pool + Sauna &middot; 2022</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- Build Process -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Your Pool, Step by Step</h2>
+    <p class="section-sub">Our structured process ensures a smooth journey from your first enquiry to the moment you take your first swim.</p>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-num s1">01</div>
+        <h4>Consultation</h4>
+        <p>Free site visit to discuss your vision, space and budget</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num s2">02</div>
+        <h4>Design</h4>
+        <p>Bespoke 3D designs and engineering plans prepared</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num s3">03</div>
+        <h4>Planning</h4>
+        <p>We manage all permissions and structural approvals</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num s4">04</div>
+        <h4>Build</h4>
+        <p>Expert construction by our directly-employed teams</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num s5">05</div>
+        <h4>Handover</h4>
+        <p>Full commissioning, training and aftercare package</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Maintenance Plans -->
+<section class="maintenance" id="maintenance">
+  <div class="container">
+    <div class="section-label" style="color:var(--gold)">Maintenance Plans</div>
+    <h2 class="section-title">Keep Your Pool Pristine</h2>
+    <p class="section-sub">Choose a maintenance plan that suits your usage and budget. All plans include our dedicated London service team and emergency support line.</p>
+    <div class="plans-grid">
+      <div class="plan-card">
+        <div class="plan-name">Essential</div>
+        <div class="plan-price">
+          <span class="plan-price-num">&pound;89</span>
+          <span class="plan-price-period"> / month</span>
+        </div>
+        <ul class="plan-features">
+          <li>Monthly service visit</li>
+          <li>Water chemistry testing</li>
+          <li>Chemical dosing</li>
+          <li>Filter rinse</li>
+          <li>Written service report</li>
+          <li class="no">Emergency callout</li>
+          <li class="no">Equipment check</li>
+          <li class="no">Seasonal opening/closing</li>
+        </ul>
+        <a href="#contact" class="plan-cta outline">Get Started</a>
+      </div>
+      <div class="plan-card featured">
+        <span class="plan-badge">MOST POPULAR</span>
+        <div class="plan-name">Premier</div>
+        <div class="plan-price">
+          <span class="plan-price-num">&pound;189</span>
+          <span class="plan-price-period"> / month</span>
+        </div>
+        <ul class="plan-features">
+          <li>Fortnightly service visit</li>
+          <li>Water chemistry testing</li>
+          <li>Chemical dosing</li>
+          <li>Filter backwash &amp; clean</li>
+          <li>Written service report</li>
+          <li>1 emergency callout/month</li>
+          <li>Annual equipment check</li>
+          <li>Seasonal opening/closing</li>
+        </ul>
+        <a href="#contact" class="plan-cta solid">Get Started</a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Platinum</div>
+        <div class="plan-price">
+          <span class="plan-price-num">&pound;349</span>
+          <span class="plan-price-period"> / month</span>
+        </div>
+        <ul class="plan-features">
+          <li>Weekly service visit</li>
+          <li>Water chemistry testing</li>
+          <li>Chemicals included</li>
+          <li>Full filter service</li>
+          <li>Digital service reports</li>
+          <li>Unlimited emergency callouts</li>
+          <li>Full equipment servicing</li>
+          <li>Seasonal opening/closing</li>
+        </ul>
+        <a href="#contact" class="plan-cta outline">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust Stats -->
+<section class="trust">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-item">
+        <div class="trust-num">200+</div>
+        <div class="trust-lbl">Pools completed in London &amp; Home Counties</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-num">18yr</div>
+        <div class="trust-lbl">Established &mdash; trading since 2007</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-num">10yr</div>
+        <div class="trust-lbl">Structural guarantee on all new builds</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-num">4.9&#9733;</div>
+        <div class="trust-lbl">Average customer rating (142 reviews)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cert-strip">
+  <div class="cert-inner">
+    <div class="cert-badge">
+      <div class="cert-icon">&#127942;</div>
+      <div class="cert-text"><strong>SPATA</strong>Full Member &mdash; Swimming Pool &amp; Allied Trades</div>
+    </div>
+    <div class="cert-badge">
+      <div class="cert-icon">&#128737;</div>
+      <div class="cert-text"><strong>BPMA</strong>British Pool Manufacturers Association</div>
+    </div>
+    <div class="cert-badge">
+      <div class="cert-icon">&#9889;</div>
+      <div class="cert-text"><strong>NICEIC</strong>Approved electrical contractor</div>
+    </div>
+    <div class="cert-badge">
+      <div class="cert-icon">&#9989;</div>
+      <div class="cert-text"><strong>10yr Warranty</strong>Structural guarantee on all builds</div>
+    </div>
+    <div class="cert-badge">
+      <div class="cert-icon">&#128203;</div>
+      <div class="cert-text"><strong>CHAS</strong>Contractors Health &amp; Safety Accredited</div>
+    </div>
+  </div>
+</div>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-label">Client Stories</div>
+    <h2 class="section-title">What Our Clients Say</h2>
+    <div class="testimonials-grid">
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">"Azure Pools transformed our Kensington basement into an extraordinary leisure space. The attention to detail was exceptional &mdash; from the bespoke tiling to the automated lighting. Worth every penny."</p>
+        <div class="testi-author">James &amp; Charlotte P.</div>
+        <div class="testi-location">Kensington, London</div>
+        <div class="testi-project">Basement Pool &mdash; 2023</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">"We've had our outdoor pool for three years and the ongoing maintenance service is impeccable. Regular visits, always on time, and our water quality is consistently perfect. Highly recommend the Premier plan."</p>
+        <div class="testi-author">Sarah M.</div>
+        <div class="testi-location">Wimbledon, Surrey</div>
+        <div class="testi-project">Outdoor Pool + Premier Maintenance</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testi-text">"The infinity pool on our roof terrace has become the centrepiece of our home. Guests can't believe it. The team managed everything from planning permission to final commissioning seamlessly."</p>
+        <div class="testi-author">Oliver T.</div>
+        <div class="testi-location">Notting Hill, London</div>
+        <div class="testi-project">Rooftop Infinity Pool &mdash; 2022</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Begin Your Pool Project</h2>
+        <p>Whether you're planning a new build or seeking to refurbish an existing pool, we'd love to hear about your project. All enquiries receive a personal response within one business day.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="contact-detail-icon">&#128222;</div>
+            <div class="contact-detail-text">
+              <strong><a href="tel:+447479531509" style="color:inherit;text-decoration:none">+44 7479 531509</a></strong>
+              Mon&ndash;Fri 8am&ndash;6pm, Sat 9am&ndash;2pm
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">&#9993;</div>
+            <div class="contact-detail-text">
+              <strong><a href="mailto:sales@graftdigital.london" style="color:inherit;text-decoration:none">sales@graftdigital.london</a></strong>
+              We reply within 1 business day
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">&#128205;</div>
+            <div class="contact-detail-text">
+              <strong>London &amp; Home Counties</strong>
+              All London postcodes + Surrey, Kent, Essex, Herts
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">&#127959;</div>
+            <div class="contact-detail-text">
+              <strong>Free Site Consultation</strong>
+              No obligation &mdash; we visit your property and discuss possibilities
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap">
+        <h3>Request a Consultation</h3>
+        <form onsubmit="handleEnquiry(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name *</label>
+              <input type="text" id="cName" placeholder="Full name" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" id="cPhone" placeholder="+44..." required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" id="cEmail" placeholder="your@email.com" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Service Required</label>
+              <select id="cService">
+                <option value="">Select a service</option>
+                <option>New Pool Design &amp; Build</option>
+                <option>Pool Refurbishment</option>
+                <option>Maintenance Plan</option>
+                <option>Emergency Repair</option>
+                <option>Pool Survey / Inspection</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Pool Type of Interest</label>
+              <select id="cType">
+                <option value="">Select type</option>
+                <option>Indoor Pool</option>
+                <option>Outdoor Pool</option>
+                <option>Basement Pool</option>
+                <option>Infinity Pool</option>
+                <option>Hydrotherapy Pool</option>
+                <option>Plunge Pool</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Tell Us About Your Project</label>
+            <textarea id="cMessage" placeholder="Describe your space, any ideas you have, approximate budget, and timeline..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Enquiry &rarr;</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
 <footer>
   <div class="container">
-    <div class="footer-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text" style="color:#fff;">Graft<span style="color:var(--gold);">Digital</span></span>
-      </a>
-      <span class="footer-copy">&copy; 2025 <strong>Graft Digital</strong> &mdash; Built by Yoel Gutierrez &middot; London</span>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div style="font-family:'Cinzel',serif;font-size:20px;font-weight:700;color:#E2E8F0">Azure Pools London</div>
+        <p>Bespoke swimming pool design, construction and maintenance for discerning clients across London and the Home Counties. SPATA members since 2007.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Design &amp; Build</a></li>
+          <li><a href="#services">Refurbishment</a></li>
+          <li><a href="#maintenance">Maintenance</a></li>
+          <li><a href="#contact">Emergency Repairs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Pool Types</h4>
+        <ul>
+          <li><a href="#pool-types">Indoor Pools</a></li>
+          <li><a href="#pool-types">Outdoor Pools</a></li>
+          <li><a href="#pool-types">Basement Pools</a></li>
+          <li><a href="#pool-types">Infinity Pools</a></li>
+          <li><a href="#pool-types">Hydrotherapy</a></li>
+          <li><a href="#pool-types">Plunge Pools</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+447479531509">+44 7479 531509</a></li>
+          <li><a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a></li>
+          <li><a href="#contact">London &amp; Home Counties</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Azure Pools London. All rights reserved.</p>
+      <p>Website by <a href="https://graftdigital.london" target="_blank">Graft Digital</a></p>
     </div>
   </div>
 </footer>
+
 <script>
-  document.getElementById('reqForm').addEventListener('submit',function(e){
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  function switchType(type, btn) {
+    document.querySelectorAll('.type-content').forEach(function(t) { t.classList.remove('active'); });
+    document.querySelectorAll('.type-tab').forEach(function(b) { b.classList.remove('active'); });
+    document.getElementById('type-' + type).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  function handleEnquiry(e) {
     e.preventDefault();
-    const f=this;
-    const btn=f.querySelector('button[type=submit]');
-    const inp=f.querySelector('input[name=template]');
-    const tmpl=inp?inp.value:'General';
-    const name=f.querySelector('input[type=text]').value;
-    const email=f.querySelector('input[type=email]').value;
-    const phone=f.querySelector('input[type=tel]').value;
-    const msg=f.querySelector('textarea').value;
-    const body='Name: '+name+'\nEmail: '+email+'\nPhone: '+phone+'\nTemplate: '+tmpl+'\n\nMessage:\n'+msg;
-    window.location.href='mailto:sales@graftdigital.london?subject='+encodeURIComponent('Template Request – '+tmpl+' – '+name)+'&body='+encodeURIComponent(body);
-    btn.textContent='✓ Opening your email app…';
-    btn.style.background='#22c55e'; btn.style.color='#fff'; btn.disabled=true;
+    var name = document.getElementById('cName').value;
+    var phone = document.getElementById('cPhone').value;
+    var email = document.getElementById('cEmail').value;
+    var service = document.getElementById('cService').value || 'Not specified';
+    var poolType = document.getElementById('cType').value || 'Not specified';
+    var message = document.getElementById('cMessage').value;
+    var subject = 'Pool Enquiry \u2013 ' + name + ' \u2013 ' + service;
+    var body = 'Name: ' + name + '\nPhone: ' + phone + '\nEmail: ' + email + '\nService: ' + service + '\nPool Type: ' + poolType + '\n\nProject Details:\n' + message;
+    window.location.href = 'mailto:sales@graftdigital.london?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  }
+
+  // Scroll reveal
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.pillar-card, .plan-card, .testi-card, .portfolio-tile').forEach(function(el) {
+    el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'opacity .5s, transform .5s';
+    observer.observe(el);
   });
 </script>
 </body>
