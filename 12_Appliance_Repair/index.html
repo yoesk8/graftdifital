@@ -3,215 +3,802 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Appliance Repair Website Template | Graft Digital</title>
-  <meta name="description" content="Washing machine, oven, fridge and dishwasher repairs across London.">
-  <meta name="keywords" content="appliance repair London">
+  <title>ProFix London | Same-Day Appliance Repair Specialists</title>
+  <meta name="description" content="London's fastest appliance repair service. Same-day washing machine, dishwasher, oven, fridge and tumble dryer repairs. Fixed labour fee. 6-month warranty.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:#0A1628; --navy-mid:#0F2040; --gold:#F5A623; --gold-dark:#C98010;
-      --gold-light:#FFB84D; --white:#FFFFFF; --off-white:#F7F9FC;
-      --text:#1A2332; --text-mid:#4A5568; --border:#E2E8F0;
+      --indigo: #312E81;
+      --indigo-mid: #4338CA;
+      --indigo-light: #6366F1;
+      --indigo-pale: #EEF2FF;
+      --lime: #65A30D;
+      --lime-mid: #84CC16;
+      --lime-pale: #F7FEE7;
+      --red: #DC2626;
+      --red-pale: #FEF2F2;
+      --white: #FFFFFF;
+      --off-white: #F8FAFC;
+      --text: #0F172A;
+      --text-mid: #475569;
+      --text-muted: #94A3B8;
+      --border: #E2E8F0;
     }
     html { scroll-behavior: smooth; }
-    body { font-family:'Inter',-apple-system,sans-serif; color:var(--text); background:var(--white); line-height:1.6; }
-    a { text-decoration:none; color:inherit; }
-    .container { max-width:1100px; margin:0 auto; padding:0 24px; }
-    /* TOPBAR */
-    .topbar { background:var(--navy); padding:14px 0; position:sticky; top:0; z-index:100; box-shadow:0 2px 12px rgba(0,0,0,.25); }
-    .topbar-inner { display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-    .logo { display:flex; align-items:center; gap:9px; }
-    .logo-mark { width:34px; height:34px; background:var(--gold); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:900; color:var(--navy); }
-    .logo-text { font-size:1.1rem; font-weight:900; color:#fff; letter-spacing:-.03em; }
-    .logo-text span { color:var(--gold); }
-    .back-link { color:rgba(255,255,255,.7); font-size:.85rem; font-weight:500; display:flex; align-items:center; gap:6px; transition:color .2s; }
-    .back-link:hover { color:var(--gold); }
-    /* HERO */
-    .hero { background:var(--navy); background-image:radial-gradient(ellipse at 15% 60%,rgba(26,53,96,.6) 0%,transparent 55%),radial-gradient(ellipse at 85% 20%,rgba(245,166,35,.07) 0%,transparent 50%); min-height:480px; display:flex; align-items:center; padding:72px 0 64px; position:relative; overflow:hidden; }
-    .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px); background-size:54px 54px; }
-    .hero-content { position:relative; z-index:2; max-width:680px; }
-    .preview-banner { background:rgba(245,166,35,.1); border:1px solid rgba(245,166,35,.3); border-radius:10px; padding:15px 20px; margin-bottom:36px; display:flex; align-items:flex-start; gap:11px; max-width:600px; }
-    .preview-banner p { color:rgba(255,255,255,.8); font-size:.86rem; line-height:1.55; margin:0; }
-    .preview-banner strong { color:var(--gold); }
-    .hero-tag { display:inline-flex; align-items:center; gap:7px; background:rgba(245,166,35,.13); border:1px solid rgba(245,166,35,.28); color:var(--gold-light); padding:6px 15px; border-radius:100px; font-size:.8rem; font-weight:600; margin-bottom:20px; }
-    .hero-icon { font-size:3.2rem; margin-bottom:10px; display:block; line-height:1; }
-    .hero h1 { font-size:clamp(2.1rem,4.5vw,3.4rem); color:#fff; letter-spacing:-.04em; margin-bottom:16px; line-height:1.15; font-weight:900; }
-    .hero h1 span { color:var(--gold); }
-    .hero > .container > .hero-content > p { color:rgba(255,255,255,.68); font-size:1.05rem; max-width:520px; margin-bottom:32px; }
-    .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
-    .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 28px; border-radius:8px; font-size:.95rem; font-weight:700; cursor:pointer; transition:all .22s ease; border:none; font-family:inherit; }
-    .btn-gold { background:var(--gold); color:var(--navy); }
-    .btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 20px rgba(245,166,35,.35); }
-    .btn-outline { background:transparent; color:#fff; border:2px solid rgba(255,255,255,.35); }
-    .btn-outline:hover { border-color:#fff; background:rgba(255,255,255,.08); }
-    /* SERVICES */
-    .services { padding:80px 0; background:var(--off-white); }
-    .services h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .services .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:20px; }
-    .service-card { background:#fff; border-radius:12px; padding:28px 24px; border:1px solid var(--border); transition:all .22s ease; }
-    .service-card:hover { transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.08); border-color:rgba(245,166,35,.3); }
-    .sc-icon { font-size:1.8rem; margin-bottom:12px; display:block; }
-    .sc-title { font-size:1rem; font-weight:700; margin-bottom:6px; }
-    .sc-desc { font-size:.88rem; color:var(--text-mid); line-height:1.65; }
-    /* TRUST */
-    .why { padding:80px 0; background:var(--white); }
-    .why h2 { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; text-align:center; margin-bottom:10px; }
-    .why .sub { text-align:center; color:var(--text-mid); font-size:1rem; margin-bottom:44px; }
-    .trust-items { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px; text-align:center; }
-    .trust-item { padding:28px 16px; }
-    .trust-num { font-size:2.4rem; font-weight:900; color:var(--gold-dark); line-height:1; margin-bottom:6px; }
-    .trust-lbl { font-size:.88rem; color:var(--text-mid); }
-    /* CTA */
-    .cta-section { padding:72px 0; background:var(--navy); background-image:radial-gradient(ellipse at 80% 50%,rgba(245,166,35,.08) 0%,transparent 55%); text-align:center; }
-    .cta-section h2 { color:#fff; font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; margin-bottom:14px; }
-    .cta-section p { color:rgba(255,255,255,.65); font-size:1rem; margin-bottom:32px; max-width:480px; margin-left:auto; margin-right:auto; }
-    /* FORM */
-    .contact-mini { padding:80px 0; background:var(--off-white); }
-    .contact-mini h2 { font-size:clamp(1.5rem,3vw,2rem); font-weight:800; text-align:center; margin-bottom:8px; }
-    .contact-mini .sub { text-align:center; color:var(--text-mid); font-size:.97rem; margin-bottom:32px; }
-    .mini-form { max-width:520px; margin:0 auto; background:#fff; border-radius:16px; padding:36px; border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,0,0,.06); }
-    .fg { margin-bottom:16px; }
-    .fg label { display:block; font-size:.84rem; font-weight:600; margin-bottom:6px; }
-    .fg input,.fg textarea { width:100%; padding:11px 14px; border:1.5px solid var(--border); border-radius:8px; font-size:.92rem; font-family:inherit; color:var(--text); outline:none; transition:border .2s; }
-    .fg input:focus,.fg textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(245,166,35,.12); }
-    .fg textarea { resize:vertical; min-height:88px; }
-    /* FOOTER */
-    footer { background:#050D1A; padding:32px 0; border-top:1px solid rgba(255,255,255,.05); }
-    .footer-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
-    .footer-copy { color:rgba(255,255,255,.35); font-size:.82rem; }
-    .footer-copy strong { color:var(--gold); }
-    @media(max-width:600px){ .hero-ctas{flex-direction:column;} .hero-ctas .btn{justify-content:center;} }
+    body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── TEMPLATE BANNER ── */
+    .template-banner { background: var(--indigo); padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .template-badge { background: var(--lime-mid); color: var(--indigo); font-size: .72rem; font-weight: 800; padding: 3px 10px; border-radius: 4px; letter-spacing: .04em; text-transform: uppercase; }
+    .template-back { color: rgba(255,255,255,.7); font-size: .82rem; font-weight: 500; display: flex; align-items: center; gap: 6px; transition: color .2s; }
+    .template-back:hover { color: var(--lime-mid); }
+
+    /* ── TOPBAR ── */
+    .topbar { background: var(--indigo); padding: 0; }
+    .topbar-inner { display: flex; align-items: center; justify-content: space-between; padding: 10px 24px; max-width: 1100px; margin: 0 auto; flex-wrap: wrap; gap: 8px; }
+    .topbar-left { display: flex; gap: 24px; flex-wrap: wrap; }
+    .topbar-item { font-size: .8rem; color: rgba(255,255,255,.7); display: flex; align-items: center; gap: 6px; font-weight: 500; }
+    .topbar-item a { color: rgba(255,255,255,.9); transition: color .2s; }
+    .topbar-item a:hover { color: var(--lime-mid); }
+    .topbar-badge { background: var(--lime); color: white; font-size: .72rem; font-weight: 800; padding: 3px 10px; border-radius: 4px; letter-spacing: .03em; }
+
+    /* ── NAVBAR ── */
+    .navbar { background: var(--white); border-bottom: 2px solid var(--indigo-pale); position: sticky; top: 0; z-index: 200; box-shadow: 0 2px 12px rgba(49,46,129,.08); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 24px; max-width: 1100px; margin: 0 auto; }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark { width: 38px; height: 38px; background: var(--indigo); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+    .logo-name { font-size: 1.05rem; font-weight: 900; color: var(--indigo); letter-spacing: -.02em; }
+    .logo-name span { color: var(--lime); }
+    .nav-links { display: flex; align-items: center; gap: 26px; list-style: none; }
+    .nav-links a { font-size: .86rem; font-weight: 600; color: var(--text-mid); transition: color .2s; }
+    .nav-links a:hover { color: var(--indigo); }
+    .nav-cta { background: var(--indigo); color: white; padding: 9px 20px; border-radius: 7px; font-size: .86rem; font-weight: 800; transition: background .2s; }
+    .nav-cta:hover { background: var(--indigo-mid); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--indigo); border-radius: 2px; }
+    .mobile-menu { display: none; background: white; border-top: 1px solid var(--border); }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; padding: 13px 24px; font-size: .93rem; font-weight: 600; color: var(--text-mid); border-bottom: 1px solid var(--border); }
+    .mobile-menu a:last-child { color: var(--indigo); }
+
+    /* ── HERO ── */
+    .hero { background: var(--off-white); padding: 64px 0 0; border-bottom: 1px solid var(--border); }
+    .hero-grid { display: grid; grid-template-columns: 1fr 400px; gap: 56px; align-items: start; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: var(--lime-pale); border: 1px solid rgba(101,163,13,.3); color: var(--lime); padding: 6px 14px; border-radius: 6px; font-size: .78rem; font-weight: 800; margin-bottom: 18px; letter-spacing: .04em; text-transform: uppercase; }
+    .hero h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.1; color: var(--indigo); margin-bottom: 18px; letter-spacing: -.03em; }
+    .hero h1 span { color: var(--lime); }
+    .hero-sub { font-size: .97rem; color: var(--text-mid); margin-bottom: 28px; max-width: 460px; }
+    .hero-promises { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 32px; }
+    .promise-item { display: flex; align-items: center; gap: 8px; font-size: .85rem; font-weight: 600; color: var(--text-mid); }
+    .promise-dot { width: 20px; height: 20px; background: var(--lime-pale); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .65rem; color: var(--lime); flex-shrink: 0; border: 1.5px solid rgba(101,163,13,.3); }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-indigo { background: var(--indigo); color: white; padding: 13px 28px; border-radius: 8px; font-size: .95rem; font-weight: 800; transition: background .2s; }
+    .btn-indigo:hover { background: var(--indigo-mid); }
+    .btn-outline { border: 2px solid var(--indigo); color: var(--indigo); padding: 12px 28px; border-radius: 8px; font-size: .95rem; font-weight: 700; transition: all .2s; }
+    .btn-outline:hover { background: var(--indigo-pale); }
+
+    /* Appliance selector */
+    .appliance-selector { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 28px; box-shadow: 0 4px 24px rgba(49,46,129,.08); margin-bottom: -40px; position: relative; z-index: 2; }
+    .selector-title { font-size: .82rem; font-weight: 800; color: var(--text-muted); letter-spacing: .06em; text-transform: uppercase; margin-bottom: 16px; }
+    .appliance-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 16px; }
+    .appliance-btn {
+      border: 1.5px solid var(--border); border-radius: 10px; padding: 12px 8px; text-align: center;
+      cursor: pointer; background: var(--off-white); transition: all .2s; font-family: inherit;
+    }
+    .appliance-btn:hover, .appliance-btn.active { border-color: var(--indigo); background: var(--indigo-pale); }
+    .appliance-btn .app-emoji { font-size: 1.4rem; display: block; margin-bottom: 4px; }
+    .appliance-btn .app-name { font-size: .72rem; font-weight: 700; color: var(--text-mid); }
+    .appliance-btn.active .app-name { color: var(--indigo); }
+    .selector-cta { width: 100%; background: var(--lime); color: white; border: none; padding: 13px; border-radius: 10px; font-family: inherit; font-size: .97rem; font-weight: 800; cursor: pointer; transition: background .2s; }
+    .selector-cta:hover { background: var(--lime-mid); }
+
+    /* ── STATS STRIP ── */
+    .stats-strip { background: var(--indigo); padding: 28px 0; margin-top: 40px; }
+    .stats-inner { display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; }
+    .stat-item { padding: 12px 36px; border-right: 1px solid rgba(255,255,255,.1); text-align: center; }
+    .stat-item:last-child { border-right: none; }
+    .stat-num { font-size: 1.7rem; font-weight: 900; color: white; line-height: 1; }
+    .stat-num span { color: var(--lime-mid); }
+    .stat-lbl { font-size: .72rem; color: rgba(255,255,255,.5); font-weight: 600; margin-top: 3px; letter-spacing: .03em; text-transform: uppercase; }
+
+    /* ── APPLIANCES WE REPAIR ── */
+    .appliances { padding: 80px 0; background: var(--white); }
+    .section-header { text-align: center; margin-bottom: 52px; }
+    .section-tag { display: inline-block; background: var(--indigo-pale); color: var(--indigo); font-size: .72rem; font-weight: 800; padding: 5px 14px; border-radius: 6px; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 12px; }
+    .section-header h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 900; letter-spacing: -.03em; margin-bottom: 12px; color: var(--indigo); }
+    .section-header p { font-size: .95rem; color: var(--text-mid); max-width: 520px; margin: 0 auto; }
+
+    .appliances-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .appliance-card {
+      border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden;
+      transition: border-color .2s, box-shadow .2s, transform .2s;
+    }
+    .appliance-card:hover { border-color: var(--indigo-light); box-shadow: 0 8px 28px rgba(99,102,241,.12); transform: translateY(-4px); }
+    .app-header { padding: 24px 20px 14px; background: var(--off-white); text-align: center; }
+    .app-big-emoji { font-size: 2.4rem; display: block; margin-bottom: 8px; }
+    .app-title { font-size: .95rem; font-weight: 800; color: var(--indigo); }
+    .app-body { padding: 14px 18px 20px; }
+    .app-issues { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+    .app-issues li { font-size: .78rem; color: var(--text-mid); display: flex; align-items: center; gap: 6px; }
+    .app-issues li::before { content: ''; width: 5px; height: 5px; background: var(--lime); border-radius: 50%; flex-shrink: 0; }
+    .app-price { font-size: .78rem; font-weight: 800; color: var(--indigo); margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
+
+    /* ── PRICING ── */
+    .pricing { padding: 80px 0; background: var(--indigo-pale); }
+    .pricing-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+    .pricing-left h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 900; letter-spacing: -.03em; color: var(--indigo); margin-bottom: 14px; }
+    .pricing-left p { font-size: .93rem; color: var(--text-mid); margin-bottom: 28px; }
+    .price-table { background: white; border-radius: 16px; border: 1px solid var(--border); overflow: hidden; }
+    .price-row { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid var(--border); }
+    .price-row:last-child { border-bottom: none; }
+    .price-row.header { background: var(--indigo); }
+    .price-row.header .pr-label { color: rgba(255,255,255,.7); font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .price-row.header .pr-val { color: rgba(255,255,255,.7); font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .pr-label { font-size: .9rem; font-weight: 700; color: var(--text); }
+    .pr-label small { display: block; font-size: .75rem; font-weight: 500; color: var(--text-muted); margin-top: 1px; }
+    .pr-val { font-size: 1rem; font-weight: 900; color: var(--indigo); }
+    .pr-val.green { color: var(--lime); }
+    .pricing-right { display: flex; flex-direction: column; gap: 16px; }
+    .promise-card { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 20px 20px; display: flex; gap: 14px; align-items: flex-start; }
+    .promise-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+    .promise-card h4 { font-size: .9rem; font-weight: 800; color: var(--indigo); margin-bottom: 4px; }
+    .promise-card p { font-size: .8rem; color: var(--text-mid); }
+
+    /* ── BRANDS ── */
+    .brands { padding: 56px 0; background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .brands-intro { text-align: center; margin-bottom: 28px; }
+    .brands-intro p { font-size: .85rem; font-weight: 600; color: var(--text-muted); letter-spacing: .04em; text-transform: uppercase; }
+    .brands-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .brand-pill { background: var(--off-white); border: 1px solid var(--border); color: var(--text-mid); padding: 8px 18px; border-radius: 8px; font-size: .84rem; font-weight: 700; transition: all .2s; }
+    .brand-pill:hover { background: var(--indigo-pale); border-color: var(--indigo-light); color: var(--indigo); }
+
+    /* ── HOW IT WORKS ── */
+    .how-it-works { padding: 80px 0; background: var(--off-white); }
+    .steps-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; position: relative; }
+    .steps-row::before { content: ''; position: absolute; top: 28px; left: calc(16.67%); right: calc(16.67%); height: 2px; background: var(--border); z-index: 0; }
+    .step { text-align: center; position: relative; z-index: 1; }
+    .step-circle { width: 56px; height: 56px; border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 900; background: white; border: 3px solid var(--indigo); color: var(--indigo); box-shadow: 0 0 0 4px var(--off-white); }
+    .step-circle.done { background: var(--indigo); color: white; }
+    .step h3 { font-size: .95rem; font-weight: 800; color: var(--indigo); margin-bottom: 8px; }
+    .step p { font-size: .84rem; color: var(--text-mid); }
+
+    /* ── WARRANTY ── */
+    .warranty { padding: 60px 0; background: var(--lime); }
+    .warranty-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; }
+    .warranty-text h3 { font-size: 1.3rem; font-weight: 900; color: white; margin-bottom: 6px; }
+    .warranty-text p { font-size: .9rem; color: rgba(255,255,255,.85); max-width: 500px; }
+    .warranty-badges { display: flex; gap: 14px; flex-wrap: wrap; }
+    .w-badge { background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3); border-radius: 12px; padding: 14px 18px; text-align: center; }
+    .w-badge .wi { font-size: 1.4rem; display: block; margin-bottom: 4px; }
+    .w-badge .wv { font-size: .95rem; font-weight: 900; color: white; }
+    .w-badge .wl { font-size: .7rem; color: rgba(255,255,255,.75); font-weight: 600; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials { padding: 80px 0; background: var(--white); }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .review-card { background: var(--off-white); border: 1px solid var(--border); border-radius: 16px; padding: 24px 22px; }
+    .review-stars { color: #F59E0B; font-size: .88rem; margin-bottom: 10px; }
+    .review-text { font-size: .86rem; color: var(--text-mid); line-height: 1.65; font-style: italic; margin-bottom: 16px; }
+    .review-bottom { display: flex; align-items: center; gap: 10px; }
+    .reviewer-avatar { width: 38px; height: 38px; background: var(--indigo); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .82rem; font-weight: 900; color: white; flex-shrink: 0; }
+    .reviewer-name { font-size: .87rem; font-weight: 800; color: var(--indigo); }
+    .reviewer-meta { font-size: .74rem; color: var(--text-muted); }
+    .review-tag { display: inline-block; background: var(--lime-pale); color: var(--lime); font-size: .68rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: auto; }
+
+    /* ── CONTACT ── */
+    .contact { padding: 80px 0; background: var(--indigo-pale); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+    .contact-left h2 { font-size: clamp(1.7rem, 3vw, 2.2rem); font-weight: 900; letter-spacing: -.03em; color: var(--indigo); margin-bottom: 14px; }
+    .contact-left p { font-size: .93rem; color: var(--text-mid); margin-bottom: 28px; }
+    .contact-details { display: flex; flex-direction: column; gap: 14px; }
+    .contact-row { display: flex; align-items: flex-start; gap: 14px; }
+    .contact-icon { width: 44px; height: 44px; background: var(--indigo-pale); border: 1px solid rgba(99,102,241,.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .contact-row-text strong { display: block; font-size: .8rem; font-weight: 700; color: var(--text-muted); margin-bottom: 2px; }
+    .contact-row-text a { color: var(--indigo); font-size: .93rem; font-weight: 700; transition: color .2s; }
+    .contact-row-text a:hover { color: var(--indigo-light); }
+    .contact-form { background: white; border-radius: 18px; padding: 32px 28px; border: 1px solid var(--border); box-shadow: 0 4px 20px rgba(49,46,129,.07); }
+    .contact-form h3 { font-size: 1.05rem; font-weight: 800; color: var(--indigo); margin-bottom: 22px; }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-size: .8rem; font-weight: 700; margin-bottom: 5px; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px 13px; border: 1.5px solid var(--border); border-radius: 7px; font-family: inherit; font-size: .88rem; color: var(--text); outline: none; transition: border-color .2s; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--indigo); }
+    .form-group textarea { min-height: 80px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .btn-submit { width: 100%; background: var(--indigo); color: white; border: none; padding: 13px; border-radius: 9px; font-family: inherit; font-size: .97rem; font-weight: 800; cursor: pointer; transition: background .2s; }
+    .btn-submit:hover { background: var(--indigo-mid); }
+
+    /* ── FOOTER ── */
+    .footer { background: var(--indigo); color: white; padding: 52px 0 26px; }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 36px; }
+    .footer-brand p { font-size: .83rem; color: rgba(255,255,255,.5); max-width: 280px; margin-top: 12px; }
+    .footer-logo { display: flex; align-items: center; gap: 10px; }
+    .footer-logo-mark { width: 34px; height: 34px; background: var(--lime); border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: .9rem; }
+    .footer-logo-text { font-size: 1rem; font-weight: 900; color: white; }
+    .footer-col h4 { font-size: .77rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 13px; color: rgba(255,255,255,.35); }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { font-size: .85rem; color: rgba(255,255,255,.55); transition: color .2s; }
+    .footer-col ul a:hover { color: var(--lime-mid); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .footer-bottom p { font-size: .78rem; color: rgba(255,255,255,.35); }
+    .footer-bottom a { color: var(--lime-mid); }
+
+    /* ── FLOATING CTA ── */
+    .floating-cta { display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--indigo); color: white; padding: 13px 26px; border-radius: 50px; font-size: .93rem; font-weight: 800; box-shadow: 0 4px 20px rgba(49,46,129,.4); z-index: 500; white-space: nowrap; }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .5s ease, transform .5s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .appliance-selector { margin-bottom: 0; }
+      .appliances-grid { grid-template-columns: repeat(2, 1fr); }
+      .pricing-inner { grid-template-columns: 1fr; }
+      .steps-row { grid-template-columns: 1fr; gap: 24px; }
+      .steps-row::before { display: none; }
+      .reviews-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .warranty-inner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .appliances-grid { grid-template-columns: repeat(2, 1fr); }
+      .appliance-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-inner { gap: 0; }
+      .stat-item { padding: 12px 20px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .floating-cta { display: flex; }
+      .form-row { grid-template-columns: 1fr; }
+      .warranty-badges { justify-content: flex-start; }
+    }
   </style>
 </head>
 <body>
-<header class="topbar">
-  <div class="container">
+
+  <!-- TEMPLATE BANNER -->
+  <div class="template-banner">
+    <span class="template-badge">Template Preview</span>
+    <a href="https://graftdigital.london" class="template-back">&#8592; Back to Graft Digital</a>
+  </div>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
     <div class="topbar-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text">Graft<span>Digital</span></span>
-      </a>
-      <a href="../index.html#industries" class="back-link">&larr; All Templates</a>
+      <div class="topbar-left">
+        <span class="topbar-item">&#128222; <a href="tel:+447479531509">+44 7479 531509</a></span>
+        <span class="topbar-item">&#9993; <a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a></span>
+        <span class="topbar-item">&#128337; Mon&#8211;Sat 8am&#8211;7pm</span>
+      </div>
+      <span class="topbar-badge">&#9989; 98% Same-Day Bookings</span>
     </div>
   </div>
-</header>
 
-<section class="hero">
-  <div class="hero-grid"></div>
-  <div class="container">
-    <div class="hero-content">
-      <div class="preview-banner">
-        <span style="font-size:1.2rem;flex-shrink:0;">&#128065;</span>
-        <p>This is a <strong>sample template</strong> for a Appliance Repair business. Your real site will be fully customised with your branding, photos &amp; details. <a href="#get-started" style="color:var(--gold);font-weight:700;">Request this template &darr;</a></p>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="logo">
+        <div class="logo-mark">&#128296;</div>
+        <span class="logo-name">Pro<span>Fix</span> London</span>
       </div>
-      <div class="hero-tag">&#128205; London Trade Template</div>
-      <span class="hero-icon">&#128268;</span>
-      <h1>London&rsquo;s Trusted<br><span>Appliance Repair</span><br>Specialists</h1>
-      <p>Washing machine, oven, fridge and dishwasher repairs across London.</p>
-      <div class="hero-ctas">
-        <a href="#get-started" class="btn btn-gold">Get a Free Quote</a>
-        <a href="tel:+447479531509" class="btn btn-outline">&#128222; Call Now</a>
+      <ul class="nav-links">
+        <li><a href="#appliances">Appliances</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#brands">Brands</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#contact" class="nav-cta">Book a Repair</a></li>
+      </ul>
+      <div class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#appliances" onclick="document.getElementById('mobileMenu').classList.remove('open')">Appliances</a>
+      <a href="#pricing" onclick="document.getElementById('mobileMenu').classList.remove('open')">Pricing</a>
+      <a href="#brands" onclick="document.getElementById('mobileMenu').classList.remove('open')">Brands</a>
+      <a href="#how" onclick="document.getElementById('mobileMenu').classList.remove('open')">How It Works</a>
+      <a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Book a Repair</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div style="padding-bottom: 72px;">
+          <div class="hero-tag">&#9889; Same-Day Available Across London</div>
+          <h1>Appliance Broken? We&#8217;ll Fix It <span>Today.</span></h1>
+          <p class="hero-sub">London&#8217;s most trusted appliance repair specialists. Fixed labour fee, 6-month parts &amp; labour warranty, and engineers with 15+ years&#8217; experience.</p>
+          <div class="hero-promises">
+            <div class="promise-item"><div class="promise-dot">&#10003;</div>Same-day availability</div>
+            <div class="promise-item"><div class="promise-dot">&#10003;</div>Fixed labour fee — no surprise costs</div>
+            <div class="promise-item"><div class="promise-dot">&#10003;</div>6-month parts &amp; labour warranty</div>
+            <div class="promise-item"><div class="promise-dot">&#10003;</div>Gas Safe &amp; fully insured engineers</div>
+          </div>
+          <div class="hero-btns">
+            <a href="#contact" class="btn-indigo">Book a Repair</a>
+            <a href="tel:+447479531509" class="btn-outline">&#128222; Call Now</a>
+          </div>
+        </div>
+        <div>
+          <div class="appliance-selector">
+            <div class="selector-title">What needs fixing?</div>
+            <div class="appliance-grid" id="appGrid">
+              <button class="appliance-btn active" onclick="selectApp(this)" data-app="Washing Machine"><span class="app-emoji">&#128167;</span><span class="app-name">Washing Machine</span></button>
+              <button class="appliance-btn" onclick="selectApp(this)" data-app="Dishwasher"><span class="app-emoji">&#129693;</span><span class="app-name">Dishwasher</span></button>
+              <button class="appliance-btn" onclick="selectApp(this)" data-app="Fridge Freezer"><span class="app-emoji">&#127967;</span><span class="app-name">Fridge Freezer</span></button>
+              <button class="appliance-btn" onclick="selectApp(this)" data-app="Oven / Cooker"><span class="app-emoji">&#127859;</span><span class="app-name">Oven / Cooker</span></button>
+              <button class="appliance-btn" onclick="selectApp(this)" data-app="Tumble Dryer"><span class="app-emoji">&#127744;</span><span class="app-name">Tumble Dryer</span></button>
+              <button class="appliance-btn" onclick="selectApp(this)" data-app="Other Appliance"><span class="app-emoji">&#128268;</span><span class="app-name">Other</span></button>
+            </div>
+            <button class="selector-cta" onclick="bookRepair()">Book This Repair &#8594;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="container">
+      <div class="stats-inner">
+        <div class="stat-item"><div class="stat-num"><span>98%</span></div><div class="stat-lbl">Same-Day Bookings</div></div>
+        <div class="stat-item"><div class="stat-num">6 <span>Month</span></div><div class="stat-lbl">Warranty</div></div>
+        <div class="stat-item"><div class="stat-num"><span>15+</span> yrs</div><div class="stat-lbl">Engineer Experience</div></div>
+        <div class="stat-item"><div class="stat-num"><span>4.9</span>&#11088;</div><div class="stat-lbl">Customer Rating</div></div>
+        <div class="stat-item"><div class="stat-num"><span>£0</span></div><div class="stat-lbl">Call-Out Fee</div></div>
       </div>
     </div>
   </div>
-</section>
 
-<section class="services">
-  <div class="container">
-    <h2>Our Services</h2>
-    <p class="sub">Professional Appliance Repair services across all London boroughs</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <span class="sc-icon">&#10003;</span>
-        <div class="sc-title">Residential</div>
-        <p class="sc-desc">Trusted by homeowners across London for reliable, high-quality work done right first time.</p>
+  <!-- APPLIANCES WE REPAIR -->
+  <section class="appliances" id="appliances">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Appliances We Fix</div>
+        <h2>We Repair Every Major Appliance</h2>
+        <p>From washing machines and ovens to American-style fridge freezers — our engineers carry spare parts for all major brands.</p>
       </div>
-      <div class="service-card">
-        <span class="sc-icon">&#127970;</span>
-        <div class="sc-title">Commercial</div>
-        <p class="sc-desc">We work with businesses, landlords and property managers throughout Greater London.</p>
+      <div class="appliances-grid">
+        <div class="appliance-card reveal">
+          <div class="app-header"><span class="app-big-emoji">&#128167;</span><div class="app-title">Washing Machines</div></div>
+          <div class="app-body">
+            <ul class="app-issues">
+              <li>Not spinning or draining</li>
+              <li>Leaking water</li>
+              <li>Error codes displayed</li>
+              <li>Drum not turning</li>
+              <li>Not heating water</li>
+            </ul>
+            <div class="app-price">From £79 + parts</div>
+          </div>
+        </div>
+        <div class="appliance-card reveal">
+          <div class="app-header"><span class="app-big-emoji">&#129693;</span><div class="app-title">Dishwashers</div></div>
+          <div class="app-body">
+            <ul class="app-issues">
+              <li>Not cleaning properly</li>
+              <li>Not draining</li>
+              <li>Door latch broken</li>
+              <li>Not filling with water</li>
+              <li>Leaking from base</li>
+            </ul>
+            <div class="app-price">From £79 + parts</div>
+          </div>
+        </div>
+        <div class="appliance-card reveal">
+          <div class="app-header"><span class="app-big-emoji">&#127967;</span><div class="app-title">Fridge Freezers</div></div>
+          <div class="app-body">
+            <ul class="app-issues">
+              <li>Not cooling or freezing</li>
+              <li>Ice maker fault</li>
+              <li>Unusual noises</li>
+              <li>Frost build-up</li>
+              <li>Compressor fault</li>
+            </ul>
+            <div class="app-price">From £89 + parts</div>
+          </div>
+        </div>
+        <div class="appliance-card reveal">
+          <div class="app-header"><span class="app-big-emoji">&#127859;</span><div class="app-title">Ovens &amp; Cookers</div></div>
+          <div class="app-body">
+            <ul class="app-issues">
+              <li>Not heating up</li>
+              <li>Fan oven fault</li>
+              <li>Grill not working</li>
+              <li>Ignition fault (gas)</li>
+              <li>Timer / control fault</li>
+            </ul>
+            <div class="app-price">From £79 + parts</div>
+          </div>
+        </div>
+        <div class="appliance-card reveal">
+          <div class="app-header"><span class="app-big-emoji">&#127744;</span><div class="app-title">Tumble Dryers</div></div>
+          <div class="app-body">
+            <ul class="app-issues">
+              <li>Not heating</li>
+              <li>Drum not turning</li>
+              <li>Overheating cutout</li>
+              <li>Condensation fault</li>
+              <li>Noisy operation</li>
+            </ul>
+            <div class="app-price">From £79 + parts</div>
+          </div>
+        </div>
+        <div class="appliance-card reveal">
+          <div class="app-header"><span class="app-big-emoji">&#128168;</span><div class="app-title">Tumble Dryers &amp; More</div></div>
+          <div class="app-body">
+            <ul class="app-issues">
+              <li>American fridge freezers</li>
+              <li>Range cookers</li>
+              <li>Washer-dryers</li>
+              <li>Integrated appliances</li>
+              <li>Commercial appliances</li>
+            </ul>
+            <div class="app-price">Call for quote</div>
+          </div>
+        </div>
+        <div class="appliance-card reveal">
+          <div class="app-header"><span class="app-big-emoji">&#128268;</span><div class="app-title">Small Appliances</div></div>
+          <div class="app-body">
+            <ul class="app-issues">
+              <li>Microwave repair</li>
+              <li>Extractor fan</li>
+              <li>Wine cooler</li>
+              <li>Coffee machine</li>
+              <li>Electric hob</li>
+            </ul>
+            <div class="app-price">From £59 + parts</div>
+          </div>
+        </div>
+        <div class="appliance-card reveal">
+          <div class="app-header"><span class="app-big-emoji">&#9968;</span><div class="app-title">Gas Appliances</div></div>
+          <div class="app-body">
+            <ul class="app-issues">
+              <li>Gas cooker repair</li>
+              <li>Gas hob ignition</li>
+              <li>Gas Safe certified</li>
+              <li>Safety inspection</li>
+              <li>Landlord gas certificate</li>
+            </ul>
+            <div class="app-price">From £89 + parts</div>
+          </div>
+        </div>
       </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128241;</span>
-        <div class="sc-title">Emergency Callouts</div>
-        <p class="sc-desc">Fast response when you need it most. We cover all London postcodes, seven days a week.</p>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="pricing-inner">
+        <div class="pricing-left reveal">
+          <div class="section-tag">Our Pricing</div>
+          <h2>Fixed Labour. No Nasty Surprises.</h2>
+          <p>We charge a flat labour fee to diagnose and repair your appliance. Parts are extra — but we always get your approval before ordering anything.</p>
+          <div class="price-table">
+            <div class="price-row header">
+              <span class="pr-label">What You Pay</span>
+              <span class="pr-val">Price</span>
+            </div>
+            <div class="price-row">
+              <div class="pr-label">Call-Out Fee<small>We come to you, diagnose the fault</small></div>
+              <div class="pr-val green">FREE</div>
+            </div>
+            <div class="price-row">
+              <div class="pr-label">Labour Fee<small>One fixed charge — covers all work done</small></div>
+              <div class="pr-val">From £79</div>
+            </div>
+            <div class="price-row">
+              <div class="pr-label">Parts<small>Manufacturer-spec, quoted before fitting</small></div>
+              <div class="pr-val">At cost</div>
+            </div>
+            <div class="price-row">
+              <div class="pr-label">Return Visits<small>If we can&#8217;t fix first time — no extra labour</small></div>
+              <div class="pr-val green">FREE</div>
+            </div>
+            <div class="price-row">
+              <div class="pr-label">Warranty<small>Parts &amp; labour covered</small></div>
+              <div class="pr-val">6 months</div>
+            </div>
+          </div>
+        </div>
+        <div class="pricing-right reveal">
+          <div class="promise-card">
+            <div class="promise-icon">&#127968;</div>
+            <div><h4>We Come to You</h4><p>No dropping off your appliance — our engineers come to your home at a time that suits you.</p></div>
+          </div>
+          <div class="promise-card">
+            <div class="promise-icon">&#128296;</div>
+            <div><h4>Parts in the Van</h4><p>We carry thousands of spare parts for all major brands — meaning most repairs are completed on the first visit.</p></div>
+          </div>
+          <div class="promise-card">
+            <div class="promise-icon">&#128221;</div>
+            <div><h4>Written Quote First</h4><p>You&#8217;ll always receive a written quote before we start any work — no surprises when the invoice arrives.</p></div>
+          </div>
+          <div class="promise-card">
+            <div class="promise-icon">&#9989;</div>
+            <div><h4>No Fix, No Fee</h4><p>If we can&#8217;t repair your appliance, you won&#8217;t be charged for labour. Simple as that.</p></div>
+          </div>
+        </div>
       </div>
-      <div class="service-card">
-        <span class="sc-icon">&#128205;</span>
-        <div class="sc-title">All London Boroughs</div>
-        <p class="sc-desc">From Hackney to Hammersmith, Croydon to Camden &mdash; we cover the entire Greater London area.</p>
+    </div>
+  </section>
+
+  <!-- BRANDS -->
+  <section class="brands" id="brands">
+    <div class="container">
+      <div class="brands-intro reveal">
+        <p>Brands we repair</p>
+      </div>
+      <div class="brands-grid reveal">
+        <span class="brand-pill">Bosch</span>
+        <span class="brand-pill">Samsung</span>
+        <span class="brand-pill">Miele</span>
+        <span class="brand-pill">AEG</span>
+        <span class="brand-pill">Hotpoint</span>
+        <span class="brand-pill">Indesit</span>
+        <span class="brand-pill">Whirlpool</span>
+        <span class="brand-pill">Beko</span>
+        <span class="brand-pill">Siemens</span>
+        <span class="brand-pill">Smeg</span>
+        <span class="brand-pill">Zanussi</span>
+        <span class="brand-pill">LG</span>
+        <span class="brand-pill">Candy</span>
+        <span class="brand-pill">Hoover</span>
+        <span class="brand-pill">Neff</span>
+        <span class="brand-pill">Electrolux</span>
+        <span class="brand-pill">Blomberg</span>
+        <span class="brand-pill">Fisher &amp; Paykel</span>
+        <span class="brand-pill">Haier</span>
+        <span class="brand-pill">Rangemaster</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works" id="how">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">How It Works</div>
+        <h2>Three Simple Steps to a Fixed Appliance</h2>
+        <p>We make appliance repair as easy as possible — from booking to completion.</p>
+      </div>
+      <div class="steps-row reveal">
+        <div class="step">
+          <div class="step-circle done">1</div>
+          <h3>Book Your Repair</h3>
+          <p>Call or book online — tell us your appliance, brand and fault. We confirm a same-day or next-day slot.</p>
+        </div>
+        <div class="step">
+          <div class="step-circle done">2</div>
+          <h3>Engineer Visit</h3>
+          <p>Your engineer arrives on time, diagnoses the fault and provides a fixed quote before starting any work.</p>
+        </div>
+        <div class="step">
+          <div class="step-circle">3</div>
+          <h3>Fixed &amp; Guaranteed</h3>
+          <p>Most repairs completed in a single visit. Your appliance is fixed and covered by our 6-month warranty.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WARRANTY -->
+  <div class="warranty">
+    <div class="container">
+      <div class="warranty-inner">
+        <div class="warranty-text">
+          <h3>Every Repair Covered for 6 Months</h3>
+          <p>Our 6-month parts and labour warranty means if the same fault returns, we come back and fix it again — completely free. No quibbles, no questions.</p>
+        </div>
+        <div class="warranty-badges">
+          <div class="w-badge"><span class="wi">&#9989;</span><div class="wv">6 Months</div><div class="wl">Warranty</div></div>
+          <div class="w-badge"><span class="wi">&#128272;</span><div class="wv">Insured</div><div class="wl">£2M Public Liability</div></div>
+          <div class="w-badge"><span class="wi">&#11088;</span><div class="wv">4.9★</div><div class="wl">Rated</div></div>
+          <div class="w-badge"><span class="wi">&#127942;</span><div class="wv">Gas Safe</div><div class="wl">Registered</div></div>
+        </div>
       </div>
     </div>
   </div>
-</section>
 
-<section class="why">
-  <div class="container">
-    <h2>Why Choose Us?</h2>
-    <p class="sub">Trusted by hundreds of London customers</p>
-    <div class="trust-items">
-      <div class="trust-item"><div class="trust-num">500+</div><div class="trust-lbl">Jobs Completed</div></div>
-      <div class="trust-item"><div class="trust-num">5&#9733;</div><div class="trust-lbl">Google Rating</div></div>
-      <div class="trust-item"><div class="trust-num">10+</div><div class="trust-lbl">Years Experience</div></div>
-      <div class="trust-item"><div class="trust-num">32</div><div class="trust-lbl">London Boroughs Covered</div></div>
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="reviews">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Reviews</div>
+        <h2>Trusted by London Households</h2>
+        <p>Over 3,000 five-star reviews from verified London customers.</p>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card reveal">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"Washing machine stopped spinning on a Tuesday morning. ProFix came out the same afternoon, diagnosed a worn drum bearing, had the part in the van and fixed it within an hour. Brilliant service and very fair price."</p>
+          <div class="review-bottom">
+            <div class="reviewer-avatar">P</div>
+            <div><div class="reviewer-name">Patricia B.</div><div class="reviewer-meta">Putney, SW15</div></div>
+            <span class="review-tag">Washing Machine</span>
+          </div>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"American fridge freezer stopped cooling — with a full fridge. ProFix came next morning, replaced the compressor start relay and it&#8217;s been perfect ever since. The 6-month warranty gave me real peace of mind. Will definitely use again."</p>
+          <div class="review-bottom">
+            <div class="reviewer-avatar">N</div>
+            <div><div class="reviewer-name">Nathan G.</div><div class="reviewer-meta">Battersea, SW11</div></div>
+            <span class="review-tag">Fridge Freezer</span>
+          </div>
+        </div>
+        <div class="review-card reveal">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"Oven element failed the day before a dinner party. Called ProFix at 8am, engineer arrived by 11am with the part. Fixed in 45 minutes, dinner party saved! Transparent pricing, lovely engineer and the warranty is a great bonus."</p>
+          <div class="review-bottom">
+            <div class="reviewer-avatar">C</div>
+            <div><div class="reviewer-name">Clara M.</div><div class="reviewer-meta">Chiswick, W4</div></div>
+            <span class="review-tag">Oven Repair</span>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="cta-section">
-  <div class="container">
-    <h2>Ready to Book? Get a Free Quote Today.</h2>
-    <p>No call centres, no pressure. Just a quick chat and a fair, honest price.</p>
-    <a href="#get-started" class="btn btn-gold">Request a Free Quote</a>
-  </div>
-</section>
-
-<section class="contact-mini" id="get-started">
-  <div class="container">
-    <h2>Request This Template</h2>
-    <p class="sub">Like what you see? Contact Yoel at Graft Digital to get your own Appliance Repair website live within days.</p>
-    <div class="mini-form">
-      <form id="reqForm">
-        <div class="fg"><label>Your Name</label><input type="text" placeholder="John Smith" required></div>
-        <div class="fg"><label>Email</label><input type="email" placeholder="john@yourcompany.co.uk" required></div>
-        <div class="fg"><label>Phone</label><input type="tel" placeholder="+44 7XXX XXX XXX"></div>
-        <div class="fg"><label>Tell me about your business</label><textarea placeholder="Where in London are you based? Do you have a logo or existing site?"></textarea></div>
-        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;font-size:.97rem;">Send Enquiry to Graft Digital &rarr;</button>
-      </form>
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left reveal">
+          <div class="section-tag">Book a Repair</div>
+          <h2>Get Your Appliance Fixed Today</h2>
+          <p>Call us now for a same-day slot, or fill in the form and we&#8217;ll call you back within 30 minutes to confirm your booking.</p>
+          <div class="contact-details">
+            <div class="contact-row">
+              <div class="contact-icon">&#128222;</div>
+              <div class="contact-row-text">
+                <strong>Call to Book Same-Day</strong>
+                <a href="tel:+447479531509">+44 7479 531509</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-icon">&#9993;</div>
+              <div class="contact-row-text">
+                <strong>Email</strong>
+                <a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-icon">&#128337;</div>
+              <div class="contact-row-text">
+                <strong>Hours</strong>
+                <a>Monday&#8211;Saturday 8am&#8211;7pm</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form reveal">
+          <h3>Book a Repair Online</h3>
+          <form onsubmit="handleContact(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" id="cFirst" placeholder="Patricia" required>
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" id="cLast" placeholder="Brown" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="tel" id="cPhone" placeholder="+44 7xxx xxxxxx" required>
+            </div>
+            <div class="form-group">
+              <label>Postcode</label>
+              <input type="text" id="cPost" placeholder="e.g. SW15 4AB">
+            </div>
+            <div class="form-group">
+              <label>Appliance &amp; Brand</label>
+              <select id="cService">
+                <option value="">Select appliance...</option>
+                <option>Washing Machine</option>
+                <option>Dishwasher</option>
+                <option>Fridge Freezer</option>
+                <option>Oven / Cooker</option>
+                <option>Tumble Dryer</option>
+                <option>Gas Cooker / Hob</option>
+                <option>Small Appliance</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Describe the Fault</label>
+              <textarea id="cMsg" placeholder="e.g. Bosch washing machine not spinning, shows E18 error code — 3 years old..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Book Repair &#8594;</button>
+          </form>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <a href="../index.html" class="logo">
-        <div class="logo-mark">G</div>
-        <span class="logo-text" style="color:#fff;">Graft<span style="color:var(--gold);">Digital</span></span>
-      </a>
-      <span class="footer-copy">&copy; 2025 <strong>Graft Digital</strong> &mdash; Built by Yoel Gutierrez &middot; London</span>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-mark">&#128296;</div>
+            <span class="footer-logo-text">ProFix London</span>
+          </div>
+          <p>London&#8217;s same-day appliance repair specialists. Fixed labour fee, 6-month warranty, Gas Safe registered engineers.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Appliances</h4>
+          <ul>
+            <li><a href="#appliances">Washing Machines</a></li>
+            <li><a href="#appliances">Dishwashers</a></li>
+            <li><a href="#appliances">Fridge Freezers</a></li>
+            <li><a href="#appliances">Ovens &amp; Cookers</a></li>
+            <li><a href="#appliances">Tumble Dryers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+447479531509">+44 7479 531509</a></li>
+            <li><a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a></li>
+            <li><a href="#contact">Book a Repair</a></li>
+            <li><a href="#pricing">View Pricing</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&#169; 2025 ProFix London. All rights reserved.</p>
+        <p>Website by <a href="https://graftdigital.london">Graft Digital</a></p>
+      </div>
     </div>
-  </div>
-</footer>
-<script>
-  document.getElementById('reqForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    const f=this;
-    const btn=f.querySelector('button[type=submit]');
-    const inp=f.querySelector('input[name=template]');
-    const tmpl=inp?inp.value:'General';
-    const name=f.querySelector('input[type=text]').value;
-    const email=f.querySelector('input[type=email]').value;
-    const phone=f.querySelector('input[type=tel]').value;
-    const msg=f.querySelector('textarea').value;
-    const body='Name: '+name+'\nEmail: '+email+'\nPhone: '+phone+'\nTemplate: '+tmpl+'\n\nMessage:\n'+msg;
-    window.location.href='mailto:sales@graftdigital.london?subject='+encodeURIComponent('Template Request – '+tmpl+' – '+name)+'&body='+encodeURIComponent(body);
-    btn.textContent='✓ Opening your email app…';
-    btn.style.background='#22c55e'; btn.style.color='#fff'; btn.disabled=true;
-  });
-</script>
+  </footer>
+
+  <!-- FLOATING CTA -->
+  <a href="tel:+447479531509" class="floating-cta">&#128296; Book Same-Day Repair</a>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => obs.observe(el));
+
+    function selectApp(btn) {
+      document.querySelectorAll('.appliance-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function bookRepair() {
+      const active = document.querySelector('.appliance-btn.active');
+      const app = active ? active.getAttribute('data-app') : 'Appliance';
+      const subject = 'Appliance Repair Booking \u2013 ' + app;
+      const body = 'Appliance: ' + app + '\n\nPlease provide your name, phone number and postcode and we will call you back to confirm your booking.';
+      window.location.href = 'mailto:sales@graftdigital.london?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    }
+
+    function handleContact(e) {
+      e.preventDefault();
+      const first = document.getElementById('cFirst').value;
+      const last = document.getElementById('cLast').value;
+      const phone = document.getElementById('cPhone').value;
+      const post = document.getElementById('cPost').value;
+      const service = document.getElementById('cService').value || 'Not specified';
+      const msg = document.getElementById('cMsg').value;
+      const subject = 'Appliance Repair \u2013 ' + first + ' ' + last + ' \u2013 ' + service;
+      const body = 'Name: ' + first + ' ' + last + '\nPhone: ' + phone + '\nPostcode: ' + post + '\nAppliance: ' + service + '\n\nFault:\n' + msg;
+      window.location.href = 'mailto:sales@graftdigital.london?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    }
+  </script>
 </body>
 </html>
