@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 52">
+  <rect width="120" height="52" rx="6" fill="#7B1D1D"/>
+  <text x="60" y="16" font-family="Arial,sans-serif" font-size="7" font-weight="900" fill="rgba(255,215,0,0.9)" text-anchor="middle" letter-spacing="1">GUILD OF</text>
+  <text x="60" y="26" font-family="Arial,sans-serif" font-size="9" font-weight="900" fill="white" text-anchor="middle" letter-spacing="0.5">MASTER</text>
+  <text x="60" y="36" font-family="Arial,sans-serif" font-size="9" font-weight="900" fill="white" text-anchor="middle" letter-spacing="0.5">CRAFTSMEN</text>
+  <text x="60" y="47" font-family="Arial,sans-serif" font-size="5.5" fill="rgba(255,215,0,0.7)" text-anchor="middle">guildofmastercraftsmen.com</text>
+</svg>

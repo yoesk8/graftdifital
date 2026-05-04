@@ -141,6 +141,15 @@
     .sw-mdf { background: #C8B89A; }
     .sw-mahogany { background: #8B3A2A; }
 
+    /* ── LOGOS STRIP ── */
+    .logos-cert-strip { padding:28px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:white; }
+    .lcs-label { text-align:center; font-size:.7rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#aaa; margin-bottom:20px; }
+    .lcs-inner { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:28px; }
+    .lcs-item { display:flex; flex-direction:column; align-items:center; gap:7px; opacity:.5; transition:all 0.24s ease; filter:grayscale(100%); }
+    .lcs-item:hover { opacity:1; filter:grayscale(0%); }
+    .lcs-item img { height:40px; width:auto; max-width:100px; object-fit:contain; }
+    .lcs-item span { font-size:.62rem; font-weight:600; color:#aaa; text-align:center; letter-spacing:.04em; }
+
     /* ── SERVICES ── */
     .services { padding: 88px 0; background: var(--warm-white); }
     .section-header { text-align: center; margin-bottom: 56px; }
@@ -444,6 +453,47 @@
         <div class="mat-item"><div class="mat-swatch sw-ash"></div><div class="mat-name">Ash</div></div>
         <div class="mat-item"><div class="mat-swatch sw-mdf"></div><div class="mat-name">MDF</div></div>
         <div class="mat-item"><div class="mat-swatch sw-mahogany"></div><div class="mat-name">Mahogany</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGOS STRIP -->
+  <div class="logos-cert-strip">
+    <div class="container">
+      <p class="lcs-label">Accreditations &amp; Trust</p>
+      <div class="lcs-inner">
+        <div class="lcs-item">
+          <img src="assets/images/logos/guild-master.svg" alt="Guild of Master Craftsmen">
+          <span>Guild of Master Craftsmen</span>
+        </div>
+        <div class="lcs-item">
+          <img src="assets/images/logos/bcfa.svg" alt="BCFA Member">
+          <span>BCFA</span>
+        </div>
+        <div class="lcs-item">
+          <img src="assets/images/logos/cscs.svg" alt="CSCS Card">
+          <span>CSCS</span>
+        </div>
+        <div class="lcs-item">
+          <img src="assets/images/logos/trustmark.svg" alt="TrustMark">
+          <span>TrustMark</span>
+        </div>
+        <div class="lcs-item">
+          <img src="assets/images/logos/checkatrade.svg" alt="Checkatrade">
+          <span>Checkatrade</span>
+        </div>
+        <div class="lcs-item">
+          <img src="assets/images/logos/trustpilot.svg" alt="Trustpilot">
+          <span>Trustpilot</span>
+        </div>
+        <div class="lcs-item">
+          <img src="assets/images/logos/google.svg" alt="Google Reviews">
+          <span>Google Reviews</span>
+        </div>
+        <div class="lcs-item">
+          <img src="assets/images/logos/which-trusted-traders.svg" alt="Which? Trusted Traders">
+          <span>Which? Trusted</span>
+        </div>
       </div>
     </div>
   </div>
