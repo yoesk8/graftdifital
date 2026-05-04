@@ -174,6 +174,15 @@
     .trust-item .trust-label { font-size: .75rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; opacity: .7; }
     .trust-item .trust-val { font-size: .9rem; font-weight: 700; }
 
+    /* ── LOGOS STRIP ── */
+    .logos-strip { padding:28px 0; border-bottom:1px solid var(--border); background:var(--white); }
+    .logos-strip-label { text-align:center; font-size:.7rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--text-mid); opacity:.5; margin-bottom:20px; }
+    .logos-row { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:28px; }
+    .logo-item { display:flex; flex-direction:column; align-items:center; gap:7px; opacity:.5; transition:all 0.24s ease; filter:grayscale(100%); }
+    .logo-item:hover { opacity:1; filter:grayscale(0%); }
+    .logo-item img { height:40px; width:auto; max-width:100px; object-fit:contain; }
+    .logo-item span { font-size:.62rem; font-weight:600; color:var(--text-mid); text-align:center; letter-spacing:.04em; }
+
     /* ── SERVICES ── */
     .services { padding: 80px 0; background: var(--white); }
     .section-header { text-align: center; margin-bottom: 52px; }
@@ -550,6 +559,47 @@
           <div class="trust-icon"><i class="fas fa-earth-europe"></i></div>
           <div class="trust-val">Eco Products</div>
           <div class="trust-label">Planet-Friendly</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGOS STRIP -->
+  <div class="logos-strip">
+    <div class="container">
+      <p class="logos-strip-label">Accreditations &amp; Trust</p>
+      <div class="logos-row">
+        <div class="logo-item">
+          <img src="assets/images/logos/bicsc.svg" alt="BICSc Member">
+          <span>BICSc</span>
+        </div>
+        <div class="logo-item">
+          <img src="assets/images/logos/chas.png" alt="CHAS Accredited">
+          <span>CHAS</span>
+        </div>
+        <div class="logo-item">
+          <img src="assets/images/logos/safecontractor.svg" alt="SafeContractor Approved">
+          <span>SafeContractor</span>
+        </div>
+        <div class="logo-item">
+          <img src="assets/images/logos/eco-cert.svg" alt="Eco-Certified Products">
+          <span>Eco-Certified</span>
+        </div>
+        <div class="logo-item">
+          <img src="assets/images/logos/checkatrade.svg" alt="Checkatrade">
+          <span>Checkatrade</span>
+        </div>
+        <div class="logo-item">
+          <img src="assets/images/logos/trustpilot.svg" alt="Trustpilot">
+          <span>Trustpilot</span>
+        </div>
+        <div class="logo-item">
+          <img src="assets/images/logos/google.svg" alt="Google Reviews">
+          <span>Google Reviews</span>
+        </div>
+        <div class="logo-item">
+          <img src="assets/images/logos/which-trusted-traders.svg" alt="Which? Trusted Traders">
+          <span>Which? Trusted</span>
         </div>
       </div>
     </div>
