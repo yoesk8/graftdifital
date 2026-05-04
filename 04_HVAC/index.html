@@ -129,13 +129,13 @@
     .section-header.light p  { color:rgba(255,255,255,.6); }
 
     /* CERTS STRIP */
-    #certs { background:var(--off-white); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:22px 0; }
-    .certs-scroll { display:flex; align-items:center; justify-content:center; gap:0; flex-wrap:wrap; }
-    .cert-block { display:flex; align-items:center; gap:10px; padding:10px 28px; border-right:1px solid var(--border); }
-    .cert-block:last-child { border-right:none; }
-    .cb-icon { font-size:1.4rem; }
-    .cb-name { font-weight:800; font-size:.88rem; color:var(--text); }
-    .cb-sub  { font-size:.7rem; color:var(--cyan); font-weight:600; letter-spacing:.05em; text-transform:uppercase; }
+    #certs { background:var(--off-white); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:28px 0; }
+    .certs-label { text-align:center; font-size:.7rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--text-light); margin-bottom:20px; }
+    .certs-scroll { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:28px; }
+    .cert-block { display:flex; flex-direction:column; align-items:center; gap:7px; opacity:.55; transition:all 0.24s ease; filter:grayscale(100%); }
+    .cert-block:hover { opacity:1; filter:grayscale(0%); }
+    .cert-block img { height:40px; width:auto; max-width:100px; object-fit:contain; }
+    .cert-block span { font-size:.62rem; font-weight:600; color:var(--text-light); text-align:center; letter-spacing:.04em; }
 
     /* SECTORS */
     #sectors { padding:92px 0; background:var(--white); }
@@ -372,13 +372,40 @@
 <!-- CERTS STRIP -->
 <div id="certs">
   <div class="container">
+    <p class="certs-label">Accreditations &amp; Trust</p>
     <div class="certs-scroll">
-      <div class="cert-block"><span class="cb-icon"><i class="fas fa-industry"></i></span><div><div class="cb-name">F-Gas</div><div class="cb-sub">Category I Certified</div></div></div>
-      <div class="cert-block"><span class="cb-icon">&#9989;</span><div><div class="cb-name">CHAS</div><div class="cb-sub">Accredited</div></div></div>
-      <div class="cert-block"><span class="cb-icon"><i class="fas fa-lock"></i></span><div><div class="cb-name">SafeContractor</div><div class="cb-sub">Approved</div></div></div>
-      <div class="cert-block"><span class="cb-icon"><i class="fas fa-file-lines"></i></span><div><div class="cb-name">REFCOM</div><div class="cb-sub">Registered</div></div></div>
-      <div class="cert-block"><span class="cb-icon"><i class="fas fa-building"></i></span><div><div class="cb-name">CSCS</div><div class="cb-sub">Card Holders</div></div></div>
-      <div class="cert-block"><span class="cb-icon"><i class="fas fa-fire"></i></span><div><div class="cb-name">City &amp; Guilds</div><div class="cb-sub">Qualified Engineers</div></div></div>
+      <div class="cert-block">
+        <img src="assets/images/logos/gas-safe.svg" alt="Gas Safe Register">
+        <span>Gas Safe</span>
+      </div>
+      <div class="cert-block">
+        <img src="assets/images/logos/fgas.svg" alt="F-Gas Certified">
+        <span>F-Gas</span>
+      </div>
+      <div class="cert-block">
+        <img src="assets/images/logos/refcom.svg" alt="REFCOM Registered">
+        <span>REFCOM</span>
+      </div>
+      <div class="cert-block">
+        <img src="assets/images/logos/besa.svg" alt="BESA Member">
+        <span>BESA</span>
+      </div>
+      <div class="cert-block">
+        <img src="assets/images/logos/checkatrade.svg" alt="Checkatrade">
+        <span>Checkatrade</span>
+      </div>
+      <div class="cert-block">
+        <img src="assets/images/logos/trustpilot.svg" alt="Trustpilot">
+        <span>Trustpilot</span>
+      </div>
+      <div class="cert-block">
+        <img src="assets/images/logos/google.svg" alt="Google Reviews">
+        <span>Google Reviews</span>
+      </div>
+      <div class="cert-block">
+        <img src="assets/images/logos/which-trusted-traders.svg" alt="Which? Trusted Traders">
+        <span>Which? Trusted</span>
+      </div>
     </div>
   </div>
 </div>
