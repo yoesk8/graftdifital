@@ -128,13 +128,13 @@
     .hero-stat-card.large .icon { font-size: 2.4rem; flex-shrink: 0; }
 
     /* ── ACCREDITATIONS ── */
-    .accreditations { background: var(--cream); border-bottom: 1px solid var(--border); padding: 24px 0; }
-    .accred-inner { display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; }
-    .accred-badge {
-      display: flex; flex-direction: column; align-items: center; gap: 3px;
-      font-size: .7rem; font-weight: 800; color: var(--forest); letter-spacing: .06em; text-transform: uppercase;
-    }
-    .accred-badge .badge-icon { font-size: 1.5rem; }
+    .accreditations { background: var(--cream); border-bottom: 1px solid var(--border); padding: 28px 0; }
+    .accred-label { text-align:center; font-size:.7rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--forest); opacity:.5; margin-bottom:20px; }
+    .accred-inner { display: flex; align-items: center; justify-content: center; gap: 28px; flex-wrap: wrap; }
+    .accred-badge { display:flex; flex-direction:column; align-items:center; gap:7px; opacity:.55; transition:all 0.24s ease; filter:grayscale(100%); }
+    .accred-badge:hover { opacity:1; filter:grayscale(0%); }
+    .accred-badge img { height:40px; width:auto; max-width:100px; object-fit:contain; }
+    .accred-badge span { font-size:.62rem; font-weight:600; color:var(--forest); text-align:center; letter-spacing:.04em; }
 
     /* ── SERVICES ── */
     .services { padding: 88px 0; background: var(--white); }
@@ -424,13 +424,36 @@
   <!-- ACCREDITATIONS -->
   <div class="accreditations">
     <div class="container">
+      <p class="accred-label">Accreditations &amp; Trust</p>
       <div class="accred-inner">
-        <div class="accred-badge"><span class="badge-icon"><i class="fas fa-leaf"></i></span>RHS Qualified</div>
-        <div class="accred-badge"><span class="badge-icon"><i class="fas fa-trophy"></i></span>BALI Member</div>
-        <div class="accred-badge"><span class="badge-icon">&#9989;</span>Checkatrade</div>
-        <div class="accred-badge"><span class="badge-icon"><i class="fas fa-lock"></i></span>Fully Insured</div>
-        <div class="accred-badge"><span class="badge-icon">&#9851;</span>Sustainable</div>
-        <div class="accred-badge"><span class="badge-icon"><i class="fas fa-coins"></i></span>TrustMark</div>
+        <div class="accred-badge">
+          <img src="assets/images/logos/bali.svg" alt="BALI Member">
+          <span>BALI</span>
+        </div>
+        <div class="accred-badge">
+          <img src="assets/images/logos/hta.svg" alt="HTA Member">
+          <span>HTA</span>
+        </div>
+        <div class="accred-badge">
+          <img src="assets/images/logos/chas.png" alt="CHAS Accredited">
+          <span>CHAS</span>
+        </div>
+        <div class="accred-badge">
+          <img src="assets/images/logos/safecontractor.svg" alt="SafeContractor">
+          <span>SafeContractor</span>
+        </div>
+        <div class="accred-badge">
+          <img src="assets/images/logos/checkatrade.svg" alt="Checkatrade">
+          <span>Checkatrade</span>
+        </div>
+        <div class="accred-badge">
+          <img src="assets/images/logos/trustpilot.svg" alt="Trustpilot">
+          <span>Trustpilot</span>
+        </div>
+        <div class="accred-badge">
+          <img src="assets/images/logos/google.svg" alt="Google Reviews">
+          <span>Google Reviews</span>
+        </div>
       </div>
     </div>
   </div>
