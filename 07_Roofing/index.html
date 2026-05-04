@@ -209,14 +209,13 @@
     .review-service { display: inline-block; margin-top: 14px; background: var(--red-light); color: var(--red); font-size: .72rem; font-weight: 700; padding: 3px 10px; border-radius: 4px; }
 
     /* ── INSURANCE & CERTS ── */
-    .certs { padding: 56px 0; background: var(--charcoal-mid); }
-    .certs-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
-    .certs-text h3 { font-size: 1.2rem; font-weight: 900; color: white; margin-bottom: 6px; }
-    .certs-text p { font-size: .88rem; color: rgba(255,255,255,.6); max-width: 440px; }
-    .certs-badges { display: flex; gap: 14px; flex-wrap: wrap; }
-    .cert-badge { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: 10px; padding: 14px 20px; text-align: center; }
-    .cert-badge .cb-icon { font-size: 1.4rem; display: block; margin-bottom: 4px; }
-    .cert-badge .cb-name { font-size: .72rem; font-weight: 800; color: rgba(255,255,255,.7); letter-spacing: .04em; text-transform: uppercase; }
+    .certs { padding: 32px 0; background: var(--charcoal-mid); }
+    .certs-label { text-align:center; font-size:.7rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.3); margin-bottom:20px; }
+    .certs-inner { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 28px; }
+    .cert-badge { display:flex; flex-direction:column; align-items:center; gap:7px; opacity:.5; transition:all 0.24s ease; filter:grayscale(100%) brightness(1.8); }
+    .cert-badge:hover { opacity:1; filter:grayscale(0%) brightness(1); }
+    .cert-badge img { height:40px; width:auto; max-width:100px; object-fit:contain; }
+    .cert-badge span { font-size:.62rem; font-weight:600; color:rgba(255,255,255,.5); text-align:center; letter-spacing:.04em; }
 
     /* ── CONTACT ── */
     .contact { padding: 88px 0; background: var(--cream); }
@@ -595,17 +594,39 @@
   <!-- CERTS -->
   <div class="certs">
     <div class="container">
+      <p class="certs-label">Accreditations &amp; Trust</p>
       <div class="certs-inner">
-        <div class="certs-text">
-          <h3>Accredited, Insured &amp; Registered</h3>
-          <p>All work is carried out by qualified roofers, fully insured to £2M public liability. Every job comes with a signed 10-year workmanship guarantee.</p>
+        <div class="cert-badge">
+          <img src="assets/images/logos/nfrc.svg" alt="NFRC Member">
+          <span>NFRC</span>
         </div>
-        <div class="certs-badges">
-          <div class="cert-badge"><span class="cb-icon"><i class="fas fa-trophy"></i></span><span class="cb-name">NFRC</span></div>
-          <div class="cert-badge"><span class="cb-icon"><i class="fas fa-lock"></i></span><span class="cb-name">£2M Insured</span></div>
-          <div class="cert-badge"><span class="cb-icon">&#9989;</span><span class="cb-name">TrustMark</span></div>
-          <div class="cert-badge"><span class="cb-icon"><i class="fas fa-file-pen"></i></span><span class="cb-name">Which? Trusted</span></div>
-          <div class="cert-badge"><span class="cb-icon"><i class="fas fa-star"></i></span><span class="cb-name">Checkatrade</span></div>
+        <div class="cert-badge">
+          <img src="assets/images/logos/trustmark.svg" alt="TrustMark">
+          <span>TrustMark</span>
+        </div>
+        <div class="cert-badge">
+          <img src="assets/images/logos/chas.png" alt="CHAS Accredited">
+          <span>CHAS</span>
+        </div>
+        <div class="cert-badge">
+          <img src="assets/images/logos/safecontractor.svg" alt="SafeContractor">
+          <span>SafeContractor</span>
+        </div>
+        <div class="cert-badge">
+          <img src="assets/images/logos/checkatrade.svg" alt="Checkatrade">
+          <span>Checkatrade</span>
+        </div>
+        <div class="cert-badge">
+          <img src="assets/images/logos/trustpilot.svg" alt="Trustpilot">
+          <span>Trustpilot</span>
+        </div>
+        <div class="cert-badge">
+          <img src="assets/images/logos/google.svg" alt="Google Reviews">
+          <span>Google Reviews</span>
+        </div>
+        <div class="cert-badge">
+          <img src="assets/images/logos/which-trusted-traders.svg" alt="Which? Trusted Traders">
+          <span>Which? Trusted</span>
         </div>
       </div>
     </div>
