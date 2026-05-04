@@ -115,13 +115,13 @@
     .stat-card-wide .sc-num { font-size:1.8rem; }
 
     /* CERTS STRIP */
-    #certs { background:var(--dark); border-top:1px solid var(--border-dark); border-bottom:1px solid var(--border-dark); padding:22px 0; }
-    .certs-inner { display:flex; align-items:center; justify-content:center; gap:0; flex-wrap:wrap; }
-    .cert-item { display:flex; align-items:center; gap:10px; padding:10px 32px; border-right:1px solid var(--border-dark); }
-    .cert-item:last-child { border-right:none; }
-    .cert-icon { font-size:1.4rem; }
-    .cert-name { font-weight:800; color:var(--white); font-size:.88rem; letter-spacing:.02em; }
-    .cert-sub { font-size:.72rem; color:var(--yellow); font-weight:600; letter-spacing:.05em; text-transform:uppercase; }
+    #certs { background:var(--dark); border-top:1px solid var(--border-dark); border-bottom:1px solid var(--border-dark); padding:28px 0; }
+    .certs-label { text-align:center; font-size:.7rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.35); margin-bottom:20px; }
+    .certs-inner { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:28px; }
+    .cert-item { display:flex; flex-direction:column; align-items:center; gap:7px; opacity:.55; transition:all 0.24s ease; filter:grayscale(100%) brightness(1.8); }
+    .cert-item:hover { opacity:1; filter:grayscale(0%) brightness(1); }
+    .cert-item img { height:40px; width:auto; max-width:100px; object-fit:contain; }
+    .cert-item span { font-size:.62rem; font-weight:600; color:rgba(255,255,255,.5); text-align:center; letter-spacing:.04em; }
 
     /* SERVICES */
     #services { padding:92px 0; background:var(--off-white); }
@@ -378,13 +378,40 @@
 <!-- CERTS STRIP -->
 <div id="certs">
   <div class="container">
+    <p class="certs-label">Accreditations &amp; Trust</p>
     <div class="certs-inner">
-      <div class="cert-item"><span class="cert-icon">&#9889;</span><div><div class="cert-name">NICEIC</div><div class="cert-sub">Approved Contractor</div></div></div>
-      <div class="cert-item"><span class="cert-icon"><i class="fas fa-house"></i></span><div><div class="cert-name">Part P</div><div class="cert-sub">Registered</div></div></div>
-      <div class="cert-item"><span class="cert-icon"><i class="fas fa-file-lines"></i></span><div><div class="cert-name">EICR</div><div class="cert-sub">Certified Tester</div></div></div>
-      <div class="cert-item"><span class="cert-icon">&#9889;</span><div><div class="cert-name">NAPIT</div><div class="cert-sub">Member</div></div></div>
-      <div class="cert-item"><span class="cert-icon"><i class="fas fa-car-side"></i></span><div><div class="cert-name">OZEV</div><div class="cert-sub">Authorised Installer</div></div></div>
-      <div class="cert-item"><span class="cert-icon">&#9728;</span><div><div class="cert-name">MCS</div><div class="cert-sub">Solar Certified</div></div></div>
+      <div class="cert-item">
+        <img src="assets/images/logos/niceic.svg" alt="NICEIC Approved Contractor">
+        <span>NICEIC</span>
+      </div>
+      <div class="cert-item">
+        <img src="assets/images/logos/napit.svg" alt="NAPIT Member">
+        <span>NAPIT</span>
+      </div>
+      <div class="cert-item">
+        <img src="assets/images/logos/part-p.svg" alt="Part P Registered">
+        <span>Part P</span>
+      </div>
+      <div class="cert-item">
+        <img src="assets/images/logos/ozev.svg" alt="OZEV Authorised Installer">
+        <span>OZEV</span>
+      </div>
+      <div class="cert-item">
+        <img src="assets/images/logos/checkatrade.svg" alt="Checkatrade">
+        <span>Checkatrade</span>
+      </div>
+      <div class="cert-item">
+        <img src="assets/images/logos/trustpilot.svg" alt="Trustpilot">
+        <span>Trustpilot</span>
+      </div>
+      <div class="cert-item">
+        <img src="assets/images/logos/google.svg" alt="Google Reviews">
+        <span>Google Reviews</span>
+      </div>
+      <div class="cert-item">
+        <img src="assets/images/logos/which-trusted-traders.svg" alt="Which? Trusted Traders">
+        <span>Which? Trusted</span>
+      </div>
     </div>
   </div>
 </div>
