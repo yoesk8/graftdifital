@@ -253,7 +253,7 @@
     .sustain-content p { font-size: .9rem; color: rgba(255,255,255,.7); margin-bottom: 24px; }
     .sustain-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
     .sustain-list li { display: flex; align-items: flex-start; gap: 10px; font-size: .88rem; color: rgba(255,255,255,.75); }
-    .sustain-list li::before { content: '&#10003;'; color: var(--amber-light); font-weight: 800; flex-shrink: 0; margin-top: 2px; }
+    .sustain-list li::before { content: '<i class="fas fa-check"></i>'; color: var(--amber-light); font-weight: 800; flex-shrink: 0; margin-top: 2px; }
 
     /* ── TESTIMONIALS ── */
     .testimonials { padding: 88px 0; background: var(--cream); }
@@ -339,6 +339,7 @@
       .sustain-stats { grid-template-columns: 1fr 1fr; }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
 
@@ -350,18 +351,18 @@
 
   <!-- TOPBAR -->
   <div class="topbar">
-    <span class="topbar-item">&#128222; <a href="tel:+447479531509">+44 7479 531509</a></span>
+    <span class="topbar-item"><i class="fas fa-phone"></i> <a href="tel:+447479531509">+44 7479 531509</a></span>
     <span class="topbar-item dot">|</span>
     <span class="topbar-item">&#9993; <a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a></span>
     <span class="topbar-item dot">|</span>
-    <span class="topbar-item">&#128338; Mon&#8211;Sat 7am&#8211;6pm</span>
+    <span class="topbar-item"><i class="fas fa-clock"></i> Mon&#8211;Sat 7am&#8211;6pm</span>
   </div>
 
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="nav-inner">
       <div class="logo">
-        <div class="logo-mark">&#127807;</div>
+        <div class="logo-mark"><i class="fas fa-leaf"></i></div>
         <span class="logo-name">Verdant <span>Gardens</span></span>
       </div>
       <ul class="nav-links">
@@ -399,17 +400,17 @@
         </div>
         <div class="hero-visual">
           <div class="hero-stat-card">
-            <span class="icon">&#127807;</span>
+            <span class="icon"><i class="fas fa-leaf"></i></span>
             <div class="num">500+</div>
             <div class="lbl">Gardens Transformed</div>
           </div>
           <div class="hero-stat-card">
-            <span class="icon">&#11088;</span>
+            <span class="icon"><i class="fas fa-star"></i></span>
             <div class="num">4.9</div>
             <div class="lbl">Average Rating</div>
           </div>
           <div class="hero-stat-card large">
-            <span class="icon">&#127748;</span>
+            <span class="icon"><i class="fas fa-mountain-sun"></i></span>
             <div>
               <div class="num">15 Years</div>
               <div class="lbl">Serving London gardens</div>
@@ -424,12 +425,12 @@
   <div class="accreditations">
     <div class="container">
       <div class="accred-inner">
-        <div class="accred-badge"><span class="badge-icon">&#127807;</span>RHS Qualified</div>
-        <div class="accred-badge"><span class="badge-icon">&#127942;</span>BALI Member</div>
+        <div class="accred-badge"><span class="badge-icon"><i class="fas fa-leaf"></i></span>RHS Qualified</div>
+        <div class="accred-badge"><span class="badge-icon"><i class="fas fa-trophy"></i></span>BALI Member</div>
         <div class="accred-badge"><span class="badge-icon">&#9989;</span>Checkatrade</div>
-        <div class="accred-badge"><span class="badge-icon">&#128272;</span>Fully Insured</div>
+        <div class="accred-badge"><span class="badge-icon"><i class="fas fa-lock"></i></span>Fully Insured</div>
         <div class="accred-badge"><span class="badge-icon">&#9851;</span>Sustainable</div>
-        <div class="accred-badge"><span class="badge-icon">&#128176;</span>TrustMark</div>
+        <div class="accred-badge"><span class="badge-icon"><i class="fas fa-coins"></i></span>TrustMark</div>
       </div>
     </div>
   </div>
@@ -445,7 +446,7 @@
       <div class="services-grid">
         <div class="service-card reveal">
           <div class="svc-header">
-            <div class="svc-icon-wrap">&#127817;</div>
+            <div class="svc-icon-wrap"><i class="fas fa-seedling"></i></div>
             <div>
               <div class="svc-title">Garden Design</div>
               <div class="svc-desc">Bespoke planting plans and hard landscaping concepts from our RHS-qualified designers, tailored to your space and lifestyle.</div>
@@ -471,7 +472,7 @@
         </div>
         <div class="service-card reveal">
           <div class="svc-header">
-            <div class="svc-icon-wrap">&#127795;</div>
+            <div class="svc-icon-wrap"><i class="fas fa-tree"></i></div>
             <div>
               <div class="svc-title">Hedge Trimming</div>
               <div class="svc-desc">Precise shaping and trimming of hedges, topiary and formal borders by skilled craftspeople with the right tools for the job.</div>
@@ -484,7 +485,7 @@
         </div>
         <div class="service-card reveal">
           <div class="svc-header">
-            <div class="svc-icon-wrap">&#127796;</div>
+            <div class="svc-icon-wrap"><i class="fas fa-tree"></i></div>
             <div>
               <div class="svc-title">Planting &amp; Borders</div>
               <div class="svc-desc">Seasonal planting schemes, border restocking and perennial planting designed for colour through every season.</div>
@@ -497,7 +498,7 @@
         </div>
         <div class="service-card reveal">
           <div class="svc-header">
-            <div class="svc-icon-wrap">&#127959;</div>
+            <div class="svc-icon-wrap"><i class="fas fa-person-digging"></i></div>
             <div>
               <div class="svc-title">Hard Landscaping</div>
               <div class="svc-desc">Patios, pathways, raised beds, fencing, decking and water features installed to the highest standards.</div>
@@ -510,7 +511,7 @@
         </div>
         <div class="service-card reveal">
           <div class="svc-header">
-            <div class="svc-icon-wrap">&#127970;</div>
+            <div class="svc-icon-wrap"><i class="fas fa-building"></i></div>
             <div>
               <div class="svc-title">Grounds Maintenance</div>
               <div class="svc-desc">Commercial and residential grounds contracts — reliable, scheduled maintenance programmes with a dedicated account manager.</div>
@@ -534,34 +535,34 @@
         <p>Every season brings different priorities. We plan ahead so your garden always looks its best.</p>
       </div>
       <div class="tab-bar reveal" id="tabBar">
-        <button class="tab-btn active" onclick="switchTab('spring')">&#127800; Spring</button>
+        <button class="tab-btn active" onclick="switchTab('spring')"><i class="fas fa-seedling"></i> Spring</button>
         <button class="tab-btn" onclick="switchTab('summer')">&#9728; Summer</button>
-        <button class="tab-btn" onclick="switchTab('autumn')">&#127811; Autumn</button>
-        <button class="tab-btn" onclick="switchTab('winter')">&#10052; Winter</button>
+        <button class="tab-btn" onclick="switchTab('autumn')"><i class="fas fa-leaf"></i> Autumn</button>
+        <button class="tab-btn" onclick="switchTab('winter')"><i class="fas fa-snowflake"></i> Winter</button>
       </div>
       <div class="tab-content active reveal" id="tab-spring">
-        <div class="season-item"><div class="season-icon">&#127807;</div><div><h4>First Cut &amp; Lawn Feed</h4><p>First mow of the year, fertiliser application and weed treatment to wake the lawn up.</p></div></div>
-        <div class="season-item"><div class="season-icon">&#127817;</div><div><h4>Border Planting</h4><p>Spring bulb tidying, new seasonal planting schemes and perennial division.</p></div></div>
-        <div class="season-item"><div class="season-icon">&#127795;</div><div><h4>Hedge &amp; Shrub Pruning</h4><p>Early season shape and structure work before the main growing surge begins.</p></div></div>
-        <div class="season-item"><div class="season-icon">&#128167;</div><div><h4>Irrigation Check</h4><p>Commission irrigation systems, check drip feeds and replace any winter-damaged components.</p></div></div>
+        <div class="season-item"><div class="season-icon"><i class="fas fa-leaf"></i></div><div><h4>First Cut &amp; Lawn Feed</h4><p>First mow of the year, fertiliser application and weed treatment to wake the lawn up.</p></div></div>
+        <div class="season-item"><div class="season-icon"><i class="fas fa-seedling"></i></div><div><h4>Border Planting</h4><p>Spring bulb tidying, new seasonal planting schemes and perennial division.</p></div></div>
+        <div class="season-item"><div class="season-icon"><i class="fas fa-tree"></i></div><div><h4>Hedge &amp; Shrub Pruning</h4><p>Early season shape and structure work before the main growing surge begins.</p></div></div>
+        <div class="season-item"><div class="season-icon"><i class="fas fa-droplet"></i></div><div><h4>Irrigation Check</h4><p>Commission irrigation systems, check drip feeds and replace any winter-damaged components.</p></div></div>
       </div>
       <div class="tab-content" id="tab-summer">
         <div class="season-item"><div class="season-icon">&#9921;</div><div><h4>Regular Lawn Maintenance</h4><p>Weekly or fortnightly mowing, edging and stripe for pristine presentation all summer.</p></div></div>
-        <div class="season-item"><div class="season-icon">&#127800;</div><div><h4>Deadheading &amp; Feeding</h4><p>Keep borders blooming with regular deadheading, feeding and pest monitoring.</p></div></div>
-        <div class="season-item"><div class="season-icon">&#127795;</div><div><h4>Formal Hedge Trim</h4><p>Main summer cut to maintain crisp lines and encourage dense, healthy growth.</p></div></div>
+        <div class="season-item"><div class="season-icon"><i class="fas fa-seedling"></i></div><div><h4>Deadheading &amp; Feeding</h4><p>Keep borders blooming with regular deadheading, feeding and pest monitoring.</p></div></div>
+        <div class="season-item"><div class="season-icon"><i class="fas fa-tree"></i></div><div><h4>Formal Hedge Trim</h4><p>Main summer cut to maintain crisp lines and encourage dense, healthy growth.</p></div></div>
         <div class="season-item"><div class="season-icon">&#9960;</div><div><h4>Patio &amp; Surface Care</h4><p>Jet washing, weed treatment between paving and sealing of decking and timber.</p></div></div>
       </div>
       <div class="tab-content" id="tab-autumn">
-        <div class="season-item"><div class="season-icon">&#127811;</div><div><h4>Leaf Clearance</h4><p>Regular clearance of fallen leaves from lawns, borders, gutters and hardstanding.</p></div></div>
+        <div class="season-item"><div class="season-icon"><i class="fas fa-leaf"></i></div><div><h4>Leaf Clearance</h4><p>Regular clearance of fallen leaves from lawns, borders, gutters and hardstanding.</p></div></div>
         <div class="season-item"><div class="season-icon">&#9926;</div><div><h4>Lawn Aeration &amp; Scarifying</h4><p>Annual scarification removes thatch buildup, followed by aeration and overseeding.</p></div></div>
-        <div class="season-item"><div class="season-icon">&#127796;</div><div><h4>Bulb Planting</h4><p>Spring bulb planting for tulips, daffodils and alliums — invest now for a spectacular spring.</p></div></div>
-        <div class="season-item"><div class="season-icon">&#127795;</div><div><h4>Shrub &amp; Rose Prep</h4><p>Autumn pruning of roses, shrubs and climbers to structure before winter sets in.</p></div></div>
+        <div class="season-item"><div class="season-icon"><i class="fas fa-tree"></i></div><div><h4>Bulb Planting</h4><p>Spring bulb planting for tulips, daffodils and alliums — invest now for a spectacular spring.</p></div></div>
+        <div class="season-item"><div class="season-icon"><i class="fas fa-tree"></i></div><div><h4>Shrub &amp; Rose Prep</h4><p>Autumn pruning of roses, shrubs and climbers to structure before winter sets in.</p></div></div>
       </div>
       <div class="tab-content" id="tab-winter">
-        <div class="season-item"><div class="season-icon">&#10052;</div><div><h4>Winter Clearance</h4><p>Tidying beds, cutting back herbaceous perennials and protecting tender plants from frost.</p></div></div>
-        <div class="season-item"><div class="season-icon">&#127795;</div><div><h4>Structural Pruning</h4><p>The best time for formative pruning of deciduous trees, shrubs and climbers.</p></div></div>
+        <div class="season-item"><div class="season-icon"><i class="fas fa-snowflake"></i></div><div><h4>Winter Clearance</h4><p>Tidying beds, cutting back herbaceous perennials and protecting tender plants from frost.</p></div></div>
+        <div class="season-item"><div class="season-icon"><i class="fas fa-tree"></i></div><div><h4>Structural Pruning</h4><p>The best time for formative pruning of deciduous trees, shrubs and climbers.</p></div></div>
         <div class="season-item"><div class="season-icon">&#9928;</div><div><h4>Planning for Spring</h4><p>Consultation and design sessions to plan new features, borders or a garden refresh.</p></div></div>
-        <div class="season-item"><div class="season-icon">&#127959;</div><div><h4>Hard Landscaping</h4><p>Ideal season for patio, pathway and structural groundwork before the growing season returns.</p></div></div>
+        <div class="season-item"><div class="season-icon"><i class="fas fa-person-digging"></i></div><div><h4>Hard Landscaping</h4><p>Ideal season for patio, pathway and structural groundwork before the growing season returns.</p></div></div>
       </div>
     </div>
   </section>
@@ -577,7 +578,7 @@
       <div class="portfolio-grid reveal">
         <div class="portfolio-card tall">
           <div class="portfolio-bg tile-1 tile-pattern"></div>
-          <div class="portfolio-icon">&#127807;</div>
+          <div class="portfolio-icon"><i class="fas fa-leaf"></i></div>
           <span class="portfolio-label">Garden Design</span>
           <div class="portfolio-overlay">
             <h4>Chelsea Townhouse Garden</h4>
@@ -595,7 +596,7 @@
         </div>
         <div class="portfolio-card">
           <div class="portfolio-bg tile-3 tile-pattern"></div>
-          <div class="portfolio-icon">&#127795;</div>
+          <div class="portfolio-icon"><i class="fas fa-tree"></i></div>
           <span class="portfolio-label">Hedge Trimming</span>
           <div class="portfolio-overlay">
             <h4>Kensington Formal Hedges</h4>
@@ -604,7 +605,7 @@
         </div>
         <div class="portfolio-card">
           <div class="portfolio-bg tile-4 tile-pattern"></div>
-          <div class="portfolio-icon">&#127959;</div>
+          <div class="portfolio-icon"><i class="fas fa-person-digging"></i></div>
           <span class="portfolio-label">Hard Landscaping</span>
           <div class="portfolio-overlay">
             <h4>Islington Courtyard Patio</h4>
@@ -613,7 +614,7 @@
         </div>
         <div class="portfolio-card">
           <div class="portfolio-bg tile-5 tile-pattern"></div>
-          <div class="portfolio-icon">&#127800;</div>
+          <div class="portfolio-icon"><i class="fas fa-seedling"></i></div>
           <span class="portfolio-label">Planting Design</span>
           <div class="portfolio-overlay">
             <h4>Richmond Cottage Garden</h4>
@@ -682,7 +683,7 @@
               <div class="reviewer-avatar">C</div>
               <div><div class="reviewer-name">Caroline H.</div><div class="reviewer-loc">Richmond, TW9</div></div>
             </div>
-            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
           </div>
           <p class="review-text">"Verdant transformed our tired, overgrown garden into something we actually want to spend time in. The design consultation was thorough and the planting choices are inspired. Best money we've ever spent on the house."</p>
           <span class="review-service">Garden Design</span>
@@ -693,7 +694,7 @@
               <div class="reviewer-avatar">R</div>
               <div><div class="reviewer-name">Robert P.</div><div class="reviewer-loc">Wimbledon, SW19</div></div>
             </div>
-            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
           </div>
           <p class="review-text">"Been on their monthly maintenance programme for two years. The lawn is immaculate — neighbours regularly ask who does it. Reliable, professional and you can trust them completely. Couldn't run the garden without them."</p>
           <span class="review-service">Grounds Maintenance</span>
@@ -704,7 +705,7 @@
               <div class="reviewer-avatar">N</div>
               <div><div class="reviewer-name">Natalie W.</div><div class="reviewer-loc">Islington, N1</div></div>
             </div>
-            <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
           </div>
           <p class="review-text">"Had the courtyard completely re-paved with natural stone and raised planters added. The team were tidy, quick and the result is stunning. Such a difference to have a proper outdoor space in London. Highly recommend."</p>
           <span class="review-service">Hard Landscaping</span>
@@ -723,7 +724,7 @@
           <p>Tell us about your outdoor space and we'll come out for a free no-obligation site visit and quote within 48 hours.</p>
           <div class="contact-details">
             <div class="contact-row">
-              <div class="contact-icon">&#128222;</div>
+              <div class="contact-icon"><i class="fas fa-phone"></i></div>
               <div class="contact-row-text">
                 <strong>Call or WhatsApp</strong>
                 <a href="tel:+447479531509">+44 7479 531509</a>
@@ -737,7 +738,7 @@
               </div>
             </div>
             <div class="contact-row">
-              <div class="contact-icon">&#128337;</div>
+              <div class="contact-icon"><i class="fas fa-clock"></i></div>
               <div class="contact-row-text">
                 <strong>Hours</strong>
                 <a>Monday&#8211;Saturday 7am&#8211;6pm</a>
@@ -796,7 +797,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="footer-logo">
-            <div class="footer-logo-mark">&#127807;</div>
+            <div class="footer-logo-mark"><i class="fas fa-leaf"></i></div>
             <span class="footer-logo-text">Verdant Gardens</span>
           </div>
           <p>Award-winning landscaping and grounds maintenance serving London for over 15 years. RHS-qualified, fully insured, sustainably minded.</p>

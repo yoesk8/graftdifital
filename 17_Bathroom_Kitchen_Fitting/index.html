@@ -245,6 +245,7 @@
       .footer-grid { grid-template-columns: 1fr; }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
 
@@ -311,12 +312,12 @@
     <p class="hero-sub">Full design, supply and installation service for London homes. From concept sketches to final sealant &mdash; we handle everything.</p>
     <div class="hero-split-cta">
       <a href="#services" class="split-btn split-btn-bath" onclick="showPanel('bath')">
-        <span class="split-btn-icon">&#128703;</span>
+        <span class="split-btn-icon"><i class="fas fa-shower"></i></span>
         <span class="split-btn-title">Bathroom Project</span>
         <span class="split-btn-desc">New fit, refurb or wet room &rarr;</span>
       </a>
       <a href="#services" class="split-btn split-btn-kit" onclick="showPanel('kitchen')">
-        <span class="split-btn-icon">&#127859;</span>
+        <span class="split-btn-icon"><i class="fas fa-utensils"></i></span>
         <span class="split-btn-title">Kitchen Project</span>
         <span class="split-btn-desc">Full fit, worktops or remodel &rarr;</span>
       </a>
@@ -324,7 +325,7 @@
     <div class="hero-stats">
       <div class="hero-stat"><div class="hero-stat-num">600+</div><div class="hero-stat-lbl">Projects Completed</div></div>
       <div class="hero-stat"><div class="hero-stat-num">15yr</div><div class="hero-stat-lbl">In Business</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">5&#9733;</div><div class="hero-stat-lbl">Which? Reviews</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">5<i class="fas fa-star"></i></div><div class="hero-stat-lbl">Which? Reviews</div></div>
       <div class="hero-stat"><div class="hero-stat-num">5yr</div><div class="hero-stat-lbl">Installation Guarantee</div></div>
     </div>
   </div>
@@ -337,37 +338,37 @@
     <h2 class="section-title">Bathrooms &amp; Kitchens</h2>
     <p class="section-sub">Toggle between our bathroom and kitchen services below &mdash; or enquire about both for a combined project.</p>
     <div class="svc-toggle">
-      <button class="svc-toggle-btn active" id="btn-bath" onclick="showPanel('bath')">&#128703; Bathrooms</button>
-      <button class="svc-toggle-btn" id="btn-kitchen" onclick="showPanel('kitchen')">&#127859; Kitchens</button>
+      <button class="svc-toggle-btn active" id="btn-bath" onclick="showPanel('bath')"><i class="fas fa-shower"></i> Bathrooms</button>
+      <button class="svc-toggle-btn" id="btn-kitchen" onclick="showPanel('kitchen')"><i class="fas fa-utensils"></i> Kitchens</button>
     </div>
 
     <div class="svc-panel active" id="panel-bath">
       <div class="svc-card">
-        <span class="svc-icon">&#128703;</span>
+        <span class="svc-icon"><i class="fas fa-shower"></i></span>
         <h3>Full Bathroom Refit</h3>
         <p>Complete strip-out and new installation — suite, tiling, plumbing and electrics all managed by us.</p>
         <span class="svc-tag">Most Popular</span>
       </div>
       <div class="svc-card">
-        <span class="svc-icon">&#128704;</span>
+        <span class="svc-icon"><i class="fas fa-bath"></i></span>
         <h3>Wet Room Conversion</h3>
         <p>Fully tanked, gradient-screed wet rooms with frameless screens and slip-resistant tiles.</p>
         <span class="svc-tag">Specialist</span>
       </div>
       <div class="svc-card">
-        <span class="svc-icon">&#128716;</span>
+        <span class="svc-icon"><i class="fas fa-bed"></i></span>
         <h3>En Suite Installation</h3>
         <p>Creating or fitting a new en suite — from partition walls to final fitting of the complete suite.</p>
         <span class="svc-tag">New Build / Refit</span>
       </div>
       <div class="svc-card">
-        <span class="svc-icon">&#128688;</span>
+        <span class="svc-icon"><i class="fas fa-faucet"></i></span>
         <h3>Walk-In Shower</h3>
         <p>Enclosures, trays or flush-to-floor shower installation with thermostatic controls and quality fittings.</p>
         <span class="svc-tag">Shower Suites</span>
       </div>
       <div class="svc-card">
-        <span class="svc-icon">&#128420;</span>
+        <span class="svc-icon"><i class="fas fa-heart"></i></span>
         <h3>Freestanding Baths</h3>
         <p>Statement freestanding bath installation with floor-mounted taps, waste fitting and plumbing.</p>
         <span class="svc-tag">Luxury</span>
@@ -382,37 +383,37 @@
 
     <div class="svc-panel" id="panel-kitchen">
       <div class="svc-card">
-        <span class="svc-icon">&#127959;</span>
+        <span class="svc-icon"><i class="fas fa-person-digging"></i></span>
         <h3>New Kitchen Installation</h3>
         <p>Full supply and fit — units, worktops, appliances, sink, tiling and electrics. One team, one contract.</p>
         <span class="svc-tag">Full Service</span>
       </div>
       <div class="svc-card">
-        <span class="svc-icon">&#129680;</span>
+        <span class="svc-icon"><i class="fas fa-solar-panel"></i></span>
         <h3>Worktop Replacement</h3>
         <p>Quartz, granite, solid wood, Corian and laminate worktops measured, templated and fitted.</p>
         <span class="svc-tag">Quick Refresh</span>
       </div>
       <div class="svc-card">
-        <span class="svc-icon">&#129490;</span>
+        <span class="svc-icon"><i class="fas fa-child"></i></span>
         <h3>Appliance Installation</h3>
         <p>Integrated and freestanding appliance fitting including oven, hob, dishwasher and fridge.</p>
         <span class="svc-tag">Gas Safe Registered</span>
       </div>
       <div class="svc-card">
-        <span class="svc-icon">&#128161;</span>
+        <span class="svc-icon"><i class="fas fa-lightbulb"></i></span>
         <h3>Kitchen Electrics</h3>
         <p>Under-cabinet lighting, socket relocation, extractor fan wiring and island lighting by our qualified electrician.</p>
         <span class="svc-tag">Part P Certified</span>
       </div>
       <div class="svc-card">
-        <span class="svc-icon">&#128081;</span>
+        <span class="svc-icon"><i class="fas fa-crown"></i></span>
         <h3>Painted Unit Spraying</h3>
         <p>Professional kitchen cabinet respraying — transforming existing units to any RAL colour for a fraction of the cost of new.</p>
         <span class="svc-tag">Budget Refresh</span>
       </div>
       <div class="svc-card">
-        <span class="svc-icon">&#128268;</span>
+        <span class="svc-icon"><i class="fas fa-plug"></i></span>
         <h3>Open Plan Extensions</h3>
         <p>Kitchen extension and open-plan reconfigurations including structural work, RSJ installation and plumbing.</p>
         <span class="svc-tag">Major Works</span>
@@ -461,19 +462,19 @@
     <div class="process-grid">
       <div class="process-step">
         <div class="ps-num">01</div>
-        <span class="ps-icon">&#128203;</span>
+        <span class="ps-icon"><i class="fas fa-clipboard-list"></i></span>
         <h4>Free Design Visit</h4>
         <p>We visit, measure up and discuss your ideas. We'll bring mood boards and material samples.</p>
       </div>
       <div class="process-step">
         <div class="ps-num">02</div>
-        <span class="ps-icon">&#127912;</span>
+        <span class="ps-icon"><i class="fas fa-palette"></i></span>
         <h4>Design &amp; Quote</h4>
         <p>We produce a detailed design plan and transparent fixed-price quote with no hidden extras.</p>
       </div>
       <div class="process-step">
         <div class="ps-num">03</div>
-        <span class="ps-icon">&#128296;</span>
+        <span class="ps-icon"><i class="fas fa-hammer"></i></span>
         <h4>Installation</h4>
         <p>Our directly-employed team manages the full installation. You have one contact throughout.</p>
       </div>
@@ -497,7 +498,7 @@
         <p>Most bathroom and kitchen companies sub-contract. We don't. Our in-house team handles every trade &mdash; from first fix plumbing to final grout. That means one contract, one guarantee and no passing the buck.</p>
         <ul class="why-points">
           <li>
-            <div class="wp-icon">&#128737;</div>
+            <div class="wp-icon"><i class="fas fa-shield-halved"></i></div>
             <div class="wp-text"><h4>Which? Trusted Trader</h4><p>Independently verified and reviewed — consistently 5 stars</p></div>
           </li>
           <li>
@@ -505,7 +506,7 @@
             <div class="wp-text"><h4>All Trades In-House</h4><p>Plumber, electrician, tiler and carpenter — all our own employees</p></div>
           </li>
           <li>
-            <div class="wp-icon">&#128179;</div>
+            <div class="wp-icon"><i class="fas fa-credit-card"></i></div>
             <div class="wp-text"><h4>Fixed-Price Quotes</h4><p>The price we quote is the price you pay. No surprise invoices.</p></div>
           </li>
           <li>
@@ -517,7 +518,7 @@
       <div class="why-right">
         <div class="why-stat-card"><div class="wsc-num">600+</div><div class="wsc-lbl">Bathrooms &amp; kitchens completed</div></div>
         <div class="why-stat-card"><div class="wsc-num">15yr</div><div class="wsc-lbl">Established in London since 2010</div></div>
-        <div class="why-stat-card"><div class="wsc-num">5&#9733;</div><div class="wsc-lbl">Average Which? Trusted Trader rating</div></div>
+        <div class="why-stat-card"><div class="wsc-num">5<i class="fas fa-star"></i></div><div class="wsc-lbl">Average Which? Trusted Trader rating</div></div>
         <div class="why-stat-card"><div class="wsc-num">5yr</div><div class="wsc-lbl">Full installation guarantee</div></div>
       </div>
     </div>
@@ -579,21 +580,21 @@
     <h2 class="section-title">What Our Clients Say</h2>
     <div class="testi-grid">
       <div class="testi-card">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p class="testi-text">"Forma transformed our tired Victorian bathroom into something extraordinary. One team handled everything — no chasing sub-contractors, no delays. The walk-in shower and freestanding bath look incredible."</p>
         <div class="testi-author">Emma &amp; Chris W.</div>
         <div class="testi-loc">Clapham, London</div>
         <div class="testi-job">Full Bathroom Refit &mdash; Victorian Terrace</div>
       </div>
       <div class="testi-card">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p class="testi-text">"Used the 0% finance option for a new kitchen. The design process was brilliant — they understood exactly what we wanted. Quartz worktops, Neff appliances and perfect tiling. Couldn't be happier."</p>
         <div class="testi-author">Raj &amp; Priya K.</div>
         <div class="testi-loc">Finchley, London</div>
         <div class="testi-job">Full Kitchen Installation &mdash; Open Plan</div>
       </div>
       <div class="testi-card">
-        <div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p class="testi-text">"We had both bathrooms and the kitchen done together. Considering the scale of the project, the disruption was minimal and the project manager was always available. Five-star service throughout."</p>
         <div class="testi-author">David H.</div>
         <div class="testi-loc">Richmond, London</div>
@@ -612,7 +613,7 @@
         <p>Tell us about your bathroom or kitchen project and we'll arrange a free design visit at a time that suits you. No pressure, no obligation.</p>
         <div class="contact-details">
           <div class="contact-detail">
-            <div class="cd-icon">&#128222;</div>
+            <div class="cd-icon"><i class="fas fa-phone"></i></div>
             <div class="cd-text">
               <strong><a href="tel:+447479531509" style="color:inherit;text-decoration:none">+44 7479 531509</a></strong>
               Mon&ndash;Sat 8am&ndash;6pm
@@ -626,14 +627,14 @@
             </div>
           </div>
           <div class="contact-detail">
-            <div class="cd-icon">&#128205;</div>
+            <div class="cd-icon"><i class="fas fa-location-dot"></i></div>
             <div class="cd-text">
               <strong>All London Boroughs</strong>
               Plus inner Home Counties
             </div>
           </div>
           <div class="contact-detail">
-            <div class="cd-icon">&#128179;</div>
+            <div class="cd-icon"><i class="fas fa-credit-card"></i></div>
             <div class="cd-text">
               <strong>0% Finance Available</strong>
               Over 12 or 24 months &mdash; ask us for details

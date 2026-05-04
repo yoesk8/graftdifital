@@ -259,6 +259,7 @@
       .warranty-badges { justify-content: flex-start; }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
 
@@ -272,9 +273,9 @@
   <div class="topbar">
     <div class="topbar-inner">
       <div class="topbar-left">
-        <span class="topbar-item">&#128222; <a href="tel:+447479531509">+44 7479 531509</a></span>
+        <span class="topbar-item"><i class="fas fa-phone"></i> <a href="tel:+447479531509">+44 7479 531509</a></span>
         <span class="topbar-item">&#9993; <a href="mailto:sales@graftdigital.london">sales@graftdigital.london</a></span>
-        <span class="topbar-item">&#128337; Mon&#8211;Sat 8am&#8211;7pm</span>
+        <span class="topbar-item"><i class="fas fa-clock"></i> Mon&#8211;Sat 8am&#8211;7pm</span>
       </div>
       <span class="topbar-badge">&#9989; 98% Same-Day Bookings</span>
     </div>
@@ -284,7 +285,7 @@
   <nav class="navbar">
     <div class="nav-inner">
       <div class="logo">
-        <div class="logo-mark">&#128296;</div>
+        <div class="logo-mark"><i class="fas fa-hammer"></i></div>
         <span class="logo-name">Pro<span>Fix</span> London</span>
       </div>
       <ul class="nav-links">
@@ -316,26 +317,26 @@
           <h1>Appliance Broken? We&#8217;ll Fix It <span>Today.</span></h1>
           <p class="hero-sub">London&#8217;s most trusted appliance repair specialists. Fixed labour fee, 6-month parts &amp; labour warranty, and engineers with 15+ years&#8217; experience.</p>
           <div class="hero-promises">
-            <div class="promise-item"><div class="promise-dot">&#10003;</div>Same-day availability</div>
-            <div class="promise-item"><div class="promise-dot">&#10003;</div>Fixed labour fee — no surprise costs</div>
-            <div class="promise-item"><div class="promise-dot">&#10003;</div>6-month parts &amp; labour warranty</div>
-            <div class="promise-item"><div class="promise-dot">&#10003;</div>Gas Safe &amp; fully insured engineers</div>
+            <div class="promise-item"><div class="promise-dot"><i class="fas fa-check"></i></div>Same-day availability</div>
+            <div class="promise-item"><div class="promise-dot"><i class="fas fa-check"></i></div>Fixed labour fee — no surprise costs</div>
+            <div class="promise-item"><div class="promise-dot"><i class="fas fa-check"></i></div>6-month parts &amp; labour warranty</div>
+            <div class="promise-item"><div class="promise-dot"><i class="fas fa-check"></i></div>Gas Safe &amp; fully insured engineers</div>
           </div>
           <div class="hero-btns">
             <a href="#contact" class="btn-indigo">Book a Repair</a>
-            <a href="tel:+447479531509" class="btn-outline">&#128222; Call Now</a>
+            <a href="tel:+447479531509" class="btn-outline"><i class="fas fa-phone"></i> Call Now</a>
           </div>
         </div>
         <div>
           <div class="appliance-selector">
             <div class="selector-title">What needs fixing?</div>
             <div class="appliance-grid" id="appGrid">
-              <button class="appliance-btn active" onclick="selectApp(this)" data-app="Washing Machine"><span class="app-emoji">&#128167;</span><span class="app-name">Washing Machine</span></button>
-              <button class="appliance-btn" onclick="selectApp(this)" data-app="Dishwasher"><span class="app-emoji">&#129693;</span><span class="app-name">Dishwasher</span></button>
-              <button class="appliance-btn" onclick="selectApp(this)" data-app="Fridge Freezer"><span class="app-emoji">&#127967;</span><span class="app-name">Fridge Freezer</span></button>
-              <button class="appliance-btn" onclick="selectApp(this)" data-app="Oven / Cooker"><span class="app-emoji">&#127859;</span><span class="app-name">Oven / Cooker</span></button>
-              <button class="appliance-btn" onclick="selectApp(this)" data-app="Tumble Dryer"><span class="app-emoji">&#127744;</span><span class="app-name">Tumble Dryer</span></button>
-              <button class="appliance-btn" onclick="selectApp(this)" data-app="Other Appliance"><span class="app-emoji">&#128268;</span><span class="app-name">Other</span></button>
+              <button class="appliance-btn active" onclick="selectApp(this)" data-app="Washing Machine"><span class="app-emoji"><i class="fas fa-droplet"></i></span><span class="app-name">Washing Machine</span></button>
+              <button class="appliance-btn" onclick="selectApp(this)" data-app="Dishwasher"><span class="app-emoji"><i class="fas fa-water-ladder"></i></span><span class="app-name">Dishwasher</span></button>
+              <button class="appliance-btn" onclick="selectApp(this)" data-app="Fridge Freezer"><span class="app-emoji"><i class="fas fa-building"></i></span><span class="app-name">Fridge Freezer</span></button>
+              <button class="appliance-btn" onclick="selectApp(this)" data-app="Oven / Cooker"><span class="app-emoji"><i class="fas fa-utensils"></i></span><span class="app-name">Oven / Cooker</span></button>
+              <button class="appliance-btn" onclick="selectApp(this)" data-app="Tumble Dryer"><span class="app-emoji"><i class="fas fa-wind"></i></span><span class="app-name">Tumble Dryer</span></button>
+              <button class="appliance-btn" onclick="selectApp(this)" data-app="Other Appliance"><span class="app-emoji"><i class="fas fa-plug"></i></span><span class="app-name">Other</span></button>
             </div>
             <button class="selector-cta" onclick="bookRepair()">Book This Repair &#8594;</button>
           </div>
@@ -351,7 +352,7 @@
         <div class="stat-item"><div class="stat-num"><span>98%</span></div><div class="stat-lbl">Same-Day Bookings</div></div>
         <div class="stat-item"><div class="stat-num">6 <span>Month</span></div><div class="stat-lbl">Warranty</div></div>
         <div class="stat-item"><div class="stat-num"><span>15+</span> yrs</div><div class="stat-lbl">Engineer Experience</div></div>
-        <div class="stat-item"><div class="stat-num"><span>4.9</span>&#11088;</div><div class="stat-lbl">Customer Rating</div></div>
+        <div class="stat-item"><div class="stat-num"><span>4.9</span><i class="fas fa-star"></i></div><div class="stat-lbl">Customer Rating</div></div>
         <div class="stat-item"><div class="stat-num"><span>£0</span></div><div class="stat-lbl">Call-Out Fee</div></div>
       </div>
     </div>
@@ -367,7 +368,7 @@
       </div>
       <div class="appliances-grid">
         <div class="appliance-card reveal">
-          <div class="app-header"><span class="app-big-emoji">&#128167;</span><div class="app-title">Washing Machines</div></div>
+          <div class="app-header"><span class="app-big-emoji"><i class="fas fa-droplet"></i></span><div class="app-title">Washing Machines</div></div>
           <div class="app-body">
             <ul class="app-issues">
               <li>Not spinning or draining</li>
@@ -380,7 +381,7 @@
           </div>
         </div>
         <div class="appliance-card reveal">
-          <div class="app-header"><span class="app-big-emoji">&#129693;</span><div class="app-title">Dishwashers</div></div>
+          <div class="app-header"><span class="app-big-emoji"><i class="fas fa-water-ladder"></i></span><div class="app-title">Dishwashers</div></div>
           <div class="app-body">
             <ul class="app-issues">
               <li>Not cleaning properly</li>
@@ -393,7 +394,7 @@
           </div>
         </div>
         <div class="appliance-card reveal">
-          <div class="app-header"><span class="app-big-emoji">&#127967;</span><div class="app-title">Fridge Freezers</div></div>
+          <div class="app-header"><span class="app-big-emoji"><i class="fas fa-building"></i></span><div class="app-title">Fridge Freezers</div></div>
           <div class="app-body">
             <ul class="app-issues">
               <li>Not cooling or freezing</li>
@@ -406,7 +407,7 @@
           </div>
         </div>
         <div class="appliance-card reveal">
-          <div class="app-header"><span class="app-big-emoji">&#127859;</span><div class="app-title">Ovens &amp; Cookers</div></div>
+          <div class="app-header"><span class="app-big-emoji"><i class="fas fa-utensils"></i></span><div class="app-title">Ovens &amp; Cookers</div></div>
           <div class="app-body">
             <ul class="app-issues">
               <li>Not heating up</li>
@@ -419,7 +420,7 @@
           </div>
         </div>
         <div class="appliance-card reveal">
-          <div class="app-header"><span class="app-big-emoji">&#127744;</span><div class="app-title">Tumble Dryers</div></div>
+          <div class="app-header"><span class="app-big-emoji"><i class="fas fa-wind"></i></span><div class="app-title">Tumble Dryers</div></div>
           <div class="app-body">
             <ul class="app-issues">
               <li>Not heating</li>
@@ -432,7 +433,7 @@
           </div>
         </div>
         <div class="appliance-card reveal">
-          <div class="app-header"><span class="app-big-emoji">&#128168;</span><div class="app-title">Tumble Dryers &amp; More</div></div>
+          <div class="app-header"><span class="app-big-emoji"><i class="fas fa-wind"></i></span><div class="app-title">Tumble Dryers &amp; More</div></div>
           <div class="app-body">
             <ul class="app-issues">
               <li>American fridge freezers</li>
@@ -445,7 +446,7 @@
           </div>
         </div>
         <div class="appliance-card reveal">
-          <div class="app-header"><span class="app-big-emoji">&#128268;</span><div class="app-title">Small Appliances</div></div>
+          <div class="app-header"><span class="app-big-emoji"><i class="fas fa-plug"></i></span><div class="app-title">Small Appliances</div></div>
           <div class="app-body">
             <ul class="app-issues">
               <li>Microwave repair</li>
@@ -511,15 +512,15 @@
         </div>
         <div class="pricing-right reveal">
           <div class="promise-card">
-            <div class="promise-icon">&#127968;</div>
+            <div class="promise-icon"><i class="fas fa-house"></i></div>
             <div><h4>We Come to You</h4><p>No dropping off your appliance — our engineers come to your home at a time that suits you.</p></div>
           </div>
           <div class="promise-card">
-            <div class="promise-icon">&#128296;</div>
+            <div class="promise-icon"><i class="fas fa-hammer"></i></div>
             <div><h4>Parts in the Van</h4><p>We carry thousands of spare parts for all major brands — meaning most repairs are completed on the first visit.</p></div>
           </div>
           <div class="promise-card">
-            <div class="promise-icon">&#128221;</div>
+            <div class="promise-icon"><i class="fas fa-file-pen"></i></div>
             <div><h4>Written Quote First</h4><p>You&#8217;ll always receive a written quote before we start any work — no surprises when the invoice arrives.</p></div>
           </div>
           <div class="promise-card">
@@ -600,9 +601,9 @@
         </div>
         <div class="warranty-badges">
           <div class="w-badge"><span class="wi">&#9989;</span><div class="wv">6 Months</div><div class="wl">Warranty</div></div>
-          <div class="w-badge"><span class="wi">&#128272;</span><div class="wv">Insured</div><div class="wl">£2M Public Liability</div></div>
-          <div class="w-badge"><span class="wi">&#11088;</span><div class="wv">4.9★</div><div class="wl">Rated</div></div>
-          <div class="w-badge"><span class="wi">&#127942;</span><div class="wv">Gas Safe</div><div class="wl">Registered</div></div>
+          <div class="w-badge"><span class="wi"><i class="fas fa-lock"></i></span><div class="wv">Insured</div><div class="wl">£2M Public Liability</div></div>
+          <div class="w-badge"><span class="wi"><i class="fas fa-star"></i></span><div class="wv">4.9★</div><div class="wl">Rated</div></div>
+          <div class="w-badge"><span class="wi"><i class="fas fa-trophy"></i></span><div class="wv">Gas Safe</div><div class="wl">Registered</div></div>
         </div>
       </div>
     </div>
@@ -618,7 +619,7 @@
       </div>
       <div class="reviews-grid">
         <div class="review-card reveal">
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
           <p class="review-text">"Washing machine stopped spinning on a Tuesday morning. ProFix came out the same afternoon, diagnosed a worn drum bearing, had the part in the van and fixed it within an hour. Brilliant service and very fair price."</p>
           <div class="review-bottom">
             <div class="reviewer-avatar">P</div>
@@ -627,7 +628,7 @@
           </div>
         </div>
         <div class="review-card reveal">
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
           <p class="review-text">"American fridge freezer stopped cooling — with a full fridge. ProFix came next morning, replaced the compressor start relay and it&#8217;s been perfect ever since. The 6-month warranty gave me real peace of mind. Will definitely use again."</p>
           <div class="review-bottom">
             <div class="reviewer-avatar">N</div>
@@ -636,7 +637,7 @@
           </div>
         </div>
         <div class="review-card reveal">
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
           <p class="review-text">"Oven element failed the day before a dinner party. Called ProFix at 8am, engineer arrived by 11am with the part. Fixed in 45 minutes, dinner party saved! Transparent pricing, lovely engineer and the warranty is a great bonus."</p>
           <div class="review-bottom">
             <div class="reviewer-avatar">C</div>
@@ -658,7 +659,7 @@
           <p>Call us now for a same-day slot, or fill in the form and we&#8217;ll call you back within 30 minutes to confirm your booking.</p>
           <div class="contact-details">
             <div class="contact-row">
-              <div class="contact-icon">&#128222;</div>
+              <div class="contact-icon"><i class="fas fa-phone"></i></div>
               <div class="contact-row-text">
                 <strong>Call to Book Same-Day</strong>
                 <a href="tel:+447479531509">+44 7479 531509</a>
@@ -672,7 +673,7 @@
               </div>
             </div>
             <div class="contact-row">
-              <div class="contact-icon">&#128337;</div>
+              <div class="contact-icon"><i class="fas fa-clock"></i></div>
               <div class="contact-row-text">
                 <strong>Hours</strong>
                 <a>Monday&#8211;Saturday 8am&#8211;7pm</a>
@@ -732,7 +733,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="footer-logo">
-            <div class="footer-logo-mark">&#128296;</div>
+            <div class="footer-logo-mark"><i class="fas fa-hammer"></i></div>
             <span class="footer-logo-text">ProFix London</span>
           </div>
           <p>London&#8217;s same-day appliance repair specialists. Fixed labour fee, 6-month warranty, Gas Safe registered engineers.</p>
@@ -765,7 +766,7 @@
   </footer>
 
   <!-- FLOATING CTA -->
-  <a href="tel:+447479531509" class="floating-cta">&#128296; Book Same-Day Repair</a>
+  <a href="tel:+447479531509" class="floating-cta"><i class="fas fa-hammer"></i> Book Same-Day Repair</a>
 
   <script>
     const revealEls = document.querySelectorAll('.reveal');

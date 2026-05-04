@@ -265,6 +265,7 @@
     @media(max-width:900px){ .hero-inner{grid-template-columns:1fr;} .hero-stats-col{flex-direction:row;flex-wrap:wrap;} .stat-card{flex:1;min-width:140px;} .emg-inner{grid-template-columns:1fr;} .emg-ctas{align-items:flex-start;} .emg-phone{font-size:1.4rem;} .aq-grid{grid-template-columns:1fr;} }
     @media(max-width:700px){ .nav-links,.nav-cta-wrap{display:none;} .hamburger{display:flex;} .svc-row{grid-template-columns:48px 1fr;} .svc-tag{display:none;} .certs-inner{justify-content:flex-start;} .cert-item{border-right:none;border-bottom:1px solid var(--border-dark);width:100%;} .gallery-grid{grid-template-columns:1fr 1fr;} .form-row{grid-template-columns:1fr;} .footer-grid{grid-template-columns:1fr;} .footer-bottom{flex-direction:column;text-align:center;} .float-emg{display:block;} }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
 
@@ -305,7 +306,7 @@
         <li><a href="#areas-quote">Contact</a></li>
       </ul>
       <div class="nav-cta-wrap">
-        <a href="tel:02030000000" class="nav-phone-btn">&#128222; 020 3000 0000</a>
+        <a href="tel:02030000000" class="nav-phone-btn"><i class="fas fa-phone"></i> 020 3000 0000</a>
         <a href="#areas-quote" class="btn btn-yellow" style="padding:9px 20px;font-size:.88rem;">Free Quote</a>
       </div>
       <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
@@ -321,7 +322,7 @@
   <a href="#gallery"      onclick="closeMob()">Our Work</a>
   <a href="#testimonials" onclick="closeMob()">Reviews</a>
   <a href="#areas-quote"  onclick="closeMob()">Contact</a>
-  <a href="tel:02030000000" class="btn btn-red" onclick="closeMob()">&#128222; Emergency Call</a>
+  <a href="tel:02030000000" class="btn btn-red" onclick="closeMob()"><i class="fas fa-phone"></i> Emergency Call</a>
 </div>
 
 <!-- HERO -->
@@ -337,7 +338,7 @@
         <p class="hero-sub">From emergency callouts to full rewires &mdash; Apex Electrical delivers safe, certified electrical work across all London boroughs. Trusted by 600+ homeowners and businesses.</p>
         <div class="hero-ctas">
           <a href="#areas-quote"   class="btn btn-yellow btn-lg">Get a Free Quote</a>
-          <a href="tel:02030000000" class="btn btn-outline-yellow btn-lg">&#128222; 24/7 Emergency</a>
+          <a href="tel:02030000000" class="btn btn-outline-yellow btn-lg"><i class="fas fa-phone"></i> 24/7 Emergency</a>
         </div>
         <div class="hero-certs">
           <div class="cert-badge"><span class="ci">&#9989;</span> NICEIC Approved</div>
@@ -352,7 +353,7 @@
           <div class="sc-lbl">Jobs completed across London</div>
         </div>
         <div class="stat-card">
-          <div class="sc-num">5&#9733;</div>
+          <div class="sc-num">5<i class="fas fa-star"></i></div>
           <div class="sc-lbl">Google rating &bull; 120+ reviews</div>
         </div>
         <div class="stat-card stat-card-wide">
@@ -379,10 +380,10 @@
   <div class="container">
     <div class="certs-inner">
       <div class="cert-item"><span class="cert-icon">&#9889;</span><div><div class="cert-name">NICEIC</div><div class="cert-sub">Approved Contractor</div></div></div>
-      <div class="cert-item"><span class="cert-icon">&#127968;</span><div><div class="cert-name">Part P</div><div class="cert-sub">Registered</div></div></div>
-      <div class="cert-item"><span class="cert-icon">&#128196;</span><div><div class="cert-name">EICR</div><div class="cert-sub">Certified Tester</div></div></div>
+      <div class="cert-item"><span class="cert-icon"><i class="fas fa-house"></i></span><div><div class="cert-name">Part P</div><div class="cert-sub">Registered</div></div></div>
+      <div class="cert-item"><span class="cert-icon"><i class="fas fa-file-lines"></i></span><div><div class="cert-name">EICR</div><div class="cert-sub">Certified Tester</div></div></div>
       <div class="cert-item"><span class="cert-icon">&#9889;</span><div><div class="cert-name">NAPIT</div><div class="cert-sub">Member</div></div></div>
-      <div class="cert-item"><span class="cert-icon">&#128665;</span><div><div class="cert-name">OZEV</div><div class="cert-sub">Authorised Installer</div></div></div>
+      <div class="cert-item"><span class="cert-icon"><i class="fas fa-car-side"></i></span><div><div class="cert-name">OZEV</div><div class="cert-sub">Authorised Installer</div></div></div>
       <div class="cert-item"><span class="cert-icon">&#9728;</span><div><div class="cert-name">MCS</div><div class="cert-sub">Solar Certified</div></div></div>
     </div>
   </div>
@@ -462,7 +463,7 @@
       <div class="emg-ctas">
         <div class="emg-phone"><a href="tel:02030000000">020 3000 0000</a></div>
         <div class="emg-sub">Available 24 hours &bull; 7 days a week</div>
-        <a href="tel:02030000000" class="btn btn-red btn-lg" style="margin-top:8px;">&#128222; Call the Emergency Line</a>
+        <a href="tel:02030000000" class="btn btn-red btn-lg" style="margin-top:8px;"><i class="fas fa-phone"></i> Call the Emergency Line</a>
       </div>
     </div>
   </div>
@@ -477,12 +478,12 @@
       <p>We don&rsquo;t cut corners. Every job is done to the highest safety standards.</p>
     </div>
     <div class="why-grid reveal">
-      <div class="why-item"><span class="wi-icon">&#128196;</span><div class="wi-title">Certified &amp; Compliant</div><p class="wi-desc">All work is NICEIC certified and Part P compliant. You receive full certification and documentation on completion.</p></div>
-      <div class="why-item"><span class="wi-icon">&#128221;</span><div class="wi-title">Fixed Prices</div><p class="wi-desc">We quote before we start. No call-out surprises, no labour rate changes mid-job. The price we quote is the price you pay.</p></div>
-      <div class="why-item"><span class="wi-icon">&#128214;</span><div class="wi-title">Landlord Specialists</div><p class="wi-desc">EICR certificates, remedial works and compliance reports. We keep your property legal and your tenants safe.</p></div>
+      <div class="why-item"><span class="wi-icon"><i class="fas fa-file-lines"></i></span><div class="wi-title">Certified &amp; Compliant</div><p class="wi-desc">All work is NICEIC certified and Part P compliant. You receive full certification and documentation on completion.</p></div>
+      <div class="why-item"><span class="wi-icon"><i class="fas fa-file-pen"></i></span><div class="wi-title">Fixed Prices</div><p class="wi-desc">We quote before we start. No call-out surprises, no labour rate changes mid-job. The price we quote is the price you pay.</p></div>
+      <div class="why-item"><span class="wi-icon"><i class="fas fa-book-open"></i></span><div class="wi-title">Landlord Specialists</div><p class="wi-desc">EICR certificates, remedial works and compliance reports. We keep your property legal and your tenants safe.</p></div>
       <div class="why-item"><span class="wi-icon">&#9989;</span><div class="wi-title">Tidy Workmanship</div><p class="wi-desc">We protect your home, chase cables neatly and leave every job clean. You won&rsquo;t know we were there, except for the results.</p></div>
-      <div class="why-item"><span class="wi-icon">&#128222;</span><div class="wi-title">Always Contactable</div><p class="wi-desc">Direct line to your electrician. No middlemen. Updates during the job and a follow-up call to make sure you&rsquo;re satisfied.</p></div>
-      <div class="why-item"><span class="wi-icon">&#128274;</span><div class="wi-title">Fully Insured</div><p class="wi-desc">Public liability insurance up to &pound;5m. You and your property are fully protected on every single job we carry out.</p></div>
+      <div class="why-item"><span class="wi-icon"><i class="fas fa-phone"></i></span><div class="wi-title">Always Contactable</div><p class="wi-desc">Direct line to your electrician. No middlemen. Updates during the job and a follow-up call to make sure you&rsquo;re satisfied.</p></div>
+      <div class="why-item"><span class="wi-icon"><i class="fas fa-lock"></i></span><div class="wi-title">Fully Insured</div><p class="wi-desc">Public liability insurance up to &pound;5m. You and your property are fully protected on every single job we carry out.</p></div>
     </div>
   </div>
 </section>
@@ -497,13 +498,13 @@
     </div>
     <div class="gallery-grid reveal">
       <div class="gallery-item"><div class="gi-bg gi-1"><span class="gi-icon">&#9889;</span><span class="gi-label">Consumer Unit Upgrade</span></div><div class="gi-overlay"></div></div>
-      <div class="gallery-item"><div class="gi-bg gi-2"><span class="gi-icon">&#127968;</span><span class="gi-label">Full Rewire &bull; Islington</span></div><div class="gi-overlay"></div></div>
-      <div class="gallery-item"><div class="gi-bg gi-3"><span class="gi-icon">&#128665;</span><span class="gi-label">EV Charger &bull; Hackney</span></div><div class="gi-overlay"></div></div>
-      <div class="gallery-item"><div class="gi-bg gi-4"><span class="gi-icon">&#128196;</span><span class="gi-label">EICR Certificate &bull; Kensington</span></div><div class="gi-overlay"></div></div>
-      <div class="gallery-item"><div class="gi-bg gi-5"><span class="gi-icon">&#127970;</span><span class="gi-label">Commercial Install &bull; Soho</span></div><div class="gi-overlay"></div></div>
+      <div class="gallery-item"><div class="gi-bg gi-2"><span class="gi-icon"><i class="fas fa-house"></i></span><span class="gi-label">Full Rewire &bull; Islington</span></div><div class="gi-overlay"></div></div>
+      <div class="gallery-item"><div class="gi-bg gi-3"><span class="gi-icon"><i class="fas fa-car-side"></i></span><span class="gi-label">EV Charger &bull; Hackney</span></div><div class="gi-overlay"></div></div>
+      <div class="gallery-item"><div class="gi-bg gi-4"><span class="gi-icon"><i class="fas fa-file-lines"></i></span><span class="gi-label">EICR Certificate &bull; Kensington</span></div><div class="gi-overlay"></div></div>
+      <div class="gallery-item"><div class="gi-bg gi-5"><span class="gi-icon"><i class="fas fa-building"></i></span><span class="gi-label">Commercial Install &bull; Soho</span></div><div class="gi-overlay"></div></div>
       <div class="gallery-item"><div class="gi-bg gi-6"><span class="gi-icon">&#9728;</span><span class="gi-label">Garden Lighting &bull; Richmond</span></div><div class="gi-overlay"></div></div>
     </div>
-    <p class="gallery-note">&#128247; Real project photos will replace these tiles on your live site</p>
+    <p class="gallery-note"><i class="fas fa-camera"></i> Real project photos will replace these tiles on your live site</p>
   </div>
 </section>
 
@@ -517,17 +518,17 @@
     </div>
     <div class="reviews-grid">
       <div class="review-card reveal">
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p class="review-text">Apex rewired our Victorian terrace in Islington from top to bottom. Immaculate work, incredibly tidy and the certificate was issued the same day. It&rsquo;s rare to find tradespeople who combine skill with genuine professionalism.</p>
         <div class="reviewer"><div class="rev-avatar">DM</div><div><div class="rev-name">David M.</div><div class="rev-loc">Islington, N1</div><div class="rev-src">&#9679; Google Review</div></div></div>
       </div>
       <div class="review-card reveal">
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p class="review-text">Called them at 11pm for a power cut emergency. Electrician was at our flat in Clapham within the hour, diagnosed the fault straight away and had us back on in 40 minutes. Absolute lifesavers.</p>
         <div class="reviewer"><div class="rev-avatar">KP</div><div><div class="rev-name">Karen P.</div><div class="rev-loc">Clapham, SW4</div><div class="rev-src">&#9679; Google Review</div></div></div>
       </div>
       <div class="review-card reveal">
-        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         <p class="review-text">Got my EICR and consumer unit upgrade done on the same day for a great price. The landlord certificate was emailed over within the hour. Will definitely be using them for all my rental properties going forward.</p>
         <div class="reviewer"><div class="rev-avatar">RB</div><div><div class="rev-name">Robert B.</div><div class="rev-loc">Landlord &bull; Croydon</div><div class="rev-src">&#9679; Google Review</div></div></div>
       </div>
