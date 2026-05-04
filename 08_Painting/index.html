@@ -249,6 +249,12 @@
     .btn-submit { width: 100%; background: var(--plum); color: white; border: none; padding: 14px; border-radius: 10px; font-family: inherit; font-size: 1rem; font-weight: 700; cursor: pointer; transition: background .2s; }
     .btn-submit:hover { background: var(--plum-mid); }
 
+    /* ── LOGOS STRIP ── */
+    .logo-cert-item { display:flex; flex-direction:column; align-items:center; gap:7px; opacity:.5; transition:all 0.24s ease; filter:grayscale(100%); }
+    .logo-cert-item:hover { opacity:1; filter:grayscale(0%); }
+    .logo-cert-item img { height:40px; width:auto; max-width:100px; object-fit:contain; }
+    .logo-cert-item span { font-size:.62rem; font-weight:600; color:#aaa; text-align:center; letter-spacing:.04em; }
+
     /* ── FOOTER ── */
     .footer { background: var(--plum); color: white; padding: 56px 0 28px; }
     .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
@@ -406,6 +412,43 @@
           <span class="principle-icon"><i class="fas fa-broom"></i></span>
           <div class="principle-name">Tidiness</div>
           <div class="principle-desc">We leave your home cleaner than we found it — every time</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGOS STRIP -->
+  <div style="padding:28px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:white;">
+    <div class="container">
+      <p style="text-align:center;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#aaa;margin-bottom:20px;">Accreditations &amp; Trust</p>
+      <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:28px;">
+        <div class="logo-cert-item">
+          <img src="assets/images/logos/pda.svg" alt="PDA Member">
+          <span>PDA</span>
+        </div>
+        <div class="logo-cert-item">
+          <img src="assets/images/logos/cscs.svg" alt="CSCS Card">
+          <span>CSCS</span>
+        </div>
+        <div class="logo-cert-item">
+          <img src="assets/images/logos/trustmark.svg" alt="TrustMark">
+          <span>TrustMark</span>
+        </div>
+        <div class="logo-cert-item">
+          <img src="assets/images/logos/checkatrade.svg" alt="Checkatrade">
+          <span>Checkatrade</span>
+        </div>
+        <div class="logo-cert-item">
+          <img src="assets/images/logos/trustpilot.svg" alt="Trustpilot">
+          <span>Trustpilot</span>
+        </div>
+        <div class="logo-cert-item">
+          <img src="assets/images/logos/google.svg" alt="Google Reviews">
+          <span>Google Reviews</span>
+        </div>
+        <div class="logo-cert-item">
+          <img src="assets/images/logos/which-trusted-traders.svg" alt="Which? Trusted Traders">
+          <span>Which? Trusted</span>
         </div>
       </div>
     </div>
