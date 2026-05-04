@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swift Move London | Man with a Van &amp; Removals</title>
+  <meta name="description" content="Trusted man with a van and full removals across London. Instant online price estimate. House moves, office relocations &amp; student moves from £45/hr.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --night: #111827; --night-mid: #1F2937;
+      --orange: #F97316; --orange-light: #FB923C; --orange-pale: #FFF7ED;
+      --green: #22C55E; --red: #EF4444;
+      --sand: #FEF9F4; --white: #FFFFFF;
+      --text: #111827; --text-mid: #4B5563; --border: #E5E7EB;
+      --silver: #9CA3AF;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* GRAFT BANNER */
+    .graft-banner { background: var(--night); padding: 8px 0; border-bottom: 2px solid var(--orange); }
+    .graft-banner-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .graft-logo { display: flex; align-items: center; gap: 8px; }
+    .graft-mark { width: 28px; height: 28px; background: var(--orange); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: .85rem; font-weight: 800; color: #fff; }
+    .graft-name { font-size: .95rem; font-weight: 800; color: #fff; }
+    .graft-name span { color: var(--orange); }
+    .graft-tagline { color: rgba(255,255,255,.45); font-size: .78rem; }
+    .graft-cta { color: var(--orange); font-size: .8rem; font-weight: 700; border: 1px solid rgba(249,115,22,.4); border-radius: 6px; padding: 5px 12px; transition: all .2s; }
+    .graft-cta:hover { background: rgba(249,115,22,.1); }
+
+    /* NAV */
+    nav { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 200; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 24px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-van-mark {
+      width: 40px; height: 26px; position: relative; flex-shrink: 0;
+    }
+    .van-body-sm { position: absolute; right: 0; top: 0; width: 30px; height: 20px; background: var(--orange); border-radius: 3px 3px 0 0; }
+    .van-cab-sm { position: absolute; left: 0; top: 5px; width: 14px; height: 15px; background: var(--orange); border-radius: 3px 0 0 0; }
+    .van-win-sm { position: absolute; left: 1px; top: 6px; width: 10px; height: 7px; background: rgba(255,255,255,.45); border-radius: 2px 0 0 0; }
+    .van-wh-sm { position: absolute; bottom: 0; width: 10px; height: 10px; background: var(--night); border-radius: 50%; border: 2px solid #666; }
+    .van-wh-sm.f { left: 4px; }
+    .van-wh-sm.r { right: 4px; }
+    .nav-brand { font-size: 1.1rem; font-weight: 800; color: var(--night); }
+    .nav-brand span { color: var(--orange); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { color: var(--text-mid); font-size: .88rem; font-weight: 600; transition: color .2s; }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-btn { background: var(--orange); color: #fff; padding: 9px 22px; border-radius: 8px; font-size: .88rem; font-weight: 800; transition: all .2s; }
+    .nav-btn:hover { background: var(--orange-light); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(249,115,22,.35); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { width: 22px; height: 2px; background: var(--night); border-radius: 2px; display: block; }
+    .nav-mob { display: none; background: #fff; border-top: 1px solid var(--border); padding: 16px 24px; flex-direction: column; gap: 12px; }
+    .nav-mob.open { display: flex; }
+    .nav-mob a { color: var(--text-mid); font-size: .9rem; font-weight: 600; padding: 6px 0; border-bottom: 1px solid var(--border); }
+    .nav-mob a:last-child { background: var(--orange); color: #fff; text-align: center; border-radius: 8px; border: none; padding: 10px; font-weight: 800; }
+
+    /* HERO */
+    .hero { background: var(--night); padding: 64px 0; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 500px; height: 500px; background: radial-gradient(circle,rgba(249,115,22,.12) 0%,transparent 70%); pointer-events: none; }
+    .hero-inner { display: grid; grid-template-columns: 1fr 400px; gap: 48px; align-items: center; position: relative; z-index: 2; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(249,115,22,.15); border: 1px solid rgba(249,115,22,.3); color: var(--orange-light); padding: 5px 14px; border-radius: 100px; font-size: .78rem; font-weight: 700; margin-bottom: 20px; }
+    .hero-template-banner { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 8px; padding: 12px 16px; margin-bottom: 24px; font-size: .82rem; color: rgba(255,255,255,.65); line-height: 1.55; }
+    .hero-template-banner strong { color: var(--orange-light); }
+    .hero-template-banner a { color: var(--orange-light); font-weight: 700; }
+    .hero h1 { font-size: clamp(2.1rem,4.5vw,3.4rem); font-weight: 800; color: #fff; line-height: 1.1; letter-spacing: -.03em; margin-bottom: 16px; }
+    .hero h1 em { color: var(--orange); font-style: normal; }
+    .hero-desc { color: rgba(255,255,255,.65); font-size: 1rem; line-height: 1.7; margin-bottom: 28px; max-width: 460px; }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 8px; font-size: .92rem; font-weight: 800; cursor: pointer; transition: all .22s; border: none; font-family: inherit; }
+    .btn-orange { background: var(--orange); color: #fff; }
+    .btn-orange:hover { background: var(--orange-light); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(249,115,22,.4); }
+    .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.25); }
+    .btn-ghost:hover { border-color: rgba(255,255,255,.6); background: rgba(255,255,255,.06); }
+    .hero-trust { display: flex; gap: 16px; flex-wrap: wrap; }
+    .trust-pill { display: flex; align-items: center; gap: 6px; color: rgba(255,255,255,.55); font-size: .78rem; font-weight: 600; }
+    .trust-pill span { color: var(--green); font-size: 1rem; }
+
+    /* HERO CALCULATOR */
+    .calc-card { background: #fff; border-radius: 16px; padding: 28px; box-shadow: 0 20px 60px rgba(0,0,0,.4); }
+    .calc-card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 4px; color: var(--night); }
+    .calc-card .calc-sub { font-size: .82rem; color: var(--text-mid); margin-bottom: 20px; }
+    .calc-field { margin-bottom: 14px; }
+    .calc-field label { display: block; font-size: .8rem; font-weight: 700; color: var(--night); margin-bottom: 5px; }
+    .calc-field select, .calc-field input[type=range] { width: 100%; }
+    .calc-field select { padding: 9px 12px; border: 1.5px solid var(--border); border-radius: 8px; font-size: .88rem; font-family: inherit; color: var(--text); outline: none; background: #fff; transition: border .2s; }
+    .calc-field select:focus { border-color: var(--orange); }
+    .range-wrap { display: flex; align-items: center; gap: 10px; }
+    .calc-field input[type=range] { accent-color: var(--orange); }
+    .range-val { font-size: .82rem; font-weight: 700; color: var(--orange); min-width: 50px; text-align: right; white-space: nowrap; }
+    .calc-result { background: var(--orange-pale); border: 2px solid var(--orange); border-radius: 12px; padding: 16px 20px; margin-top: 16px; text-align: center; }
+    .calc-result-label { font-size: .75rem; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 4px; }
+    .calc-price { font-size: 2.2rem; font-weight: 800; color: var(--night); line-height: 1; }
+    .calc-meta { display: flex; justify-content: center; gap: 16px; margin-top: 8px; flex-wrap: wrap; }
+    .calc-meta-item { font-size: .75rem; color: var(--text-mid); font-weight: 600; }
+    .calc-meta-item strong { color: var(--night); }
+    .calc-book-btn { width: 100%; margin-top: 14px; padding: 12px; background: var(--orange); color: #fff; border: none; border-radius: 8px; font-size: .92rem; font-weight: 800; cursor: pointer; font-family: inherit; transition: all .2s; }
+    .calc-book-btn:hover { background: var(--orange-light); }
+
+    /* STATS */
+    .stats-strip { background: var(--orange); padding: 20px 0; }
+    .stats-row { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 8px; }
+    .stat-item { text-align: center; padding: 4px 16px; }
+    .stat-num { font-size: 1.7rem; font-weight: 800; color: #fff; line-height: 1; }
+    .stat-lbl { font-size: .75rem; font-weight: 700; color: rgba(255,255,255,.75); text-transform: uppercase; letter-spacing: .04em; }
+
+    /* SERVICES */
+    .services-section { padding: 80px 0; background: var(--sand); }
+    .section-label { text-align: center; font-size: .78rem; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+    .section-title { font-size: clamp(1.6rem,3vw,2.3rem); font-weight: 800; letter-spacing: -.03em; text-align: center; margin-bottom: 8px; }
+    .section-sub { text-align: center; color: var(--text-mid); font-size: 1rem; margin-bottom: 48px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .svc-card { background: #fff; border-radius: 16px; padding: 32px 28px; border: 2px solid var(--border); transition: all .25s; position: relative; overflow: hidden; }
+    .svc-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--orange); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+    .svc-card:hover { border-color: var(--orange); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(249,115,22,.12); }
+    .svc-card:hover::before { transform: scaleX(1); }
+    .svc-icon { font-size: 2.4rem; margin-bottom: 14px; display: block; line-height: 1; }
+    .svc-card h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 8px; }
+    .svc-card p { font-size: .88rem; color: var(--text-mid); line-height: 1.65; margin-bottom: 16px; }
+    .svc-price { font-size: .85rem; font-weight: 700; color: var(--orange); }
+
+    /* VAN SIZE SELECTOR */
+    .van-section { padding: 80px 0; background: var(--white); }
+    .van-tabs { display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; margin-bottom: 36px; }
+    .van-tab { padding: 10px 24px; border-radius: 8px; font-size: .88rem; font-weight: 700; border: 2px solid var(--border); background: #fff; color: var(--text-mid); cursor: pointer; transition: all .2s; font-family: inherit; }
+    .van-tab.active, .van-tab:hover { background: var(--night); color: var(--orange); border-color: var(--night); }
+    .van-panel { display: none; }
+    .van-panel.active { display: block; }
+    .van-panel-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; background: var(--sand); border-radius: 20px; padding: 48px; border: 1px solid var(--border); }
+    .van-graphic { display: flex; justify-content: center; align-items: flex-end; padding-bottom: 12px; }
+
+    /* CSS Van illustrations */
+    .css-van { position: relative; }
+    /* Transit van */
+    .van-transit .van-body { width: 180px; height: 80px; background: var(--orange); border-radius: 6px 6px 0 0; position: relative; }
+    .van-transit .van-cab { width: 68px; height: 64px; background: var(--orange-light); border-radius: 6px 0 0 0; position: absolute; left: -68px; bottom: 0; }
+    .van-transit .van-windshield { width: 48px; height: 32px; background: rgba(255,255,255,.4); border-radius: 5px 0 0 0; position: absolute; left: 8px; top: 8px; }
+    .van-transit .van-wheels { display: flex; justify-content: space-between; padding: 0 16px; margin-top: 0; position: absolute; bottom: -14px; left: -68px; right: 0; }
+    .van-wheel { width: 28px; height: 28px; background: var(--night); border-radius: 50%; border: 4px solid #555; }
+    .van-transit .van-door { position: absolute; right: 12px; top: 12px; bottom: 0; width: 60px; border-left: 2px solid rgba(0,0,0,.15); border-bottom: none; }
+    /* LWB van */
+    .van-lwb .van-body { width: 240px; height: 88px; background: var(--orange); border-radius: 6px 6px 0 0; position: relative; }
+    .van-lwb .van-cab { width: 72px; height: 72px; background: var(--orange-light); border-radius: 6px 0 0 0; position: absolute; left: -72px; bottom: 0; }
+    .van-lwb .van-windshield { width: 52px; height: 36px; background: rgba(255,255,255,.4); border-radius: 5px 0 0 0; position: absolute; left: 8px; top: 8px; }
+    .van-lwb .van-wheels { display: flex; justify-content: space-between; padding: 0 20px; position: absolute; bottom: -16px; left: -72px; right: 0; }
+    .van-lwb .van-wheel { width: 32px; height: 32px; }
+    /* Luton van */
+    .van-luton .van-box { width: 240px; height: 110px; background: var(--orange); border-radius: 4px; position: relative; }
+    .van-luton .van-box-top { position: absolute; top: -20px; left: 0; right: 40px; height: 20px; background: var(--orange); border-radius: 4px 4px 0 0; }
+    .van-luton .van-cab { width: 72px; height: 80px; background: var(--orange-light); border-radius: 6px 0 0 0; position: absolute; left: -72px; bottom: 0; }
+    .van-luton .van-windshield { width: 52px; height: 40px; background: rgba(255,255,255,.4); border-radius: 5px 0 0 0; position: absolute; left: 8px; top: 8px; }
+    .van-luton .van-wheels { display: flex; justify-content: space-between; padding: 0 20px; position: absolute; bottom: -18px; left: -72px; right: 0; }
+    .van-luton .van-wheel { width: 36px; height: 36px; }
+
+    .van-info h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; letter-spacing: -.02em; }
+    .van-info .van-capacity { display: inline-block; background: var(--orange); color: #fff; padding: 4px 14px; border-radius: 100px; font-size: .8rem; font-weight: 700; margin-bottom: 16px; }
+    .van-info p { color: var(--text-mid); font-size: .92rem; line-height: 1.7; margin-bottom: 20px; }
+    .van-specs { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+    .van-specs li { display: flex; align-items: center; gap: 8px; font-size: .88rem; color: var(--text); }
+    .van-specs li::before { content: ''; width: 16px; height: 16px; flex-shrink: 0; background: var(--orange); border-radius: 50%; display: inline-block; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2 6l3 3 5-5' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; }
+    .van-from { font-size: 1.1rem; font-weight: 800; color: var(--orange); }
+
+    /* HOW IT WORKS */
+    .how-section { padding: 80px 0; background: var(--night); position: relative; overflow: hidden; }
+    .how-section::before { content: ''; position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; background: radial-gradient(circle,rgba(249,115,22,.08) 0%,transparent 70%); }
+    .how-section .section-label { color: var(--orange); }
+    .how-section .section-title { color: #fff; }
+    .how-section .section-sub { color: rgba(255,255,255,.5); }
+    .timeline { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; margin-top: 48px; position: relative; }
+    .timeline::before { content: ''; position: absolute; top: 28px; left: calc(12.5% + 16px); right: calc(12.5% + 16px); height: 2px; background: linear-gradient(90deg,var(--orange),rgba(249,115,22,.3)); z-index: 0; }
+    .timeline-step { text-align: center; padding: 0 16px; position: relative; z-index: 1; }
+    .tl-num { width: 56px; height: 56px; background: var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem; font-weight: 800; margin: 0 auto 20px; border: 4px solid var(--night); box-shadow: 0 0 0 2px var(--orange); }
+    .timeline-step h3 { font-size: .95rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .timeline-step p { font-size: .82rem; color: rgba(255,255,255,.5); line-height: 1.6; }
+
+    /* WHAT'S INCLUDED */
+    .included-section { padding: 80px 0; background: var(--sand); }
+    .included-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
+    .incl-card { background: #fff; border-radius: 14px; padding: 28px; border: 1px solid var(--border); }
+    .incl-card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+    .incl-badge { background: var(--orange); color: #fff; font-size: .68rem; font-weight: 700; padding: 2px 10px; border-radius: 100px; text-transform: uppercase; letter-spacing: .04em; }
+    .incl-badge.addon { background: var(--night); }
+    .incl-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .incl-list li { display: flex; align-items: flex-start; gap: 8px; font-size: .88rem; color: var(--text-mid); }
+    .incl-list li::before { content: ''; width: 14px; height: 14px; flex-shrink: 0; margin-top: 3px; background: var(--green); border-radius: 50%; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10' fill='none'%3E%3Cpath d='M2 5l2 2 4-4' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; }
+
+    /* AREAS */
+    .areas-section { padding: 80px 0; background: #fff; }
+    .areas-grid { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 32px; }
+    .area-pill { background: var(--sand); border: 1px solid var(--border); border-radius: 100px; padding: 7px 16px; font-size: .82rem; font-weight: 600; color: var(--text-mid); transition: all .2s; }
+    .area-pill:hover { background: var(--orange); color: #fff; border-color: var(--orange); }
+
+    /* CONTACT */
+    .contact-section { padding: 80px 0; background: var(--night); }
+    .contact-section .section-label { color: var(--orange); }
+    .contact-section .section-title { color: #fff; }
+    .contact-section .section-sub { color: rgba(255,255,255,.5); }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .contact-info-cards { display: flex; flex-direction: column; gap: 16px; }
+    .info-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; padding: 20px; display: flex; align-items: center; gap: 14px; }
+    .info-icon { width: 44px; height: 44px; background: var(--orange); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .info-label { font-size: .75rem; color: rgba(255,255,255,.45); font-weight: 600; margin-bottom: 2px; }
+    .info-val { color: #fff; font-weight: 700; font-size: .95rem; }
+    .contact-usp { margin-top: 24px; }
+    .usp-row { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.06); font-size: .88rem; color: rgba(255,255,255,.65); }
+    .usp-row:last-child { border-bottom: none; }
+    .usp-row span { color: var(--green); font-size: 1.1rem; }
+    .contact-form-card { background: #fff; border-radius: 16px; padding: 36px; }
+    .contact-form-card h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 20px; }
+    .fg { margin-bottom: 14px; }
+    .fg label { display: block; font-size: .82rem; font-weight: 700; margin-bottom: 5px; }
+    .fg input, .fg select, .fg textarea { width: 100%; padding: 10px 13px; border: 1.5px solid var(--border); border-radius: 8px; font-size: .9rem; font-family: inherit; color: var(--text); outline: none; transition: border .2s; background: #fff; }
+    .fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(249,115,22,.1); }
+    .fg textarea { resize: vertical; min-height: 80px; }
+    .fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .submit-btn { width: 100%; padding: 13px; border-radius: 8px; background: var(--orange); color: #fff; font-size: .95rem; font-weight: 800; font-family: inherit; border: none; cursor: pointer; transition: all .2s; }
+    .submit-btn:hover { background: var(--orange-light); transform: translateY(-1px); }
+
+    /* FOOTER */
+    footer { background: #070D15; padding: 36px 0; border-top: 1px solid rgba(249,115,22,.1); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { display: flex; align-items: center; gap: 9px; }
+    .footer-brand { font-size: .95rem; font-weight: 800; color: #fff; }
+    .footer-brand span { color: var(--orange); }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-links a { color: rgba(255,255,255,.3); font-size: .78rem; transition: color .2s; }
+    .footer-links a:hover { color: var(--orange); }
+    .footer-copy { color: rgba(255,255,255,.25); font-size: .78rem; }
+    .footer-copy strong { color: var(--orange); }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* RESPONSIVE */
+    @media(max-width:960px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .calc-card { max-width: 480px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .van-panel-inner { grid-template-columns: 1fr; }
+      .van-graphic { order: -1; }
+      .timeline { grid-template-columns: 1fr 1fr; }
+      .timeline::before { display: none; }
+      .included-grid { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; }
+    }
+    @media(max-width:640px) {
+      .nav-links, .nav-btn { display: none; }
+      .hamburger { display: flex; }
+      .services-grid { grid-template-columns: 1fr; }
+      .timeline { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; }
+      .fg-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- GRAFT BANNER -->
+<div class="graft-banner">
+  <div class="container">
+    <div class="graft-banner-inner">
+      <a href="../index.html" class="graft-logo">
+        <div class="graft-mark">G</div>
+        <span class="graft-name">Graft<span>Digital</span></span>
+      </a>
+      <span class="graft-tagline">This is a demo template &mdash; your business, fully customised</span>
+      <a href="#get-started" class="graft-cta">Get Your Site &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="nav-van-mark">
+          <div class="van-body-sm"></div>
+          <div class="van-cab-sm"></div>
+          <div class="van-win-sm"></div>
+          <div class="van-wh-sm f"></div>
+          <div class="van-wh-sm r"></div>
+        </div>
+        <span class="nav-brand">Swift <span>Move</span> London</span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#vans">Van Sizes</a>
+        <a href="#areas">Areas</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="#contact" class="nav-btn">Get a Quote</a>
+      <button class="hamburger" onclick="document.querySelector('.nav-mob').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-mob">
+    <a href="#services">Services</a>
+    <a href="#vans">Van Sizes</a>
+    <a href="#areas">Areas</a>
+    <a href="#contact">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-template-banner">
+          &#128230; This is a <strong>sample template</strong> for a Man with a Van / Removals business. Your real site will be fully customised with your branding &amp; details. <a href="#get-started">Request this template &darr;</a>
+        </div>
+        <div class="hero-tag">&#128205; Serving All London Postcodes</div>
+        <h1>London&rsquo;s Most<br>Reliable <em>Man with<br>a Van</em> Service</h1>
+        <p class="hero-desc">Vetted, insured drivers. Instant online price estimates. House moves, office relocations, student moves and single item collections &mdash; 7 days a week.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-orange">&#128222; Book Now</a>
+          <a href="#vans" class="btn btn-ghost">Our Van Sizes</a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-pill"><span>&#10003;</span> Fully Insured</div>
+          <div class="trust-pill"><span>&#10003;</span> DBS Checked Drivers</div>
+          <div class="trust-pill"><span>&#10003;</span> No Hidden Charges</div>
+          <div class="trust-pill"><span>&#10003;</span> 7 Days a Week</div>
+        </div>
+      </div>
+      <!-- LIVE PRICE CALCULATOR -->
+      <div class="hero-right">
+        <div class="calc-card">
+          <h3>Get an Instant Price Estimate</h3>
+          <p class="calc-sub">Takes 30 seconds &mdash; no obligation</p>
+          <div class="calc-field">
+            <label>Move Size</label>
+            <select id="moveSize" onchange="calcPrice()">
+              <option value="item">Single item / small load</option>
+              <option value="studio">Studio flat</option>
+              <option value="bed1" selected>1-bedroom flat</option>
+              <option value="bed2">2-bedroom flat / house</option>
+              <option value="bed3">3-bedroom house</option>
+              <option value="bed4">4+ bedroom house</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label>Distance (miles)</label>
+            <div class="range-wrap">
+              <input type="range" id="moveDist" min="1" max="80" value="8" oninput="document.getElementById('distVal').textContent=this.value+' mi'; calcPrice()">
+              <span class="range-val" id="distVal">8 mi</span>
+            </div>
+          </div>
+          <div class="calc-field">
+            <label>Packing Service?</label>
+            <select id="packing" onchange="calcPrice()">
+              <option value="no">No &mdash; I&rsquo;ll pack myself</option>
+              <option value="yes">Yes &mdash; include packing team</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label>Preferred Date</label>
+            <select id="moveDate" onchange="calcPrice()">
+              <option value="weekday">Weekday (Mon&ndash;Fri)</option>
+              <option value="weekend">Weekend (Sat&ndash;Sun)</option>
+            </select>
+          </div>
+          <div class="calc-result">
+            <div class="calc-result-label">Estimated Price</div>
+            <div class="calc-price" id="priceResult">&pound;180 &ndash; &pound;220</div>
+            <div class="calc-meta">
+              <div class="calc-meta-item">Est. time: <strong id="hoursEst">3&ndash;4 hrs</strong></div>
+              <div class="calc-meta-item">Rate: <strong id="rateEst">&pound;50/hr</strong></div>
+            </div>
+          </div>
+          <button class="calc-book-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book This Move &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-item"><div class="stat-num">8,000+</div><div class="stat-lbl">Moves Completed</div></div>
+      <div class="stat-item"><div class="stat-num">4.9&#9733;</div><div class="stat-lbl">Google Rating</div></div>
+      <div class="stat-item"><div class="stat-num">from &pound;45</div><div class="stat-lbl">Per Hour</div></div>
+      <div class="stat-item"><div class="stat-num">7 Days</div><div class="stat-lbl">a Week</div></div>
+      <div class="stat-item"><div class="stat-num">32</div><div class="stat-lbl">London Boroughs</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="section-label">What We Move</div>
+    <h2 class="section-title">Every Type of Move Covered</h2>
+    <p class="section-sub">Whether you&rsquo;re moving a single sofa or an entire office, we&rsquo;ve got the right van and team for the job</p>
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <span class="svc-icon">&#128717;</span>
+        <h3>Small Moves &amp; Single Items</h3>
+        <p>Perfect for studio flats, single rooms, students or just a few bulky items that won&rsquo;t fit in a car. One driver, one van, no fuss.</p>
+        <div class="svc-price">From &pound;45/hr &bull; 2hr minimum</div>
+      </div>
+      <div class="svc-card reveal">
+        <span class="svc-icon">&#127968;</span>
+        <h3>House &amp; Flat Removals</h3>
+        <p>Full home removals from 1-bedroom flats to large 4+ bedroom houses. We load, transport and unload &mdash; all wrapped and protected.</p>
+        <div class="svc-price">From &pound;50/hr &bull; 2-man teams available</div>
+      </div>
+      <div class="svc-card reveal">
+        <span class="svc-icon">&#127970;</span>
+        <h3>Office Relocations</h3>
+        <p>Minimal disruption office moves across London. We work evenings and weekends to fit around your business. IT equipment handled with care.</p>
+        <div class="svc-price">From &pound;55/hr &bull; Weekend rates available</div>
+      </div>
+      <div class="svc-card reveal">
+        <span class="svc-icon">&#127979;</span>
+        <h3>Student Moves</h3>
+        <p>End of term, start of year or halls to private rental &mdash; affordable, flexible moves designed for students across all London universities.</p>
+        <div class="svc-price">From &pound;45/hr &bull; Student discounts</div>
+      </div>
+      <div class="svc-card reveal">
+        <span class="svc-icon">&#128230;</span>
+        <h3>Packing &amp; Unpacking</h3>
+        <p>Our experienced team can pack your entire home using quality materials &mdash; saving you hours of stress. Fragile items handled with extra care.</p>
+        <div class="svc-price">From &pound;80 &bull; Add-on to any move</div>
+      </div>
+      <div class="svc-card reveal">
+        <span class="svc-icon">&#128666;</span>
+        <h3>Long Distance UK Moves</h3>
+        <p>Moving out of London? We cover the whole of the UK. Fixed-price quotes for long distance so you know exactly what you&rsquo;ll pay.</p>
+        <div class="svc-price">Fixed price quotes &bull; Nationwide</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VAN SIZE SELECTOR -->
+<section class="van-section" id="vans">
+  <div class="container">
+    <div class="section-label">Fleet</div>
+    <h2 class="section-title">Choose the Right Van</h2>
+    <p class="section-sub">We match the right vehicle to your move &mdash; no paying for space you don&rsquo;t need</p>
+    <div class="van-tabs">
+      <button class="van-tab active" onclick="showVan('transit',this)">Transit Van</button>
+      <button class="van-tab" onclick="showVan('lwb',this)">Long Wheelbase</button>
+      <button class="van-tab" onclick="showVan('luton',this)">Luton Van</button>
+    </div>
+
+    <!-- Transit -->
+    <div class="van-panel active" id="van-transit">
+      <div class="van-panel-inner">
+        <div class="van-graphic">
+          <div class="css-van van-transit">
+            <div class="van-body">
+              <div class="van-door"></div>
+            </div>
+            <div class="van-cab">
+              <div class="van-windshield"></div>
+            </div>
+            <div class="van-wheels">
+              <div class="van-wheel"></div>
+              <div class="van-wheel"></div>
+              <div class="van-wheel"></div>
+            </div>
+          </div>
+        </div>
+        <div class="van-info">
+          <h3>Transit Van</h3>
+          <span class="van-capacity">Up to 600 cu ft</span>
+          <p>Our most popular van for studio flats, 1-bed moves and single item collections. Quick to load, easy to park in tight London streets.</p>
+          <ul class="van-specs">
+            <li>Ideal for studio &amp; 1-bedroom flats</li>
+            <li>Single item and small loads</li>
+            <li>Student moves</li>
+            <li>Easy parking in narrow streets</li>
+          </ul>
+          <div class="van-from">From &pound;45/hr</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LWB -->
+    <div class="van-panel" id="van-lwb">
+      <div class="van-panel-inner">
+        <div class="van-graphic">
+          <div class="css-van van-lwb">
+            <div class="van-body">
+              <div class="van-door" style="position:absolute;right:12px;top:12px;bottom:0;width:80px;border-left:2px solid rgba(0,0,0,.15);"></div>
+            </div>
+            <div class="van-cab">
+              <div class="van-windshield"></div>
+            </div>
+            <div class="van-wheels">
+              <div class="van-wheel"></div>
+              <div class="van-wheel"></div>
+              <div class="van-wheel"></div>
+            </div>
+          </div>
+        </div>
+        <div class="van-info">
+          <h3>Long Wheelbase Van</h3>
+          <span class="van-capacity">Up to 900 cu ft</span>
+          <p>Our workhorse for 2-bedroom flats and small houses. Extra length means fewer trips and faster moves &mdash; saving you money.</p>
+          <ul class="van-specs">
+            <li>2-bedroom flats and houses</li>
+            <li>Office small relocations</li>
+            <li>Furniture and appliance moves</li>
+            <li>Great for awkward or long items</li>
+          </ul>
+          <div class="van-from">From &pound;50/hr</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Luton -->
+    <div class="van-panel" id="van-luton">
+      <div class="van-panel-inner">
+        <div class="van-graphic">
+          <div class="css-van van-luton">
+            <div class="van-box">
+              <div class="van-box-top"></div>
+            </div>
+            <div class="van-cab">
+              <div class="van-windshield"></div>
+            </div>
+            <div class="van-wheels">
+              <div class="van-wheel"></div>
+              <div class="van-wheel"></div>
+              <div class="van-wheel"></div>
+            </div>
+          </div>
+        </div>
+        <div class="van-info">
+          <h3>Luton Box Van</h3>
+          <span class="van-capacity">Up to 1,400 cu ft</span>
+          <p>Maximum capacity for large family homes, big office relocations or when you simply have a lot of stuff. Fitted with a tail lift for heavy items.</p>
+          <ul class="van-specs">
+            <li>3-5+ bedroom house moves</li>
+            <li>Full office relocations</li>
+            <li>Tail lift for heavy furniture</li>
+            <li>2-man team recommended</li>
+          </ul>
+          <div class="van-from">From &pound;65/hr</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="container">
+    <div class="section-label">The Process</div>
+    <h2 class="section-title">Moving Day, Made Easy</h2>
+    <p class="section-sub">We handle the stress so you don&rsquo;t have to</p>
+    <div class="timeline">
+      <div class="timeline-step reveal">
+        <div class="tl-num">1</div>
+        <h3>Get Your Estimate</h3>
+        <p>Use our instant calculator or call us for a tailored quote. No surprises, no hidden fees.</p>
+      </div>
+      <div class="timeline-step reveal">
+        <div class="tl-num">2</div>
+        <h3>Book Your Slot</h3>
+        <p>Choose your date and time. We confirm same day and send a reminder the evening before.</p>
+      </div>
+      <div class="timeline-step reveal">
+        <div class="tl-num">3</div>
+        <h3>We Show Up On Time</h3>
+        <p>Our vetted driver arrives on time, introduces themselves and does a walkthrough with you.</p>
+      </div>
+      <div class="timeline-step reveal">
+        <div class="tl-num">4</div>
+        <h3>Settled In</h3>
+        <p>Everything delivered, placed where you want it. We only leave when you&rsquo;re happy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="included-section">
+  <div class="container">
+    <div class="section-label">What You Get</div>
+    <h2 class="section-title">Everything Included</h2>
+    <p class="section-sub">No nasty surprises on moving day</p>
+    <div class="included-grid">
+      <div class="incl-card reveal">
+        <h3>Standard Move <span class="incl-badge">Included</span></h3>
+        <ul class="incl-list">
+          <li>Fully insured van and driver</li>
+          <li>Furniture blankets and straps</li>
+          <li>Loading and unloading</li>
+          <li>Disassembly of flat-pack furniture</li>
+          <li>Reassembly at destination</li>
+          <li>Goods-in-transit insurance</li>
+          <li>Congestion Charge if applicable</li>
+          <li>No fuel surcharges within M25</li>
+        </ul>
+      </div>
+      <div class="incl-card reveal">
+        <h3>Packing Add-on <span class="incl-badge addon">Optional Extra</span></h3>
+        <ul class="incl-list">
+          <li>Professional packing team</li>
+          <li>Double-wall cardboard boxes</li>
+          <li>Bubble wrap for fragiles</li>
+          <li>Wardrobe boxes for clothes</li>
+          <li>Full labelling system</li>
+          <li>Unpacking at destination</li>
+          <li>Removal and disposal of boxes</li>
+          <li>From &pound;80 add-on to any move</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="areas-section" id="areas">
+  <div class="container">
+    <div class="section-label">Coverage</div>
+    <h2 class="section-title">All 32 London Boroughs</h2>
+    <p class="section-sub">We cover every postcode in Greater London, plus long distance UK moves</p>
+    <div class="areas-grid">
+      <span class="area-pill">Barking</span><span class="area-pill">Barnet</span><span class="area-pill">Bexley</span>
+      <span class="area-pill">Brent</span><span class="area-pill">Bromley</span><span class="area-pill">Camden</span>
+      <span class="area-pill">City of London</span><span class="area-pill">Croydon</span><span class="area-pill">Ealing</span>
+      <span class="area-pill">Enfield</span><span class="area-pill">Greenwich</span><span class="area-pill">Hackney</span>
+      <span class="area-pill">Hammersmith</span><span class="area-pill">Haringey</span><span class="area-pill">Harrow</span>
+      <span class="area-pill">Havering</span><span class="area-pill">Hillingdon</span><span class="area-pill">Hounslow</span>
+      <span class="area-pill">Islington</span><span class="area-pill">Kensington</span><span class="area-pill">Kingston</span>
+      <span class="area-pill">Lambeth</span><span class="area-pill">Lewisham</span><span class="area-pill">Merton</span>
+      <span class="area-pill">Newham</span><span class="area-pill">Redbridge</span><span class="area-pill">Richmond</span>
+      <span class="area-pill">Southwark</span><span class="area-pill">Sutton</span><span class="area-pill">Tower Hamlets</span>
+      <span class="area-pill">Waltham Forest</span><span class="area-pill">Wandsworth</span><span class="area-pill">Westminster</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="section-label">Book Your Move</div>
+    <h2 class="section-title" style="color:#fff;">Get a Confirmed Quote</h2>
+    <p class="section-sub">Tell us about your move and we&rsquo;ll come back within the hour</p>
+    <div class="contact-inner" style="margin-top:48px;">
+      <div>
+        <div class="contact-info-cards">
+          <div class="info-card">
+            <div class="info-icon">&#128222;</div>
+            <div><div class="info-label">Phone</div><div class="info-val">+44 7479 531509</div></div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">&#128139;</div>
+            <div><div class="info-label">Email</div><div class="info-val">sales@graftdigital.london</div></div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon">&#128336;</div>
+            <div><div class="info-label">Hours</div><div class="info-val">7 days a week, 7am &ndash; 9pm</div></div>
+          </div>
+        </div>
+        <div class="contact-usp">
+          <div class="usp-row"><span>&#10003;</span>Free quote &mdash; no obligation</div>
+          <div class="usp-row"><span>&#10003;</span>Confirmed within 1 hour</div>
+          <div class="usp-row"><span>&#10003;</span>Fixed price or hourly &mdash; your choice</div>
+          <div class="usp-row"><span>&#10003;</span>All drivers DBS checked &amp; insured</div>
+          <div class="usp-row"><span>&#10003;</span>Short notice bookings welcome</div>
+        </div>
+      </div>
+      <div class="contact-form-card" id="get-started">
+        <h3>Request a Quote</h3>
+        <form id="quoteForm">
+          <div class="fg-row">
+            <div class="fg"><label>Name *</label><input type="text" placeholder="Your name" required></div>
+            <div class="fg"><label>Phone *</label><input type="tel" placeholder="+44 7XXX XXX XXX" required></div>
+          </div>
+          <div class="fg"><label>Email</label><input type="email" placeholder="you@email.com"></div>
+          <div class="fg-row">
+            <div class="fg">
+              <label>Move Size</label>
+              <select>
+                <option>Single item / small load</option>
+                <option>Studio flat</option>
+                <option>1-bedroom flat</option>
+                <option>2-bedroom flat / house</option>
+                <option>3-bedroom house</option>
+                <option>4+ bedroom house</option>
+                <option>Office move</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label>Preferred Date</label>
+              <input type="date">
+            </div>
+          </div>
+          <div class="fg-row">
+            <div class="fg"><label>From (postcode / area)</label><input type="text" placeholder="e.g. SW1A or Brixton"></div>
+            <div class="fg"><label>To (postcode / area)</label><input type="text" placeholder="e.g. E1 or Shoreditch"></div>
+          </div>
+          <div class="fg"><label>Anything else we should know?</label><textarea placeholder="Stairs? Parking restrictions? Fragile items? Let us know..."></textarea></div>
+          <button type="submit" class="submit-btn">Send Quote Request &rarr;</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="#" class="footer-logo">
+        <span class="footer-brand">Swift <span>Move</span> London</span>
+      </a>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#vans">Van Sizes</a>
+        <a href="#areas">Areas</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <span class="footer-copy">&copy; 2025 <strong>Graft Digital</strong> &mdash; Yoel Gutierrez &middot; London</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* Price calculator */
+  function calcPrice() {
+    var size = document.getElementById('moveSize').value;
+    var dist = parseInt(document.getElementById('moveDist').value) || 8;
+    var packing = document.getElementById('packing').value;
+    var weekend = document.getElementById('moveDate').value === 'weekend';
+
+    var baseHours = { item: 1.5, studio: 2, bed1: 3, bed2: 4.5, bed3: 6, bed4: 8 };
+    var hours = baseHours[size] || 3;
+    var rate = weekend ? 60 : 50;
+    if (dist > 30) rate += 10;
+    var packCost = packing === 'yes' ? 80 : 0;
+    var distExtra = dist > 15 ? Math.round((dist - 15) * 1.8) : 0;
+    var base = Math.round(hours * rate + packCost + distExtra);
+    var low = Math.round(base * 0.92 / 10) * 10;
+    var high = Math.round(base * 1.1 / 10) * 10;
+
+    document.getElementById('priceResult').textContent = '\u00a3' + low + ' \u2013 \u00a3' + high;
+    document.getElementById('hoursEst').textContent = Math.floor(hours) + '\u2013' + (Math.floor(hours) + 1) + ' hrs';
+    document.getElementById('rateEst').textContent = '\u00a3' + rate + '/hr';
+  }
+  calcPrice();
+
+  /* Van tabs */
+  function showVan(type, btn) {
+    document.querySelectorAll('.van-panel').forEach(function(p) { p.classList.remove('active'); });
+    document.querySelectorAll('.van-tab').forEach(function(b) { b.classList.remove('active'); });
+    document.getElementById('van-' + type).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  /* Scroll reveal */
+  var revealEls = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  revealEls.forEach(function(el) { io.observe(el); });
+
+  /* Contact form */
+  document.getElementById('quoteForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = this.querySelector('button[type=submit]');
+    var name = this.querySelector('input[type=text]').value;
+    var phone = this.querySelector('input[type=tel]').value;
+    var email = this.querySelector('input[type=email]').value;
+    var moveSize = this.querySelectorAll('select')[0].value;
+    var fromArea = this.querySelectorAll('input[type=text]')[1] ? this.querySelectorAll('input[type=text]')[1].value : '';
+    var toArea = this.querySelectorAll('input[type=text]')[2] ? this.querySelectorAll('input[type=text]')[2].value : '';
+    var msg = this.querySelector('textarea').value;
+    var body = 'Name: ' + name + '\nPhone: ' + phone + '\nEmail: ' + email + '\nMove Size: ' + moveSize + '\nFrom: ' + fromArea + '\nTo: ' + toArea + '\n\nNotes:\n' + msg;
+    window.location.href = 'mailto:sales@graftdigital.london?subject=' + encodeURIComponent('Move Quote Request \u2013 ' + name) + '&body=' + encodeURIComponent(body);
+    btn.textContent = '\u2713 Opening your email app\u2026';
+    btn.style.background = '#22c55e';
+    btn.disabled = true;
+  });
+</script>
+</body>
+</html>
