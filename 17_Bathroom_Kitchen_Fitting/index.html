@@ -103,6 +103,13 @@
     .svc-tag { display: inline-block; background: var(--cream); color: var(--teal); font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 10px; border: 1px solid #D0EAE8; }
 
     /* Design Styles */
+    .bk-logos-strip { padding:28px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:var(--off-white); }
+    .bk-logos-label { text-align:center; font-size:.7rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted); margin-bottom:20px; }
+    .bk-logos-inner { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:28px; }
+    .bk-logo { display:flex; flex-direction:column; align-items:center; gap:7px; opacity:.5; transition:all 0.24s ease; filter:grayscale(100%); }
+    .bk-logo:hover { opacity:1; filter:grayscale(0%); }
+    .bk-logo img { height:40px; width:auto; max-width:100px; object-fit:contain; }
+    .bk-logo span { font-size:.62rem; font-weight:600; color:var(--text-muted); text-align:center; letter-spacing:.04em; }
     .styles { background: var(--white); padding: 80px 0; }
     .styles-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
     .style-card { border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform .2s, box-shadow .2s; }
@@ -421,6 +428,22 @@
     </div>
   </div>
 </section>
+
+<!-- LOGOS STRIP -->
+<div class="bk-logos-strip">
+  <div class="container">
+    <p class="bk-logos-label">Accreditations &amp; Trust</p>
+    <div class="bk-logos-inner">
+      <div class="bk-logo"><img src="assets/images/logos/kbsa.svg" alt="KBSA Member"><span>KBSA</span></div>
+      <div class="bk-logo"><img src="assets/images/logos/gas-safe.svg" alt="Gas Safe Register"><span>Gas Safe</span></div>
+      <div class="bk-logo"><img src="assets/images/logos/trustmark.svg" alt="TrustMark"><span>TrustMark</span></div>
+      <div class="bk-logo"><img src="assets/images/logos/checkatrade.svg" alt="Checkatrade"><span>Checkatrade</span></div>
+      <div class="bk-logo"><img src="assets/images/logos/trustpilot.svg" alt="Trustpilot"><span>Trustpilot</span></div>
+      <div class="bk-logo"><img src="assets/images/logos/google.svg" alt="Google Reviews"><span>Google Reviews</span></div>
+      <div class="bk-logo"><img src="assets/images/logos/which-trusted-traders.svg" alt="Which? Trusted Traders"><span>Which? Trusted</span></div>
+    </div>
+  </div>
+</div>
 
 <!-- Design Styles -->
 <section class="styles" id="styles">
