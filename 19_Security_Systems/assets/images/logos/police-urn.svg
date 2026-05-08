@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 52">
+  <rect width="120" height="52" rx="6" fill="#003087"/>
+  <text x="60" y="15" font-family="Arial,sans-serif" font-size="7" font-weight="700" fill="rgba(255,255,255,0.8)" text-anchor="middle">POLICE</text>
+  <text x="60" y="26" font-family="Arial,sans-serif" font-size="9" font-weight="900" fill="white" text-anchor="middle">UNIQUE REF.</text>
+  <text x="60" y="37" font-family="Arial,sans-serif" font-size="9" font-weight="900" fill="white" text-anchor="middle">NUMBER</text>
+  <text x="60" y="48" font-family="Arial,sans-serif" font-size="6" fill="rgba(255,255,255,0.7)" text-anchor="middle">URN Registered Alarm</text>
+</svg>

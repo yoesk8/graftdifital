@@ -199,12 +199,13 @@
     .pkg-cta-featured:hover { background: #33C8E8; }
 
     /* CERTS */
-    .certs-section { padding: 48px 0; background: var(--slate); border-top: 1px solid rgba(0,180,216,.1); }
-    .certs-section h3 { color: rgba(255,255,255,.5); font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; text-align: center; margin-bottom: 24px; }
-    .certs-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
-    .cert-badge { background: rgba(255,255,255,.05); border: 1px solid rgba(0,180,216,.2); border-radius: 8px; padding: 14px 22px; text-align: center; }
-    .cert-badge-top { color: var(--electric); font-size: .9rem; font-weight: 900; letter-spacing: .02em; }
-    .cert-badge-sub { color: rgba(255,255,255,.4); font-size: .68rem; margin-top: 2px; }
+    .certs-section { padding: 32px 0; background: var(--slate); border-top: 1px solid rgba(0,180,216,.1); }
+    .certs-section h3 { color: rgba(255,255,255,.3); font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; text-align: center; margin-bottom: 20px; }
+    .certs-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 28px; align-items: center; }
+    .cert-badge { display:flex; flex-direction:column; align-items:center; gap:7px; opacity:.5; transition:all 0.24s ease; filter:grayscale(100%) brightness(1.8); }
+    .cert-badge:hover { opacity:1; filter:grayscale(0%) brightness(1); }
+    .cert-badge img { height:40px; width:auto; max-width:100px; object-fit:contain; }
+    .cert-badge span { font-size:.62rem; font-weight:600; color:rgba(255,255,255,.5); text-align:center; letter-spacing:.04em; }
 
     /* CONTACT */
     .contact-section { padding: 80px 0; background: var(--light); }
@@ -637,11 +638,34 @@
   <div class="container">
     <h3>Certifications &amp; Approvals</h3>
     <div class="certs-row">
-      <div class="cert-badge"><div class="cert-badge-top">NSI GOLD</div><div class="cert-badge-sub">National Security Inspectorate</div></div>
-      <div class="cert-badge"><div class="cert-badge-top">SSAIB</div><div class="cert-badge-sub">Security Systems Approved</div></div>
-      <div class="cert-badge"><div class="cert-badge-top">WHICH?</div><div class="cert-badge-sub">Trusted Trader</div></div>
-      <div class="cert-badge"><div class="cert-badge-top">POLICE URN</div><div class="cert-badge-sub">Unique Reference Number</div></div>
-      <div class="cert-badge"><div class="cert-badge-top">ISO 9001</div><div class="cert-badge-sub">Quality Management</div></div>
+      <div class="cert-badge">
+        <img src="assets/images/logos/nsi.svg" alt="NSI Gold">
+        <span>NSI Gold</span>
+      </div>
+      <div class="cert-badge">
+        <img src="assets/images/logos/ssaib.svg" alt="SSAIB Approved">
+        <span>SSAIB</span>
+      </div>
+      <div class="cert-badge">
+        <img src="assets/images/logos/police-urn.svg" alt="Police URN">
+        <span>Police URN</span>
+      </div>
+      <div class="cert-badge">
+        <img src="assets/images/logos/iso9001.svg" alt="ISO 9001">
+        <span>ISO 9001</span>
+      </div>
+      <div class="cert-badge">
+        <img src="assets/images/logos/trustpilot.svg" alt="Trustpilot">
+        <span>Trustpilot</span>
+      </div>
+      <div class="cert-badge">
+        <img src="assets/images/logos/google.svg" alt="Google Reviews">
+        <span>Google Reviews</span>
+      </div>
+      <div class="cert-badge">
+        <img src="assets/images/logos/which-trusted-traders.svg" alt="Which? Trusted Traders">
+        <span>Which? Trusted</span>
+      </div>
     </div>
   </div>
 </section>
