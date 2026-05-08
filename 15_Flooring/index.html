@@ -118,6 +118,13 @@
     .ftype-tag { background: var(--stone); color: var(--slate); font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 10px; }
 
     /* Stats Strip */
+    .fl-logos-strip { padding:28px 0; border-bottom:1px solid var(--border); background:white; }
+    .fl-logos-label { text-align:center; font-size:.7rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#aaa; margin-bottom:20px; }
+    .fl-logos-inner { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:28px; }
+    .fl-logo { display:flex; flex-direction:column; align-items:center; gap:7px; opacity:.5; transition:all 0.24s ease; filter:grayscale(100%); }
+    .fl-logo:hover { opacity:1; filter:grayscale(0%); }
+    .fl-logo img { height:40px; width:auto; max-width:100px; object-fit:contain; }
+    .fl-logo span { font-size:.62rem; font-weight:600; color:#aaa; text-align:center; letter-spacing:.04em; }
     .stats-strip { background: var(--terracotta); padding: 32px 0; }
     .stats-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
     .stat-item { text-align: center; }
@@ -548,6 +555,22 @@
     <div class="stat-item">
       <div class="stat-num">5<i class="fas fa-star"></i></div>
       <div class="stat-lbl">Average Trustpilot rating</div>
+    </div>
+  </div>
+</div>
+
+<!-- LOGOS STRIP -->
+<div class="fl-logos-strip">
+  <div class="container">
+    <p class="fl-logos-label">Accreditations &amp; Trust</p>
+    <div class="fl-logos-inner">
+      <div class="fl-logo"><img src="assets/images/logos/cfa.svg" alt="CFA Member"><span>CFA</span></div>
+      <div class="fl-logo"><img src="assets/images/logos/fita.svg" alt="FITA Member"><span>FITA</span></div>
+      <div class="fl-logo"><img src="assets/images/logos/trustmark.svg" alt="TrustMark"><span>TrustMark</span></div>
+      <div class="fl-logo"><img src="assets/images/logos/checkatrade.svg" alt="Checkatrade"><span>Checkatrade</span></div>
+      <div class="fl-logo"><img src="assets/images/logos/trustpilot.svg" alt="Trustpilot"><span>Trustpilot</span></div>
+      <div class="fl-logo"><img src="assets/images/logos/google.svg" alt="Google Reviews"><span>Google Reviews</span></div>
+      <div class="fl-logo"><img src="assets/images/logos/which-trusted-traders.svg" alt="Which? Trusted Traders"><span>Which? Trusted</span></div>
     </div>
   </div>
 </div>
