@@ -112,12 +112,13 @@
     .service-tag.urgent { background: #FEF3C7; color: #92400E; }
 
     /* Certifications */
-    .certs { background: var(--forest); padding: 28px 0; }
-    .certs-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap; }
-    .cert-item { display: flex; align-items: center; gap: 10px; }
-    .cert-badge-box { width: 44px; height: 44px; background: rgba(74,124,89,0.2); border: 1px solid rgba(74,124,89,0.4); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
-    .cert-item-text { font-size: 13px; color: #9CA3AF; }
-    .cert-item-text strong { display: block; color: #D1FAE5; font-size: 13px; }
+    .certs { background: var(--forest); padding: 32px 0; }
+    .certs-label { text-align:center; font-size:.7rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.3); margin-bottom:20px; }
+    .certs-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: center; align-items: center; gap: 28px; flex-wrap: wrap; }
+    .cert-item { display:flex; flex-direction:column; align-items:center; gap:7px; opacity:.5; transition:all 0.24s ease; filter:grayscale(100%) brightness(1.8); }
+    .cert-item:hover { opacity:1; filter:grayscale(0%) brightness(1); }
+    .cert-item img { height:40px; width:auto; max-width:100px; object-fit:contain; }
+    .cert-item span { font-size:.62rem; font-weight:600; color:rgba(255,255,255,.5); text-align:center; letter-spacing:.04em; }
 
     /* Why Us */
     .why-us { background: var(--white); padding: 80px 0; }
@@ -412,26 +413,31 @@
 
 <!-- Certs Strip -->
 <div class="certs">
+  <p class="certs-label">Accreditations &amp; Trust</p>
   <div class="certs-inner">
     <div class="cert-item">
-      <div class="cert-badge-box"><i class="fas fa-trophy"></i></div>
-      <div class="cert-item-text"><strong>NPTC Certified</strong>All operatives hold current NPTC certificates</div>
+      <img src="assets/images/logos/arboricultural-assoc.svg" alt="Arboricultural Association">
+      <span>AA Approved</span>
     </div>
     <div class="cert-item">
-      <div class="cert-badge-box"><i class="fas fa-star"></i></div>
-      <div class="cert-item-text"><strong>AA Approved</strong>Arboricultural Association member</div>
+      <img src="assets/images/logos/nptc.svg" alt="NPTC / Lantra Certified">
+      <span>NPTC / Lantra</span>
     </div>
     <div class="cert-item">
-      <div class="cert-badge-box"><i class="fas fa-shield-halved"></i></div>
-      <div class="cert-item-text"><strong>&pound;5M Insured</strong>Full public liability cover</div>
+      <img src="assets/images/logos/chas.png" alt="CHAS Accredited">
+      <span>CHAS</span>
     </div>
     <div class="cert-item">
-      <div class="cert-badge-box">&#9851;</div>
-      <div class="cert-item-text"><strong>Waste Licensed</strong>Registered waste carrier &amp; chip recycling</div>
+      <img src="assets/images/logos/checkatrade.svg" alt="Checkatrade">
+      <span>Checkatrade</span>
     </div>
     <div class="cert-item">
-      <div class="cert-badge-box"><i class="fas fa-clipboard-list"></i></div>
-      <div class="cert-item-text"><strong>CHAS Accredited</strong>Contractors Health &amp; Safety</div>
+      <img src="assets/images/logos/trustpilot.svg" alt="Trustpilot">
+      <span>Trustpilot</span>
+    </div>
+    <div class="cert-item">
+      <img src="assets/images/logos/google.svg" alt="Google Reviews">
+      <span>Google Reviews</span>
     </div>
   </div>
 </div>
