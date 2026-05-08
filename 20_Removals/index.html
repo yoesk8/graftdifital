@@ -110,6 +110,13 @@
     .stat-lbl { font-size: .75rem; font-weight: 700; color: rgba(255,255,255,.75); text-transform: uppercase; letter-spacing: .04em; }
 
     /* SERVICES */
+    .rm-logos-strip { padding:28px 0; border-bottom:1px solid rgba(0,0,0,.08); background:white; }
+    .rm-logos-label { text-align:center; font-size:.7rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#aaa; margin-bottom:20px; }
+    .rm-logos-inner { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:28px; }
+    .rm-logo { display:flex; flex-direction:column; align-items:center; gap:7px; opacity:.5; transition:all 0.24s ease; filter:grayscale(100%); }
+    .rm-logo:hover { opacity:1; filter:grayscale(0%); }
+    .rm-logo img { height:40px; width:auto; max-width:100px; object-fit:contain; }
+    .rm-logo span { font-size:.62rem; font-weight:600; color:#aaa; text-align:center; letter-spacing:.04em; }
     .services-section { padding: 80px 0; background: var(--sand); }
     .section-label { text-align: center; font-size: .78rem; font-weight: 700; color: var(--orange); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
     .section-title { font-size: clamp(1.6rem,3vw,2.3rem); font-weight: 800; letter-spacing: -.03em; text-align: center; margin-bottom: 8px; }
@@ -393,6 +400,21 @@
       <div class="stat-item"><div class="stat-num">from &pound;45</div><div class="stat-lbl">Per Hour</div></div>
       <div class="stat-item"><div class="stat-num">7 Days</div><div class="stat-lbl">a Week</div></div>
       <div class="stat-item"><div class="stat-num">32</div><div class="stat-lbl">London Boroughs</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- LOGOS STRIP -->
+<div class="rm-logos-strip">
+  <div class="container">
+    <p class="rm-logos-label">Accreditations &amp; Trust</p>
+    <div class="rm-logos-inner">
+      <div class="rm-logo"><img src="assets/images/logos/bar.svg" alt="BAR Member"><span>BAR Member</span></div>
+      <div class="rm-logo"><img src="assets/images/logos/move-assured.svg" alt="Move Assured"><span>Move Assured</span></div>
+      <div class="rm-logo"><img src="assets/images/logos/checkatrade.svg" alt="Checkatrade"><span>Checkatrade</span></div>
+      <div class="rm-logo"><img src="assets/images/logos/trustpilot.svg" alt="Trustpilot"><span>Trustpilot</span></div>
+      <div class="rm-logo"><img src="assets/images/logos/google.svg" alt="Google Reviews"><span>Google Reviews</span></div>
+      <div class="rm-logo"><img src="assets/images/logos/which-trusted-traders.svg" alt="Which? Trusted Traders"><span>Which? Trusted</span></div>
     </div>
   </div>
 </div>
