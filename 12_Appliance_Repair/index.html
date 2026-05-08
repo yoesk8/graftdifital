@@ -106,6 +106,13 @@
     .stat-lbl { font-size: .72rem; color: rgba(255,255,255,.5); font-weight: 600; margin-top: 3px; letter-spacing: .03em; text-transform: uppercase; }
 
     /* ── APPLIANCES WE REPAIR ── */
+    .ar-logos-strip { padding:28px 0; border-bottom:1px solid var(--border); background:var(--off-white); }
+    .ar-logos-label { text-align:center; font-size:.7rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--text-light); margin-bottom:20px; }
+    .ar-logos-inner { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:28px; }
+    .ar-logo { display:flex; flex-direction:column; align-items:center; gap:7px; opacity:.5; transition:all 0.24s ease; filter:grayscale(100%); }
+    .ar-logo:hover { opacity:1; filter:grayscale(0%); }
+    .ar-logo img { height:40px; width:auto; max-width:100px; object-fit:contain; }
+    .ar-logo span { font-size:.62rem; font-weight:600; color:var(--text-light); text-align:center; letter-spacing:.04em; }
     .appliances { padding: 80px 0; background: var(--white); }
     .section-header { text-align: center; margin-bottom: 52px; }
     .section-tag { display: inline-block; background: var(--indigo-pale); color: var(--indigo); font-size: .72rem; font-weight: 800; padding: 5px 14px; border-radius: 6px; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 12px; }
@@ -354,6 +361,21 @@
         <div class="stat-item"><div class="stat-num"><span>15+</span> yrs</div><div class="stat-lbl">Engineer Experience</div></div>
         <div class="stat-item"><div class="stat-num"><span>4.9</span><i class="fas fa-star"></i></div><div class="stat-lbl">Customer Rating</div></div>
         <div class="stat-item"><div class="stat-num"><span>£0</span></div><div class="stat-lbl">Call-Out Fee</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGOS STRIP -->
+  <div class="ar-logos-strip">
+    <div class="container">
+      <p class="ar-logos-label">Accreditations &amp; Trust</p>
+      <div class="ar-logos-inner">
+        <div class="ar-logo"><img src="assets/images/logos/amdea.svg" alt="AMDEA Member"><span>AMDEA</span></div>
+        <div class="ar-logo"><img src="assets/images/logos/manufacturer-auth.svg" alt="Manufacturer Authorised"><span>Manufacturer Auth.</span></div>
+        <div class="ar-logo"><img src="assets/images/logos/checkatrade.svg" alt="Checkatrade"><span>Checkatrade</span></div>
+        <div class="ar-logo"><img src="assets/images/logos/trustpilot.svg" alt="Trustpilot"><span>Trustpilot</span></div>
+        <div class="ar-logo"><img src="assets/images/logos/google.svg" alt="Google Reviews"><span>Google Reviews</span></div>
+        <div class="ar-logo"><img src="assets/images/logos/which-trusted-traders.svg" alt="Which? Trusted Traders"><span>Which? Trusted</span></div>
       </div>
     </div>
   </div>
