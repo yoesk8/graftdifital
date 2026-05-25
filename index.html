@@ -440,6 +440,128 @@
     .form-group textarea { resize: vertical; min-height: 96px; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
+    /* ── PRICING ────────────────────────────── */
+    #pricing { padding: 96px 0; background: var(--white); }
+
+    .pricing-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .pricing-left h2 { margin-bottom: 16px; }
+    .pricing-left > p { color: var(--text-mid); font-size: 1.02rem; line-height: 1.75; margin-bottom: 28px; }
+
+    .value-rows { list-style: none; margin-bottom: 28px; }
+    .value-row {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: .93rem; color: var(--text-mid);
+    }
+    .value-row:last-child { border-bottom: none; }
+    .value-row strong { color: var(--text); font-weight: 600; }
+    .value-row .val {
+      background: var(--light);
+      color: var(--text-mid);
+      font-size: .78rem; font-weight: 700;
+      padding: 3px 10px; border-radius: 20px;
+    }
+
+    .value-total {
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: .97rem; font-weight: 700; color: var(--text);
+    }
+    .value-total .crossed {
+      color: var(--text-light); font-weight: 500;
+      text-decoration: line-through; margin-left: 8px; font-size: .88rem;
+    }
+
+    .pricing-card {
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 48px 44px;
+      color: var(--white);
+      position: relative; overflow: hidden;
+      box-shadow: var(--shadow-xl);
+    }
+    .pricing-card::before {
+      content: '';
+      position: absolute; top: -60px; right: -60px;
+      width: 220px; height: 220px;
+      background: var(--gold); border-radius: 50%; opacity: .06;
+    }
+    .pricing-card::after {
+      content: '';
+      position: absolute; bottom: -30px; left: -30px;
+      width: 130px; height: 130px;
+      background: var(--gold); border-radius: 50%; opacity: .04;
+    }
+
+    .pkg-label {
+      display: inline-block;
+      background: rgba(245,166,35,.18);
+      color: var(--gold-light);
+      font-size: .72rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; padding: 5px 13px; border-radius: 100px;
+      margin-bottom: 22px;
+    }
+
+    .pkg-name { font-size: 1.55rem; font-weight: 800; color: var(--white); margin-bottom: 6px; }
+    .pkg-desc { color: rgba(255,255,255,.6); font-size: .9rem; margin-bottom: 28px; }
+
+    .pkg-price {
+      display: flex; align-items: flex-end; gap: 6px;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .pkg-price .currency { font-size: 1.8rem; font-weight: 800; color: var(--gold); line-height: 1; padding-bottom: 6px; }
+    .pkg-price .amount  { font-size: 5rem; font-weight: 900; color: var(--gold); line-height: 1; letter-spacing: -.04em; }
+    .pkg-price .period  { font-size: .88rem; color: rgba(255,255,255,.45); padding-bottom: 10px; }
+
+    .pkg-includes { list-style: none; margin-bottom: 32px; }
+    .pkg-includes li {
+      display: flex; align-items: flex-start; gap: 11px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      font-size: .91rem; color: rgba(255,255,255,.85);
+    }
+    .pkg-includes li:last-child { border-bottom: none; }
+    .pkg-check {
+      width: 20px; height: 20px; flex-shrink: 0;
+      background: rgba(245,166,35,.2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .62rem; color: var(--gold);
+      font-weight: 900; margin-top: 1px;
+    }
+
+    .pkg-cta {
+      display: flex; align-items: center; justify-content: center;
+      width: 100%; padding: 15px 28px;
+      background: var(--gold); color: var(--navy);
+      border-radius: 8px; font-size: 1rem; font-weight: 800;
+      cursor: pointer; border: none; font-family: inherit;
+      letter-spacing: -.01em; text-decoration: none;
+      transition: var(--trans); gap: 8px;
+    }
+    .pkg-cta:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(245,166,35,.35); }
+
+    .pkg-renewal {
+      text-align: center; margin-top: 14px;
+      color: rgba(255,255,255,.35); font-size: .78rem;
+    }
+
+    @media (max-width: 900px) {
+      .pricing-wrap { grid-template-columns: 1fr; gap: 40px; }
+    }
+
     /* ── FOOTER ─────────────────────────────── */
     footer {
       background: #050D1A;
@@ -521,9 +643,10 @@
   <button class="mobile-close" id="mobileClose">&#x2715;</button>
   <a href="#industries" onclick="closeMobile()">Templates</a>
   <a href="#process"    onclick="closeMobile()">How It Works</a>
+  <a href="#pricing"    onclick="closeMobile()">Pricing</a>
   <a href="#about"      onclick="closeMobile()">About</a>
   <a href="#contact"    onclick="closeMobile()">Contact</a>
-  <a href="#contact" class="btn btn-gold" onclick="closeMobile()">Get a Free Quote</a>
+  <a href="#contact" class="btn btn-gold" onclick="closeMobile()">Get Started</a>
 </div>
 
 <!-- ── NAVBAR ───────────────────── -->
@@ -537,11 +660,12 @@
       <ul class="nav-links">
         <li><a href="#industries">Templates</a></li>
         <li><a href="#process">How It Works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="nav-cta">
-        <a href="#contact" class="btn btn-gold">Get a Free Quote</a>
+        <a href="#pricing" class="btn btn-gold">See Pricing</a>
       </div>
       <button class="hamburger" id="hamburger">
         <span></span><span></span><span></span>
@@ -562,11 +686,11 @@
         Websites Built for<br><span class="gold">London Trades</span>.<br>Built to Win.
       </h1>
       <p class="hero-sub fu fu-3">
-        Professional, affordable websites that turn browsers into booked customers. Pick your trade, see your template, go live in days &mdash; not months.
+        Professional websites that turn browsers into booked customers. One simple package &mdash; website, domain, hosting &amp; business email &mdash; all for <strong style="color:var(--gold);">£299</strong>.
       </p>
       <div class="hero-ctas fu fu-4">
-        <a href="#industries" class="btn btn-gold">Browse Templates &darr;</a>
-        <a href="#contact"    class="btn btn-outline">Get a Free Quote</a>
+        <a href="#pricing"    class="btn btn-gold">See the £299 Package &darr;</a>
+        <a href="#industries" class="btn btn-outline">Browse Templates</a>
       </div>
       <div class="hero-stats fu fu-4">
         <div class="hero-stat">
@@ -634,6 +758,108 @@
   </div>
 </section>
 
+<!-- ── PRICING ────────────────────── -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">Transparent Pricing</span>
+      <h2>One Package. Everything Included.</h2>
+      <p>No hidden fees, no monthly surprises. Just everything your business needs to get found online.</p>
+    </div>
+    <div class="pricing-wrap">
+
+      <!-- Left: value breakdown -->
+      <div class="pricing-left">
+        <h2>What&rsquo;s normally in this package?</h2>
+        <p>When you price these up individually from the likes of GoDaddy, 123-reg, or a freelance designer, this is what you&rsquo;d typically spend:</p>
+        <ul class="value-rows">
+          <li class="value-row">
+            <strong>Professional website design</strong>
+            <span class="val">£500 &ndash; £1,500+</span>
+          </li>
+          <li class="value-row">
+            <strong>.co.uk or .com domain name (1 year)</strong>
+            <span class="val">~£12 &ndash; £20/yr</span>
+          </li>
+          <li class="value-row">
+            <strong>UK web hosting (1 year)</strong>
+            <span class="val">~£60 &ndash; £120/yr</span>
+          </li>
+          <li class="value-row">
+            <strong>Business email address</strong>
+            <span class="val">~£30 &ndash; £60/yr</span>
+          </li>
+          <li class="value-row">
+            <strong>SSL certificate</strong>
+            <span class="val">Included free</span>
+          </li>
+          <li class="value-row">
+            <strong>Google Business Profile setup</strong>
+            <span class="val">£50 &ndash; £150</span>
+          </li>
+        </ul>
+        <div class="value-total">
+          <span>Typical total cost</span>
+          <span>£650 &ndash; £1,800+ <span class="crossed">elsewhere</span></span>
+        </div>
+      </div>
+
+      <!-- Right: the card -->
+      <div class="pricing-card">
+        <span class="pkg-label">All-In Package</span>
+        <div class="pkg-name">The Complete Starter</div>
+        <div class="pkg-desc">Everything you need to get online and start winning jobs.</div>
+        <div class="pkg-price">
+          <span class="currency">£</span>
+          <span class="amount">299</span>
+          <span class="period">one-off payment</span>
+        </div>
+        <ul class="pkg-includes">
+          <li>
+            <span class="pkg-check"><i class="fas fa-check"></i></span>
+            Professional website built on your trade template
+          </li>
+          <li>
+            <span class="pkg-check"><i class="fas fa-check"></i></span>
+            .co.uk or .com domain name &mdash; your choice
+          </li>
+          <li>
+            <span class="pkg-check"><i class="fas fa-check"></i></span>
+            1 year UK hosting included
+          </li>
+          <li>
+            <span class="pkg-check"><i class="fas fa-check"></i></span>
+            1 business email (e.g. info@yourbusiness.co.uk)
+          </li>
+          <li>
+            <span class="pkg-check"><i class="fas fa-check"></i></span>
+            SSL certificate &mdash; secure &amp; Google-trusted
+          </li>
+          <li>
+            <span class="pkg-check"><i class="fas fa-check"></i></span>
+            Mobile-first, London SEO optimised
+          </li>
+          <li>
+            <span class="pkg-check"><i class="fas fa-check"></i></span>
+            Google Business Profile setup
+          </li>
+          <li>
+            <span class="pkg-check"><i class="fas fa-check"></i></span>
+            Live within 48&ndash;72 hours of approval
+          </li>
+          <li>
+            <span class="pkg-check"><i class="fas fa-check"></i></span>
+            Direct support from Yoel &mdash; no call centres
+          </li>
+        </ul>
+        <a href="#contact" class="pkg-cta">Get Started Today &rarr;</a>
+        <p class="pkg-renewal">Renewal from £99/yr after year one (hosting, domain &amp; email)</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ── ABOUT ─────────────────────── -->
 <section id="about">
   <div class="container">
@@ -693,8 +919,8 @@
       </div>
       <div class="why-card">
         <span class="why-icon">&#163;</span>
-        <h3 class="why-title">Trade-Friendly Pricing</h3>
-        <p class="why-desc">Transparent, one-off pricing. No hidden monthly fees. You pay once and you own it. Affordable ongoing support plans are also available.</p>
+        <h3 class="why-title">All-In for £299</h3>
+        <p class="why-desc">One transparent price covers your website, domain, hosting and business email. No hidden fees &mdash; and renewal is just £99/yr after year one.</p>
       </div>
       <div class="why-card">
         <span class="why-icon"><i class="fas fa-lock"></i></span>
